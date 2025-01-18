@@ -15,6 +15,10 @@ pre.sourceCode{
     border: 1px solid #111111;
     padding: 1em;
 }
+pre {
+    background: lightgray;
+    padding: 1em;
+}
 body{
   font-optical-sizing: auto;
   font-weight: 300;

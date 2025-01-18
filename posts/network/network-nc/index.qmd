@@ -1,0 +1,75 @@
+---
+title: "nc"
+date: "10/11/2024"
+categories: [ "Network" ]
+---
+## Understanding Netcat's Core Functionality
+
+At its heart, `nc` is a command-line tool that establishes network connections using TCP or UDP protocols. It can act as both a client (initiating connections) and a server (listening for connections).  This duality makes it incredibly useful for various tasks, from simple port scanning to creating rudimentary network servers.
+
+## Basic Usage: Connecting to a Server
+
+Let's start with a fundamental example: connecting to a web server on port 80.  This command will display the server's response:
+
+```bash
+nc google.com 80
+```
+
+This command connects to `google.com` on port 80 (HTTP).  You'll likely see the server's HTTP header information.  To send data, you can type your message and press Enter.  The server's response will be displayed subsequently.
+
+
+## Listening for Incoming Connections
+
+To create a simple server listening on a specific port (let's use port 12345), use the following:
+
+```bash
+nc -lvp 12345
+```
+
+* `-l`: This option tells `nc` to listen for incoming connections.
+* `-v`: This option enables verbose output, showing connection details.
+* `-p 12345`: This specifies the port number to listen on.
+
+In another terminal, you can connect to this server:
+
+```bash
+nc 127.0.0.1 12345
+```
+
+This will establish a connection, and any data typed in one terminal will be visible in the other.
+
+##  Transferring Files
+
+Netcat can also be used to transfer files. To send a file (`myfile.txt`) to a remote server running an `nc` listener on port 12345:
+
+```bash
+nc -w1 < myfile.txt remote_server_ip 12345
+```
+Here `-w1` sets a timeout of 1 second.
+
+On the server side, you would use the listening command from before: `nc -lvp 12345 > received_file.txt`.
+
+
+## Specifying the Protocol
+
+By default, `nc` uses TCP. To use UDP, add the `-u` flag:
+
+```bash
+nc -u google.com 53 # Querying a DNS server using UDP
+```
+
+
+##  Advanced Usage: Port Scanning
+
+While not its primary purpose, `nc` can be used for basic port scanning.  However, dedicated port scanners are generally more efficient.  A rudimentary scan would look like this (replace `target_ip` with the target's IP address):
+
+```bash
+for port in {1-100}; do nc -zv target_ip $port; done
+```
+
+This script attempts to connect to ports 1 through 100. `-z` indicates a scan only; no data is transferred. `-v` provides verbose output.
+
+
+##  Security Considerations
+
+Remember that `nc` operates at a low level.  Use caution when using it with untrusted sources, as it can be exploited.  Always be mindful of the ports and IP addresses you're interacting with.

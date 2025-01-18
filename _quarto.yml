@@ -5,8 +5,10 @@ project:
 website:
   favicon: favicon.ico
   title: "Linux Commands Handbook"
+  page-navigation: true
   reader-mode: false
   open-graph: true
+  page-footer: "Copyright 2025, Muthukrishnan" 
   google-analytics: 
     tracking-id: 'G-HE366VCQBM'
   site-url: 'https://linux.muthu.co'
@@ -18,6 +20,8 @@ website:
         href: https://github.com/muthuspark
       - icon: twitter
         href: https://twitter.com/krimuthu
+
+
 format:
   html:
     theme: litera
