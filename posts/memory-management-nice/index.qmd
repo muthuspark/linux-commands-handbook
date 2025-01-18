@@ -1,0 +1,73 @@
+---
+title: "nice"
+date: "01/15/2024"
+categories: [ "Memory Management" ]
+---
+## What is the `nice` Command?
+
+The `nice` command allows you to adjust the priority of a process.  A lower nice value (a smaller number) indicates a higher priority, meaning the process will receive more CPU time. Conversely, a higher nice value (a larger number) assigns lower priority, resulting in the process receiving less CPU time. This seemingly simple adjustment has significant ramifications, especially in memory-intensive scenarios.
+
+Why does priority matter for memory?  While `nice` doesn't directly control memory allocation, a higher-priority process might indirectly consume more memory due to its increased access to the CPU. A process hogging the CPU can lead to other processes being swapped out to disk, resulting in increased memory pressure and potential performance degradation. Conversely, a low-priority process might be swapped out more frequently, even if it's not actively consuming a significant amount of memory.
+
+## Using the `nice` Command: Practical Examples
+
+Let's explore some practical scenarios with code examples.  We'll use a simple Python script that simulates memory-intensive behavior:
+
+```python
+import time
+import os
+
+
+data = [i for i in range(10000000)] # Large list to consume memory
+
+while True:
+    # Perform some computation
+    sum(data)
+    time.sleep(1)
+```
+
+This script creates a large list to consume memory and then continuously sums the list. Save this script as `memory_hog.py`.
+
+**1. Running without `nice`:**
+
+```bash
+python3 memory_hog.py &
+```
+
+This runs the script in the background. Observe its CPU and memory usage using tools like `top` or `htop`.
+
+**2. Running with a lower nice value (higher priority):**
+
+```bash
+nice -n -10 python3 memory_hog.py &
+```
+
+Here, `-n -10` assigns a very high priority (-20 is the maximum, but requires root privileges).  Again, monitor CPU and memory usage.  You'll likely notice this process gets more CPU time compared to the previous example.
+
+**3. Running with a higher nice value (lower priority):**
+
+```bash
+nice +19 python3 memory_hog.py &
+```
+
+This runs the script with a low priority (19 is a fairly low priority,  but not the lowest possible). Monitor CPU and memory usage. This time, the process will likely be given less CPU time compared to the other examples.  Its memory usage might not drastically change, but it could be swapped out to disk more often.
+
+
+**4. Renice an already running process:**
+
+First, run the script without `nice`:
+
+```bash
+python3 memory_hog.py &
+```
+
+Find the process ID (PID) using `ps aux | grep memory_hog.py`. Let's assume the PID is 12345.  Then, change its priority:
+
+```bash
+renice +10 12345
+```
+
+This increases the nice value of the running process with PID 12345 by 10.
+
+These examples demonstrate how `nice` influences process priority, indirectly impacting system resource allocation and potentially affecting memory usage.  Understanding its effects can be crucial in managing system performance, especially in environments with many concurrent processes.  Remember to use `top` or `htop` to observe the real-time effects of these commands on CPU and memory usage.
+

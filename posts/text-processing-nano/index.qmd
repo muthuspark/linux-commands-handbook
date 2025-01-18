@@ -1,0 +1,93 @@
+---
+title: "nano"
+date: "05/26/2024"
+categories: [ "Text Processing" ]
+---
+## Launching Nano
+
+The simplest way to launch Nano is via the command line:
+
+```bash
+nano myfile.txt
+```
+
+This command creates a new file named `myfile.txt` or opens it if it already exists.  The file will be displayed within the Nano editor window.
+
+
+## Basic Navigation and Editing
+
+Nano uses simple key combinations for navigation and editing.  Here's a quick rundown:
+
+* **Cursor Movement:** Use the arrow keys (↑, ↓, ←, →) to move the cursor around the document.
+* **Insertion:** Start typing to insert text at the cursor's current position.
+* **Deletion:** Use the Delete key to delete characters to the right of the cursor, or Ctrl+H (backspace) to delete characters to the left.
+
+
+## Essential Nano Commands
+
+
+Nano's power lies in its intuitive command shortcuts, displayed at the bottom of the editor window. Let's explore some crucial ones:
+
+* **Saving the file:**  Press Ctrl+O (write out).  You'll be prompted to confirm the filename.  Press Enter to save.
+
+* **Exiting Nano:** Press Ctrl+X (exit). You'll be prompted to save changes if you haven't already. Choose 'Y' to save or 'N' to discard changes.
+
+* **Cut, Copy, and Paste:**
+
+    * **Cut:** Select the text you want to cut using the mouse or Shift + arrow keys. Then, press Ctrl+K to cut the selected text.
+    * **Copy:** Select the text you wish to copy. Press Alt+6 to copy the selected text.
+    * **Paste:** Place the cursor where you want to paste the text. Press Ctrl+U to paste the copied or cut text.
+
+
+* **Searching:** Press Ctrl+W to open the search dialog. Type the text you're looking for and press Enter.
+
+
+## Practical Examples
+
+Let's walk through some common text processing tasks using Nano:
+
+**Example 1: Creating and Editing a simple text file**
+
+1. Open Nano: `nano my_poem.txt`
+2. Type the following poem:
+```
+The fog comes
+on little cat feet.
+It sits looking
+over harbor and city
+on silent haunches
+and then moves on.
+```
+3. Save the file: Ctrl+O, press Enter.
+4. Exit Nano: Ctrl+X
+
+
+**Example 2:  Replacing Text**
+
+1. Open the file: `nano my_poem.txt`
+2. Let's replace "fog" with "mist".  You can do this manually by deleting "fog" and typing "mist", or use the search and replace functionality (this functionality is not directly supported by a single keybinding but through repeated Ctrl+W searches and manual deletion/insertion)
+
+
+**Example 3: Appending Text to an existing file**
+
+1. Open the file in nano: `nano my_poem.txt`
+2. Navigate to the end of the file using Ctrl+V (page down) repeatedly.
+3. Add a new stanza:
+```
+The mist retreats,
+revealing a new day.
+```
+4. Save and exit.
+
+
+**Example 4: Using line numbers:**
+
+Nano doesn't inherently display line numbers. Many distributions offer a way to enable this within Nano's configuration file, but this is highly distribution-dependent and outside the scope of a simple guide.  However, you can use the `cat` command with the `-n` option to view the file with line numbers *after* you've saved it with Nano:
+
+```bash
+cat -n my_poem.txt
+```
+
+
+These examples provide a solid foundation for using Nano for various text editing tasks.  Experiment with the commands and shortcuts to master this valuable Linux tool. Remember to always save your work using Ctrl+O before exiting with Ctrl+X.
+

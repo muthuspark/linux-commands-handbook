@@ -1,0 +1,106 @@
+---
+title: "ftp"
+date: "01/01/2024"
+categories: [ "Network" ]
+---
+## Connecting to an FTP Server
+
+The fundamental step is establishing a connection. The basic syntax is simple:
+
+```bash
+ftp <ftp_server_address>
+```
+
+Replace `<ftp_server_address>` with the actual IP address or domain name of the FTP server.  For instance, to connect to `ftp.example.com`:
+
+```bash
+ftp ftp.example.com
+```
+
+You'll likely be prompted for your username and password.
+
+
+## Navigating the Remote Directory Structure
+
+Once connected, you can navigate the remote server's file system using commands similar to those found in your local shell.
+
+* **`pwd` (print working directory):** Displays your current directory on the remote server.
+
+```bash
+pwd
+```
+
+* **`ls` (list directory contents):** Lists the files and directories in your current remote directory.  The `-l` option provides a detailed listing.
+
+```bash
+ls
+ls -l
+```
+
+* **`cd <directory>` (change directory):** Changes your current directory on the remote server.  To move up one level, use `cd ..`.
+
+```bash
+cd /pub/documents
+cd ..
+```
+
+
+## Transferring Files
+
+The core functionality of `ftp` lies in its file transfer capabilities.
+
+* **`get <remote_file> <local_file>` (download):** Downloads a file from the remote server to your local system.  If you omit `<local_file>`, the file will be downloaded with the same name.
+
+```bash
+get report.pdf
+get /pub/images/logo.png mylogo.png
+```
+
+* **`put <local_file> <remote_file>` (upload):** Uploads a file from your local system to the remote server.  Again, omitting `<remote_file>` uses the local filename.
+
+```bash
+put mydocument.txt
+put myimage.jpg /pub/images/newimage.jpg
+```
+
+* **`mget <remote_file1> <remote_file2> ...` (download multiple):** Downloads multiple files at once.  Use wildcards for efficient selection.
+
+```bash
+mget *.txt
+```
+
+* **`mput <local_file1> <local_file2> ...` (upload multiple):** Uploads multiple files simultaneously. Wildcards are also supported here.
+
+```bash
+mput *.jpg
+```
+
+
+##  Handling Passive Mode
+
+Some firewalls or network configurations require using passive mode for successful FTP connections.  Enable passive mode with:
+
+```bash
+passive
+```
+
+After this command, subsequent file transfers will utilize the passive mode.  To return to active mode, use:
+
+```bash
+active
+```
+
+
+##  Disconnecting from the Server
+
+When finished, disconnect from the FTP server using:
+
+```bash
+bye
+```
+
+
+##  Advanced Features and Options
+
+The `ftp` command offers many more options for fine-grained control over transfers, including resuming interrupted transfers, setting transfer speeds, and more. Refer to the `man ftp` page for a complete list of available options and commands.  Experimentation and the manual page are your best allies in mastering this powerful tool.  Remember to always be mindful of security best practices when using FTP, particularly when handling sensitive data.
+

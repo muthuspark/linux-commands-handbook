@@ -1,0 +1,100 @@
+---
+title: "perf"
+date: "01/15/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding `perf`
+
+`perf` provides a wide array of functionalities for examining system performance, targeting various aspects like CPU usage, cache misses, memory access patterns, and branch prediction. It leverages hardware performance counters embedded in modern processors to gather detailed statistics.  This granular data allows for precise identification of performance bottlenecks, enabling targeted optimization efforts.
+
+
+## Basic Usage: Measuring CPU Cycles
+
+Let's start with a simple example: measuring the CPU cycles consumed by a program. We'll use a small C program for demonstration:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i, j;
+    long long sum = 0;
+    for (i = 0; i < 10000000; i++) {
+        for (j = 0; j < 1000; j++) {
+            sum += i * j;
+        }
+    }
+    printf("Sum: %lld\n", sum);
+    return 0;
+}
+```
+
+Compile this code (e.g., `gcc -o myprog myprog.c`) and then use `perf` to profile it:
+
+```bash
+sudo perf record -g ./myprog
+sudo perf report
+```
+
+`perf record` profiles the execution,  `-g` enables call graph generation for detailed function-level analysis. `perf report` presents the results in a human-readable format, showing the number of CPU cycles and other metrics consumed by different functions.
+
+
+## Focusing on Specific Events
+
+Instead of general CPU cycles, you might want to focus on specific events, like cache misses.  Here's how to measure L1 data cache misses:
+
+```bash
+sudo perf record -e cache-misses ./myprog
+sudo perf report
+```
+
+This will only record data related to L1 data cache misses, providing a more targeted analysis.
+
+
+## Analyzing Memory Access
+
+Understanding memory access patterns is crucial for performance tuning.  `perf` can help visualize memory usage:
+
+```bash
+sudo perf record -e mem:loads,mem:stores ./myprog
+sudo perf report
+```
+
+This command records memory loads and stores. The `perf report` output will detail the number of loads and stores, highlighting potential memory-related bottlenecks.
+
+
+## Flame Graphs for Visual Performance Analysis
+
+Flame graphs offer a visually intuitive way to understand performance bottlenecks.  You'll need the `flamegraph` tool (available via various package managers). After recording a trace using `perf record` (as in the earlier examples):
+
+```bash
+sudo perf script > perf.data
+./stackcollapse-perf.pl perf.data | ./flamegraph.pl > flamegraph.svg
+```
+
+This generates an SVG file (`flamegraph.svg`) that visually represents the call stack, highlighting functions consuming significant resources.
+
+
+## Advanced Techniques: Top-down and Bottom-up Analysis
+
+`perf` supports both top-down and bottom-up analysis.  Top-down focuses on functions consuming the most resources, while bottom-up analyzes the contributions of individual instructions.  These approaches provide complementary perspectives on performance.
+
+
+## Profiling the Kernel
+
+`perf` isn't limited to user-space programs; it can also profile the Linux kernel.  This requires root privileges and involves carefully chosen events to avoid disrupting the system:
+
+```bash
+sudo perf record -a -e sched:sched_switch sleep 10  # Profiles kernel for 10 seconds
+sudo perf report
+```
+
+
+This example profiles scheduler activity (`sched:sched_switch`) for 10 seconds. Remember to use appropriate events and time limits to avoid excessive overhead.  Improper kernel profiling can lead to system instability.
+
+
+
+## Exploring More with `perf`
+
+This post covers the basics of `perf`.  Explore the `perf` man page (`man perf`) for an extensive list of options and events.  Experiment with different combinations to gain deeper insights into your system's performance characteristics.  Mastering `perf` is a valuable skill for any Linux system administrator or developer.
+

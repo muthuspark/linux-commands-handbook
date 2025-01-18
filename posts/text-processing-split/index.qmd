@@ -1,0 +1,74 @@
+---
+title: "split"
+date: "01/12/2024"
+categories: [ "Text Processing" ]
+---
+## Basic Usage: Splitting Files into Smaller Pieces
+
+The simplest usage of `split` involves specifying the input file and the desired prefix for the output files.  `split` will create files with sequentially numbered suffixes.
+
+```bash
+split -l 1000 my_large_file.txt my_large_file_
+```
+
+This command splits `my_large_file.txt` into smaller files, each containing 1000 lines.  The output files will be named `my_large_file_aa`, `my_large_file_ab`, `my_large_file_ac`, and so on.  The `-l` option specifies the number of lines per output file.
+
+Let's try splitting a file into files of a specific size instead of a number of lines:
+
+```bash
+split -b 100k my_large_file.txt my_large_file_
+```
+
+This command does exactly the same, but instead of specifying number of lines, it specifies size of each output file in bytes. `100k` stands for 100 kilobytes. You can use other suffixes like `m` (megabytes), `g` (gigabytes), etc.
+
+
+## Advanced Usage: Customizing Splitting Behavior
+
+`split` offers several options to fine-tune the splitting process. Let's explore some of them:
+
+**Specifying the Output File Suffix Length:**
+
+The default suffix length is two characters (e.g., `aa`, `ab`, `ac`). You can change this using the `-d` option, which uses numeric suffixes instead of alphanumeric ones.  You can also control the number of digits using the `-a` option.
+
+```bash
+split -d -a 3 -l 1000 my_large_file.txt my_large_file_
+```
+
+This command will create files like `my_large_file_000`, `my_large_file_001`, `my_large_file_002`, etc., each with 1000 lines.
+
+
+**Splitting Based on a Specific Number of Files:**
+
+If you need a precise number of output files, the `-n` option is your go-to.
+
+```bash
+split -n 5 my_large_file.txt my_large_file_
+```
+
+This will split `my_large_file.txt` into exactly five files.  `split` will calculate the optimal number of lines or bytes per file to achieve this.  You can also use suffixes like `k`, `m`, `g` here too to specify number of lines. For example, `-n 5k` means split into 5000 lines.
+
+
+**Handling Files Larger Than Specified Size/Lines:**
+
+If you use `-l` or `-b` with numbers that result in last file being less than specified number of lines or bytes, `split` will still create a last file containing the remaining lines/bytes.  However, there is a `--filter=command` option to handle processing of each file before it's written to disk. This can be useful in more complex scenarios. For example, one could compress each chunk before writing it to disk:
+
+```bash
+split --filter='gzip > $FILE.gz' -l 1000 my_large_file.txt my_large_file_
+```
+
+This will compress each 1000-line chunk with `gzip` as it is being created.
+
+
+**Using a Different Suffix:**
+
+By default `split` uses suffix after the prefix, but you can specify what it will append instead of automatically generated suffixes:
+
+```bash
+split -l 1000 my_large_file.txt - my_large_file_
+```
+
+This will create files like `my_large_file_001`, `my_large_file_002` and so on.  Essentially, it overrides the auto-generated suffix with `-`.  You can put any string in that place, which will be appended to each output file name.
+
+
+These examples demonstrate the versatility of the `split` command. By combining different options, you can tailor the splitting process to suit your specific needs. Remember to consult the `man split` page for a comprehensive list of all available options and their functionalities.
+

@@ -1,0 +1,96 @@
+---
+title: "screen"
+date: "03/07/2024"
+categories: [ "Process Management" ]
+---
+## What is `screen`?
+
+`screen` is a powerful terminal multiplexer that lets you manage multiple terminal sessions within a single window.  It's particularly useful for:
+
+* **Running long-running processes:**  Keep your processes running even after you close your terminal.
+* **Managing multiple sessions:** Work on several tasks concurrently within a single terminal.
+* **Remote access:** Access your sessions from different terminals.
+* **Session restoration:** Recover sessions after unexpected disconnections.
+
+## Getting Started with `screen`
+
+Before diving into detailed examples, ensure `screen` is installed on your system.  Most Linux distributions include it by default.  If not, use your distribution's package manager (e.g., `apt-get install screen` on Debian/Ubuntu, `yum install screen` on CentOS/RHEL).
+
+## Basic `screen` Commands
+
+Let's explore fundamental `screen` commands with practical examples.
+
+**1. Starting a `screen` session:**
+
+Simply type `screen` in your terminal.  This will create a new screen session. You'll now be working within this session.  Any commands you run here will continue running even if you detach from the session.
+
+**2. Detaching from a `screen` session:**
+
+Press `Ctrl+a` followed by `d`. This detaches you from the current session without terminating the running processes. Your session remains active in the background.
+
+**3. Listing existing `screen` sessions:**
+
+Use the command `screen -ls`. This lists all active `screen` sessions, showing their process ID and status.  The output looks something like this:
+
+```
+There are screens on:
+    1234.pts-1.myuser    (Detached)
+    5678.pts-2.myuser    (1 Socket)
+```
+
+**4. Reattaching to a `screen` session:**
+
+Use `screen -r <session_number>` or `screen -r <session_name>`.  Replace `<session_number>` with the number from the `screen -ls` output or `<session_name>` (if you've named your session using the `-S` option during launch). For example, to reattach to session `1234.pts-1.myuser`, use:
+
+```bash
+screen -r 1234.pts-1.myuser
+```
+
+**5. Killing a `screen` session:**
+
+Use `screen -X quit` within the session itself to gracefully exit, or `screen -S <session_name> -X quit` from outside the session. Forcibly killing a session requires using the process ID and `kill` command (obtained from `screen -ls`), which is generally discouraged unless absolutely necessary.
+
+
+## Advanced `screen` Usage:  Splitting Windows and more
+
+`screen` provides features to split your terminal into multiple windows, improving your workflow.
+
+**1. Splitting the screen:**
+
+Within a `screen` session, press `Ctrl+a` followed by `S`.  This splits the current window horizontally.  You can now navigate between the split windows using `Ctrl+a` then `Tab`.
+
+**2. Creating new windows:**
+
+Press `Ctrl+a` followed by `c` to create a new window within the `screen` session.
+
+**3. Switching between windows:**
+
+Use `Ctrl+a` followed by `n` (for next window) or `p` (for previous window).
+
+**4. Closing a window:**
+
+Press `Ctrl+a` followed by `k` within the window you want to close.
+
+**5. Naming a session:**
+
+You can name your sessions at launch using the `-S` option:
+
+```bash
+screen -S my_long_running_process
+```
+
+
+## Example: Running a long process
+
+Let’s say we want to run a long-running process, like a web server:
+
+1. Start a `screen` session:  `screen`
+2. Start your process within the session (replace `python your_script.py` with your actual command): `python your_script.py`
+3. Detach from the session: `Ctrl+a`, `d`
+4. Later, reattach: `screen -r`
+
+
+This ensures your web server continues running even if you close your terminal or lose your network connection. You can reattach at any point to monitor its progress or make changes.
+
+## Conclusion (Not included as per instructions)
+

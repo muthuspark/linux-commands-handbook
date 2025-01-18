@@ -1,0 +1,91 @@
+---
+title: "umask"
+date: "05/09/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding the `umask` Concept
+
+Every file and directory on a Linux system has associated permissions that dictate who can read, write, and execute it. These permissions are represented using a three-digit octal number (e.g., `755`, `644`).  `umask` doesn't directly set permissions; instead, it *determines how permissions are *modified* when a new file or directory is created.*
+
+Think of `umask` as a *mask* that subtracts permissions from the default permissions.  The default permissions vary slightly depending on whether you're creating a file or a directory.  Let's break down the default permissions and how `umask` affects them:
+
+
+**Default Permissions:**
+
+* **Files:**  The default permissions for newly created files are typically `666` (read and write access for the owner, group, and others).
+* **Directories:** The default permissions for newly created directories are typically `777` (read, write, and execute access for all).
+
+
+**How `umask` Works:**
+
+The `umask` value is also an octal number.  Each digit corresponds to a permission set:
+
+* **First digit (leftmost):**  Owner permissions
+* **Second digit:** Group permissions
+* **Third digit:** Other permissions
+
+Each digit represents the *permissions that are *removed*** from the default. Let's consider some examples:
+
+
+## `umask` in Action: Code Examples
+
+**Example 1:  Restricting write access for others**
+
+Let's say you want to create files with read and write access for the owner and group, but only read access for others.  The default file permissions are `666`.  To achieve the desired outcome, you need to remove write access (`2`) from others (`02`). Therefore, your `umask` would be `022`:
+
+```bash
+umask 022
+touch myfile.txt
+ls -l myfile.txt
+```
+
+The `ls -l` command will likely show something like `-rw-r--r--`, confirming that others only have read access.
+
+
+**Example 2:  Creating restrictive directories**
+
+To create directories with only read and execute access for the owner and group, and no access for others, you would use `007` as the `umask`. The default for directories is `777`. `007` removes write access from the owner, group, and others.
+
+```bash
+umask 007
+mkdir mydir
+ls -ld mydir
+```
+
+`ls -ld mydir` will show permissions similar to `drwxr-xr-x`.
+
+
+**Example 3:  Checking your current `umask`**
+
+To check your current `umask` setting, simply type:
+
+```bash
+umask
+```
+
+
+**Example 4:  Setting a `umask` temporarily**
+
+The `umask` setting is typically persistent across your current shell session but is reset upon logging out or closing the shell. If you only want a temporary change, consider changing it with a subshell:
+
+```bash
+( umask 077; touch temp_file.txt )
+```
+
+The file `temp_file.txt` will have the permissions reflecting the temporary `umask` of `077`.
+
+
+**Example 5: Using symbolic permissions**
+
+Instead of octal numbers, you can also use symbolic permissions with `umask`. For instance:
+
+```bash
+umask u=rw,g=r,o=r
+touch another_file.txt
+```
+
+This sets the owner's permissions to read and write (`u=rw`), the group's permissions to read (`g=r`), and others' permissions to read (`o=r`).
+
+
+By understanding and strategically using the `umask` command, you gain significant control over file and directory permissions, enhancing security and organization within your Linux environment.  Experiment with different `umask` values to find the settings that best suit your needs.
+

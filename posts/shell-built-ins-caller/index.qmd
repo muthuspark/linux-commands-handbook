@@ -1,0 +1,141 @@
+---
+title: "caller"
+date: "05/11/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What `caller` Does
+
+The `caller` command reports information about the calling function or script.  It doesn't directly execute any commands; instead, it outputs information that your script can then use. The output is typically structured, offering details about the caller's location.
+
+
+##  `caller` Syntax and Options
+
+The basic syntax is simply:
+
+```bash
+caller [options]
+```
+
+The most commonly used option is `-n`:
+
+* **`-n`**:  This option specifies the number of stack frames to traverse.  A value of `0` (the default) indicates the immediate caller; `1` would be the function that called the immediate caller, and so on.
+
+
+##  Code Examples
+
+Let's illustrate with some examples to solidify understanding.
+
+**Example 1: Basic Usage**
+
+Create a file named `caller_example.sh` with the following content:
+
+```bash
+#!/bin/bash
+
+function func1() {
+  echo "func1 called from:"
+  caller
+}
+
+function func2() {
+  func1
+}
+
+func2
+```
+
+Run the script:
+
+```bash
+./caller_example.sh
+```
+
+The output will show something like this (the exact line number might vary):
+
+```
+func1 called from:
+./caller_example.sh:8
+```
+
+This clearly shows that `func1` was called from line 8 of `caller_example.sh` (which is where `func2` calls `func1`).
+
+
+**Example 2: Using the `-n` option**
+
+Modify `caller_example.sh`:
+
+```bash
+#!/bin/bash
+
+function func1() {
+  echo "func1 called from:"
+  caller
+  echo "func1 called (2 levels up):"
+  caller 2
+}
+
+function func2() {
+  func1
+}
+
+func2
+```
+
+Running this will produce:
+
+
+```
+func1 called from:
+./caller_example.sh:8
+func1 called (2 levels up):
+./caller_example.sh:15
+```
+
+Now we see two calls to `caller`. The first shows the direct caller (`./caller_example.sh:8`), while the second, with `caller 2`, shows the caller of the caller (`./caller_example.sh:15`, where `func2` is called).
+
+
+**Example 3:  Extracting Information**
+
+You can parse the output of `caller` to extract specific information.  For instance, we can extract the line number:
+
+```bash
+#!/bin/bash
+
+function func1() {
+  caller | awk '{print $2}'
+}
+
+func1
+```
+
+This uses `awk` to print only the second field (the line number) of the output from `caller`.
+
+
+**Example 4: Handling Errors**
+
+If `caller` is used outside a function,  it will often return an error or an empty string.
+
+
+```bash
+#!/bin/bash
+
+echo "Direct call to caller:"
+caller
+echo "End of script"
+```
+
+
+This will print "Direct call to caller:", then likely an empty line or an error indicating it was not called from a function, and finally "End of script".  Robust scripts should anticipate and handle such cases.
+
+
+## Advanced Applications
+
+`caller` becomes increasingly valuable in complex scenarios:
+
+* **Debugging recursive functions:** Trace the execution flow through multiple recursive calls.
+* **Logging function calls:**  Automatically record function calls and their arguments in a log file.
+* **Dynamically generated shell scripts:** Determine the origin of a dynamically generated script for better error reporting.
+
+
+By mastering the `caller` built-in, you equip yourself to write more robust, maintainable, and self-documenting shell scripts.  Its seemingly simple functionality unlocks considerable power in advanced shell programming.
+

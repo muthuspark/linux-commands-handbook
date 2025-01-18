@@ -1,0 +1,128 @@
+---
+title: "nl"
+date: "08/21/2024"
+categories: [ "Text Processing" ]
+---
+## Basic Line Numbering
+
+The simplest use of `nl` is to add line numbers to a file.  Let's say you have a file named `my_file.txt` with the following content:
+
+```
+This is line one.
+This is line two.
+This is line three.
+```
+
+To add line numbers, simply pipe the file's content to `nl`:
+
+```bash
+cat my_file.txt | nl
+```
+
+This will output:
+
+```
+     1	This is line one.
+     2	This is line two.
+     3	This is line three.
+```
+
+Notice the default behavior:  line numbers are left-aligned, separated by a tab from the text, and begin at 1.
+
+
+## Customizing Line Numbers
+
+`nl` offers a wealth of options for customizing the numbering.  Let's explore some key options:
+
+* **`-s` (separator):**  Changes the separator between the line number and the text.  Instead of a tab, we can use a colon:
+
+```bash
+cat my_file.txt | nl -s ':'
+```
+
+Output:
+
+```
+1:This is line one.
+2:This is line two.
+3:This is line three.
+```
+
+* **`-w` (width):** Specifies the width of the line number field.  This is useful for aligning numbers when dealing with potentially large numbers:
+
+```bash
+cat my_file.txt | nl -w 5
+```
+
+Output:
+
+```
+00001	This is line one.
+00002	This is line two.
+00003	This is line three.
+```
+
+* **`-n` (number-style):** Allows you to control the number format.  `ln` (left-justified, no leading zeros) is the default, but you can use `rn` (right-justified, no leading zeros), `rz` (right-justified, with leading zeros), `ln` (left-justified, no leading zeros) and more.
+
+
+```bash
+cat my_file.txt | nl -n rz -w 3
+```
+
+Output:
+
+```
+001	This is line one.
+002	This is line two.
+003	This is line three.
+```
+
+* **`-b` (numbering-style):**  Controls how lines are numbered.  `a` numbers all lines, `t` numbers only non-blank lines, `n` numbers only non-blank lines that don't start with whitespace, and `p` numbers only lines that start with a non-whitespace character.
+
+```bash
+cat my_file.txt | nl -b t
+```
+
+This will only number lines with text, ignoring blank lines if any were present in `my_file.txt`.
+
+
+* **`-v` (start-number):**  Lets you specify the starting line number:
+
+```bash
+cat my_file.txt | nl -v 10
+```
+
+Output:
+
+```
+    10	This is line one.
+    11	This is line two.
+    12	This is line three.
+```
+
+
+##  Numbering Specific Sections of a File
+
+`nl` can also be used in conjunction with other commands like `sed` or `awk` to number specific sections of a file. For example, to only number lines containing the word "line":
+
+
+```bash
+sed -n '/line/p' my_file.txt | nl
+```
+
+This uses `sed` to filter lines containing "line" and then pipes the output to `nl` for numbering.
+
+
+## In-Place Numbering
+
+While the examples above show using `nl` with pipes, it's also possible to number a file in-place using output redirection:
+
+```bash
+nl -n ln -w 3 -s ' - ' my_file.txt > temp_file.txt && mv temp_file.txt my_file.txt
+```
+
+This will overwrite the original `my_file.txt`.  Remember to always back up your files before performing in-place modifications.
+
+
+These examples demonstrate the flexibility and power of the `nl` command. By combining `nl` with other text processing tools, you can achieve sophisticated line numbering tailored to your specific needs.
+

@@ -1,0 +1,102 @@
+---
+title: "host"
+date: "12/07/2024"
+categories: [ "Network" ]
+---
+## Understanding `netstat` and `ss`
+
+Before diving into specific examples, it's important to understand the difference between `netstat` and `ss`.  `netstat` is an older command, still present on many systems for backward compatibility, but `ss` is generally preferred as it's faster, more efficient, and offers a more modern interface.  `ss` uses the `/proc` filesystem directly, whereas `netstat` relies on parsing kernel netlink messages which can be slower.  In this guide, we'll primarily focus on `ss`, but will point out any key differences where applicable.
+
+
+## Basic Usage and Options
+
+The simplest way to use `ss` is to run it without any arguments:
+
+```bash
+ss
+```
+
+This will display a summary of all established network connections.  However, `ss` offers a wide array of options to refine the output.  Let's explore some of the most common ones:
+
+
+### Displaying Active Connections
+
+To view only active connections (established, listening, etc.), use the `-a` (all) option:
+
+```bash
+ss -a
+```
+
+This provides a comprehensive overview of all network activity on your system.
+
+
+### Filtering by Protocol
+
+You can filter the output by protocol. For example, to see only TCP connections:
+
+```bash
+ss -a -p tcp
+```
+
+Similarly, for UDP connections:
+
+```bash
+ss -a -p udp
+```
+
+The `-p` option shows the process ID (PID) and the program name associated with each connection, adding valuable context.
+
+
+### Filtering by Port
+
+To filter connections based on a specific port number, you can use the `-t` (TCP) or `-u` (UDP) flags in conjunction with the `-p` option and specify the port number:
+
+
+```bash
+
+ss -tap 'sport = :80'
+
+
+ss -uap 'dport = :53'
+```
+
+Note the use of `sport` for source port and `dport` for destination port. The `:` before the port number indicates that we want to match any IP address associated with that port.
+
+
+### Displaying Listening Sockets
+
+To display only listening sockets (servers waiting for connections):
+
+```bash
+ss -l
+```
+
+This is particularly useful for identifying services that are running and listening on the network.
+
+
+### Displaying Connection State
+
+You can filter by connection state. For example, to see only connections in the `ESTABLISHED` state:
+
+```bash
+ss -a state established
+```
+
+Other common states include `LISTEN`, `SYN_SENT`, `SYN_RECV`, `TIME_WAIT`, and `CLOSE_WAIT`.  Understanding these states is critical for troubleshooting network issues.
+
+###  Working with `netstat` (for Comparison)
+
+
+While `ss` is recommended, `netstat` can still be found on many systems.  A basic equivalent to `ss -a` would be:
+
+```bash
+netstat -atunp
+```
+
+However, the options and output format differ slightly. Refer to your system's `man netstat` page for complete details on `netstat` options.
+
+
+###  Further Exploration
+
+The `ss` command offers many more powerful options for manipulating and interpreting network data.  Experiment with different combinations of flags to further refine your understanding and ability to troubleshoot networking issues. You can consult the `man ss` page for a complete reference.  Exploring the various options will unlock powerful insights into your system's network activity.
+

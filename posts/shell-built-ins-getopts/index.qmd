@@ -1,0 +1,151 @@
+---
+title: "getopts"
+date: "05/31/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding `getopts`
+
+`getopts` is designed to process options provided to your script.  It's particularly useful when dealing with scripts that accept multiple options, some of which may require arguments.  Unlike manually parsing `$1`, `$2`, etc., `getopts` provides a structured and error-handling way to handle options and their arguments.
+
+The basic syntax is:
+
+```bash
+getopts optstring variable
+```
+
+* **`optstring`**:  A string specifying the valid options your script accepts.  Options starting with a colon (`:`) indicate that they require an argument.
+* **`variable`**:  The name of a variable where `getopts` will store information about the processed option.
+
+
+## Example 1: Simple Option Parsing
+
+Let's create a script that takes a `-n` option (for name) and a `-a` option (for age):
+
+```bash
+#!/bin/bash
+
+while getopts ":n:a:" opt; do
+  case $opt in
+    n)
+      name="$OPTARG"
+      ;;
+    a)
+      age="$OPTARG"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+echo "Name: $name"
+echo "Age: $age"
+```
+
+This script:
+
+1. Uses a `while` loop to iterate through the options.
+2. `getopts ":n:a:" opt` defines that `-n` and `-a` are valid options, both requiring arguments (due to the colon).
+3. The `case` statement handles each option:
+    * `n)` and `a)` assign the argument to `$OPTARG`.
+    * `\?)` handles invalid options, printing an error message.
+    * `:)` handles missing arguments for options that require them.
+4. Finally, it prints the name and age.
+
+To run this:
+
+```bash
+./my_script.sh -n John -a 30
+```
+
+
+## Example 2:  Option with a Default Value
+
+We can enhance the previous example to provide a default value if an option is not specified:
+
+```bash
+#!/bin/bash
+
+name="Unknown"
+age=0
+
+while getopts ":n:a:" opt; do
+  case $opt in
+    n)
+      name="$OPTARG"
+      ;;
+    a)
+      age="$OPTARG"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+echo "Name: $name"
+echo "Age: $age"
+```
+
+Now, if you run the script without `-n` or `-a`, the default values will be used.
+
+
+## Example 3: Boolean Options
+
+Boolean options don't require arguments.  Let's add a `-v` (verbose) option:
+
+```bash
+#!/bin/bash
+
+verbose=false
+
+while getopts ":n:a:v" opt; do
+  case $opt in
+    n)
+      name="$OPTARG"
+      ;;
+    a)
+      age="$OPTARG"
+      ;;
+    v)
+      verbose=true
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+if $verbose; then
+  echo "Verbose mode enabled."
+fi
+
+echo "Name: $name"
+echo "Age: $age"
+```
+
+Here, `-v` sets the `verbose` variable to `true`.
+
+
+## Handling Long Options
+
+While `getopts` primarily handles short options, you can achieve long option support using `getopt`  (a separate command, not a shell built-in) which is more complex but offers greater flexibility.  This warrants a separate discussion.
+
+
+These examples demonstrate the versatility of `getopts` for creating sophisticated command-line interfaces for your shell scripts.  By mastering its usage, you can significantly improve the usability and robustness of your programs.
+

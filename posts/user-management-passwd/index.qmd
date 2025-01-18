@@ -1,0 +1,57 @@
+---
+title: "passwd"
+date: "08/12/2024"
+categories: [ "User Management" ]
+---
+## Changing Your Own Password
+
+The most common use of `passwd` is to change your own password.  When you execute `passwd` without any arguments, the system prompts you for your current password and then twice for your new password.
+
+```bash
+passwd
+```
+
+The system will verify your current password and then prompt you to enter and confirm your new password.  It enforces password complexity rules (these vary depending on your system's configuration).  If the new password doesn't meet these rules, you'll receive an error message and be prompted to try again.
+
+## Changing Another User's Password (Root Privileges Required)
+
+Changing another user's password requires root privileges (or equivalent). You'll need to use the username as an argument.
+
+```bash
+sudo passwd john_doe
+```
+
+This command will prompt you (as root) for the new password for the `john_doe` user, twice for confirmation.  Remember, using `sudo` requires you to have the necessary permissions in your system's configuration.
+
+
+## Setting a Password for a New User (Root Privileges Required)
+
+While `passwd` primarily changes existing passwords, it can also be used in conjunction with user creation commands like `useradd` to set an initial password.  This is often done in a single line command as part of user creation. Note that this practice is generally discouraged in favour of using `useradd` with the `-p` option which allows for setting a password directly without using `echo`. However, for completeness, here's how you can do it:
+
+```bash
+sudo useradd newuser && sudo passwd newuser
+```
+
+This first creates a user named `newuser` and then immediately prompts you to set their initial password.
+
+
+##  Using `passwd` with `-d` to Delete a Password
+
+The `-d` option removes a user's password, effectively locking them out of the account until a new password is set.  This can be useful for security reasons, for example, if an account is compromised.
+
+```bash
+sudo passwd -d john_doe
+```
+
+This command removes the password for the `john_doe` user. The user will then be unable to log in until a new password is set via `passwd john_doe`.
+
+
+##  Password Expiration and Warning (Specific Options Vary Across Distributions)
+
+Many Linux distributions provide additional options within the `passwd` command to control password expiration and warnings. These options aren't universally standard, so consult your distribution's documentation for specifics.  For example, you might find options like setting password expiry time or specifying the number of days before a password expires that the user receives a warning.  These often involve setting values within `/etc/login.defs` or similar configuration files, and the `passwd` command then reflects those settings.
+
+
+##  Security Considerations
+
+Always handle password management securely. Avoid storing passwords in plain text, use strong and unique passwords, and regularly update them.  Remember that using `sudo` appropriately grants significant power, so exercise caution and adhere to security best practices.
+

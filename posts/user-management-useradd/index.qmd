@@ -1,0 +1,111 @@
+---
+title: "useradd"
+date: "09/26/2024"
+categories: [ "User Management" ]
+---
+## The Basics of `useradd`
+
+At its core, `useradd` creates a new user account.  The simplest form is:
+
+```bash
+sudo useradd username
+```
+
+Replace `username` with the desired username.  This command creates a new user with a home directory in `/home/username` and a default shell (`/bin/bash` usually).  The `sudo` prefix is essential, as only the root user or users with sudo privileges can create new accounts.
+
+Let's create a user named "newuser":
+
+```bash
+sudo useradd newuser
+```
+
+Verify the user's creation:
+
+```bash
+cat /etc/passwd | grep newuser
+```
+
+This command searches the `/etc/passwd` file (which contains user account information) for the "newuser" entry.
+
+
+##  Specifying the Home Directory
+
+You can specify a custom home directory using the `-d` or `--home-directory` option:
+
+```bash
+sudo useradd -d /home/users/newuser2 newuser2
+```
+
+This creates `newuser2` with a home directory located at `/home/users/newuser2`. Note that the directory must exist before running the command, or you'll encounter an error.  You can create it beforehand using `mkdir -p /home/users/newuser2`.
+
+
+## Setting the User's Shell
+
+The default shell is usually Bash (`/bin/bash`), but you can change it using the `-s` or `--shell` option:
+
+```bash
+sudo useradd -s /bin/zsh newuser3
+```
+
+This creates `newuser3` with Zsh as their default shell.
+
+
+##  Assigning a User ID (UID) and Group ID (GID)
+
+Each user and group has a unique ID. You can specify these using `-u` (UID) and `-g` (GID):
+
+```bash
+sudo useradd -u 1001 -g 1001 newuser4
+```
+
+This creates `newuser4` with UID and GID both set to 1001.  Be cautious when manually setting UIDs and GIDs to avoid conflicts.
+
+
+## Creating a User with a Specific Group
+
+You can add the user to a specific group using the `-g` option:
+
+```bash
+sudo useradd -g sudoers newuser5
+```
+
+This adds `newuser5` to the `sudoers` group, granting them sudo privileges (assuming `sudo` is configured correctly).  Note that simply adding a user to the `sudoers` group doesn't automatically grant sudo privileges; you'll typically need to edit `/etc/sudoers` using `visudo`.
+
+
+##  Adding the User to Supplementary Groups
+
+To add a user to multiple groups, use the `-G` option multiple times or list them comma separated:
+
+```bash
+sudo useradd -G audio,video newuser6
+```
+
+This adds `newuser6` to both the `audio` and `video` groups.
+
+
+## Creating a System Account
+
+System accounts are typically used for services and don't have a home directory. Use the `-M` option to prevent home directory creation:
+
+```bash
+sudo useradd -M -s /sbin/nologin systemuser
+```
+
+This creates `systemuser` without a home directory and with `/sbin/nologin` as the shell, preventing login.
+
+
+##  Using a User Creation Template
+
+You can create a user based on a template account using the `-k` option:
+
+
+```bash
+sudo useradd -k /etc/skel/template newuser7
+```
+
+This will copy the contents of the `/etc/skel/template` directory (assuming it exists and contains files and settings for new users) to the newuser7's home directory.
+
+
+
+These examples illustrate the power and flexibility of the `useradd` command.  Remember always to use `sudo` and exercise caution when modifying system settings.  Further exploration of the `man useradd` page is highly recommended for a complete understanding of all available options.
+

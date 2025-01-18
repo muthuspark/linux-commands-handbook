@@ -1,0 +1,136 @@
+---
+title: "sftp"
+date: "03/20/2024"
+categories: [ "Network" ]
+---
+## Getting Started with `sftp`
+
+Before you begin, ensure you have SSH access to your remote server. This usually involves having an SSH client installed (like OpenSSH, which is pre-installed on many systems) and knowing the server's IP address or hostname, as well as your username and password (or SSH key).
+
+The basic syntax for `sftp` is:
+
+```bash
+sftp [user@]hostname
+```
+
+Let's connect to a server named `myremote.com` with username `john`:
+
+```bash
+sftp john@myremote.com
+```
+
+You'll be prompted for your password.  Once connected, you'll see an `sftp>` prompt.
+
+
+## Essential `sftp` Commands
+
+Here are some key commands you'll frequently use:
+
+* **`get filename`**: Downloads a file from the remote server to your local directory.
+
+   ```bash
+   sftp> get remote_file.txt
+   ```
+   This will download `remote_file.txt` to your current working directory.
+
+* **`get remote_file.txt local_file.txt`**: Downloads a file from the remote server, specifying a local filename.
+
+   ```bash
+   sftp> get remote_file.txt my_local_copy.txt
+   ```
+
+* **`put filename`**: Uploads a file from your local directory to the remote server.
+
+   ```bash
+   sftp> put my_local_file.txt
+   ```
+
+* **`put local_file.txt remote_file.txt`**: Uploads a file to the server, specifying a remote filename.
+
+   ```bash
+   sftp> put my_local_file.txt their_file.txt
+   ```
+
+* **`lcd directory`**: Changes the local working directory.
+
+   ```bash
+   sftp> lcd /home/john/documents
+   ```
+
+* **`cd directory`**: Changes the remote working directory.
+
+   ```bash
+   sftp> cd /var/www/html
+   ```
+
+* **`pwd`**: Displays the current remote working directory.
+
+   ```bash
+   sftp> pwd
+   ```
+
+* **`lpwd`**: Displays the current local working directory.
+
+   ```bash
+   sftp> lpwd
+   ```
+
+* **`ls`**: Lists the files and directories in the current remote directory.
+
+   ```bash
+   sftp> ls
+   ```
+
+* **`lls`**: Lists the files and directories in the current local directory.
+
+   ```bash
+   sftp> lls
+   ```
+
+* **`mkdir directory_name`**: Creates a new directory on the remote server.
+
+   ```bash
+   sftp> mkdir mynewdirectory
+   ```
+
+* **`rmdir directory_name`**: Removes an empty directory on the remote server.
+
+   ```bash
+   sftp> rmdir myolddirectory
+   ```
+
+* **`rm filename`**: Deletes a file on the remote server.  Use with caution!
+
+   ```bash
+   sftp> rm file_to_delete.txt
+   ```
+
+* **`bye` or `exit`**: Closes the `sftp` session.
+
+
+##  Working with Directories and Recursive Transfers
+
+`sftp` excels in handling directories. While you can manually `get` and `put` individual files, you can also perform recursive transfers.  However, direct recursive transfer isn't a built-in command.  You would need to use tools like `rsync` for this feature, which offers far more advanced options for synchronization and backup.
+
+For instance, to download an entire directory recursively using `rsync` (which needs to be installed on both your local machine and the remote server), you might use:
+
+
+```bash
+rsync -avz john@myremote.com:/path/to/remote/directory /path/to/local/directory
+```
+
+
+This command uses `rsync` to recursively copy (`-a`), archive mode (`-v`), compress (`-z`), from the remote server to your local machine. Remember to replace placeholders with your actual paths.  This method is generally safer and more efficient for bulk file transfers than repeatedly using `sftp get`.
+
+
+## Leveraging SSH Keys for Secure and Passwordless Access
+
+For enhanced security and convenience, consider configuring SSH keys. This eliminates the need to repeatedly enter your password.  Setting up SSH keys is outside the scope of this immediate tutorial but it's a highly recommended security practice.
+
+
+##  Troubleshooting and Error Handling
+
+Common errors might include connection issues (incorrect hostname/IP, network problems), permission errors (lack of read/write access on the remote server), or file-not-found errors.  Always double-check your paths and permissions.
+
+
+

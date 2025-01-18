@@ -1,0 +1,83 @@
+---
+title: "ps"
+date: "02/19/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding the Basics
+
+The simplest form of the `ps` command displays a concise list of processes:
+
+```bash
+ps
+```
+
+This typically shows the process ID (PID), Terminal (TTY), and command name. However,  `ps`'s true power lies in its numerous options, allowing for highly customized output.
+
+## Key Options and Their Usage
+
+Let's explore some essential `ps` options:
+
+* **`-e` (or `-A`)**: Displays all processes running on the system, including those not associated with a terminal.
+
+```bash
+ps -e
+```
+
+* **`-f` (full format)**: Provides a more detailed output, including the process's parent PID (PPID), session ID (SID), and more.
+
+```bash
+ps -ef
+```
+
+* **`-u <username>`**: Shows processes owned by a specific user.  Replace `<username>` with the actual username.
+
+```bash
+ps -u john
+```
+
+* **`-x`**: Includes processes without controlling terminals. Combining this with `-f` gives a comprehensive view.
+
+```bash
+ps -fx
+```
+
+* **`--sort=<field>`**: Sorts the output based on a specified field.  Common fields include `%CPU` (CPU percentage), `%MEM` (memory percentage), `PID`, and `TIME` (CPU time).
+
+```bash
+ps -eo pcpu,pid,%mem,%cpu --sort=-%cpu
+#This sorts by CPU usage in descending order (- signifies descending)
+```
+
+* **`grep` for filtering**: Combining `ps` with `grep` allows for filtering the output based on process name or other characteristics. This is particularly useful when searching for specific processes.
+
+```bash
+ps -aux | grep chrome  #Shows all chrome processes
+```
+
+This command first uses `ps -aux` (similar to `ps -e`, showing all processes and detailed information) and then pipes the output to `grep` which filters it to show only lines containing "chrome".
+
+* **`awk` for data manipulation**:  `awk` can be used to further refine and extract specific information from the `ps` output.
+
+```bash
+ps -eo pid,%mem,%cpu | awk '{print $1 " " $2 " " $3}'
+#This extracts PID, %MEM, and %CPU and prints them in a simplified format.
+```
+
+This example shows how `awk` can isolate specific columns and arrange them.
+
+
+##  Going Deeper:  Understanding Output Columns
+
+The output columns often include:
+
+* **PID**: Process ID – a unique identifier for each process.
+* **PPID**: Parent Process ID – the ID of the process that launched the current one.
+* **TTY**: Terminal associated with the process.  A question mark (?) indicates no terminal.
+* **TIME**: CPU time used by the process.
+* **%CPU**: CPU utilization percentage.
+* **%MEM**: Memory utilization percentage.
+* **CMD**: Command used to launch the process.
+
+
+By mastering the `ps` command and its various options, you gain a powerful tool for diagnosing performance bottlenecks, identifying resource-intensive processes, and troubleshooting system issues on your Linux systems.  Effective use of `grep` and `awk` further enhances its analytical capabilities.
+

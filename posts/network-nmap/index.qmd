@@ -1,0 +1,106 @@
+---
+title: "nmap"
+date: "10/11/2024"
+categories: [ "Network" ]
+---
+## Getting Started with Nmap
+
+Before diving into advanced commands, let's begin with the basics.  The simplest way to use Nmap is to scan a single host for open ports:
+
+```bash
+nmap <target_ip_address>
+```
+
+Replace `<target_ip_address>` with the IP address of the host you want to scan.  For example, to scan the host with IP address `192.168.1.100`:
+
+```bash
+nmap 192.168.1.100
+```
+
+This command will perform a basic TCP SYN scan, identifying open ports and their associated services.  The output will show a list of ports, their states (open, closed, filtered), and the service running on each open port.
+
+
+## Specifying Scan Types with Nmap
+
+Nmap offers a wide variety of scan types, each designed for different purposes.  Let's explore a few:
+
+* **TCP SYN Scan (-sS):** This is the default scan type and is stealthier than a full TCP connect scan.  It's often preferred for security audits as it's less likely to trigger intrusion detection systems.
+
+```bash
+nmap -sS 192.168.1.100
+```
+
+* **UDP Scan (-sU):**  UDP scans are crucial as many services run on UDP ports.  This scan type requires more time due to the nature of UDP.
+
+```bash
+nmap -sU 192.168.1.100
+```
+
+* **Version Detection (-sV):**  This option attempts to identify the version of the services running on open ports, providing more detailed information about the target system.
+
+```bash
+nmap -sV 192.168.1.100
+```
+
+* **OS Detection (-O):**  Nmap can attempt to determine the operating system of the target host based on its network responses.  Accuracy varies depending on the target system's configuration.
+
+```bash
+nmap -O 192.168.1.100
+```
+
+* **Script Scanning (-sC):** Nmap includes a large library of scripts that can perform various tasks, from vulnerability checks to service detection.  The `-sC` option runs a default set of scripts.
+
+```bash
+nmap -sC 192.168.1.100
+```
+
+
+## Scanning Multiple Hosts
+
+Nmap efficiently handles scanning multiple hosts. You can specify a range of IP addresses using CIDR notation:
+
+```bash
+nmap 192.168.1.0/24
+```
+
+This command scans all hosts within the `192.168.1.0/24` subnet.  You can also specify individual IP addresses or hostnames separated by spaces:
+
+```bash
+nmap 192.168.1.100 192.168.1.101 example.com
+```
+
+
+## Specifying Port Ranges
+
+Instead of scanning all ports, you can specify a particular range:
+
+```bash
+nmap -p 21-25,80,443 192.168.1.100
+```
+
+This scans ports 21 through 25, as well as ports 80 and 443.
+
+
+## Combining Options
+
+Nmap's power lies in its ability to combine multiple options.  For a comprehensive scan including version detection, OS detection, and script scanning:
+
+```bash
+nmap -sS -sV -O -sC 192.168.1.100
+```
+
+
+##  Output Formatting
+
+Nmap offers various output formats, including XML, Grepable output and more, which are useful for parsing and automating the results. For example to output in XML use:
+
+
+```bash
+nmap -oX output.xml 192.168.1.100
+```
+
+This will save the scan results in an XML file named `output.xml`.
+
+
+These examples offer a starting point for exploring Nmap's capabilities.  Remember to always obtain permission before scanning any network or system that you do not own or manage.  Improper use of Nmap can be illegal.
+

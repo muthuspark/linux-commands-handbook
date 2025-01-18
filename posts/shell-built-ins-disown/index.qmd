@@ -1,0 +1,84 @@
+---
+title: "disown"
+date: "07/11/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding the `disown` Command
+
+The basic function of `disown` is simple: it removes a job from the shell's job control list. This means the shell no longer tracks the process's status or manages its termination.  Even if you close the terminal or log out, the detached process will continue running.
+
+### Syntax
+
+The general syntax of the `disown` command is:
+
+```bash
+disown [-h] [jobspec ...]
+```
+
+* `-h`: This option prevents the shell from sending SIGHUP signals to the job.  SIGHUP is commonly sent when you log out, often leading to process termination. Using `-h` ensures that the process is protected from this signal.
+
+* `jobspec`: This specifies the job(s) you want to disown.  You can specify jobs by their job ID (e.g., `%1`, `%2`), job numbers (e.g., `1`, `2`), or process IDs (PIDs, e.g., `12345`).  If no `jobspec` is provided, the currently active background job is disowned.
+
+## Practical Examples
+
+Let's explore some practical applications of `disown` with concrete examples.
+
+**Example 1: Disowning a Single Background Job**
+
+Suppose you've started a long-running process in the background:
+
+```bash
+sleep 600 &  # Sleep for 10 minutes in the background
+```
+
+You can then disown this job using its job ID:
+
+```bash
+disown %1
+```
+
+or using the `-h` flag for added protection:
+
+```bash
+disown -h %1
+```
+
+**Example 2: Disowning Multiple Jobs**
+
+If you have multiple background jobs, you can disown them all at once:
+
+```bash
+sleep 300 &
+sleep 600 &
+ping google.com &
+
+jobs  # List the background jobs
+disown %1 %2 %3 # Disown all jobs
+```
+
+**Example 3: Disowning using PIDs**
+
+You can disown a process using its Process ID (PID), obtained using the `ps` command:
+
+```bash
+long_running_process &
+pid=$(jobs -p | awk '{print $1}') # Get the PID of the last background job
+disown $pid
+```
+
+
+**Example 4: Disowning a specific job using job number:**
+
+```bash
+sleep 100 &
+sleep 200 &
+jobs
+
+
+
+
+disown 1 #Disowns job number 1
+```
+
+These examples illustrate the flexibility and power of `disown`.  Remember that once a process is disowned, you'll lose the ability to manage it directly through the shell's job control.  However, you can always use other tools like `ps` and `kill` to monitor and interact with the process, even after disowning it.  Using `nohup` in conjunction with `disown` can provide even greater robustness for processes that might be sensitive to terminal disconnections.  However, understanding  when and how to use `disown` is a valuable skill for any Linux user.
+

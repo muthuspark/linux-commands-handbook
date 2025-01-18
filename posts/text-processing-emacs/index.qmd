@@ -1,0 +1,94 @@
+---
+title: "emacs"
+date: "04/30/2024"
+categories: [ "Text Processing" ]
+---
+## Navigating and Editing Text
+
+Emacs's navigation commands form the foundation of efficient text manipulation.  Learning these shortcuts significantly boosts productivity.
+
+* **Movement:**
+    * `Ctrl-f`: Move cursor forward one character.
+    * `Ctrl-b`: Move cursor backward one character.
+    * `Ctrl-n`: Move cursor down one line.
+    * `Ctrl-p`: Move cursor up one line.
+    * `Ctrl-a`: Move cursor to the beginning of the line.
+    * `Ctrl-e`: Move cursor to the end of the line.
+    * `Alt-f`: Move cursor forward one word.
+    * `Alt-b`: Move cursor backward one word.
+
+* **Deletion:**
+    * `Ctrl-d`: Delete character under cursor.
+    * `Ctrl-k`: Delete from cursor to end of line.
+    * `Alt-d`: Delete word at cursor.
+    * `M-Backspace`: (Alt+Backspace) Delete word before cursor.
+
+
+**Example:** Let's say you have the following text:
+
+```
+This is a sample text string.
+```
+
+To delete the word "sample", you would place your cursor on the 's' in "sample" and press `Alt-d`.
+
+
+## Powerful Search and Replace
+
+Emacs's search functionality is incredibly robust, allowing for both simple and complex searches and replacements.
+
+* **Searching:**
+    * `Ctrl-s`: Incremental forward search.
+    * `Ctrl-r`: Incremental reverse search.
+    * `C-s <regex>`:  Search using regular expressions (replace `<regex>` with your regular expression).
+
+
+* **Replacing:**
+    * `M-%`: (Alt+%) Opens the query-replace dialog.  You can specify the text to search for and the replacement text.  Using `%` will replace all occurrences, while `!` will replace only the current occurrence.
+
+
+**Example:** To replace all occurrences of "text" with "data" in the sample text above:
+
+1. Press `M-%`.
+2. Enter "text" as the search string.
+3. Enter "data" as the replacement string.
+4. Press `%` to replace all occurrences.
+
+
+## Utilizing Regular Expressions
+
+Emacs's support for regular expressions significantly expands its text manipulation capabilities. This allows for sophisticated pattern matching and replacement.
+
+**Example:** Let's say you have a file with email addresses in the format `name@domain.com`. You want to extract only the domain names.  You can use the following regular expression within Emacs's search and replace functionality:
+
+Search String: `[^@]+@([^.]+)\.[^.]+`
+Replacement String: `\1`
+
+This regular expression uses capturing groups (`(...)`) to extract the domain name.  `\1` refers to the first captured group.
+
+
+## Working with Regions
+
+Emacs allows you to mark regions of text and perform operations on them.
+
+* **Marking a Region:**  Place the cursor at the start of the region, then press `Ctrl-Space`. Move the cursor to the end of the region.
+* **Common Region Commands:**
+    * `M-w`: (Alt-w) Copy the region to the kill ring.
+    * `C-w`: Cut the region.
+    * `C-y`: Yanks (pastes) the text from the kill ring.
+
+
+**Example:** To copy a paragraph, mark the region encompassing the paragraph using `Ctrl-Space` and then move the cursor to the end of the paragraph.  Then, press `M-w` to copy it, and `C-y` to paste it elsewhere.
+
+
+## Macros for Automation
+
+Emacs's macro functionality enables the recording and replaying of keystrokes, automating repetitive tasks.
+
+* **Starting a Macro:** Press `F3` to start recording a macro.
+* **Ending a Macro:** Press `F4` to stop recording.
+* **Executing a Macro:** Press `F4` again to execute the recorded macro.
+
+
+**Example:** If you need to perform the same sequence of edits on multiple lines, record those edits as a macro and replay it on each line, saving significant time and effort.  This is particularly useful for tasks like reformatting text or applying consistent changes across multiple lines.
+

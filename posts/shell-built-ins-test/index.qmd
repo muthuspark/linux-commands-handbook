@@ -1,0 +1,125 @@
+---
+title: "test"
+date: "05/17/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding the Basics
+
+The `test` command's primary function is to perform comparisons and checks on various aspects of your system. It operates by examining an expression and returning an exit code.  This exit code is then used by control structures like `if` statements to determine the flow of your script.
+
+The `[ ]` (square brackets) are an alias for the `test` command; they're functionally identical.  Using square brackets is generally preferred for readability within scripts.  The closing bracket *must* be separated from the following argument by a space.
+
+```bash
+test expression  # Equivalent to
+[ expression ]
+```
+
+## Common Test Operators
+
+`test` and `[` support a wide range of operators.  Here are some of the most frequently used:
+
+**String Comparisons:**
+
+* `=`:  Checks for string equality.
+* `!=`: Checks for string inequality.
+* `-z string`: Checks if a string is empty.
+* `-n string`: Checks if a string is not empty.
+
+**Numerical Comparisons:**
+
+* `-eq`:  Equal to.
+* `-ne`: Not equal to.
+* `-gt`: Greater than.
+* `-ge`: Greater than or equal to.
+* `-lt`: Less than.
+* `-le`: Less than or equal to.
+
+**File Tests:**
+
+* `-e file`: Checks if a file exists.
+* `-f file`: Checks if a file exists and is a regular file.
+* `-d file`: Checks if a file exists and is a directory.
+* `-r file`: Checks if a file exists and is readable.
+* `-w file`: Checks if a file exists and is writable.
+* `-x file`: Checks if a file exists and is executable.
+* `-s file`: Checks if a file exists and has a size greater than zero.
+
+
+## Code Examples
+
+Let's illustrate these operators with practical examples.
+
+**String Comparisons:**
+
+```bash
+#!/bin/bash
+
+string1="hello"
+string2="world"
+
+if [ "$string1" = "$string2" ]; then
+  echo "Strings are equal"
+else
+  echo "Strings are not equal"
+fi
+
+if [ -z "$string3" ]; then
+  echo "string3 is empty"
+fi
+
+```
+
+**Numerical Comparisons:**
+
+```bash
+#!/bin/bash
+
+num1=10
+num2=5
+
+if [ "$num1" -gt "$num2" ]; then
+  echo "$num1 is greater than $num2"
+fi
+```
+
+**File Tests:**
+
+```bash
+#!/bin/bash
+
+file="/tmp/myfile.txt"
+
+if [ -e "$file" ]; then
+  echo "File exists"
+  if [ -f "$file" ]; then
+    echo "It's a regular file"
+  fi
+else
+  echo "File does not exist"
+fi
+
+if [ -d "/tmp" ]; then
+  echo "/tmp is a directory"
+fi
+```
+
+**Combining Tests:**
+
+You can combine multiple tests using logical operators:
+
+* `-a`: Logical AND
+* `-o`: Logical OR
+* `!`: Logical NOT
+
+
+```bash
+#!/bin/bash
+
+if [ -f "/tmp/myfile.txt" -a -r "/tmp/myfile.txt" ]; then
+  echo "File exists and is readable"
+fi
+```
+
+
+These examples showcase the versatility of the `test` command. Remember to always quote your variables to prevent word splitting and globbing issues. Mastering this built-in is essential for creating robust and effective shell scripts.
+

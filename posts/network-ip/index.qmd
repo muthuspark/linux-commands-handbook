@@ -1,0 +1,162 @@
+---
+title: "ip"
+date: "04/13/2024"
+categories: [ "Network" ]
+---
+## Understanding the `ip` Command Structure
+
+The `ip` command follows a consistent structure:
+
+```bash
+ip [OBJECT] [COMMAND] [OPTIONS]
+```
+
+Where:
+
+* **OBJECT:**  Specifies the network object to manage (e.g., `addr`, `link`, `route`, `neigh`).
+* **COMMAND:**  Specifies the action to perform (e.g., `add`, `del`, `show`, `set`).
+* **OPTIONS:**  Provide additional parameters to refine the command's behavior.
+
+## Managing Network Interfaces with `ip link`
+
+The `ip link` subcommand focuses on managing network interfaces themselves. Let's explore some key functionalities:
+
+**1. Listing Interfaces:**  The simplest use is to list all available interfaces:
+
+```bash
+ip link show
+```
+
+This command displays detailed information about each interface, including its name, state, MAC address, and more.
+
+
+**2. Setting Interface Up/Down:**
+
+To bring an interface online:
+
+```bash
+ip link set dev eth0 up
+```
+
+To take an interface offline:
+
+```bash
+ip link set dev eth0 down
+```
+
+Replace `eth0` with the actual name of your interface.
+
+
+**3. Setting Interface Name:**
+
+Renaming an interface (requires root privileges):
+
+```bash
+ip link set dev eth0 name eth1
+```
+
+**Caution:** Renaming interfaces can disrupt network connectivity if not done carefully.
+
+
+## Managing IP Addresses with `ip addr`
+
+The `ip addr` subcommand is used for managing IP addresses assigned to interfaces.
+
+**1. Showing IP Addresses:**
+
+Displaying IP addresses assigned to all interfaces:
+
+```bash
+ip addr show
+```
+
+Showing IP addresses for a specific interface:
+
+```bash
+ip addr show dev eth0
+```
+
+**2. Adding an IP Address:**
+
+Adding a static IPv4 address to `eth0`:
+
+```bash
+ip addr add 192.168.1.100/24 dev eth0
+```
+
+Adding a static IPv6 address to `eth0`:
+
+```bash
+ip addr add 2001:db8:1::100/64 dev eth0
+```
+
+
+**3. Deleting an IP Address:**
+
+Removing an IP address from `eth0`:
+
+```bash
+ip addr del 192.168.1.100/24 dev eth0
+```
+
+
+## Managing Routing Tables with `ip route`
+
+The `ip route` subcommand allows manipulation of the routing tables.
+
+**1. Showing Routing Table:**
+
+Displaying the current routing table:
+
+```bash
+ip route show
+```
+
+**2. Adding a Static Route:**
+
+Adding a route to a remote network:
+
+```bash
+ip route add 10.0.0.0/8 via 192.168.1.1 dev eth0
+```
+
+This adds a route to the 10.0.0.0/8 network via the gateway 192.168.1.1 on the `eth0` interface.
+
+
+**3. Deleting a Static Route:**
+
+Removing a route:
+
+```bash
+ip route del 10.0.0.0/8 via 192.168.1.1 dev eth0
+```
+
+
+##  Neighbor Discovery with `ip neigh`
+
+The `ip neigh` subcommand manages neighbor discovery entries, crucial for protocols like ARP and NDP.
+
+**1. Showing Neighbors:**
+
+Displaying neighboring hosts:
+
+```bash
+ip neigh show
+```
+
+
+**2. Adding a Neighbor Entry (Static ARP):**
+
+Adding a static ARP entry (for IPv4):
+
+```bash
+ip neigh add 192.168.1.101 lladdr xx:xx:xx:xx:xx:xx dev eth0
+```
+
+Replace `xx:xx:xx:xx:xx:xx` with the MAC address of the host.
+
+This adds a static entry associating the IP address `192.168.1.101` with the specified MAC address on interface `eth0`. This is generally not recommended unless absolutely necessary, as it can interfere with ARP resolution.
+
+
+This is a detailed overview of the core functionality of the `ip` command. There are many more advanced options and subcommands available;  exploring the `man ip` page will provide a comprehensive understanding of its full potential. Remember to always use `sudo` or `su` when performing operations that require root privileges.
+

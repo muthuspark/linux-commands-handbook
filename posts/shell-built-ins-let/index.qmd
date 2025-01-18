@@ -1,0 +1,133 @@
+---
+title: "let"
+date: "05/02/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What is `let`?
+
+The `let` command is a shell built-in that allows you to evaluate arithmetic expressions. Unlike using external tools like `bc` or `awk`, `let` offers a concise and efficient way to perform calculations within your shell scripts, making your code cleaner and more readable.  It operates directly on shell variables, modifying their values based on the results of the calculations.
+
+## Basic Arithmetic Operations with `let`
+
+`let` supports standard arithmetic operators:
+
+* **Addition (+):**  `let a=10+5`  (assigns 15 to the variable `a`)
+* **Subtraction (-):** `let b=20-7` (assigns 13 to the variable `b`)
+* **Multiplication (*):** `let c=6*4` (assigns 24 to the variable `c`)
+* **Division (/):** `let d=30/3` (assigns 10 to the variable `d`)
+* **Modulo (%):** `let e=17%5` (assigns 2 to the variable `e` – remainder after division)
+
+**Example:**
+
+```bash
+#!/bin/bash
+
+let x=10
+let y=5
+let sum=x+y
+let diff=x-y
+let prod=x*y
+let quo=x/y
+let rem=x%y
+
+echo "Sum: $sum"
+echo "Difference: $diff"
+echo "Product: $prod"
+echo "Quotient: $quo"
+echo "Remainder: $rem"
+```
+
+This script demonstrates the basic arithmetic operations using `let`. The output will display the results of each calculation.
+
+
+##  Increment and Decrement Operators
+
+`let` also supports increment (`++`) and decrement (`--`) operators:
+
+* **Increment (++) :** `let i++` (increments the value of `i` by 1)  `let i+=5` (increments by 5)
+* **Decrement (--):** `let j--` (decrements the value of `j` by 1) `let j-=2` (decrements by 2)
+
+**Example:**
+
+```bash
+#!/bin/bash
+
+let counter=0
+let counter++
+echo "Counter after increment: $counter"
+let counter+=3
+echo "Counter after adding 3: $counter"
+let counter--
+echo "Counter after decrement: $counter"
+
+```
+
+This shows how to increment and decrement variables using `let`.
+
+
+## Compound Assignments
+
+`let` efficiently handles compound assignments, combining arithmetic operations with assignment:
+
+* `+=`, `-=`, `*=`, `/=`, `%=`, `**=` (exponentiation)
+
+**Example:**
+
+```bash
+#!/bin/bash
+
+let num=5
+let num+=10  # num = num + 10
+echo "num: $num"
+let num*=2   # num = num * 2
+echo "num: $num"
+```
+
+This illustrates the use of compound assignments for more concise code.
+
+
+##  Using let with different Number Bases
+
+`let` can handle numbers in different bases (octal, hexadecimal, decimal) using prefixes:
+
+* **Decimal:**  (no prefix) `let dec=10`
+* **Octal:**  `0` prefix `let oct=012` (decimal equivalent is 10)
+* **Hexadecimal:** `0x` prefix `let hex=0xA` (decimal equivalent is 10)
+
+
+**Example:**
+
+```bash
+#!/bin/bash
+
+let decimal=255
+let octal=0377
+let hexadecimal=0xFF
+
+echo "Decimal: $decimal"
+echo "Octal: $octal"
+echo "Hexadecimal: $hexadecimal"
+```
+
+This demonstrates how `let` can work with numbers represented in different bases.
+
+
+##  Expressions and Operator Precedence
+
+`let` supports more complex expressions, adhering to standard operator precedence rules.  Parentheses can be used to override precedence.
+
+
+**Example:**
+
+```bash
+#!/bin/bash
+
+let result=$(( 10 + 5 * 2 )) # Multiplication before addition
+echo "Result: $result"
+
+let result=$(( (10 + 5) * 2 )) # Parentheses control precedence
+echo "Result: $result"
+```
+
+This example highlights the importance of operator precedence and the use of parentheses for controlling the order of operations within expressions processed by `let`.
+

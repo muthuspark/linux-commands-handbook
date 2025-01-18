@@ -1,0 +1,88 @@
+---
+title: "history"
+date: "01/18/2025"
+categories: [ "Shell Built-ins" ]
+---
+## Accessing Your Command History
+
+The simplest way to use `history` is to simply type the command itself. This displays a numbered list of your recent commands:
+
+```bash
+history
+```
+
+The output will look something like this (the numbers will vary based on your shell's history size and your previous commands):
+
+```
+  1  ls -l
+  2  cd /tmp
+  3  sudo apt update
+  4  grep "error" logfile.txt
+  5  history
+```
+
+The numbers preceding each command are crucial; they're used to re-execute commands.
+
+
+## Re-executing Commands with `history`
+
+Instead of retyping a command, you can use its history number to rerun it.  For example, to re-execute command number 3 ( `sudo apt update` in the example above):
+
+```bash
+!3
+```
+
+The `!` symbol signifies that you are referencing a command from your history.  You can also use the `!!` to execute the very last command.
+
+
+##  Searching and Filtering Command History
+
+`history` offers powerful search capabilities.  Let's say you want to re-run a command containing the word "grep". You can use a pattern matching feature:
+
+```bash
+!grep*
+```
+
+This will execute the most recent command containing "grep".  If multiple commands match, the most recent one will be executed. You can also use more sophisticated patterns with wildcards:
+
+
+```bash
+!g*p*
+```
+
+This would execute the most recent command starting with 'g' and containing 'p' anywhere within it.
+
+
+##  Modifying and Re-executing Commands
+
+You can modify commands before re-executing them. Suppose you want to rerun command 4 but replace `logfile.txt` with `newlogfile.txt`.  You can do this:
+
+```bash
+!4:s/logfile.txt/newlogfile.txt
+```
+
+The `:s/old/new` syntax performs a substitution.  The `s` stands for substitute, `old` is the text to be replaced, and `new` is the replacement text.  This is incredibly useful for quickly making small changes to previous commands.
+
+
+## Controlling the History Size
+
+The number of commands stored in your history is configurable. This is often controlled by the `HISTSIZE` and `HISTFILESIZE` environment variables.  `HISTSIZE` controls how many commands are kept in memory, while `HISTFILESIZE` controls how many commands are saved to the history file (usually `.bash_history`).  You can modify these variables in your shell configuration files (like `.bashrc` or `.profile`). For example, to increase the number of commands saved in memory to 1000:
+
+```bash
+export HISTSIZE=1000
+```
+
+You would then need to source your configuration file (e.g., `source ~/.bashrc`) for the change to take effect.
+
+
+##  Viewing History with Specific Options
+
+The `history` command offers other options to tailor the output:
+
+* **`history 10`**: Show only the last 10 commands.
+* **`history | grep "apt"`**: Pipe the history output to `grep` to filter for commands containing "apt".
+* **`history -c`**: Clear the current history.  Be careful with this command!
+
+
+This article has covered the fundamental aspects of the `history` command.  Exploring its capabilities will significantly enhance your command-line workflow and efficiency.
+

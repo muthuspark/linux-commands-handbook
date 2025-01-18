@@ -1,0 +1,95 @@
+---
+title: "route"
+date: "11/03/2024"
+categories: [ "Network" ]
+---
+## Understanding Routing Tables
+
+Before diving into the commands, let's briefly understand routing tables.  These tables act as a directory for your system's network connections, mapping destination networks to the interfaces and gateways needed to reach them. When your system needs to send data to a destination, it consults the routing table to determine the best path.
+
+## Key `ip route` Commands and Options
+
+The `ip route` command offers a wealth of options, allowing you to view, add, delete, and modify routing entries. Let's explore some common commands and their usage:
+
+### 1. Viewing Routing Tables
+
+The simplest use of `ip route` is to display the current routing table:
+
+```bash
+ip route
+```
+
+This will output a list of routes, including the destination network, netmask, gateway, and interface.
+
+
+### 2. Adding Static Routes
+
+Adding a static route is essential for directing traffic to networks not automatically discovered by your system.  The syntax is as follows:
+
+```bash
+ip route add <destination> via <gateway> dev <interface>
+```
+
+For example, to add a route to the 192.168.1.0/24 network via the gateway 192.168.0.1 using the `eth0` interface:
+
+```bash
+sudo ip route add 192.168.1.0/24 via 192.168.0.1 dev eth0
+```
+
+You'll need `sudo` privileges to modify routing tables.  The `/24` denotes the subnet mask.
+
+
+### 3. Deleting Routes
+
+Removing a route is equally important for network management. The command is:
+
+```bash
+sudo ip route del <destination> via <gateway> dev <interface>
+```
+
+To delete the route added in the previous example:
+
+```bash
+sudo ip route del 192.168.1.0/24 via 192.168.0.1 dev eth0
+```
+
+
+### 4. Specifying Metric
+
+Routes can have associated metrics, influencing route selection. Lower metrics are preferred.
+
+```bash
+sudo ip route add 10.0.0.0/8 via 10.10.10.1 dev eth1 metric 20
+```
+
+This adds a route to 10.0.0.0/8 with a metric of 20.
+
+
+### 5. Default Gateway
+
+Setting a default gateway directs all traffic not explicitly routed otherwise:
+
+```bash
+sudo ip route add default via 192.168.0.1 dev eth0
+```
+
+This sets 192.168.0.1 as the default gateway on the `eth0` interface.
+
+
+### 6.  Showing specific routes
+
+You can filter the output by specifying a particular destination or interface
+
+```bash
+ip route show to 192.168.1.0/24
+ip route show dev eth0
+```
+
+
+### 7. Using `ip route list` (synonym for `ip route show`)
+
+`ip route list` functions identically to `ip route show`.  It provides the same functionality with a slightly different command syntax.
+
+
+These examples illustrate some core `ip route` functionalities.  Exploring the `man ip-route` page provides a complete reference to all its capabilities, including advanced features like policy routing and route tables manipulation.  Understanding and utilizing `ip route` is critical for effective Linux network administration.
+

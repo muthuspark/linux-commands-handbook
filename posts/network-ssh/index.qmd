@@ -1,0 +1,108 @@
+---
+title: "ssh"
+date: "08/12/2024"
+categories: [ "Network" ]
+---
+## Connecting to a Remote Server
+
+The most basic use of `ssh` is connecting to a remote server.  The syntax is straightforward:
+
+```bash
+ssh username@hostname_or_ip_address
+```
+
+Replace `username` with your username on the remote server and `hostname_or_ip_address` with the server's hostname or IP address. For example, to connect to a server named `example.com` with the username `john`, you would use:
+
+```bash
+ssh john@example.com
+```
+
+If the server uses a non-standard port (other than the default port 22), you specify it using the `-p` option:
+
+```bash
+ssh -p 2222 john@example.com
+```
+
+This connects to `example.com` on port 2222.
+
+
+## Securely Transferring Files
+
+`ssh` isn't just for remote login; it also facilitates secure file transfer using `scp` (secure copy). To copy a file from your local machine to a remote server:
+
+```bash
+scp local_file username@hostname_or_ip_address:/remote/path/
+```
+
+For instance, to copy `mydocument.txt` to the `/home/john/documents` directory on `example.com`:
+
+```bash
+scp mydocument.txt john@example.com:/home/john/documents/
+```
+
+Copying a file *from* the remote server to your local machine is equally simple:
+
+```bash
+scp username@hostname_or_ip_address:/remote/path/local_file
+```
+
+To copy `remote_file.log` from `/var/log` on `example.com` to your current directory:
+
+```bash
+scp john@example.com:/var/log/remote_file.log .
+```
+
+
+## Executing Remote Commands
+
+The `ssh` command can execute commands on the remote server without requiring a full login session using the following syntax:
+
+```bash
+ssh username@hostname_or_ip_address 'command'
+```
+
+For example, to check the disk space on `example.com`:
+
+```bash
+ssh john@example.com 'df -h'
+```
+
+Note the single quotes around the command; this is crucial to prevent local shell interpretation of special characters.  For more complex commands, it's often safer to use a script:
+
+```bash
+ssh john@example.com "bash -s" < my_remote_script.sh
+```
+
+This executes `my_remote_script.sh` on the remote server using `bash`.
+
+
+## Using SSH Keys for Passwordless Authentication
+
+Typing your password every time you connect is cumbersome. SSH keys provide passwordless authentication.  This involves generating a key pair (public and private), placing the public key on the remote server, and keeping the private key secure on your local machine.
+
+
+Generating a key pair:
+
+```bash
+ssh-keygen
+```
+
+Follow the prompts; you can accept the defaults for most options.  Then copy the public key (`~/.ssh/id_rsa.pub`) to the remote server's `~/.ssh/authorized_keys` file (you might need to create the `.ssh` directory first).  After this, you should be able to connect without a password.
+
+
+##  SSH Tunneling
+
+SSH tunneling creates a secure connection through a remote server, allowing you to access services on other networks.  This is useful for accessing servers behind firewalls.
+
+
+For example, to create a local port forwarding tunnel to access a web server on a private network:
+
+```bash
+ssh -L 8080:internal_server_ip:80 username@gateway_server
+```
+
+This forwards traffic from port 8080 on your local machine to port 80 on `internal_server_ip` through `gateway_server`.
+
+
+These examples illustrate the core functionality of the `ssh` command.  Exploring its many other options and capabilities will significantly enhance your Linux system administration skills.
+

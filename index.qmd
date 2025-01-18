@@ -1,0 +1,14 @@
+---
+title: ""
+listing:
+  contents: posts
+  sort: "title"
+  type: table
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [title, categories]
+  page-size: 500
+page-layout: full
+title-block-banner: false
+---

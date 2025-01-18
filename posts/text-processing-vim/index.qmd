@@ -1,0 +1,125 @@
+---
+title: "vim"
+date: "12/19/2024"
+categories: [ "Text Processing" ]
+---
+## Navigating Your Text
+
+Before diving into text manipulation, efficient navigation is key.  Vim's modal nature (Normal, Insert, Visual) dictates how you interact with the text.
+
+* **Entering Insert Mode:** `i` (insert before cursor), `a` (insert after cursor), `o` (open a new line below), `O` (open a new line above).
+* **Returning to Normal Mode:** `Esc` key.
+* **Movement:**
+    * `h`: Left
+    * `j`: Down
+    * `k`: Up
+    * `l`: Right
+    * `w`: Next word
+    * `b`: Previous word
+    * `e`: End of word
+    * `0`: Beginning of line
+    * `$`: End of line
+    * `gg`: Go to the beginning of the file
+    * `G`: Go to the end of the file
+    * `nG`: Go to line n
+
+
+**Example:**
+
+Let's say you have a file named `my_text.txt` with the following content:
+
+```
+This is a sample text file.
+It contains multiple lines of text.
+We will use vim to edit it.
+```
+
+Open the file in Vim: `vim my_text.txt`
+
+Navigate to the beginning of the file using `gg`, then move to the end of the third line using `3j$`.
+
+## Editing Text
+
+Vim offers a rich set of commands for editing text.
+
+* **Deleting Text:**
+    * `x`: Delete character under cursor
+    * `dw`: Delete word
+    * `dd`: Delete line
+    * `d$`: Delete to end of line
+    * `dgg`: Delete from cursor to beginning of file
+    * `dG`: Delete from cursor to end of file
+
+
+* **Yanking (Copying) Text:**
+    * `yw`: Yank word
+    * `yy`: Yank line
+    * `y$`: Yank to end of line
+
+
+* **Putting (Pasting) Text:**
+    * `p`: Paste after cursor
+    * `P`: Paste before cursor
+
+
+* **Changing Text:**
+    * `cw`: Change word
+    * `cc`: Change line
+    * `c$`: Change to end of line
+
+
+**Example:**
+
+Continuing with `my_text.txt`, let's make some changes:
+
+1.  Move to the beginning of the second line (`2gg`).
+2.  Delete the word "contains" using `dw`.
+3.  Insert the word "includes" using `iincludes<Esc>`.
+4.  Move to the end of the third line (`3j$`).
+5.  Append "efficiently" using `a efficiently<Esc>`.
+
+
+## Searching and Replacing
+
+Vim provides powerful search and replace functionalities.
+
+* **Searching:** `/pattern` searches forward, `?pattern` searches backward.  `n` repeats the last search forward, `N` repeats the last search backward.
+* **Replacing:**  `:s/old/new/g` replaces all occurrences of "old" with "new" on the current line.  `:1,$s/old/new/g` replaces all occurrences of "old" with "new" in the entire file.  `:s/old/new/gc`  prompts for confirmation before each replacement.
+
+**Example:**
+
+Let's replace all instances of "text" with "data" in `my_text.txt`:
+
+`:1,$s/text/data/g`
+
+This command will replace all occurrences of "text" with "data" throughout the file.
+
+
+
+## Working with Multiple Files
+
+Vim allows you to efficiently work with multiple files.
+
+* **Opening multiple files:** `vim file1.txt file2.txt`
+* **Switching between files:** `:n` (next file), `:N` (previous file)
+
+
+## Visual Mode
+
+Visual mode allows for selecting blocks of text for various operations.
+
+* **Entering Visual Mode:** `v` (character-wise), `V` (line-wise), `Ctrl-v` (block-wise)
+* **Operations in Visual Mode:**  Many commands work differently in visual mode,  e.g., `d` deletes the selected text, `y` yanks it, and `c` changes it.
+
+
+**Example:**
+
+Select a block of text in visual mode and then use `d` to delete it, or `y` to copy it.
+
+
+
+
+##  More Advanced Commands (Brief Overview)
+
+This only scratches the surface. Vim offers many more commands for advanced operations like macros, regular expressions, plugins, and more.  Exploring these features unlocks even greater productivity.
+

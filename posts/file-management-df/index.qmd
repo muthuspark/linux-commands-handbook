@@ -1,0 +1,92 @@
+---
+title: "df"
+date: "01/10/2025"
+categories: [ "File Management" ]
+---
+## Understanding the Basics of `df`
+
+The `df` command displays the amount of disk space used and available on file systems. By default, it shows information for all mounted file systems.  The output typically includes:
+
+* **Filesystem:** The name of the file system (e.g., `/dev/sda1`, `/dev/mapper/vg0-lv_root`).
+* **1K-blocks:** The total number of 1KB blocks on the file system.
+* **Used:** The number of 1KB blocks used.
+* **Avail:** The number of 1KB blocks available.
+* **Use%:** The percentage of disk space used.
+* **Mounted on:** The mount point where the file system is accessible.
+
+
+Let's start with a simple example:
+
+```bash
+df
+```
+
+This will give you a general overview of your disk space usage.
+
+
+##  `df` with Options: Fine-tuning Your Output
+
+The power of `df` lies in its various options that allow you to customize the output. Let's explore some of the most useful ones:
+
+**1.  `-h` (Human-readable):**  This option formats the output in a more human-friendly way, using units like KB, MB, GB, and TB. This is generally preferred over the default 1K-blocks output.
+
+```bash
+df -h
+```
+
+**2.  `-T` (Filesystem Type):** Displays the type of file system for each partition.
+
+```bash
+df -T
+```
+
+**3.  `-t <type>` (Specific Filesystem Type):**  Allows you to filter the output to show only file systems of a specific type (e.g., ext4, xfs, tmpfs).
+
+```bash
+df -t ext4
+```
+
+This will only show ext4 partitions.
+
+
+**4.  `-i` (Inodes):**  Instead of block usage, this option shows inode usage. Inodes are data structures that store information about files and directories.  This is useful for understanding if you're running low on inodes, rather than disk space.
+
+```bash
+df -i
+```
+
+**5.  `-x <type>` (Exclude Filesystem Type):**  Excludes file systems of a specific type from the output.
+
+```bash
+df -x tmpfs
+```
+
+This will exclude temporary file systems (like `tmpfs`).
+
+
+**6. Specifying a specific file system:** You can target specific mount points.
+
+```bash
+df /home
+```
+
+This only shows information about the `/home` partition.
+
+
+## Combining Options for Powerful Analysis
+
+The real power of `df` comes from combining these options. For instance, to get a human-readable output showing only ext4 partitions:
+
+```bash
+df -h -t ext4
+```
+
+Or, to get a human-readable output excluding tmpfs:
+
+```bash
+df -h -x tmpfs
+```
+
+
+These examples demonstrate how flexible and informative the `df` command can be.  By mastering its options, you gain a crucial tool for effective disk space management on your Linux system.  Experiment with different combinations of options to tailor the output to your specific needs.  Remember to consult the `man df` page for a complete list of options and further details.
+

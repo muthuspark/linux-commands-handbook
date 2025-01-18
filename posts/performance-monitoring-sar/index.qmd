@@ -1,0 +1,90 @@
+---
+title: "sar"
+date: "02/08/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding sar's Functionality
+
+`sar` gathers system performance data from various sources, including the kernel's accounting mechanisms.  It can report on CPU utilization, memory usage, I/O activity, network traffic, and much more.  The beauty of `sar` lies in its ability to collect data over time, allowing you to analyze trends and identify patterns.  This historical perspective is crucial for accurate performance diagnosis.
+
+
+## Installing sar
+
+`sar` is typically part of the `sysstat` package. If you don't have it installed, use your distribution's package manager:
+
+* **Debian/Ubuntu:** `sudo apt-get update && sudo apt-get install sysstat`
+* **Red Hat/CentOS/Fedora:** `sudo yum update && sudo yum install sysstat`
+
+
+## Basic sar Usage: CPU Utilization
+
+Let's start with a fundamental example: monitoring CPU usage. The following command displays CPU utilization statistics for the last 10 minutes, with a 1-minute interval:
+
+```bash
+sar -u 1 10
+```
+
+This command breaks down as follows:
+
+* `sar`: The System Activity Reporter command.
+* `-u`: Specifies that we want CPU utilization statistics.
+* `1`: Indicates a sampling interval of 1 minute.
+* `10`: Specifies that we want data for the last 10 minutes.
+
+
+The output will show utilization percentages for various CPU cores (if your system has multiple cores)  along with the average.  You'll see metrics like `%usr` (user CPU time), `%sys` (system CPU time), `%idle` (idle CPU time), and more.
+
+
+## Advanced sar Usage: Memory Statistics
+
+To examine memory usage, we use the `-r` option:
+
+```bash
+sar -r 1 10
+```
+
+This command will show memory statistics including:
+
+* `kbmemfree`: The amount of free memory.
+* `kbmemused`: The amount of used memory.
+* `kbbuffers`: Memory used for buffering I/O operations.
+* `kbcached`: Memory used for caching.
+
+
+##  Analyzing I/O Performance
+
+Monitoring I/O operations is vital for identifying disk bottlenecks.  Use the `-b` option:
+
+```bash
+sar -b 1 10
+```
+
+This will display statistics related to block device activity, including:
+
+* `tps`: Transactions per second.
+* `rkB/s`: Read kilobytes per second.
+* `wkB/s`: Write kilobytes per second.
+* `avgrq-sz`: Average request size.
+
+
+##  Long-Term Monitoring with Log Files
+
+`sar` can write its output to a log file for later analysis.  This is essential for tracking performance trends over extended periods.  To do this, use the `-f` option to specify a log file (or let `sar` create one):
+
+```bash
+sar -u 1 60 > cpu_usage.log
+```
+
+This command saves CPU utilization data for the last 60 minutes (1-minute intervals) to a file named `cpu_usage.log`. You can then analyze this log file at any time.
+
+```bash
+sar -f cpu_usage.log
+```
+
+This will display the data stored in `cpu_usage.log`. You can further filter and analyze the data using tools like `awk`, `grep`, and `sed`.
+
+
+##  More options:
+
+The `sar` command has numerous other options for detailed analysis of various system aspects, including network statistics (`-n`),  paging statistics (`-W`), and more.  Consult the `man sar` page for a complete list of options and detailed explanations.  Experiment with different options and find the ones most relevant to your performance analysis needs.
+

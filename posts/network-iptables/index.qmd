@@ -1,0 +1,110 @@
+---
+title: "iptables"
+date: "08/25/2024"
+categories: [ "Network" ]
+---
+## Understanding iptables Basics
+
+`iptables` works by manipulating chains within tables.  The core tables are:
+
+* **`filter`:**  The default table, used for general packet filtering (accepting, dropping, or forwarding packets).  This contains the chains `INPUT`, `OUTPUT`, and `FORWARD`.
+* **`nat`:**  Handles Network Address Translation (NAT), modifying packet source/destination IP addresses and ports.  Contains chains like `PREROUTING`, `POSTROUTING`, and `OUTPUT`.
+* **`mangle`:** Used for modifying packet headers (e.g., Quality of Service settings). Contains chains like `PREROUTING`, `INPUT`, `FORWARD`, `OUTPUT`, `POSTROUTING`.
+
+Each chain processes packets in a specific order.  Rules within a chain are evaluated sequentially until a match is found.  If no rule matches, the default policy for that chain is applied (usually `ACCEPT` or `DROP`).
+
+## Common iptables Commands
+
+Here's a breakdown of essential `iptables` commands with examples:
+
+**1. Viewing Current Rules:**
+
+To see the current rules in the `filter` table's `INPUT` chain:
+
+```bash
+iptables -L INPUT -n
+```
+
+The `-n` flag displays numerical IP addresses and port numbers instead of resolving hostnames and service names.
+
+**2. Adding Rules:**
+
+Let's add a rule to allow SSH connections (port 22) from any IP address:
+
+```bash
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```
+
+* `-A INPUT`: Appends the rule to the `INPUT` chain.
+* `-p tcp`: Specifies the protocol (TCP).
+* `--dport 22`: Matches packets destined for port 22.
+* `-j ACCEPT`: Jumps to the `ACCEPT` target (allows the connection).
+
+
+To block traffic from a specific IP address (e.g., 192.168.1.100):
+
+```bash
+iptables -A INPUT -s 192.168.1.100 -j DROP
+```
+
+* `-s 192.168.1.100`: Specifies the source IP address.
+* `-j DROP`: Jumps to the `DROP` target (blocks the connection).
+
+
+**3. Deleting Rules:**
+
+To delete a rule (be extremely cautious!), you'll need its number (shown in `iptables -L`).  Let's say the SSH rule is number 1:
+
+```bash
+iptables -D INPUT 1
+```
+
+* `-D INPUT`: Deletes a rule from the `INPUT` chain.
+* `1`: The rule number to delete.
+
+
+**4. Flushing Chains:**
+
+To remove all rules from a chain (use with extreme caution!):
+
+```bash
+iptables -F INPUT
+```
+
+* `-F INPUT`: Flushes (empties) the `INPUT` chain.
+
+**5. Setting Default Policies:**
+
+To set the default policy for the `INPUT` chain to `DROP` (blocks all incoming traffic unless explicitly allowed):
+
+```bash
+iptables -P INPUT DROP
+```
+
+* `-P INPUT`: Sets the policy for the `INPUT` chain.
+* `DROP`: Sets the default action to drop packets.
+
+**6. Saving Rules (Persistence):**
+
+The way to save `iptables` rules persists across reboots varies depending on your distribution. Common methods include using service scripts (`/etc/init.d/iptables` or systemd services) or tools like `iptables-save` and `iptables-restore`.  Consult your distribution's documentation for the correct procedure.  A typical approach might involve saving the current rules to a file:
+
+```bash
+iptables-save > /etc/iptables/rules.v4
+```
+
+And then restoring them on boot.
+
+
+##  Working with the `nat` Table
+
+Let's configure NAT to masquerade outgoing connections:
+
+```bash
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
+
+This rule uses the `nat` table's `POSTROUTING` chain to masquerade (hide) the internal IP addresses when traffic leaves through the `eth0` interface.  Replace `eth0` with your outbound interface.
+
+
+These examples demonstrate the core functionalities of `iptables`.  Remember to use extreme caution when manipulating firewall rules, as incorrect configurations can severely impact network connectivity.  Always back up your existing rules before making significant changes.  And again, for new systems, consider migrating to `nftables`.
+

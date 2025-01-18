@@ -1,0 +1,96 @@
+---
+title: "cd"
+date: "10/25/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding the Basics
+
+The `cd` command's primary function is simple: to change your current working directory. Your working directory is the location from which the shell executes commands.  If you type `ls` (list files), it will show you the contents of your *current* working directory.
+
+The most basic usage involves specifying the target directory path:
+
+```bash
+cd /home/user/documents
+```
+
+This command changes your working directory to the `/home/user/documents` directory.  Note the forward slash `/` as the path separator in Linux.
+
+If you omit the path, `cd` defaults to your home directory:
+
+```bash
+cd
+```
+
+This is equivalent to:
+
+```bash
+cd ~
+```
+
+The `~` symbol is a shorthand for your home directory.
+
+
+## Relative vs. Absolute Paths
+
+`cd` can use both relative and absolute paths.
+
+* **Absolute Paths:**  These paths start from the root directory (`/`).  They specify the complete path from the root to the target directory.  Example: `/home/user/documents/reports`.
+
+* **Relative Paths:** These paths are relative to your *current* working directory.  For example, if your current working directory is `/home/user/documents`, then `cd reports` would change your directory to `/home/user/documents/reports`.
+
+Let's illustrate with examples:
+
+Suppose your current directory is `/home/user`:
+
+| Command         | Result                                    |
+|-----------------|--------------------------------------------|
+| `cd documents`   | Changes to `/home/user/documents`           |
+| `cd ../`         | Changes to `/home`                         |
+| `cd /tmp`        | Changes to `/tmp`                           |
+| `cd ./reports`  | Changes to `/home/user/reports` (if `reports` exists) |
+
+
+`..` represents the parent directory.  `.` represents the current directory.  These are very useful for navigating up and down the directory tree.
+
+
+##  Advanced Usage
+
+`cd` offers some more advanced features:
+
+* **Using environment variables:** You can use environment variables to simplify paths. For instance, if you've set `MYDOCS=/home/user/documents`, you could use:
+
+```bash
+cd $MYDOCS
+```
+
+* **Creating directories while changing:** You can combine `cd` with `mkdir` to create directories on the fly and then change to them. This requires bash version 4.3 or higher.
+
+```bash
+mkdir -p /tmp/my/new/directory && cd /tmp/my/new/directory
+```
+
+The `-p` option ensures that parent directories are also created if they don't exist.
+
+
+* **Error Handling:**  If the target directory doesn't exist, `cd` will typically print an error message and leave the current working directory unchanged.  You might want to incorporate error handling in scripts using techniques like checking the exit status.
+
+
+##  Practical Examples in Scripts
+
+The `cd` command is indispensable in shell scripts for navigating to various locations before executing other commands:
+
+```bash
+#!/bin/bash
+
+
+cd /home/user/projects/myproject
+
+
+./build.sh
+
+
+cd ~
+```
+
+This script demonstrates changing to a project directory, executing a build script, and returning to the home directory afterwards, maintaining a structured and organized workflow.  This is vital for ensuring scripts execute in the correct context.
+

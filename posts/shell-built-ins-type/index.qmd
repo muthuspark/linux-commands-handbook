@@ -1,0 +1,109 @@
+---
+title: "type"
+date: "02/13/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Identifying Command Types
+
+The simplest usage of `type` is to pass the command name as an argument:
+
+```bash
+type ls
+```
+
+This will output something like:
+
+```
+ls is aliased to `ls --color=auto`
+```
+
+This tells us that `ls` in this particular shell is an *alias*.  The alias is defined to execute the command `ls --color=auto`.  The output will vary based on your shell configuration.  If `ls` weren't aliased, you might see output like:
+
+```
+ls is /bin/ls
+```
+
+This indicates that `ls` is an *external command* located at `/bin/ls`.
+
+Let's look at other possibilities:
+
+```bash
+type date
+```
+
+This might show:
+
+```
+date is /usr/bin/date
+```
+
+Again, an external command, but located in `/usr/bin`.  The location might differ depending on your system.
+
+Now, let's explore built-in commands:
+
+```bash
+type cd
+```
+
+The output (depending on your shell) might resemble:
+
+```
+cd is a shell builtin
+```
+
+This clearly states that `cd` is a *shell built-in*.  Built-ins are inherently faster than external commands as they don't require the shell to search the filesystem for the executable.
+
+
+##  Working with Functions
+
+If you've defined a shell function, `type` will identify it as such:
+
+```bash
+my_function() {
+  echo "This is my function!"
+}
+
+type my_function
+```
+
+The output will be similar to:
+
+```
+my_function is a function
+my_function ()
+{
+  echo "This is my function!"
+}
+```
+
+This shows that `my_function` is a function, along with its definition.
+
+
+## Handling Multiple Commands
+
+The `type` command can handle multiple commands at once:
+
+```bash
+type ls date cd my_function
+```
+
+This will provide the type information for each command individually.
+
+
+##  Importance of `type` in Scripting
+
+The `type` command is crucial for robust shell scripting.  You can use it to conditionally execute commands based on their type.  For example:
+
+```bash
+command="grep"
+if type "$command" &> /dev/null; then
+  echo "$command exists"
+else
+  echo "$command not found"
+fi
+```
+
+This snippet checks if `grep` exists (regardless of whether it's built-in or external) before attempting to use it, preventing script errors.  The `&> /dev/null` redirects both standard output and standard error to `/dev/null`, suppressing any output from `type` itself.
+
+This level of control demonstrates the power and flexibility that the simple `type` command provides in shell scripting and general shell interaction.  It's a small command with a large impact on your understanding and management of your Linux environment.
+

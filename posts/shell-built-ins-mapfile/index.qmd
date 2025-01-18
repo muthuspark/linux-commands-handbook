@@ -1,0 +1,123 @@
+---
+title: "mapfile"
+date: "10/19/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What is `mapfile`?
+
+`mapfile` is a Bash built-in command that reads lines from a file or standard input and stores them into an array variable.  This simplifies the process of loading data into arrays, eliminating the need for complex loops and manual array indexing.  It offers flexibility and control over how data is imported, making it invaluable for various scripting tasks.
+
+## Basic Usage
+
+The simplest form of `mapfile` reads lines from standard input and assigns them to an array called `myArray`:
+
+```bash
+mapfile myArray
+```
+
+Now, type some lines of text, pressing Enter after each one.  Once you've finished, press Ctrl+D (EOF) to signal the end of input. The lines you typed will be stored in `myArray`. You can access individual elements using array indexing:
+
+```bash
+echo "${myArray[0]}" # Prints the first line
+echo "${myArray[1]}" # Prints the second line
+echo "${#myArray[@]}" # Prints the number of elements in the array
+```
+
+## Reading from a File
+
+Instead of standard input, you can specify a file to read from using the `-t` option (to remove trailing newlines) and the `<` redirection operator:
+
+```bash
+mapfile -t myArray < myfile.txt
+```
+
+This reads each line from `myfile.txt`, removes the trailing newline character from each line and assigns the result to the `myArray` array.
+
+Example `myfile.txt`:
+
+```
+Line one
+Line two
+Line three
+```
+
+After running the command, `myArray[0]` would hold "Line one", `myArray[1]` would hold "Line two", and so on.
+
+## Specifying a Variable Name
+
+While `mapfile` defaults to using the name `myArray`, you can explicitly specify the array variable name:
+
+```bash
+mapfile -t myData < myfile.txt
+```
+
+This will populate the `myData` array instead of `myArray`.
+
+
+##  Controlling the Array Index
+
+The `-O` option lets you specify the starting index for the array:
+
+```bash
+mapfile -t -O 3 myArray < myfile.txt
+```
+
+This starts the array index at 3, so the first line from `myfile.txt` will be stored in `myArray[3]`, the second in `myArray[4]`, and so on.
+
+##  Limiting the Number of Lines
+
+Use the `-n` option to limit the number of lines read:
+
+```bash
+mapfile -n 2 -t myArray < myfile.txt
+```
+
+This reads only the first two lines from `myfile.txt` into `myArray`.
+
+##  Using a Separator
+
+By default, `mapfile` uses newline characters as separators.  However, you can use the `-d` option to specify a different delimiter:
+
+```bash
+mapfile -d ',' -t myArray < myfile.csv
+```
+
+This reads lines from `myfile.csv`, using a comma as the delimiter. Each comma-separated value will become a separate element in the `myArray` array.
+
+Example `myfile.csv`:
+
+```
+apple,banana,orange
+grape,kiwi,mango
+```
+
+After running this, `myArray[0]` would be "apple", `myArray[1]` would be "banana", and so on.
+
+
+##  Combining Options
+
+You can combine multiple options for even more control. For example, to read the first 5 lines from a file, starting at index 2 and using a semicolon as the delimiter:
+
+```bash
+mapfile -n 5 -O 2 -d ';' -t myArray < myfile.txt
+```
+
+
+##  Handling Empty Lines
+
+If your file contains empty lines, these will be included in the array as empty strings.  You can filter these out if needed using additional scripting techniques.
+
+
+##  Reading from a Command's Output
+
+Instead of a file, you can read from the output of a command using command substitution:
+
+```bash
+mapfile -t myArray < <(ls -l)
+```
+
+This reads the output of the `ls -l` command and stores it in the `myArray` array.  Note the use of process substitution `<(command)`.
+
+
+These examples demonstrate the versatility of `mapfile`. By mastering its options, you can efficiently manage data within your shell scripts, simplifying complex array manipulations.
+

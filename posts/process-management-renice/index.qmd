@@ -1,0 +1,85 @@
+---
+title: "renice"
+date: "03/11/2024"
+categories: [ "Process Management" ]
+---
+## What is `renice`?
+
+`renice` is a command-line tool that allows you to change the niceness (priority) of running processes. Niceness is a numerical value that affects process scheduling.  A lower niceness value means higher priority, while a higher value means lower priority.  The default niceness is 0, but you can adjust it within a range of -20 (highest priority) to 19 (lowest priority).  This doesn't directly control how much CPU time a process gets, but it significantly influences the scheduler's decisions.
+
+## Understanding Niceness Values
+
+The niceness value is an *additive* value.  If you use `renice` to increase the niceness of a process, you're adding to its current niceness value.  For example:
+
+* A process with a niceness of 0, having its niceness increased by 10 using `renice`, will now have a niceness of 10.
+* A process with a niceness of 5, having its niceness decreased by 2 using `renice`, will now have a niceness of 3.
+
+
+## Using `renice`: Practical Examples
+
+Let's explore several practical scenarios and the corresponding `renice` commands:
+
+**1. Increasing the Niceness of a Specific Process (PID):**
+
+Let's say you have a long-running process with PID 1234 that's consuming excessive resources and impacting other applications.  To lower its priority, you can use:
+
+```bash
+sudo renice 10 -p 1234
+```
+
+This command increases the niceness of process 1234 by 10.  `sudo` is required because changing process priorities usually requires root privileges.
+
+**2. Increasing the Niceness of Processes Belonging to a User:**
+
+If you want to reduce the priority of all processes owned by a specific user (e.g., 'john'), you can use the `-u` option:
+
+```bash
+sudo renice 5 -u john
+```
+
+This command increases the niceness of all processes owned by user 'john' by 5.
+
+**3. Decreasing the Niceness of a Process Group:**
+
+Sometimes, you might want to prioritize a group of processes related to a specific job.  If you know the process group ID (PGID), you can use the `-g` option:
+
+```bash
+sudo renice -5 -g 5555
+```
+
+This command decreases the niceness of all processes in process group 5555 by 5, effectively boosting their priority.
+
+**4. Displaying Niceness Values:**
+
+To see the current niceness of a process, you can use the `ps` command with the `-o` option:
+
+
+```bash
+ps -o pid,ppid,ni,%cpu,%mem --sort=-%cpu
+```
+This command displays the process ID (PID), parent process ID (PPID), niceness (ni), CPU usage (%cpu), and memory usage (%mem), sorted by CPU usage in descending order. This allows you to easily identify resource-intensive processes and their niceness values.
+
+
+**5.  Using `renice` with a shell script for automated tasks:**
+
+You can integrate `renice` into shell scripts to manage process priorities automatically.  For example, a script might monitor CPU usage and automatically increase the niceness of processes exceeding a certain threshold.
+
+
+```bash
+#!/bin/bash
+
+
+cpu_usage=$(ps -p 1234 -o %cpu | tail -n 1 | awk '{print $1}')
+
+
+if (( $(echo "$cpu_usage > 80" | bc -l) )); then
+  sudo renice 5 -p 1234
+  echo "Increased niceness of process 1234"
+fi
+```
+
+Remember to make this script executable (`chmod +x your_script.sh`) before running it.
+
+
+These examples demonstrate the flexibility and power of the `renice` command for fine-tuning system resource allocation.  Effective use of `renice` contributes to a more responsive and stable Linux system.
+

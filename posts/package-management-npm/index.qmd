@@ -1,0 +1,121 @@
+---
+title: "npm"
+date: "11/15/2024"
+categories: [ "Package Management" ]
+---
+## Installing npm
+
+If you've installed Node.js, npm usually comes bundled with it.  To verify your installation and check the version, open your terminal and run:
+
+```bash
+npm -v
+```
+
+This will output the installed npm version. If you don't have npm installed, you'll need to download and install Node.js from the official website: [https://nodejs.org/](https://nodejs.org/)
+
+
+##  The Core npm Commands:
+
+### 1.  `npm init`: Creating a `package.json` file
+
+The `package.json` file is the heart of your Node.js project. It lists project metadata, dependencies, and scripts.  To create one, navigate to your project directory in the terminal and run:
+
+```bash
+npm init -y
+```
+
+The `-y` flag automatically accepts the default values.  You can omit this to manually configure each setting. This will generate a `package.json` file containing basic information about your project.
+
+
+### 2. `npm install`: Installing Packages
+
+This is arguably the most frequently used npm command.  It installs packages from the npm registry (npmjs.com).  To install a package, for example, `express` (a popular web framework), use:
+
+```bash
+npm install express
+```
+
+This command downloads `express` and its dependencies and adds them to your project's `node_modules` folder.  It also updates your `package.json` file to list `express` as a dependency under the `dependencies` section.
+
+To install a package as a development dependency (only needed for development, not production), use the `--save-dev` flag or `-D`:
+
+```bash
+npm install --save-dev nodemon
+```
+
+`nodemon` is a tool that restarts your server automatically on code changes, useful during development.
+
+
+### 3. `npm install` with `package.json`
+
+If you have a `package.json` file with dependencies listed, you can install all of them at once:
+
+```bash
+npm install
+```
+
+This is particularly useful when sharing your project with others; they can simply run this command to set up the project's environment.
+
+
+
+### 4.  `npm uninstall`: Removing Packages
+
+To remove a package, use:
+
+```bash
+npm uninstall express
+```
+
+This removes the package from `node_modules` and updates the `package.json` file.
+
+
+### 5.  `npm list`: Viewing Installed Packages
+
+To see all the installed packages, including their dependencies, use:
+
+```bash
+npm list
+```
+
+This provides a tree-like structure showing all installed packages and their versions.
+
+
+### 6. `npm update`: Updating Packages
+
+To update all the packages listed in `package.json` to their latest versions, use:
+
+```bash
+npm update
+```
+
+You can update specific packages using:
+
+```bash
+npm update express
+```
+
+
+### 7. `npm run`: Running Scripts Defined in `package.json`
+
+The `scripts` section in `package.json` allows you to define custom commands.  For example:
+
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  }
+}
+```
+
+You can then run these scripts using:
+
+```bash
+npm run start  // Runs node server.js
+npm run dev   // Runs nodemon server.js
+```
+
+These examples demonstrate the fundamental commands.  npm offers many more features, including package versioning (using semver), managing private packages, and working with different registries, providing a robust and flexible system for managing your Node.js project dependencies.
+

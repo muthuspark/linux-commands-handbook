@@ -1,0 +1,99 @@
+---
+title: "read"
+date: "06/23/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Basic Usage: Reading a Single Line
+
+At its core, `read` takes input from the standard input (typically your keyboard) and assigns it to a variable.
+
+```bash
+read myVariable
+echo "You entered: $myVariable"
+```
+
+This script prompts the user for input.  Whatever the user types (followed by Enter) is stored in the `myVariable` variable and then printed to the console.
+
+## Handling Multiple Variables
+
+`read` can simultaneously assign input to multiple variables, separating input based on whitespace.
+
+```bash
+read name age city
+echo "Name: $name, Age: $age, City: $city"
+```
+
+If the user enters "John Doe 30 New York", `name` will be "John Doe", `age` will be "30", and `city` will be "New York". Note that this relies on whitespace as the delimiter.
+
+## Specifying a Delimiter
+
+For finer control over input separation, use the `-d` option to specify a custom delimiter.
+
+```bash
+read -d ',' var1 var2 var3 <<< "apple,banana,orange"
+echo "Var1: $var1, Var2: $var2, Var3: $var3"
+```
+
+This example uses a comma as the delimiter.  The `<<<` operator provides the input string directly to `read`.
+
+
+## Reading from a File
+
+While primarily used for terminal input, `read` can also read from files using input redirection.
+
+```bash
+while IFS= read -r line; do
+  echo "$line"
+done < myfile.txt
+```
+
+This script reads `myfile.txt` line by line. `IFS= read -r` is crucial: `IFS=` prevents word splitting, and `-r` prevents backslash escapes from being interpreted.
+
+
+##  Prompting the User with a Message
+
+You can add a prompt to the user input using the `-p` option:
+
+```bash
+read -p "Enter your name: " username
+echo "Hello, $username!"
+```
+
+This adds "Enter your name: " to the prompt, enhancing user experience.
+
+##  Setting a Timeout
+
+For situations requiring timed input, the `-t` option sets a timeout in seconds.
+
+```bash
+read -t 5 -p "Enter your password (5 seconds): " password
+if [ -z "$password" ]; then
+  echo "Timeout!"
+else
+  echo "Password entered: $password"
+fi
+```
+
+If the user doesn't enter a password within 5 seconds, the script prints "Timeout!".
+
+##  Ignoring Leading and Trailing Whitespace
+
+The `-r` option, as mentioned earlier, is crucial for preserving backslashes.  Combining it with parameter expansion to remove leading/trailing whitespace offers further control:
+
+```bash
+read -r input
+input="${input#"${input%%[![:space:]]*}"}"  #remove leading whitespace
+input="${input%"${input##*[![:space:]]}"}"  #remove trailing whitespace
+echo "Cleaned Input: $input"
+```
+
+This example uses parameter expansion to remove leading and trailing whitespace from the input.
+
+
+## Handling Escape Sequences
+
+By default, `read` interprets backslash escape sequences (like `\n` for newline).  The `-r` option prevents this interpretation, preserving the literal backslash.
+
+
+These examples demonstrate the versatility of the `read` command.  From simple single-line input to complex file processing and timeout handling, `read` is an essential tool in any Linux user's or script writer's arsenal.
+

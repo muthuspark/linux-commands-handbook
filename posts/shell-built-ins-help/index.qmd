@@ -1,0 +1,94 @@
+---
+title: "help"
+date: "03/01/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What is the `help` command?
+
+The `help` command is a built-in shell utility that provides concise information about other shell built-in commands.  It's your quick reference guide for understanding the syntax and usage of these internal commands.  Crucially, `help` *only* works for shell built-ins; it won't provide information on external commands (like `ls`, `grep`, etc.).
+
+## How to Use `help`
+
+The syntax is straightforward:
+
+```bash
+help <command>
+```
+
+Replace `<command>` with the name of the shell built-in command you want information on.
+
+**Example 1: Getting help on the `cd` command**
+
+The `cd` command (change directory) is a fundamental shell built-in.  Let's see what `help` tells us:
+
+```bash
+help cd
+```
+
+This will display output similar to:
+
+```
+cd: cd [-L|[-P [-e]] [-H]] [dir]
+    Change the shell working directory.
+
+    Change the current working directory to DIR.  If DIR is not supplied,
+    the value of HOME is used.
+
+    Options:
+      -L  If the specified directory is a symbolic link, follow it.  This is
+          the default behavior.
+      -P  If the specified directory is a symbolic link, do not follow it.
+      -e  If DIR does not exist, exit with an error.
+      -H  If the specified directory is a symbolic link, follow it if the
+          link refers to a directory.  Do not follow it if the link refers
+          to a file.  This option is only effective if a directory is
+          specified.
+```
+
+This output clearly describes the `cd` command's syntax, options, and functionality.
+
+
+**Example 2: Exploring the `alias` command**
+
+The `alias` command allows you to create shortcuts for longer commands.  Let's use `help` to understand it better:
+
+```bash
+help alias
+```
+
+You'll see information explaining how to create, list, and remove aliases within your shell.
+
+
+**Example 3: Understanding `export`**
+
+The `export` command is vital for setting environment variables.  Using `help`:
+
+```bash
+help export
+```
+
+This will show you the correct usage of `export` to manage environment variables, explaining how they're inherited by child processes.
+
+
+**Example 4:  Handling errors with `help`**
+
+If you try to use `help` on a command that isn't a shell built-in, you'll typically get an error message indicating that the command isn't found. For example:
+
+```bash
+help ls 
+```
+
+This will likely return an error similar to `help: ls: no such builtin command`.
+
+
+**Example 5: Combining `help` with other commands**
+
+You can creatively combine `help` with other shell features. For instance, to see help for all commands containing "echo" in their description, one could pipe the output of `help` to `grep`:
+
+```bash
+help | grep echo
+```
+
+
+Using `help` effectively allows for a quick and easy way to understand the functionality of numerous shell built-ins, making it a valuable tool in any Linux user's arsenal.
+

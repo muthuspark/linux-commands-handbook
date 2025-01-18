@@ -1,0 +1,104 @@
+---
+title: "pr"
+date: "10/23/2024"
+categories: [ "Text Processing" ]
+---
+## Understanding the Basics of `pr`
+
+The `pr` command's core function is to paginate and format text files.  It takes one or more files as input and outputs a formatted version to standard output (your terminal) or to a specified file.  By default, `pr` treats each input file as a separate document, adding headers, footers, and page numbers to each.
+
+
+## Key Options and Their Usage
+
+Let's explore some crucial `pr` options through practical examples:
+
+**1. Setting Page Length and Width:**
+
+The `-l` option sets the page length (number of lines per page), and `-w` sets the page width (number of characters per line).
+
+```bash
+
+echo "This is line 1" > sample.txt
+echo "This is line 2" >> sample.txt
+echo "This is line 3" >> sample.txt
+
+
+pr -l 2 -w 10 sample.txt
+```
+
+This will output the text with each page containing only two lines, truncated to a width of 10 characters.
+
+
+**2. Adding Headers and Footers:**
+
+Use `-h` to specify a header and `-f` for a footer.  Multiple headers or footers can be given, separated by spaces.
+
+```bash
+pr -h "My Document Header" -f "Page %p" sample.txt
+```
+
+This adds "My Document Header" as the header and "Page <page number>" as the footer to each page.
+
+
+**3. Handling Multiple Files:**
+
+`pr` can process multiple files simultaneously, treating each as a separate document.
+
+```bash
+
+echo "Another line" > sample2.txt
+
+
+pr sample.txt sample2.txt
+```
+
+This will format both `sample.txt` and `sample2.txt`, separating them with a page break.
+
+
+**4. Numbering Lines:**
+
+The `-n` option controls line numbering.  `-n` adds line numbers to each line, `-n1` numbers lines sequentially across all input files, and `-nN` numbers each file separately.
+
+```bash
+pr -n sample.txt
+pr -n1 sample.txt sample2.txt
+pr -nN sample.txt sample2.txt
+```
+
+
+**5. Output to a File:**
+
+Use redirection to send the formatted output to a file instead of the terminal.
+
+```bash
+pr -l 5 sample.txt > formatted.txt
+```
+
+This saves the formatted output to `formatted.txt`.
+
+
+**6.  Columnar Output:**
+
+The `-m` option merges multiple files into columns on the same page.
+
+
+```bash
+pr -m sample.txt sample2.txt
+```
+
+This will display the content of both files side-by-side in columns.
+
+
+**7.  Suppressing Headers and Footers:**
+
+Use `-t` to suppress the header and footer.
+
+```bash
+pr -t sample.txt
+```
+
+This will produce output without any headers or footers.
+
+
+These examples demonstrate the versatility of the `pr` command. Experiment with these options and their combinations to achieve the desired text formatting for your specific needs. Remember to consult the `man pr` page for a comprehensive list of all available options and their detailed descriptions.
+

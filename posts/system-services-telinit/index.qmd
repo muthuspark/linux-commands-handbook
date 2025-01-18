@@ -1,0 +1,83 @@
+---
+title: "telinit"
+date: "07/20/2024"
+categories: [ "System Services" ]
+---
+## What is `telinit`?
+
+`telinit` is a command-line utility used to change the system's runlevel.  Runlevels represent different operational states of a Linux system.  Each runlevel corresponds to a specific set of services and processes that are started or stopped.  Historically, runlevels were numbered 0 to 6, each with a distinct purpose:
+
+* **0:** Halt (power down) the system.
+* **1:** Single-user mode (only root can log in).
+* **2:** Multi-user mode without NFS (Network File System).
+* **3:** Full multi-user mode (most common).
+* **4:** Unused.
+* **5:** Graphical multi-user mode (X Window System).
+* **6:** Reboot the system.
+
+
+## Using `telinit`
+
+The basic syntax of `telinit` is straightforward:
+
+```bash
+telinit <runlevel>
+```
+
+Replace `<runlevel>` with the desired runlevel number (0-6).
+
+**Example 1: Switching to single-user mode:**
+
+To switch to single-user mode (runlevel 1), execute:
+
+```bash
+sudo telinit 1
+```
+
+This command will stop most services and leave only essential ones running, providing a minimal environment accessible only to the root user.  Note that the `sudo` command is necessary because changing the runlevel requires root privileges.
+
+
+**Example 2: Rebooting the system:**
+
+To reboot the system (equivalent to runlevel 6), use:
+
+```bash
+sudo telinit 6
+```
+
+This command initiates a system reboot.
+
+
+**Example 3: Switching to multi-user mode:**
+
+To go back to the standard multi-user mode (runlevel 3), you would execute:
+
+```bash
+sudo telinit 3
+```
+
+
+##  Important Considerations
+
+* **Deprecation:**  `telinit` is largely replaced by `systemctl` in modern systemd-based distributions. `systemctl` offers more granular control over services and avoids the limitations and ambiguities of runlevels.
+* **Root Privileges:**  All `telinit` commands require root privileges (using `sudo`).
+* **System Stability:** Incorrect use of `telinit` can lead to system instability or data loss.  Proceed with caution and only use this command if you are comfortable with the potential consequences.
+* **Distribution Differences:** The exact behavior and availability of runlevels can vary slightly depending on your Linux distribution.
+
+
+## `telinit` vs. `systemctl`
+
+While `telinit` manipulates runlevels, `systemctl` focuses on managing individual system services (units).  `systemctl` provides far more flexibility and is the preferred method for managing services in modern Linux systems.  For example, to start a service named `network-online.target` using `systemctl`:
+
+```bash
+sudo systemctl start network-online.target
+```
+
+To stop it:
+
+```bash
+sudo systemctl stop network-online.target
+```
+
+This highlights the more specific and targeted approach offered by `systemctl`.  While `telinit` changes the entire system state, `systemctl` allows for precise control over individual services.  Understanding both commands provides a comprehensive view of Linux system management, encompassing both legacy and current practices.
+

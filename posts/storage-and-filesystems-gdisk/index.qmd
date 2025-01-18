@@ -1,0 +1,139 @@
+---
+title: "gdisk"
+date: "11/13/2024"
+categories: [ "Storage and Filesystems" ]
+---
+## Understanding GPT and `gdisk`
+
+GPT partitions store partition information in a header and a partition table located at the beginning and end of the disk, providing redundancy and protection against data corruption. `gdisk` allows you to create, delete, resize, and modify GPT partitions safely and efficiently.  Its interactive nature guides you through each step, minimizing the risk of accidental data loss.  This is in contrast to tools that allow for more direct manipulation of partition tables, which can be disastrous if misused.
+
+##  Essential `gdisk` Commands
+
+Before executing any `gdisk` commands, **always back up your data**.  A single mistake can lead to data loss.
+
+Let's assume your storage device is `/dev/sdb`.  **Replace `/dev/sdb` with the actual device identifier of your target drive.  Mistakes here can have catastrophic consequences.**  Never use this command on a device holding critical data unless you've properly backed it up.
+
+**1. Entering `gdisk`:**
+
+```bash
+sudo gdisk /dev/sdb
+```
+You'll be greeted with the `gdisk` prompt: `GPT fdisk (gdisk) version 1.0.8`.
+
+
+**2. Listing Partitions:**
+
+To see the current partition layout, type `p`:
+
+```bash
+p
+```
+
+This displays information such as partition number, start and end sectors, size, type (e.g., Linux filesystem, EFI System Partition), and other relevant details.
+
+
+**3. Creating a New Partition:**
+
+To create a new partition, type `n`:
+
+```bash
+n
+```
+
+You'll be prompted to select a partition type (default is primary):
+* **Partition number:** Choose an available number.
+* **First sector:**  Accept the default (usually the first available sector).
+* **Last sector:** Specify the size using sectors or specify an end sector. You can enter a size like `+100M` for 100 megabytes or `+1G` for 1 gigabyte. This is usually easier than calculating sectors.
+
+For instance, to create a 200 MiB primary partition, you might use these choices (press Enter to accept defaults where possible):
+
+
+```
+n
+1
+<Enter>
++200M
+```
+
+
+**4. Setting a Partition Type:**
+
+After creating a partition, you can set its type (filesystem).  Use the `t` command:
+
+```bash
+t
+```
+You will be prompted to enter the partition number, then a hexadecimal partition code.  For example:
+
+```
+t
+1
+ef00  # For EFI System Partition
+```
+
+You can find a list of partition type codes using `l`.
+
+
+**5. Writing Changes to Disk:**
+
+Once you've made all necessary changes, **carefully** write the changes to the disk using the `w` command.  `gdisk` will issue warnings to confirm your intention:
+
+```bash
+w
+```
+
+
+**6. Deleting a Partition:**
+
+To delete a partition, use the `d` command:
+
+```bash
+d
+```
+
+You'll be prompted to enter the partition number to delete.
+
+
+**7. Resizing a Partition:**
+
+Resizing is more complex and requires careful planning. Use the `r` command, but proceed with extreme caution as mistakes here can lead to irretrievable data loss.
+
+
+**Example: Creating an EFI System Partition and a Linux partition**
+
+Let's say we want to create a 500MB EFI System Partition and then a partition taking up all remaining space for a Linux system.
+
+
+1. Create the EFI System Partition (Partition 1):
+
+```bash
+n
+1
+<Enter>
++500M
+t
+1
+ef00
+```
+
+2. Create the Linux partition (Partition 2, using the remaining space):
+
+```bash
+n
+2
+<Enter>
+<Enter>  (to accept the last sector, automatically filling the remaining space)
+t
+2
+8300  #Typical Linux filesystem partition type
+```
+
+3. Write the changes:
+
+```bash
+w
+```
+
+
+Remember to always double-check your commands and partition sizes before writing the changes.  `gdisk` provides warnings to help prevent accidental data loss, but ultimately the responsibility lies with the user.  Incorrect usage of `gdisk` can result in data loss, so always back up your data beforehand and exercise caution.
+

@@ -1,0 +1,93 @@
+---
+title: "times"
+date: "01/15/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What `times` Does
+
+The `times` command displays the cumulative CPU time used by the current shell process and all its child processes. This time is broken down into two categories:
+
+* **User time:** The time spent executing the process's own code.
+* **System time:** The time spent executing kernel code on behalf of the process.
+
+
+This breakdown is provided separately for both the current shell and its children. Understanding this distinction helps in diagnosing whether a process is CPU-bound (high user time) or I/O-bound (high system time).
+
+## Syntax and Options
+
+The basic syntax is incredibly simple:
+
+```bash
+times
+```
+
+Executing this command will output a line similar to this (the exact numbers will vary):
+
+
+```
+0m0.000s 0m0.005s 0m0.000s 0m0.005s
+```
+
+This represents (in order):
+
+* User time for the shell
+* System time for the shell
+* User time for child processes
+* System time for child processes
+
+While the basic usage is straightforward, there are no additional options available for the `times` command itself. Its simplicity is its strength.
+
+
+
+## Example Usage Scenarios
+
+
+Let's illustrate `times` with some examples:
+
+
+**Example 1: Measuring a simple command:**
+
+
+First, let's record the baseline CPU time:
+
+```bash
+times
+```
+
+Now, let's run a computationally intensive command (like a long `sleep`):
+
+```bash
+sleep 5
+```
+
+Finally, check the CPU time again:
+
+
+```bash
+times
+```
+
+By subtracting the first `times` output from the second, you can estimate the CPU time consumed by the `sleep` command.
+
+
+**Example 2: Observing Child Process Behavior:**
+
+
+Run a command that spawns multiple child processes (e.g., a loop that calls `sleep` multiple times),  execute `times` before and after to observe the effect on child process time.  The difference in child process times will reflect the combined CPU usage of those spawned processes.
+
+```bash
+times
+for i in {1..5}; do sleep 1 & done; wait
+times
+```
+
+This script runs five `sleep 1` commands concurrently in the background and waits for them to finish. Comparing the `times` outputs before and after this loop shows the additional user and system time consumed by the child processes.
+
+
+**Example 3:  Identifying Potential Bottlenecks:**
+
+If a specific program or shell script is running slowly, use `times` before and after its execution to pinpoint whether the performance issue stems from extensive user computation or frequent system calls. A disproportionately high system time might indicate I/O bottlenecks, while a high user time could suggest optimization needs within the program's code itself.
+
+
+This capability makes `times` a simple yet effective tool for basic performance analysis directly within your shell environment.  It's a valuable addition to your Linux command-line toolbox.
+

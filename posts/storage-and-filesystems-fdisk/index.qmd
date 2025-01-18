@@ -1,0 +1,92 @@
+---
+title: "fdisk"
+date: "10/21/2024"
+categories: [ "Storage and Filesystems" ]
+---
+
+
+The `fdisk` command is a powerful, albeit somewhat complex, tool in Linux for partitioning hard disks.  It allows you to create, delete, resize, and manage partitions on your storage devices. While graphical tools exist, understanding `fdisk` is crucial for system administrators and advanced users.  This guide will walk you through its essential functionalities with detailed examples.
+
+**Understanding Partitions:**
+
+Before diving into `fdisk`, it's important to grasp the concept of partitions.  A partition is a logical division of a physical hard drive, allowing you to organize your storage space into separate sections. Each partition can be formatted with a different filesystem (e.g., ext4, NTFS, FAT32) and have its own independent file system.
+
+**Using `fdisk`:**
+
+The basic syntax of `fdisk` is:
+
+```bash
+sudo fdisk /dev/sdX
+```
+
+Replace `/dev/sdX` with the actual device name of your hard drive.  For example, `/dev/sda` usually refers to the first hard drive.  **Always double-check the device name before proceeding, as incorrect usage can lead to data loss.**  The `sudo` command is necessary because partitioning requires root privileges.
+
+
+**Key `fdisk` Commands:**
+
+Once you've executed the command, you'll be presented with the `fdisk` prompt. Here are some of the most important commands:
+
+* **`p` (print):** Displays the current partition table.  This is essential to see the existing partitions before making any changes.
+
+```bash
+fdisk /dev/sda
+p
+```
+
+* **`n` (new):** Creates a new partition. You'll be prompted to choose a partition type (primary or logical), partition number, and starting and ending cylinders.
+
+```bash
+n
+p       # Primary partition (choose p or l for logical)
+1       # Partition number (usually starts from 1)
+<Enter> # Accept default starting sector
+<Enter> # Accept default ending sector (or specify a size)
+```
+
+* **`d` (delete):** Deletes a partition. You'll be prompted to specify the partition number to delete.
+
+```bash
+d
+1       # Delete partition 1
+```
+
+* **`w` (write):** Writes the changes to the partition table. This is crucial – your changes will not be saved until you execute this command.
+
+```bash
+w
+```
+
+* **`q` (quit):** Quits the `fdisk` utility without saving changes.
+
+```bash
+q
+```
+
+* **`t` (type):** Changes the partition type (e.g., to specify a filesystem).  You'll need the hexadecimal code for the desired type.  For example, `83` is typically for Linux partitions.
+
+```bash
+t
+1       # Select partition 1
+83      # Linux filesystem type
+```
+
+
+**Example: Creating a New Partition:**
+
+Let's say we want to create a new primary partition on `/dev/sda` for a Linux system. The steps would be:
+
+1. Open `fdisk`: `sudo fdisk /dev/sda`
+2. Print the partition table: `p`
+3. Create a new partition: `n`  (Choose primary partition 'p', then choose a partition number, and accept default start/end sectors or specify a custom size.)
+4. Set the partition type to Linux: `t` (Select the newly created partition number and then enter `83`)
+5. Write the changes: `w`
+6. Exit `fdisk`: The system will prompt you to reload the partition table, generally by running `partprobe /dev/sda`
+
+**Important Considerations:**
+
+* **Data Loss:**  Incorrect use of `fdisk` can lead to irretrievable data loss.  Always double-check your commands and device names before executing them.  It is strongly recommended to back up your data before making any partitioning changes.
+* **Backup:** Before starting, back up your data.
+* **Device Names:** Be extremely careful when specifying the device name.  A simple typo can have disastrous consequences.
+
+This guide provides a basic introduction to `fdisk`. There are more advanced options and features available, which you can explore further in the `fdisk` man page (`man fdisk`). Remember that practicing with a virtual machine is highly recommended before applying these commands to a production system.
+

@@ -1,0 +1,77 @@
+---
+title: "htop"
+date: "01/05/2024"
+categories: [ "Performance Monitoring" ]
+---
+## What is htop?
+
+`htop` is an interactive text-mode process viewer for Linux, offering a dynamic and user-friendly alternative to the static `top` command. It provides a real-time overview of system processes, CPU usage, memory consumption, and more, all within a navigable interface.  Unlike `top`, `htop` doesn't require constant screen refreshing – you can navigate and interact with the displayed information directly.
+
+## Installation
+
+`htop` is not typically included in minimal Linux installations.  You'll need to install it using your distribution's package manager.  Here are examples for common distributions:
+
+* **Debian/Ubuntu:**
+```bash
+sudo apt update
+sudo apt install htop
+```
+
+* **Fedora/CentOS/RHEL:**
+```bash
+sudo dnf install htop
+```
+
+* **Arch Linux:**
+```bash
+sudo pacman -S htop
+```
+
+
+##  Navigating the htop Interface
+
+After installation, simply run `htop` in your terminal.  You'll be greeted with a screen displaying various system metrics.  The key elements include:
+
+* **Top Section:** Shows overall system information like CPU usage, memory usage, swap usage, and load average.
+* **Process List:** Displays a list of running processes with details such as PID, user, CPU%, memory%, and command.
+* **Bottom Section:** Provides navigation and interaction options.
+
+**Navigation Keys:**
+
+* **Arrow Keys:** Move the cursor within the process list.
+* **Spacebar:** Sort the process list by the selected column.
+* **F6:**  Filter the displayed processes. You can use this to focus on processes run by a specific user, or those matching specific patterns.
+  For Example: To filter process for user "john" type "john" in the filter popup.
+* **F2:** Provides various configuration options. You can enable/disable certain features like the tree view (which shows parent-child process relationships) and change the refresh rate.
+* **F4:** Allows you to kill selected process by entering the Process ID (PID).
+* **F9:** Allows you to run a new process.
+* **F10:** Exits htop.
+
+##  Practical Examples: Analyzing System Performance
+
+Let's illustrate `htop`'s utility with some scenarios:
+
+**1. Identifying CPU-Intensive Processes:**
+
+Imagine a situation where your system is sluggish. Running `htop` will immediately highlight processes consuming significant CPU resources.  The `%CPU` column readily indicates the culprit. You can then take appropriate action, like investigating the process, prioritizing it, or even killing it if necessary (use with caution!).
+
+
+**2. Detecting Memory Leaks:**
+
+Memory leaks can gradually degrade system performance.  `htop`'s memory usage columns (`%MEM`, `RES`, `VIRT`) allow you to track memory consumption by individual processes and identify potential memory leaks.  High `RES` (resident memory) usage, particularly with consistently increasing memory usage over time, might point to a problem.
+
+
+**3. Monitoring Disk I/O:**
+
+While `htop` doesn't directly show detailed disk I/O, observing overall CPU usage and the presence of processes with high `%CPU` alongside potentially slow processes might be indirect indicators of I/O bottleneck.
+
+
+**4.  Analyzing Process Tree:** (Requires enabling the tree view in `htop`'s configuration)
+
+With the tree view enabled, `htop` provides a visual representation of the process hierarchy.  This is invaluable for understanding process relationships and identifying processes indirectly impacting system performance. For instance, a high-CPU consuming process might have several child processes contributing to the load.
+
+
+## Beyond the Basics
+
+`htop` offers many additional features and options worth exploring, such as customizing the displayed columns, setting alerts, and integrating with external monitoring tools.  Refer to the `htop` man page (`man htop`) for a comprehensive overview of its features. The built-in help section (often accessible with F1) is also a great starting point.
+

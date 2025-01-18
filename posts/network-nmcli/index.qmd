@@ -1,0 +1,108 @@
+---
+title: "nmcli"
+date: "05/30/2024"
+categories: [ "Network" ]
+---
+## Getting Started with nmcli
+
+Before diving into specific commands, ensure NetworkManager is installed and running on your system.  You can usually check its status with:
+
+```bash
+systemctl status NetworkManager
+```
+
+If it's not running, start it using:
+
+```bash
+sudo systemctl start NetworkManager
+```
+
+Now you're ready to explore `nmcli`'s potential.
+
+##  Connecting to Wi-Fi Networks
+
+Connecting to a Wi-Fi network using `nmcli` is straightforward.  First, use `nmcli dev wifi` to list available Wi-Fi networks:
+
+```bash
+nmcli dev wifi
+```
+
+This will display a list of SSIDs, signal strengths, and security types.  To connect to a specific network (e.g., "MyNetwork"), use:
+
+```bash
+nmcli dev wifi connect "MyNetwork" password "YourPassword"
+```
+
+Replace `"MyNetwork"` and `"YourPassword"` with your network's SSID and password, respectively.
+
+If your network requires a different authentication method (like WPA2-Enterprise),  you may need additional parameters.  Refer to the `nmcli` man page (`man nmcli`) for advanced options.
+
+
+## Managing Wired Connections
+
+For wired connections,  `nmcli` provides equally efficient control.  To view your wired connections:
+
+```bash
+nmcli con show --active
+```
+
+This displays information about currently active connections.  To connect to a wired connection, assuming it's detected,  you often don't need explicit commands as NetworkManager handles it automatically. However, you can manually control it with:
+
+```bash
+nmcli con up id <connection-id>
+```
+Replace `<connection-id>` with the ID of the wired connection you want to activate. You can find this ID using `nmcli con show`.
+
+##  Configuring Static IP Addresses
+
+Static IP addresses offer more control over your network settings.  To configure a static IP, you'll need to create a new connection.  Let's assume you want to create a connection named "StaticIP" with the following details:
+
+* **Connection Type:** ethernet
+* **IP Address:** 192.168.1.100
+* **Netmask:** 255.255.255.0
+* **Gateway:** 192.168.1.1
+* **DNS:** 8.8.8.8
+
+The command to achieve this is:
+
+```bash
+nmcli con add type ethernet con-name StaticIP ifname eth0 ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8
+```
+
+Replace `eth0` with your ethernet interface name.  After creating the connection, activate it using:
+
+```bash
+nmcli con up id StaticIP
+```
+
+##  Disconnecting from a Network
+
+To disconnect from a currently active connection, use the following command, replacing `<connection-id>` with the connection ID:
+
+```bash
+nmcli con down id <connection-id>
+```
+
+
+## Displaying Network Information
+
+`nmcli` provides a wealth of information about your network configuration.  For a general overview of all connections, use:
+
+```bash
+nmcli con show
+```
+
+To view detailed information about a specific connection, use:
+
+```bash
+nmcli con show <connection-id>
+```
+
+To see the status of your network devices:
+
+```bash
+nmcli dev status
+```
+
+These commands provide crucial details for troubleshooting and monitoring your network.  Remember to replace placeholders like `<connection-id>` with the actual values from your system.  Consult the `nmcli` man page for a comprehensive list of options and features.
+

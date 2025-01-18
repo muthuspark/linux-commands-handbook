@@ -1,0 +1,83 @@
+---
+title: "checksec"
+date: "11/01/2024"
+categories: [ "Security" ]
+---
+## What does `checksec` do?
+
+`checksec` examines an ELF binary and reports on several key security-related properties. These include:
+
+* **Arch:** The architecture of the binary (e.g., x86-64, i386).
+* **RELRO:** (Relocation Read-Only)  Indicates whether the Global Offset Table (GOT) is read-only after relocation.  `Full RELRO` is the most secure setting, preventing attackers from overwriting function pointers.
+* **Stack Canary:** A random value placed on the stack to detect stack buffer overflows.  Its presence significantly mitigates a common attack vector.
+* **NX (No-eXecute):** Prevents code execution from the stack or heap, hindering shellcode injection attempts.
+* **PIE (Position Independent Executable):** Randomizes the base address of the binary in memory, making address space layout randomization (ASLR) more effective.
+* **FORTIFY_SOURCE:** A compiler feature that adds runtime checks for buffer overflows and other potential vulnerabilities.
+
+
+## Using `checksec`
+
+The basic usage is simple: just provide the path to the binary as an argument.
+
+```bash
+checksec my_program
+```
+
+Replace `my_program` with the actual path to your executable.  The output will resemble this (the specifics will depend on your binary):
+
+```
+[*] '/path/to/my_program'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+    FORTIFY:  No
+```
+
+## Code Examples and Security Implications
+
+Let's examine a few C code examples and analyze their `checksec` results to illustrate the impact of different security features.
+
+
+**Example 1: A Vulnerable Program (Without Security Features)**
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char buffer[16];
+  gets(buffer); // VERY DANGEROUS!  Avoid gets() always!
+  printf("%s\n", buffer);
+  return 0;
+}
+```
+
+Compiling this (without any compiler flags for security) and running `checksec` will likely reveal a lack of crucial protections:  `Partial RELRO`, `Canary` might be absent, `NX` might be enabled (depending on the system configuration), and `PIE` will likely be disabled.  This program is highly vulnerable to buffer overflow attacks.
+
+**Example 2:  Program with Improved Security**
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char buffer[16];
+  fgets(buffer, sizeof(buffer), stdin); // Safer than gets()
+  printf("%s\n", buffer);
+  return 0;
+}
+```
+
+Compiling with appropriate compiler flags (e.g., `-fstack-protector`, `-fPIE`, `-D_FORTIFY_SOURCE=2` for GCC) will significantly enhance security. Running `checksec` on this compiled binary should show improvements –  `Full RELRO`, `Canary found`, `NX enabled`, and `PIE enabled`.  `fgets` is a safer alternative to `gets`.  Even with `fgets`, larger inputs could still be vulnerable, emphasizing the need for input validation.
+
+
+**Example 3: Demonstrating FORTIFY_SOURCE**
+
+`FORTIFY_SOURCE` is a powerful compiler feature that adds runtime checks to guard against common buffer overflow vulnerabilities.  Using it requires compilation with the appropriate flag.
+
+
+
+Analyzing the results of `checksec` after compiling with and without these flags highlights the effectiveness of these compiler features in improving the security posture of your applications.  Remember that employing a layered approach to security is key; combining multiple security features is crucial for strong protection.
+

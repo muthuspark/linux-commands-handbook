@@ -1,0 +1,115 @@
+---
+title: "chage"
+date: "07/13/2024"
+categories: [ "User Management" ]
+---
+## Understanding the Basics of `chage`
+
+The `chage` command interacts directly with the `/etc/shadow` file, a crucial system file containing encrypted passwords and password aging information.  It's important to note that you'll need root privileges (using `sudo`) to execute `chage` effectively.
+
+
+## Key Options and Usage Examples
+
+Let's explore the most commonly used options of `chage`:
+
+
+**1. Viewing Password Information:**
+
+The simplest use of `chage` is to view the current password information for a user.  To see the details for the user 'john', you'd use:
+
+```bash
+sudo chage -l john
+```
+
+This will output information like:
+
+* **Last password change:** The date the password was last modified.
+* **Password expires:** The date the password will expire.
+* **Password inactive:** The number of days a password can remain unchanged before the account becomes inactive.
+* **Account expires:**  The date the account itself will expire.
+* **Minimum, Maximum, Warning days:**  These control password aging policies.
+
+**Example Output:**
+
+```
+Last password change:     Nov 26, 2023
+Password expires:         never
+Password inactive:        0
+Account expires:          never
+Minimum number of days between password changes: 0
+Maximum number of days between password changes: 99999
+Number of days of warning before password expires: 7
+```
+
+
+**2. Changing Password Expiration:**
+
+You can modify the password expiration date using the `-d` option for setting the last password change date,  and `-M`, `-m`, and `-W` to set the maximum, minimum, and warning days respectively.
+
+
+**Example: Setting Password Expiration to 90 Days**
+
+To set the maximum number of days before a password needs changing to 90 days for user 'john', execute:
+
+```bash
+sudo chage -M 90 john
+```
+
+**Example: Setting minimum password age to 1 day**
+
+To set the minimum number of days before a password can be changed to 1 day:
+
+
+```bash
+sudo chage -m 1 john
+```
+
+**Example: Setting a warning period of 14 days**
+
+To set the warning period before password expiry to 14 days:
+
+```bash
+sudo chage -W 14 john
+```
+
+**3. Setting the Last Password Change Date:**
+
+This is typically used when you know the last time the password was changed, perhaps during a manual reset:
+
+```bash
+sudo chage -d 2023-11-20 john
+```
+This would set the last password change date to November 20th, 2023 for the user 'john'.  Remember to use the correct date format (YYYY-MM-DD).
+
+**4. Locking and Unlocking Accounts:**
+
+You can lock an account using the `-E` option to set the account expiration date to the past.   This effectively prevents the user from logging in. To unlock it, set it to a future date or `never`.
+
+
+**Example: Locking an Account**
+
+```bash
+sudo chage -E 01-01-1970 john #effectively locks the account
+```
+
+**Example: Unlocking an Account**
+
+```bash
+sudo chage -E 01-01-2030 john #unlocks account, making it valid until 2030.
+sudo chage -E never john #unlocks account, removing expiry date
+```
+
+
+**5.  Using `-l` with Multiple Users:**
+
+While not directly supported by `chage` itself, you can leverage the power of `xargs` to apply `chage -l` to multiple users listed in a file:
+
+```bash
+cat userlist.txt | xargs -I {} sudo chage -l {}
+```
+
+Where `userlist.txt` contains a list of usernames, one per line.
+
+
+This guide provides a strong foundation for working with the `chage` command.  Remember to exercise caution when modifying password policies, as incorrect settings could lock users out of their accounts.  Always test your commands in a non-production environment first before applying them to a live system.
+

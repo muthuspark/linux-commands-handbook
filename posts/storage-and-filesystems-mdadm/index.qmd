@@ -1,0 +1,101 @@
+---
+title: "mdadm"
+date: "03/30/2024"
+categories: [ "Storage and Filesystems" ]
+---
+## Setting up a RAID Array
+
+Before you begin, ensure you have the necessary drives identified. You can use `lsblk` to list your block devices:
+
+```bash
+lsblk
+```
+
+This will output a list of your disks, including their size and partition information.  Let's assume we want to create a RAID1 (mirroring) array using `/dev/sdb` and `/dev/sdc`.  Both drives should be the same size and ideally, have no partitions or data.
+
+**Creating the RAID1 Array:**
+
+First, we create the MD array:
+
+```bash
+sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc
+```
+
+This command does the following:
+
+* `sudo mdadm`: Invokes the `mdadm` utility with superuser privileges.
+* `--create /dev/md0`: Creates a new MD array named `/dev/md0`. You can choose a different name.
+* `--level=1`: Specifies RAID level 1 (mirroring).
+* `--raid-devices=2`: Indicates that two drives will participate in the array.
+* `/dev/sdb /dev/sdc`: Specifies the drives to be included in the array.
+
+
+**Checking the Array Status:**
+
+After creating the array, verify its status:
+
+```bash
+sudo mdadm --detail /dev/md0
+```
+
+This command provides detailed information about the array, including its status, devices, and configuration.  You should see a "state : clean" message indicating successful creation.  It will also take some time to synchronize the drives. You can monitor the progress with:
+
+```bash
+cat /proc/mdstat
+```
+
+
+**Formatting and Mounting the RAID Array:**
+
+Once the synchronization is complete, format the array with your desired filesystem (e.g., ext4):
+
+```bash
+sudo mkfs.ext4 /dev/md0
+```
+
+Finally, create a mount point and mount the array:
+
+```bash
+sudo mkdir /mnt/raid1
+sudo mount /dev/md0 /mnt/raid1
+```
+
+## Managing the RAID Array
+
+**Adding a Drive to a RAID Array (RAID1):**
+
+`mdadm` allows for adding drives to existing arrays, enhancing redundancy.  Let's say you want to add `/dev/sdd` to your existing RAID1 array `/dev/md0`.  *Ensure `/dev/sdd` is the same size as the others.*
+
+```bash
+sudo mdadm --add /dev/md0 /dev/sdd
+```
+
+This command adds `/dev/sdd` to the `/dev/md0` array. The array will then resynchronize to include the new drive.
+
+**Removing a Drive from a RAID Array (RAID1):**
+
+Removing a drive from a RAID1 array should be done with caution.  While you can remove one of the drives, you lose redundancy. It can be useful for replacing a failing disk.
+
+```bash
+sudo mdadm --remove /dev/md0 /dev/sdb  # Replace /dev/sdb with the drive you want to remove
+```
+
+After removing a drive from a RAID1 array, the remaining drive will continue to function, but the array is now vulnerable. You must replace the failed drive as soon as possible.
+
+
+**Other RAID Levels:**
+
+`mdadm` supports various RAID levels.  For example, to create a RAID5 array (data striping with parity) using three drives (`/dev/sdb`, `/dev/sdc`, `/dev/sdd`):
+
+```bash
+sudo mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/sdb /dev/sdc /dev/sdd
+```
+
+Remember to adjust the number of `--raid-devices` according to the number of drives and the chosen RAID level. Always consult the `mdadm` man page (`man mdadm`) for detailed information and options.  Consider the performance and redundancy needs of your data before choosing a RAID level.
+
+
+
+## Monitoring Your RAID Array
+
+Regular monitoring of your RAID array is crucial to ensure data integrity.  Use the `cat /proc/mdstat` command periodically to check the array's status.  Any errors or warnings should be addressed promptly.  You can also use monitoring tools to automatically track your array's health.
+

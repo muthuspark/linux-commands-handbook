@@ -1,0 +1,151 @@
+---
+title: "ufw"
+date: "04/15/2024"
+categories: [ "Security" ]
+---
+## Enabling and Disabling UFW
+
+Before you can start configuring rules, you need to enable UFW.  This is typically done with root privileges (using `sudo`).
+
+```bash
+sudo ufw enable
+```
+
+UFW will prompt you to confirm the enablement.  This will activate the firewall and potentially block all incoming connections until you explicitly allow them. To disable UFW:
+
+```bash
+sudo ufw disable
+```
+
+
+## Checking UFW Status
+
+It's crucial to check the status of UFW regularly to verify your rules are working correctly.
+
+```bash
+sudo ufw status
+```
+
+This command displays the current status of the firewall, including whether it's enabled, active, and any active rules.  Adding the `verbose` flag provides more detailed information:
+
+```bash
+sudo ufw status verbose
+```
+
+
+## Allowing and Denying Connections
+
+UFW uses a simple syntax for allowing and denying connections. You specify the protocol (TCP or UDP), port number, and optionally the source IP address.
+
+
+**Allowing SSH (TCP port 22):**  This is vital to ensure you can still access your server remotely after enabling the firewall.
+
+```bash
+sudo ufw allow ssh
+```
+
+UFW intelligently recognizes `ssh` and automatically maps it to the correct port.
+
+
+**Allowing HTTP (TCP port 80):**
+
+```bash
+sudo ufw allow 80/tcp
+```
+
+**Allowing HTTPS (TCP port 443):**
+
+```bash
+sudo ufw allow 443/tcp
+```
+
+**Allowing a Specific Port Range (e.g., 1000-2000):** This is useful if you have several applications using a range of ports.
+
+```bash
+sudo ufw allow 1000:2000/tcp
+```
+
+**Denying Connections from a Specific IP Address:**
+
+```bash
+sudo ufw deny from 192.168.1.100 to any port 22
+```
+
+This denies SSH access from the IP address `192.168.1.100`.  `to any` means any port on the server.
+
+
+**Allowing Connections from a Specific IP Address:**
+
+```bash
+sudo ufw allow from 10.0.0.10 to any port 80
+```
+
+
+
+## Deleting Rules
+
+To delete a specific rule, you need its rule number (displayed by `sudo ufw status`).  Let's say rule number 1 needs to be deleted:
+
+
+```bash
+sudo ufw delete 1
+```
+
+You can also delete rules by specifying the protocol and port:
+
+```bash
+sudo ufw delete allow 80/tcp
+```
+
+
+## Working with Application Profiles
+
+UFW also provides application profiles for common services. These simplify rule creation and management.
+
+```bash
+sudo ufw allow OpenSSH
+```
+
+This is equivalent to `sudo ufw allow 22/tcp` but uses a more descriptive profile.
+
+
+## Default Policy
+
+
+UFW allows you to set a default policy for incoming and outgoing connections. The default is usually to deny all incoming connections and allow all outgoing connections. To change the default policy to deny all incoming traffic:
+
+```bash
+sudo ufw default deny incoming
+```
+
+To change the default policy to deny all outgoing traffic (use with caution!):
+
+```bash
+sudo ufw default deny outgoing
+```
+
+
+
+##  Viewing the UFW Ruleset
+
+
+To see all rules currently configured by UFW you can use:
+
+```bash
+sudo ufw app list
+```
+
+This lists all applications and their associated rules which UFW is aware of.
+
+
+## Resetting UFW
+
+To completely reset UFW to its default state (use with extreme caution, it will delete all your rules):
+
+```bash
+sudo ufw reset
+```
+
+
+This guide covers many of the essential UFW commands. Always remember to exercise caution when configuring your firewall, as incorrect settings can render your system inaccessible.  Always back up your configuration before making significant changes.
+

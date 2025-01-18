@@ -1,0 +1,94 @@
+---
+title: "netstat"
+date: "07/16/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding the Basics
+
+`netstat` displays network-related information in a textual format.  Its output can be overwhelming at first, but with a bit of practice, you'll quickly learn to interpret the crucial details.  The most common usage involves viewing active network connections.
+
+**Basic Syntax:**
+
+```bash
+netstat [options]
+```
+
+The `options` determine the type of information displayed. Let's examine some key options:
+
+
+## Exploring Key `netstat` Options
+
+**1. Viewing Active Connections (`-a` or `-t` , `-u` , `-w`):**
+
+* `-a` (all): Displays all connections and listening ports.
+* `-t` (tcp): Shows only TCP connections.
+* `-u` (udp): Shows only UDP connections.
+* `-w` (raw): Shows raw sockets.
+
+This example displays all TCP connections:
+
+```bash
+netstat -at
+```
+
+This command will show you a table with columns like Proto, Recv-Q, Send-Q, Local Address, Foreign Address, and State.
+
+* **Proto:** Protocol (TCP or UDP).
+* **Recv-Q:** Receive queue size.
+* **Send-Q:** Send queue size.
+* **Local Address:**  Local IP address and port.
+* **Foreign Address:** Remote IP address and port.
+* **State:** Connection state (e.g., ESTABLISHED, LISTEN, CLOSE_WAIT).
+
+
+**2. Viewing Routing Tables (`-r`):**
+
+The `-r` option displays the kernel routing table, showing how your system routes network traffic.
+
+```bash
+netstat -r
+```
+
+This will show you the destination network, gateway, flags, refcount, use, interface, etc.  This is invaluable for troubleshooting network connectivity issues.
+
+
+**3. Viewing Interface Statistics (`-i`):**
+
+Use `-i` to get detailed statistics about each network interface, such as bytes sent and received, packets, errors, and more.
+
+```bash
+netstat -i
+```
+
+
+**4.  Numerical Addresses (`-n`):**
+
+By default, `netstat` resolves IP addresses and port numbers to hostnames and service names.  For faster output and when name resolution might fail, use the `-n` option.
+
+```bash
+netstat -an
+```
+
+
+**5.  Program Name (`-p`):**
+
+To identify the process associated with each connection, include the `-p` option.  This requires appropriate permissions.
+
+```bash
+netstat -ap
+```
+
+Note that `-p` might require root privileges depending on your Linux distribution.
+
+
+**6. Combining Options:**
+
+You can combine multiple options for more specific output. For example, to see all active TCP connections and the associated processes:
+
+```bash
+netstat -atp
+```
+
+
+These examples provide a starting point for utilizing `netstat`.  Experiment with different combinations of options to tailor the output to your specific monitoring needs. Remember that `ss` offers a more modern and efficient alternative, but `netstat` remains a valuable tool, particularly on older systems.
+

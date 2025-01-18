@@ -1,0 +1,90 @@
+---
+title: "tee"
+date: "01/08/2025"
+categories: [ "Text Processing" ]
+---
+## The Basics of `tee`
+
+At its core, `tee` takes the standard input (stdin) and writes it to both standard output (stdout) – your terminal – and one or more files.  This is incredibly useful when you need to log the output of a command while also seeing it in real-time.
+
+The basic syntax is straightforward:
+
+```bash
+command | tee output_file.txt
+```
+
+This pipes the output of `command` to `tee`, which then writes it to `output_file.txt` and displays it on your terminal.
+
+**Example 1: Logging the output of `ls`**
+
+Let's say you want to log a directory listing to a file while simultaneously viewing it on your terminal.  You can achieve this with:
+
+```bash
+ls -l /tmp | tee /tmp/directory_listing.txt
+```
+
+This command lists the contents of `/tmp` with detailed information (`ls -l`), pipes the output to `tee`, and writes it to `/tmp/directory_listing.txt`.  The output also appears on your terminal.
+
+
+## Advanced `tee` Usage: Appending and Multiple Files
+
+`tee` offers more advanced options to enhance its functionality.
+
+**Appending to a file:**  By default, `tee` overwrites the output file if it exists.  To append to an existing file, use the `-a` (or `--append`) option:
+
+```bash
+ls -l /etc | tee -a /tmp/system_files.txt
+```
+
+This appends the output of `ls -l /etc` to `/tmp/system_files.txt`.  If `/tmp/system_files.txt` doesn't exist, it will be created.
+
+
+**Writing to multiple files:** You can specify multiple output files by separating them with spaces:
+
+```bash
+date | tee file1.txt file2.txt
+```
+
+This command writes the current date and time to both `file1.txt` and `file2.txt`, and also displays it on the terminal.
+
+
+## Combining `tee` with Other Commands for Powerful Workflows
+
+The real power of `tee` shines when combined with other CLI commands.
+
+**Example 2:  Filtering and Logging System Logs**
+
+Suppose you want to filter system logs for specific error messages and save them to a file for later analysis:
+
+```bash
+dmesg | grep "error" | tee error_log.txt
+```
+
+This command filters the system log (`dmesg`) for lines containing "error," pipes the output to `tee`, and saves the filtered results to `error_log.txt` while also showing them on the terminal.
+
+
+**Example 3:  Logging the output of a long-running process:**
+
+Monitoring a lengthy process and saving its output is easily done with `tee`.  Let's assume you have a script `my_long_script.sh`:
+
+```bash
+./my_long_script.sh | tee my_script_output.log
+```
+
+This will run your script, log its complete output to `my_script_output.log`, and show it on your console simultaneously, allowing you to monitor the progress.
+
+
+## Ignoring Interrupts
+
+The `-i` (or `--ignore-interrupts`) option is useful when running long commands.  It prevents the command from being interrupted by signals such as Ctrl+C, ensuring the output is fully written to the file even if you stop the process manually.
+
+
+```bash
+long_running_command | tee -i output.log
+```
+
+This ensures that even if you interrupt `long_running_command`, the output already processed will be saved to `output.log`.
+
+
+By understanding and utilizing the versatile `tee` command, you can significantly enhance your command-line efficiency and streamline your workflow.  Its ability to simultaneously display output and log it to files makes it an invaluable tool for any Linux user.
+

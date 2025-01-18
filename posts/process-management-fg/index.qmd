@@ -1,0 +1,87 @@
+---
+title: "fg"
+date: "04/13/2024"
+categories: [ "Process Management" ]
+---
+## Understanding `fg`
+
+The `fg` command is primarily used to resume a suspended job from the background to the foreground.  Jobs are typically put into the background using the `&` symbol after a command. For instance, running `sleep 10 &` starts a 10-second sleep process in the background. This allows you to continue using your terminal while the process runs.  However, to monitor or interact with the background process, you'll need to bring it to the foreground using `fg`.
+
+## Basic Usage
+
+The simplest form of the `fg` command is just typing `fg` and pressing Enter. This resumes the *most recently* backgrounded job.  Let's illustrate this:
+
+```bash
+$ sleep 10 &
+[1] 12345  #Job number and PID displayed
+$ date
+Thu Oct 26 14:30:00 EDT 2024
+$ fg
+```
+
+The `fg` command will resume the `sleep 10` process, bringing it to the foreground.  You'll observe that the terminal will now be dedicated to this process until it completes.
+
+## Specifying Jobs
+
+You can also specify which job to bring to the foreground using the job number (shown in square brackets `[]` when backgrounding a process). If you had multiple background processes, you could use:
+
+```bash
+$ sleep 10 &
+[1] 67890
+$ ping google.com &
+[2] 12345
+$ fg %2  #Brings job number 2 (ping) to the foreground
+```
+
+Here, `%2` refers to job number 2.  You can replace `%2` with the corresponding job number for any other backgrounded process.
+
+## Working with Job Names
+
+While job numbers are convenient, they can change if you launch and finish other background jobs. An alternative is using job names, although these are only helpful if you explicitly assigned them during backgrounding.  Suppose you'd run:
+
+```bash
+$ sleep 10 &
+[1] + sleep 10
+$ ping google.com &
+[2] - ping google.com
+```
+
+In the example above job names have been assigned, note that `sleep` has job number 1 and `ping` has job number 2. Now you can use job names:
+
+```bash
+$ fg %sleep  #Brings the "sleep" job to the foreground
+$ fg %ping   #Brings the "ping" job to the foreground
+```
+
+Here, `%sleep` and `%ping` directly target the jobs by their names instead of their numerical ID.
+
+## Combining `fg` with other commands
+
+The `jobs` command displays a list of all active background jobs, which is highly beneficial when using `fg`.  The output of `jobs` helps you identify the job number or name to use with the `fg` command.
+
+```bash
+$ sleep 10 &
+$ ping google.com &
+$ jobs
+[1] + Running                 sleep 10 &
+[2] - Running                 ping google.com &
+$ fg %1
+```
+
+This example showcases the practical use of `jobs` in conjunction with `fg` for effective process management.
+
+
+## Handling Signals with `fg`
+
+While not directly part of the `fg` command's core functionality, you can use signals to interact with a process after bringing it to the foreground. For example:
+
+```bash
+$ sleep 100 &
+[1] 12345
+$ fg %1
+$ kill %1 # Sends a TERM signal to the sleep process interrupting it.
+```
+
+This demonstrates how to combine `fg` with the `kill` command to send signals (in this case, `TERM`) to the foreground process.  This allows for interrupting or terminating the task.  Different signals can provide a range of effects, allowing you finer control over your processes.
+
+

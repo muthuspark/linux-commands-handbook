@@ -1,0 +1,146 @@
+---
+title: "systemctl"
+date: "11/07/2024"
+categories: [ "System Services" ]
+---
+## Understanding Systemd Services
+
+Before diving into `systemctl` commands, it's crucial to grasp the concept of systemd services.  These are essentially processes or daemons that run in the background, providing essential system functionality.  Examples include network management (`networkd`), logging (`journalctl`), and the display manager (`gdm3`).  Each service is defined by a unit file, typically located in `/etc/systemd/system/`. These files specify how the service should be started, stopped, and managed.
+
+## Common systemctl Commands
+
+`systemctl` offers a rich set of commands to interact with systemd services. Here are some of the most frequently used:
+
+
+### 1. Starting and Stopping Services
+
+To start a service, use the `start` command:
+
+```bash
+sudo systemctl start sshd.service
+```
+
+This command starts the SSH daemon.  The `.service` suffix is essential.  To stop a running service:
+
+```bash
+sudo systemctl stop sshd.service
+```
+
+
+### 2. Restarting and Reloading Services
+
+Restarting a service terminates and restarts it:
+
+```bash
+sudo systemctl restart sshd.service
+```
+
+Reloading a service, on the other hand, reloads its configuration without restarting the process itself (useful for configuration changes):
+
+```bash
+sudo systemctl reload sshd.service
+```
+
+
+### 3. Checking Service Status
+
+To check the status of a service, use the `status` command:
+
+```bash
+sudo systemctl status sshd.service
+```
+
+This provides detailed information about the service's current state, including whether it's running, active, failed, or inactive.  The output usually includes logs and other relevant details.
+
+
+### 4. Enabling and Disabling Services
+
+Enabling a service ensures it starts automatically during system boot:
+
+```bash
+sudo systemctl enable sshd.service
+```
+
+Disabling a service prevents it from starting at boot:
+
+```bash
+sudo systemctl disable sshd.service
+```
+
+You can check the enabled status of a service with:
+
+```bash
+sudo systemctl is-enabled sshd.service
+```
+
+This will output `enabled` or `disabled`.
+
+
+### 5. Listing Services
+
+To list all active services:
+
+```bash
+systemctl list-units --type=service
+```
+
+You can filter this list. For example to list only running services:
+
+```bash
+systemctl list-units --type=service --state=running
+```
+
+To list all available service units:
+
+```bash
+systemctl list-unit-files --type=service
+```
+
+
+### 6.  Masking a Service
+
+Sometimes, you want to prevent a service from ever being started, even manually.  This is done by masking:
+
+```bash
+sudo systemctl mask sshd.service
+```
+
+Unmasking is done similarly:
+
+```bash
+sudo systemctl unmask sshd.service
+```
+
+
+### 7. Working with Other Unit Types
+
+While we focused on `.service` units, `systemctl` manages other unit types, including:
+
+* **`.socket`**: Network sockets
+* **`.target`**: Groups of units (e.g., `graphical.target` for the graphical desktop)
+* **`.mount`**: Mount points
+* **`.automount`**: Automounted file systems
+* **`.swap`**: Swap devices
+* **`.device`**: Hardware devices
+
+The commands remain the same, simply replace `.service` with the appropriate suffix. For instance:
+
+```bash
+sudo systemctl start getty.target
+```
+
+
+
+### 8. Using `--user` for User Services
+
+`systemctl` also manages user services.  These are services that run under a specific user's context.  Use the `--user` option for these:
+
+```bash
+systemctl --user start my-user-service.service
+```
+
+Remember to create your user service files appropriately.
+
+
+These examples provide a solid foundation for working with `systemctl`. Mastering these commands is essential for any Linux administrator. Remember to always use `sudo` when necessary to execute commands with root privileges.  Further exploration of the `man systemctl` page is highly recommended for advanced usage.
+

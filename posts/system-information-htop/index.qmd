@@ -1,0 +1,83 @@
+---
+title: "htop"
+date: "07/26/2024"
+categories: [ "System Information" ]
+---
+## What is htop?
+
+`htop` is an interactive text-mode process viewer for Linux, a powerful alternative to the standard `top` command. Unlike `top`, which requires constant scrolling to view all processes, `htop` offers a dynamic, navigable interface.  You can scroll through processes, sort by various metrics, kill processes, and even change process priorities – all without leaving the command-line.
+
+
+## Installation
+
+`htop` is not typically included in minimal Linux installations.  To install it, you'll need to use your distribution's package manager. Here are examples for some popular distributions:
+
+* **Debian/Ubuntu:**
+  ```bash
+  sudo apt update
+  sudo apt install htop
+  ```
+
+* **Fedora/CentOS/RHEL:**
+  ```bash
+  sudo dnf install htop
+  ```
+
+* **Arch Linux:**
+  ```bash
+  sudo pacman -S htop
+  ```
+
+Once installed, simply type `htop` in your terminal and press Enter to launch the application.
+
+
+## Navigating the htop Interface
+
+The `htop` interface displays information in a clear, organized manner. Key elements include:
+
+* **Top Section:** Displays system-wide statistics like CPU usage (per core), memory usage, swap space, and load average.
+* **Main Section:** Shows a list of running processes with their PID, user, CPU and memory usage, and more.
+* **Bottom Section:** Provides navigation instructions and quick access to commands.
+
+##  Key Navigation Commands
+
+* **Arrow Keys:** Navigate up and down the process list.
+* **Spacebar:**  Sorts processes by CPU usage (cycles).
+* **F6:**  Switch between different sorting options (e.g., CPU%, MEM%, PID, etc.).
+* **F4:**  Filter processes by name or part of a name. (Type your filter, then press Enter)
+* **K:** Send a KILL signal (SIGTERM) to a selected process. This politely requests the process to terminate.
+* **Shift+K:** Send a KILL signal (SIGKILL) to a selected process. This forces the process to terminate.  Use with caution!
+* **H:** Shows the tree view of processes, highlighting parent-child relationships
+* **F2:**  Change settings (colors, display options).
+
+
+##  Example: Monitoring CPU Usage
+
+Let's say you suspect a specific process is consuming excessive CPU resources.  After launching `htop`, you can:
+
+1. **Identify the process:** Use the arrow keys to navigate to the suspect process in the process list.  Observe its CPU % usage.
+2. **Sort by CPU usage:** Press the `Spacebar` to sort the list by CPU percentage, making high-CPU consumers easier to spot.
+3. **Kill the process (if necessary):** If the process is unresponsive or misbehaving, press `K` (SIGTERM) or `Shift+K` (SIGKILL) to terminate it.
+
+
+## Example: Analyzing Memory Usage
+
+Similar to CPU monitoring, you can effectively analyze memory usage with `htop`.
+
+1. **Sort by memory usage:** Press `F6` to select "MEM%" as the sorting criteria. This displays the processes consuming the most RAM at the top.
+2. **Identify memory leaks:**  If you see processes consistently consuming large amounts of RAM, investigate potential memory leaks within those applications.
+
+
+## Example: Filtering Processes
+
+Finding a specific process in a long list can be tedious.  `htop`'s filtering feature is helpful:
+
+1. **Press F4:**  This activates the filter input field.
+2. **Enter a filter string:** For instance, if you are searching for a process named 'chrome', type 'chrome' and press Enter. `htop` will display only processes containing 'chrome' in their name.
+
+
+##  Beyond the Basics
+
+
+`htop` offers many more features, including customizable display settings, interactive process management, and real-time monitoring.  Exploring its options through the help menu (usually accessible via `F1`) is highly recommended for advanced usage.  Its intuitive interface and powerful features make it an indispensable tool for any Linux system administrator or developer.
+

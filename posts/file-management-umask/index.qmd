@@ -1,0 +1,111 @@
+---
+title: "umask"
+date: "04/01/2024"
+categories: [ "File Management" ]
+---
+## What is `umask`?
+
+`umask` (user mask) is a Linux command that determines the default permissions for newly created files and directories.  It works by specifying which permissions are *removed* from the standard umask.  The standard permissions are typically read, write, and execute for the owner, group, and others (rw-rw-rw- or 666 for files and rwxrwxrwx or 777 for directories).  `umask` subtracts its value from these defaults.
+
+## Understanding `umask` values
+
+`umask` values are expressed in octal notation (base-8). Each digit represents a set of permissions:
+
+* **First digit (leftmost):**  Permissions for the **owner**.
+* **Second digit:** Permissions for the **group**.
+* **Third digit:** Permissions for **others**.
+
+Within each digit:
+
+* 4 = read permission
+* 2 = write permission
+* 1 = execute permission
+
+For example:
+
+* `002` removes write permission for others.
+* `022` removes write permission for the group and others.
+* `077` removes all permissions for the group and others (leaving only owner permissions).
+
+
+## Practical Examples
+
+Let's explore some `umask` scenarios with code examples:
+
+**1. Setting a `umask`:**
+
+To set a `umask`, use the command:
+
+```bash
+umask 002
+```
+
+This command removes write access for "others" from the default permissions.  Any files or directories created after this command will inherit these modified permissions.
+
+**2. Checking the current `umask`:**
+
+To see the current `umask` setting, simply type:
+
+```bash
+umask
+```
+
+The output will display the current octal value.
+
+**3. Creating files with different `umask` settings:**
+
+Let's see how `umask` affects file creation:
+
+```bash
+
+umask 002
+
+
+touch myfile.txt
+
+
+ls -l myfile.txt
+```
+
+You'll notice that `myfile.txt` will lack write permission for others, reflecting the `umask` setting.  Now let's try a different `umask`:
+
+```bash
+
+umask 027
+
+#Create a directory
+mkdir mydir
+
+#Check directory permissions
+ls -l mydir
+```
+
+This example shows how a more restrictive `umask` affects both file and directory permissions.
+
+
+**4.  Symbolic Permissions with `umask`:**
+
+While octal notation is common, you can also use symbolic notation for more readable configurations (though less common with umask):
+
+```bash
+umask u=rwx,g=rx,o=rx
+```
+
+This sets the owner's permissions to read, write, and execute (rwx), group's permissions to read and execute (rx), and others' permissions to read and execute (rx).  Note that this is equivalent to an octal umask of `007`.
+
+
+**5. Temporary `umask` changes:**
+
+`umask` changes are persistent until you change them again or reboot the system.  However, you can temporarily change the `umask` within a subshell to perform specific operations:
+
+```bash
+( umask 077; touch temp_file.txt; )
+ls -l temp_file.txt
+```
+
+This creates `temp_file.txt` with the specified temporary `umask` only within the subshell, leaving your default `umask` unchanged outside of it.
+
+
+
+Remember that proper `umask` configuration is vital for system security and should be tailored to your specific needs.  Experiment with different `umask` values and observe their effect on file permissions to solidify your understanding.
+

@@ -1,0 +1,83 @@
+---
+title: "ifconfig"
+date: "05/27/2024"
+categories: [ "Network" ]
+---
+## Why `ip` is Better than `ifconfig`
+
+`ifconfig` is a legacy tool with a simpler, less structured approach.  `ip` offers a significantly improved interface, providing more comprehensive control over network interfaces and routing tables. Its structured approach makes complex configurations much easier to manage and understand.
+
+
+## Basic Network Interface Management with `ip`
+
+Let's start with the fundamentals.  The core functionality of `ifconfig` is encompassed by the `ip addr` command.
+
+**Displaying Interface Information:**
+
+The simplest use of `ip addr` is to list all network interfaces and their associated addresses:
+
+```bash
+ip addr show
+```
+
+This will output information including the interface name (e.g., `eth0`, `wlan0`, `lo`), its IP address, subnet mask, and other details.
+
+
+**Setting a Static IP Address:**
+
+To configure a static IP address on an interface, use the following syntax:
+
+```bash
+ip addr add 192.168.1.100/24 dev eth0
+```
+
+This sets the IP address `192.168.1.100` with a netmask of `/24` on the `eth0` interface.  Remember to replace `eth0` with the actual name of your interface and adjust the IP address and netmask accordingly.
+
+
+**Setting a Static IP Address with Gateway and DNS:**
+
+For a more complete configuration including a default gateway and DNS servers, you'll need to use additional `ip` commands:
+
+```bash
+ip addr add 192.168.1.100/24 dev eth0
+ip route add default via 192.168.1.1
+ip route add 8.8.8.8 dev eth0 #for google dns
+ip route add 8.8.4.4 dev eth0 #for google dns
+```
+
+This adds a default route via the gateway `192.168.1.1` and adds google's DNS servers to the routing table.
+
+
+**Deleting an IP Address:**
+
+To remove an IP address from an interface:
+
+```bash
+ip addr del 192.168.1.100/24 dev eth0
+```
+
+**Bringing Interfaces Up and Down:**
+
+To bring an interface up (activate it):
+
+```bash
+ip link set eth0 up
+```
+
+To bring an interface down (deactivate it):
+
+```bash
+ip link set eth0 down
+```
+
+
+## Working with Network Namespaces
+
+
+`ip` also provides powerful tools for managing network namespaces, allowing for isolation of network configurations.  This is beyond the scope of a basic introduction, but it highlights the extended capabilities `ip` provides compared to `ifconfig`.
+
+
+##  Advanced Usage (Brief Overview)
+
+The `ip` command offers much more than what's covered here.  Explore the `ip route`, `ip link`, and `ip netns` commands for advanced routing, interface management, and network namespace manipulation respectively.  Consult the `man ip` page for exhaustive documentation.  Understanding these capabilities provides much more comprehensive control over your network configurations.
+

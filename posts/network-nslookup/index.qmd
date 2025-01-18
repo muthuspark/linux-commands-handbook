@@ -1,0 +1,81 @@
+---
+title: "nslookup"
+date: "01/12/2025"
+categories: [ "Network" ]
+---
+## Basic DNS Queries with nslookup
+
+The simplest use of `nslookup` involves querying a domain name to get its corresponding IP address.  For example, to find the IP address of `google.com`, you would use:
+
+```bash
+nslookup google.com
+```
+
+This command will return the IP addresses associated with `google.com`, typically including both IPv4 and IPv6 addresses.  The output will show the server used for the query and the various records found, including the canonical name (CNAME) and Address (A) records.
+
+## Specifying DNS Servers
+
+By default, `nslookup` uses the DNS server configured on your system.  However, you can specify a different server using the `server` option:
+
+```bash
+nslookup google.com 8.8.8.8
+```
+
+This command queries `google.com` using Google's public DNS server (8.8.8.8).  This is particularly useful for troubleshooting DNS issues or testing different DNS resolvers.
+
+
+## Reverse DNS Lookups
+
+`nslookup` also allows you to perform reverse DNS lookups, translating an IP address into a domain name.  This is achieved using the `-type=PTR` option or by simply providing the IP address:
+
+```bash
+nslookup -type=PTR 8.8.8.8
+```
+
+or
+
+
+```bash
+nslookup 8.8.8.8
+```
+
+Both commands will attempt to resolve the IP address 8.8.8.8 to its corresponding domain name (in this case, `dns.google`).
+
+
+## Querying Specific Record Types
+
+`nslookup` supports various record types beyond A and PTR records. You can specify the desired record type using the `-type` option.  For example, to query the MX records for `google.com` (which specify mail exchange servers):
+
+```bash
+nslookup -type=MX google.com
+```
+
+This will list the mail servers responsible for handling email for `google.com`.  Other common record types include:
+
+* **SOA (Start of Authority):**  Provides information about the DNS zone.
+* **NS (Name Server):** Lists the authoritative name servers for a domain.
+* **CNAME (Canonical Name):** Specifies an alias for a domain name.
+* **TXT (Text):**  Contains arbitrary text information.
+
+
+## Interactive Mode
+
+`nslookup` can also be used in interactive mode, allowing you to perform multiple queries without repeatedly typing the command.  To enter interactive mode, simply run `nslookup` without any arguments:
+
+```bash
+nslookup
+```
+
+You can then type your queries (e.g., `google.com`, `set type=MX`, `exit`) and press Enter. This mode is especially helpful for exploring DNS information in more detail and performing sequential queries.
+
+
+## Troubleshooting DNS Issues with nslookup
+
+`nslookup` is invaluable for diagnosing DNS problems.  If a website is unreachable, you can use `nslookup` to check if the DNS server can resolve its domain name to an IP address. If the resolution fails, it indicates a potential DNS issue, either with your local configuration or the DNS server itself.  By using different DNS servers, you can pinpoint the source of the problem.
+
+## Advanced Usage with Options
+
+`nslookup` offers numerous other command line options for more fine-grained control over queries. These include specifying port numbers, timeout settings, and more.  Refer to the `man nslookup` page for a comprehensive list of options and their usage.
+
+
+

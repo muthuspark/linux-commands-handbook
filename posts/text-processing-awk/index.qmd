@@ -1,0 +1,142 @@
+---
+title: "awk"
+date: "11/01/2024"
+categories: [ "Text Processing" ]
+---
+## Understanding awk's Structure
+
+The basic `awk` command structure is:
+
+```bash
+awk 'program' input-file
+```
+
+The `program` is a set of instructions written in `awk`'s scripting language, and `input-file` specifies the file to be processed.  If no input file is given, `awk` reads from standard input (stdin).
+
+A simple `awk` program consists of patterns and actions.  A pattern defines which lines to process, and the action dictates what happens to those lines.  If a pattern is omitted, the action is performed on every line.  If an action is omitted, the matching line is printed.
+
+
+## Basic Awk Operations
+
+Let's start with some fundamental examples:
+
+**1. Printing every line:**
+
+This command prints every line of the file `data.txt`:
+
+```bash
+awk '{print}' data.txt
+```
+
+This is equivalent to using `cat data.txt`.
+
+
+**2. Printing specific fields:**
+
+Assuming `data.txt` contains comma-separated values (CSV), this command prints the second and third fields:
+
+```bash
+awk -F',' '{print $2, $3}' data.txt
+```
+
+`-F','` sets the field separator to a comma.  `$2` and `$3` refer to the second and third fields respectively.
+
+
+**3. Conditional printing:**
+
+This command prints only lines where the first field is greater than 10:
+
+```bash
+awk -F',' '$1 > 10 {print}' data.txt
+```
+
+
+**4. Using variables:**
+
+This example sums the values in the second field:
+
+```bash
+awk -F',' '{sum += $2} END {print "Sum:", sum}' data.txt
+```
+
+`sum` is an `awk` variable. The `END` block is executed after processing all lines.
+
+
+## Advanced Awk Techniques
+
+`awk`'s power lies in its ability to handle more complex scenarios:
+
+**1. Regular expressions:**
+
+This command prints lines containing the word "error":
+
+```bash
+awk '/error/ {print}' log.txt
+```
+
+`/error/` is a regular expression pattern.
+
+
+**2. Built-in functions:**
+
+`awk` provides numerous built-in functions. This example converts the second field to uppercase:
+
+```bash
+awk -F',' '{print toupper($2)}' data.txt
+```
+
+
+**3. Multiple patterns and actions:**
+
+This command prints lines starting with "INFO" and lines containing "warning":
+
+```bash
+awk '/^INFO/{print "Info message:", $0} /warning/{print "Warning:", $0}' log.txt
+```
+
+
+**4. Custom functions:**
+
+`awk` allows you to define custom functions:
+
+```bash
+awk 'function square(x){return x*x} {print square($1)}' data.txt
+```
+
+
+**5. Using `BEGIN` block:**
+
+The `BEGIN` block is executed before processing any lines. This example prints a header before the data:
+
+```bash
+awk 'BEGIN {print "Data Report"} {print $1, $2}' data.txt
+```
+
+
+##  Working with Multiple Files
+
+`awk` can effortlessly handle multiple input files:
+
+```bash
+awk '{print FILENAME, $1}' file1.txt file2.txt
+```
+
+This command prints the filename and the first field from both `file1.txt` and `file2.txt`.
+
+
+##  Example: Processing Log Files
+
+Imagine you have a log file with entries like:  `[date] [level] [message]`
+
+This `awk` script can summarize the log file by level:
+
+
+```bash
+awk '{count[$2]++} END {for (level in count) print level, count[level]}' log.txt
+```
+
+This script uses an associative array (`count`) to count the occurrences of each log level.
+
+
+These examples showcase the versatility of `awk`. Its concise syntax and powerful features make it an indispensable tool for any Linux user working with text data.  By understanding these fundamental concepts and expanding upon them, you'll unlock the true potential of `awk` for various text processing tasks.
+

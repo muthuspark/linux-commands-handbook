@@ -1,0 +1,104 @@
+---
+title: "ethtool"
+date: "01/02/2024"
+categories: [ "Network" ]
+---
+## Getting Started with ethtool
+
+Before we jump into specific commands, let's begin with the basics.  To display general information about a network interface, say `eth0`, you'd use:
+
+```bash
+ethtool eth0
+```
+
+This provides a summary including driver information, link speed, duplex mode, and auto-negotiation status.
+
+
+## Exploring Network Interface Details
+
+`ethtool` offers more granular control and information retrieval. For example, to view the driver in use:
+
+```bash
+ethtool -i eth0
+```
+
+This displays the driver name, version, and other driver-specific details.
+
+
+## Managing Auto-Negotiation
+
+Auto-negotiation allows network devices to automatically determine the best speed and duplex settings. You can disable it using:
+
+```bash
+sudo ethtool -s eth0 speed 1000 duplex full autoneg off
+```
+
+This forces a 1 Gigabit connection with full duplex mode.  Remember to replace `eth0` with your interface name.  Enabling auto-negotiation again:
+
+```bash
+sudo ethtool -s eth0 autoneg on
+```
+
+
+## Setting Speed and Duplex
+
+If auto-negotiation is off, you can manually configure the speed and duplex settings:
+
+```bash
+sudo ethtool -s eth0 speed 100 duplex half
+```
+
+This sets the speed to 100 Mbps and duplex to half.  Be mindful of compatibility with connected devices.
+
+
+##  Working with Coalescing Parameters
+
+Coalescing affects how often the network card interrupts the CPU.  Adjusting these settings can impact performance, particularly under heavy network load. You can view current settings:
+
+```bash
+ethtool -c eth0
+```
+
+And modify them (requires root privileges):
+
+```bash
+sudo ethtool -C eth0 rx-usecs 100 rx-frames 100 tx-usecs 100 tx-frames 100
+```
+
+This example sets receive and transmit coalescing parameters. Experiment with different values to find the optimal configuration for your system.
+
+
+##  Checking Link Status
+
+A quick way to check the link status is:
+
+
+```bash
+ethtool link info eth0
+```
+
+This will indicate whether a link is up or down.
+
+
+##  Advanced Features:  Offload Settings
+
+Network interfaces often support various offloading features, like checksum offloading.  You can see what features are supported and enabled using:
+
+
+```bash
+ethtool -k eth0
+```
+
+
+This reveals a detailed list of offloading capabilities.  Enabling or disabling specific offloads usually involves the `-K` option, but the exact parameters depend on your network card and driver.  Consult your driver's documentation for details.
+
+
+##  Troubleshooting with ethtool
+
+`ethtool` is invaluable for troubleshooting network issues.  For instance, if you experience connection problems, you can quickly check the link status, speed, and duplex settings to identify potential misconfigurations.
+
+
+##  Important Note on Permissions
+
+Most `ethtool` commands requiring changes to network interface settings need root privileges (using `sudo`). Always run commands with `sudo` when modifying settings. Remember to replace `"eth0"` with the actual name of your network interface. Use the `ip link show` command to list your interfaces.
+

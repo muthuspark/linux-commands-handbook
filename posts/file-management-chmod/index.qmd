@@ -1,0 +1,94 @@
+---
+title: "chmod"
+date: "07/01/2024"
+categories: [ "File Management" ]
+---
+## Understanding File Permissions
+
+Before delving into `chmod`, it's essential to grasp the fundamental concept of file permissions in Linux.  Each file and directory possesses three sets of permissions:
+
+* **Owner:** The user who created the file or directory.
+* **Group:** A group of users who share access privileges.
+* **Others:** All other users on the system.
+
+Each set has three permissions:
+
+* **Read (r):** Allows viewing the file's contents (for files) or listing its contents (for directories).
+* **Write (w):** Allows modifying the file's contents (for files) or adding/deleting files within the directory (for directories).
+* **Execute (x):** Allows running the file (for executable files) or accessing the directory (for directories).
+
+These permissions are represented numerically (4 for read, 2 for write, 1 for execute) or symbolically (r, w, x).
+
+
+## Using `chmod` with Numerical Notation
+
+The numerical method expresses permissions as a three-digit octal number. Each digit corresponds to the permissions for owner, group, and others respectively.
+
+**Example 1: Setting permissions to 755**
+
+The command `chmod 755 myfile.txt` sets the permissions as follows:
+
+* **7 (Owner):** 4 + 2 + 1 = Read, Write, and Execute permissions for the owner.
+* **5 (Group):** 4 + 1 = Read and Execute permissions for the group.
+* **5 (Others):** 4 + 1 = Read and Execute permissions for others.
+
+
+**Example 2:  Restricting access**
+
+To make a file readable only by the owner:
+
+```bash
+chmod 400 sensitive_data.txt
+```
+
+This sets permissions to 4 (read) for the owner, 0 (no permissions) for the group, and 0 (no permissions) for others.
+
+
+## Using `chmod` with Symbolic Notation
+
+The symbolic method is more user-friendly and easier to remember. It uses the `u`, `g`, `o`, and `a` symbols to represent owner, group, others, and all respectively, followed by the `+`, `-`, or `=` operators to add, remove, or set permissions.
+
+**Example 3: Adding execute permission for the group**
+
+```bash
+chmod g+x my_script.sh
+```
+
+This adds execute permission (`x`) for the group (`g`).
+
+**Example 4: Removing write permission for others**
+
+```bash
+chmod o-w myfile.txt
+```
+
+This removes write permission (`w`) for others (`o`).
+
+**Example 5: Setting permissions for all users**
+
+```bash
+chmod a=rx my_directory
+```
+
+This sets read (`r`) and execute (`x`) permissions for all (`a`).
+
+
+## Working with Directories
+
+The `chmod` command works identically for directories.  Execute permission on a directory allows access to its contents.
+
+**Example 6: Making a directory accessible to everyone**
+
+```bash
+chmod a+rx my_public_directory
+```
+
+This adds read and execute permissions for everyone on `my_public_directory`.
+
+
+##  Advanced Scenarios and Troubleshooting
+
+Remember to always double-check your `chmod` commands before execution. Incorrectly setting permissions can lead to data inaccessibility.  Using the `ls -l` command will help you verify the permissions of a file after executing `chmod`.
+
+Further exploration of `umask` can assist in setting default permissions for newly created files and directories.  Understanding these concepts is fundamental to securing your Linux system effectively.
+

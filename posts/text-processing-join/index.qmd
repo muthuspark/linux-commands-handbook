@@ -1,0 +1,151 @@
+---
+title: "join"
+date: "03/11/2024"
+categories: [ "Text Processing" ]
+---
+## Understanding the Basics
+
+The `join` command takes two sorted files as input and joins lines that share a common field.  This common field, often an ID or key, is specified using the `-1` and `-2` options.  `-1` indicates the field number in the first file, and `-2` specifies the field number in the second file.
+
+**Basic Syntax:**
+
+```bash
+join [OPTION]... FILE1 FILE2
+```
+
+**Example:**
+
+Let's say we have two files:
+
+**`employees.txt`:**
+
+```
+101,John Doe,Sales
+102,Jane Smith,Marketing
+103,Peter Jones,Engineering
+```
+
+**`salaries.txt`:**
+
+```
+101,50000
+102,60000
+103,70000
+```
+
+To join these files based on the first field (employee ID), we use the following command:
+
+```bash
+join -1 1 -2 1 employees.txt salaries.txt
+```
+
+This produces the output:
+
+```
+101 John Doe Sales 50000
+102 Jane Smith Marketing 60000
+103 Peter Jones Engineering 70000
+```
+
+
+##  Handling Different Field Separators
+
+The default field separator is whitespace. However, you can specify a different separator using the `-t` option.
+
+**Example:**
+
+If our files used commas as separators:
+
+**`employees_csv.txt`:**
+
+```
+101,John Doe,Sales
+102,Jane Smith,Marketing
+103,Peter Jones,Engineering
+```
+
+**`salaries_csv.txt`:**
+
+```
+101,50000
+102,60000
+103,70000
+```
+
+The command would be:
+
+```bash
+join -t ',' -1 1 -2 1 employees_csv.txt salaries_csv.txt
+```
+
+This yields the same output as before.
+
+
+##  Joining on Different Fields
+
+You can specify different join fields using the `-1` and `-2` options.  For example, if the employee ID was the second field in `employees.txt`:
+
+```bash
+join -1 2 -2 1 employees.txt salaries.txt
+```
+
+
+##  Handling Unsorted Files
+
+`join` requires sorted input files. Use the `sort` command to sort your files before joining if they aren't already sorted:
+
+```bash
+sort -t ',' -k 1,1 employees_csv.txt > employees_sorted.txt
+sort -t ',' -k 1,1 salaries_csv.txt > salaries_sorted.txt
+join -t ',' -1 1 -2 1 employees_sorted.txt salaries_sorted.txt
+```
+
+
+##  Dealing with Missing Entries
+
+If a key exists in one file but not the other, `join` will not include those lines by default. To include lines even if the join key isn't found in the other file, use the `-a` option.  `-a 1` will include unmatched lines from the first file, and `-a 2` for the second file.
+
+
+**Example:**
+
+If `salaries.txt` was missing the entry for employee 103:
+
+```bash
+join -a 1 -1 1 -2 1 employees.txt salaries.txt
+```
+
+This would include the entry for employee 103 from `employees.txt`, even though there's no corresponding salary.  The missing fields will be represented by empty strings.
+
+
+##  Using `-e` for Empty Field Replacement
+
+The `-e` option allows you to replace empty fields with a string of your choice.  For example:
+
+```bash
+join -a 1 -e 'N/A' -1 1 -2 1 employees.txt salaries.txt
+```
+
+This would replace empty fields with "N/A" in the output.
+
+
+##  Output Control with `-o`
+
+The `-o` option allows for fine-grained control over the output format.  You can specify which fields from each file to include. The format is `FORMAT`, where each item is `FILE_NUMBER.FIELD_NUMBER`.
+
+**Example:** Outputting only employee ID and salary:
+
+```bash
+join -o 1.1,2.2 employees.txt salaries.txt
+```
+
+This would produce:
+
+```
+101 50000
+102 60000
+103 70000
+```
+
+
+These examples demonstrate the versatility of the `join` command. By combining it with other command-line tools like `sort`, you can effectively process and manipulate data across multiple files.  Remember to consult the `man join` page for even more advanced options and usage details.
+

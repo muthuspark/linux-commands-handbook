@@ -1,0 +1,98 @@
+---
+title: "lsblk"
+date: "02/15/2024"
+categories: [ "System Information" ]
+---
+## What is `lsblk`?
+
+`lsblk` (list block devices) is a simple yet powerful command-line utility used to display information about block devices on a Linux system.  These block devices represent storage devices like hard drives, SSDs, partitions, and even loop devices (used for mounting image files).  Unlike commands like `fdisk` which modify partitions, `lsblk` is purely for informational purposes.
+
+## Basic Usage
+
+The simplest way to use `lsblk` is to run it without any options:
+
+```bash
+lsblk
+```
+
+This will output a table showing the block devices, their mount points (if mounted), and some key properties.  You'll see information like:
+
+* **NAME:** The device name (e.g., `/dev/sda`, `/dev/sdb1`).
+* **RM:**  Removable status (yes/no).
+* **SIZE:** The size of the device.
+* **TYPE:**  The type of device (e.g., disk, part).
+* **MOUNTPOINT:** Where the device is mounted (if applicable).
+
+## Exploring `lsblk` Options
+
+`lsblk` offers several options to customize the output and tailor it to your specific needs:
+
+### `-l` (List)
+
+This option provides a more concise, single-line output, perfect for scripting or when you need a quick overview:
+
+```bash
+lsblk -l
+```
+
+The output will show key information in a compact format, omitting some less critical details.
+
+### `-f` (Full Output)
+
+The `-f` option provides more details than the default output. This includes the filesystem type of each partition:
+
+```bash
+lsblk -f
+```
+
+This is extremely useful for identifying the filesystem on various partitions.
+
+### `-o` (Output Columns)
+
+This option allows you to specify which columns are displayed.  You can list multiple columns separated by commas.  For example, to only show the NAME and SIZE:
+
+```bash
+lsblk -o NAME,SIZE
+```
+
+You can find a complete list of available columns in the `lsblk` man page (`man lsblk`).
+
+
+### `-n` (No headers)
+
+Suppress the header line from the output. This is handy when parsing the output with other commands:
+
+```bash
+lsblk -n
+```
+
+
+### `-p` (Print all)
+
+This option will display all partitions, even those that are not in use:
+
+```bash
+lsblk -p
+```
+
+###  Filtering with `-e` and `-t`
+
+
+* `-e <type>`: allows you to specify the types of devices to list (e.g., `-e part` for partitions only)
+* `-t <type>`: opposite of `-e`, this filters to show only devices of a specified type (e.g., `-t disk` for disks only).
+
+Example showing only partitions:
+
+```bash
+lsblk -e part
+```
+
+Example showing only disks:
+
+```bash
+lsblk -t disk
+```
+
+
+These options provide a significant level of control over the output of `lsblk`, making it a valuable tool for managing and monitoring your Linux system's block devices.  By combining these options effectively, you can extract precisely the information you need in the format you prefer.
+

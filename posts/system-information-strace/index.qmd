@@ -1,0 +1,82 @@
+---
+title: "strace"
+date: "05/31/2024"
+categories: [ "System Information" ]
+---
+## What is `strace`?
+
+`strace` (short for "system call tracer") is a diagnostic, debugging, and instructional utility that allows you to monitor the system calls a process makes.  Each system call, a request to the kernel for a specific service, is meticulously logged, including its arguments and return values. This granular level of detail allows developers to identify performance issues, pinpoint the source of errors, and gain a deeper appreciation of how programs operate within the Linux kernel.
+
+## Basic Usage: Tracing a Simple Program
+
+Let's begin with a straightforward example.  Consider a simple C program that prints "Hello, world!":
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("Hello, world!\n");
+  return 0;
+}
+```
+
+Compile this code (e.g., `gcc hello.c -o hello`) and then run it with `strace`:
+
+```bash
+strace ./hello
+```
+
+The output will be a detailed listing of system calls, resembling this (the exact output may vary slightly depending on your system):
+
+```
+execve("./hello", ["./hello"], [/* 25 vars */]) = 0
+brk(NULL)                               = 0x55e735192000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f989c312000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=140912, ...}) = 0
+mmap(NULL, 140912, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f989c2e1000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc-2.31.so", O_RDONLY|O_CLOEXEC) = 3
+... (many more lines) ...
+write(1, "Hello, world!\n", 14Hello, world!
+) = 14
+exit_group(0)                           = ?
++++ exited with 0 +++
+```
+
+This output shows calls like `execve` (executing the program), `mmap` (memory mapping), `write` (writing to standard output), and `exit_group` (program termination).
+
+
+##  Filtering Output with `-e` Option
+
+`strace`'s output can be quite verbose. The `-e` option allows filtering by system call.  To only see `write` system calls:
+
+```bash
+strace -e trace=write ./hello
+```
+
+This will significantly reduce the output, showing only the lines related to writing to files or standard output.
+
+
+## Tracing Specific Processes by PID
+
+Instead of specifying the program directly, you can trace a process by its Process ID (PID). First, run your program in the background (`./hello &`), then obtain its PID using `ps aux | grep hello`.  Finally, trace it using its PID:
+
+```bash
+strace -p <PID>
+```
+
+
+## Advanced Options: Tracing File Operations
+
+`strace` offers sophisticated options for tracing specific file operations.  For example, to trace only open, read, and write system calls:
+
+
+```bash
+strace -e trace=open,read,write ./hello
+```
+
+
+These examples only scratch the surface of `strace`'s capabilities.  Exploring its numerous options and applying it to different programs will reveal its true power in debugging and understanding system-level interactions.  Experimentation is key to mastering this versatile command-line tool.
+

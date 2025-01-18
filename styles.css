@@ -1,0 +1,38 @@
+/* css styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200..800&display=swap');
+body, p {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "MONO" 1;
+}
+#listing-listing > table > thead > tr > th:nth-child(3) {
+    display: none;
+}
+pre.sourceCode{
+    border: 1px solid #111111;
+    padding: 1em;
+}
+body{
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+.listing-date{
+    display: block;
+    width: 100px !important;
+}
+.page-item .page-link {
+    border-radius: 5px;
+}
+.utterances {
+    background: #f6f8fa;
+    border-radius: 7px;
+}
+.quarto-title-meta {
+    display: none !important;
+}
+.quarto-title-banner {
+    padding-bottom: 0 !important;
+}

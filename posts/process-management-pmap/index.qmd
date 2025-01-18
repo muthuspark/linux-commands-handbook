@@ -1,0 +1,83 @@
+---
+title: "pmap"
+date: "01/14/2024"
+categories: [ "Process Management" ]
+---
+## What is `pmap`?
+
+`pmap` displays the memory map of a specific process.  This memory map details how the operating system has allocated virtual memory to that process, including details like:
+
+* **Address Ranges:**  The starting and ending virtual addresses of each memory segment.
+* **Permissions:**  The access permissions for each segment (read, write, execute).
+* **Offset:**  The offset into the file (if applicable).
+* **Device:**  The device from which the segment is mapped (e.g., a file or shared memory).
+* **Path:** The path to the file if the memory is mapped from a file.
+
+
+## Basic Usage
+
+The simplest way to use `pmap` is to provide the process ID (PID) as an argument:
+
+```bash
+pmap <PID>
+```
+
+For example, to examine the memory map of the process with PID 1234:
+
+```bash
+pmap 1234
+```
+
+This will output a table showing the memory segments allocated to process 1234.  Each line represents a different segment, and the columns typically include the address range, permissions, offset, device, and path.
+
+
+##  Interpreting the Output
+
+The output of `pmap` can seem dense at first, but understanding the columns is key. Let's break down a typical line:
+
+```
+address           perms offset  dev   inode       pathname
+00400000-00401000 r-xp 00000000 00:00 1234567     /usr/bin/myprogram
+```
+
+* **`00400000-00401000`:**  The virtual address range occupied by this segment.
+* **`r-xp`:** Permissions: `r` (read), `-` (no write), `x` (execute), `p` (private, meaning this memory is not shared with other processes).
+* **`00000000`:** Offset into the file.
+* **`00:00`:** Device major and minor numbers.
+* **`1234567`:** Inode number.
+* **`/usr/bin/myprogram`:** Path to the executable file.
+
+Different permissions combinations are possible (e.g., `rw-p`, `rwxp`, `---p`).  `shared` instead of `private` indicates shared memory.
+
+
+## Advanced Usage:  Targeting Specific Processes
+
+You can identify the PID of a process using other commands like `ps`:
+
+```bash
+ps aux | grep myprogram
+```
+
+This will show information about processes containing "myprogram" in their name.  Then, copy the PID and use it with `pmap`:
+
+
+##  Handling Multiple Processes
+
+If you need to examine memory usage across multiple processes, you can use `ps` with `pmap` for efficient monitoring:
+
+```bash
+ps aux | while read line; do PID=$(echo $line | awk '{print $2}'); pmap $PID; done
+```
+This is an example and might need adjustments based on your system's `ps` output format. It's crucial to understand the output of your `ps` command to extract the PID correctly.
+
+
+## Identifying Memory Leaks
+
+By observing changes in the memory map over time, `pmap` can indirectly help identify potential memory leaks. Repeatedly running `pmap` on a suspect process can reveal if certain segments are growing excessively, hinting at a memory management problem.
+
+
+
+##  `pmap` Limitations
+
+Keep in mind that `pmap` provides a snapshot of the memory map at a specific moment. It doesn't show dynamic changes in memory allocation.  Also, interpretation of the output requires some familiarity with operating system memory management concepts.
+

@@ -1,0 +1,80 @@
+---
+title: "rc-update"
+date: "01/30/2024"
+categories: [ "System Services" ]
+---
+## Understanding Runlevels
+
+Before exploring `rc-update`, it's crucial to understand Linux runlevels. A runlevel represents a system's operational state.  Common runlevels include:
+
+* **0:** Halt (power down)
+* **1:** Single-user mode (root only)
+* **2-5:** Multi-user modes with varying levels of services active (typically 3 or 5 for graphical interfaces)
+* **6:** Reboot
+
+
+`rc-update` manipulates which services start and stop at specific runlevels.
+
+
+## Adding a Service to Runlevels
+
+Let's say you have a script located at `/etc/init.d/myservice` that manages a custom service. To enable this service to start at runlevels 2, 3, 4, and 5, you would use the following command:
+
+
+```bash
+sudo rc-update add myservice default
+```
+
+This command adds `myservice` to the `default` runlevel, which typically encompasses runlevels 2, 3, 4, and 5.  If you want more granular control, you can specify individual runlevels:
+
+
+```bash
+sudo rc-update add myservice 2
+sudo rc-update add myservice 3
+sudo rc-update add myservice 4
+sudo rc-update add myservice 5
+```
+
+This achieves the same result, but allows for independent control of each runlevel.  You can verify the changes by examining the relevant files within the `/etc/rc.d/rc*.d` directories. These directories contain symbolic links reflecting the services and their start/stop order.
+
+
+## Removing a Service from Runlevels
+
+To remove `myservice` from runlevel 3, you would use:
+
+```bash
+sudo rc-update del myservice 3
+```
+
+Similarly, removing from the default runlevel:
+
+```bash
+sudo rc-update del myservice default
+```
+
+
+##  Listing Services and Runlevels
+
+To see which services are linked to a specific runlevel (e.g., 3):
+
+```bash
+sudo rc-update show 3
+```
+
+This command lists all services associated with runlevel 3. To view all services associated with all runlevels:
+
+```bash
+sudo rc-update show
+```
+
+This provides a comprehensive overview of service runlevel associations.
+
+## Handling Dependencies
+
+Complex services often depend on other services. `rc-update`  doesn't directly manage dependencies; these are typically handled within the service scripts themselves (often using `chkconfig` or similar tools alongside `rc-update` in older systems, or `systemctl` in systemd-based systems).  Ensure your service scripts correctly handle dependencies to avoid boot failures.
+
+
+## Working with Different Init Systems
+
+The `rc-update` command is traditionally associated with SysVinit based systems.  Modern distributions often employ systemd as their init system. Systemd uses `systemctl` for managing services and has a different approach to runlevels and service control.  If you're using systemd,  `rc-update` might not be available or functional as expected.  Consult your distribution's documentation for service management using `systemctl`.
+

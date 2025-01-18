@@ -1,0 +1,84 @@
+---
+title: "arp"
+date: "09/29/2024"
+categories: [ "Network" ]
+---
+## Understanding ARP: IP to MAC Address Mapping
+
+Every device on a local network has a unique IP address and a unique MAC address.  IP addresses are used for routing data across networks, while MAC addresses are used for communication within a single network segment.  The ARP protocol bridges this gap; when a device wants to send data to another device on the same network, it uses ARP to discover the recipient's MAC address based on its known IP address.
+
+## Key `arp` Command Options and Examples
+
+The `arp` command offers several options to manage ARP tables. Let's explore some of the most commonly used ones:
+
+**1. Viewing the ARP Cache:**
+
+The simplest use of `arp` is to display the current ARP cache, which contains the mappings between IP addresses and MAC addresses that your system has learned.
+
+```bash
+arp -a
+```
+
+This command will output a table similar to this (the exact output may vary depending on your system):
+
+```
+? (192.168.1.1) at 00:16:3e:1a:2f:4d [ether] on eth0
+? (192.168.1.100) at 00:0c:29:a3:b7:1d [ether] on eth0
+```
+
+This shows the IP addresses and their corresponding MAC addresses, along with the interface (`eth0` in this example) they are associated with.  The `?` indicates that the IP address is not yet associated with a host's MAC address and needs to be learned.
+
+**2. Adding an ARP Entry:**
+
+You can manually add an ARP entry using the `-s` option. This is useful for static IP-MAC address mappings or troubleshooting situations.
+
+```bash
+sudo arp -s 192.168.1.200 00:11:22:33:44:55
+```
+
+This command adds an entry for IP address `192.168.1.200` with MAC address `00:11:22:33:44:55`.  The `sudo` command is necessary because modifying the ARP table requires root privileges.
+
+**3. Deleting an ARP Entry:**
+
+To delete an ARP entry, use the `-d` option with the IP address:
+
+```bash
+sudo arp -d 192.168.1.200
+```
+
+This command removes the ARP entry for `192.168.1.200`.
+
+**4. Specifying the Interface:**
+
+If you have multiple network interfaces, you can specify the interface to which the ARP command applies using the `-i` option:
+
+```bash
+sudo arp -i eth1 -s 10.0.0.10 00:aa:bb:cc:dd:ee
+```
+
+This adds an ARP entry on the `eth1` interface.
+
+**5.  Using `ip neigh` (Recommended Modern Alternative):**
+
+While `arp` is still functional, the `ip neigh` command offers more comprehensive network neighbor management, including features not available in `arp`. For example, to display neighbors, similar to `arp -a`:
+
+```bash
+ip neigh show
+```
+
+To add a static neighbor entry:
+
+```bash
+sudo ip neigh add 192.168.1.200 lladdr 00:11:22:33:44:55 dev eth0
+```
+
+
+To delete a neighbor entry:
+
+```bash
+sudo ip neigh del 192.168.1.200 dev eth0
+```
+
+
+These examples demonstrate the basic functionality of the `arp` command and the superior functionality of the `ip neigh` command. Remember to always use `sudo` when modifying the ARP table, as it requires root privileges.  Always replace placeholder IP addresses and MAC addresses with your actual network information.  Using `ip neigh` is generally preferred for new tasks due to its enhanced capabilities and consistency across various Linux distributions.
+

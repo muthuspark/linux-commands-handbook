@@ -1,0 +1,86 @@
+---
+title: "netstat"
+date: "10/15/2024"
+categories: [ "Network" ]
+---
+## Understanding `netstat`'s Core Functionality
+
+`netstat` provides a snapshot of your system's network activity. It shows you which processes are listening on ports, which connections are active, and various other network statistics.  The command's flexibility stems from its numerous options, allowing you to tailor the output to your specific needs.
+
+
+## Key `netstat` Options and Examples
+
+Let's explore some of the most commonly used `netstat` options:
+
+**1. Viewing Active Connections (`netstat -a` or `netstat -an`)**
+
+The `-a` option displays all active connections and listening ports.  The `-n` option (often used in conjunction with `-a`) displays numerical addresses instead of resolving hostnames, which speeds up the process and is particularly useful when dealing with a large number of connections.
+
+
+```bash
+netstat -an
+```
+
+This will provide a list including the protocol (TCP or UDP), local address and port, foreign address and port, and the connection state (e.g., ESTABLISHED, LISTEN, CLOSE_WAIT).
+
+
+**2. Showing Only Listening Ports (`netstat -l` or `netstat -lan`)**
+
+To view only the ports your system is currently listening on, use the `-l` option. Combining it with `-n` again provides numerical addresses for efficiency.
+
+
+```bash
+netstat -lan
+```
+
+This output shows services waiting for incoming connections.
+
+
+**3. Displaying Routing Table (`netstat -r`)**
+
+The routing table dictates how your system forwards network traffic.  The `-r` option reveals this vital information.
+
+
+```bash
+netstat -r
+```
+
+This will show the destination network, gateway, interface, and other routing metrics.
+
+
+**4.  Filtering by Protocol (`netstat -p` with `-t` or `-u`)**
+
+You can filter the output to show only TCP (`-t`) or UDP (`-u`) connections using the `-p` option (often used alongside `-t` or `-u` and others to further refine results).
+
+
+```bash
+netstat -tupan  # TCP connections, numerical addresses, and process information
+netstat -upan # UDP connections, numerical addresses, and process information
+
+```
+
+The `-p` option will display the process ID (PID) and name associated with each connection, helping you identify which applications are using the network.
+
+
+**5.  Using `grep` for Specific Processes or Ports**
+
+
+For more targeted output, combine `netstat` with the `grep` command to filter results. For example, to find connections related to a specific process (let's say with PID 12345):
+
+
+```bash
+netstat -ap | grep 12345
+```
+
+Or to find connections on a specific port (e.g., port 80):
+
+
+```bash
+netstat -an | grep ":80"
+```
+
+This powerful combination allows for precise monitoring of your network activity.
+
+
+**Important Note:** The availability and exact output format of specific `netstat` options might differ slightly depending on your Linux distribution. In some cases, `ss` is preferred as a more modern and feature-rich alternative.  Always consult your system's documentation for the most accurate information.
+

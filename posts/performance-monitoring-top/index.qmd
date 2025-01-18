@@ -1,0 +1,82 @@
+---
+title: "top"
+date: "07/06/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding the `top` Display
+
+When you execute `top` (simply type `top` in your terminal and press Enter), you're presented with a constantly updating display showing various system processes. The default view typically includes:
+
+* **Tasks:** The number of running, sleeping, and stopped processes.
+* **CPU Usage:**  A breakdown of CPU utilization by user processes, system processes, idle time, etc.
+* **Memory Usage:**  Information on physical memory (RAM) usage, including free and used amounts.
+* **Swap Usage:**  Details about the usage of swap space (if enabled).
+* **Load Average:**  A measure of the system load over the past 1, 5, and 15 minutes.
+* **Process List:** A table showing individual processes, sorted by CPU usage by default, displaying their PID (Process ID), USER, PR (Priority), NI (Nice value), VIRT (Virtual Memory), RES (Resident Memory), SHR (Shared Memory), %CPU, %MEM, TIME+, and COMMAND.
+
+**Example:**
+
+A typical `top` output might look like this (though the specifics will vary greatly depending on your system):
+
+```
+top - 11:30:12 up  1:23,  1 user,  load average: 0.80, 0.72, 0.65
+Tasks: 120 total,   1 running, 119 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.6 us,  0.8 sy,  0.0 ni, 97.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7962.2 total,   6249.1 free,    674.4 used,   1038.7 buff/cache
+MiB Swap:    7999.9 total,    7999.9 free,      0.0 used.   6895.7 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 2928 root      20   0  120752  8720  5668 R   5.8  0.1   0:00.23 top
+    1 root      20   0  266864  3388  2680 S   0.0  0.0   0:02.96 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.07 kthreadd
+```
+
+
+## Interacting with `top`
+
+`top` offers several interactive features:
+
+* **Sorting:** Press a column header (e.g., '%CPU', '%MEM') to sort the processes by that column.  Press it again to reverse the sort order.
+* **Filtering:** You can filter the process list using the `o` (lowercase 'o') command, followed by the filtering criteria. This is less common and requires more advanced syntax.
+* **Killing Processes:**  Using the `k` command, you can specify a PID to send a signal to a process (often SIGTERM, which requests termination). This can be helpful for stopping runaway processes.
+* **Interactive Commands:** Pressing `h` or `?` will display a list of interactive commands available within `top`.  These commands offer significant control over the displayed information and behavior.
+* **Exiting `top`:** Press `q` to exit the `top` command and return to the terminal prompt.
+
+**Example: Killing a Process**
+
+Let's say you want to kill process with PID 12345. You would follow these steps:
+
+1. Run `top`
+2. Locate the process with PID 12345
+3. Press `k`
+4. Enter the PID `12345` and press Enter.
+5. You might be prompted to confirm which signal to send. Often the default `TERM` signal is acceptable.
+
+
+##  `top` Command-Line Options
+
+`top` also accepts various command-line options to customize its behavior:
+
+* `-b` (batch mode): Runs `top` in batch mode, suitable for scripting and redirecting output.
+* `-d` (delay): Specifies the delay between updates (in seconds).  For instance, `top -d 2` updates every 2 seconds.
+* `-n` (iterations): Specifies the number of iterations `top` runs before exiting. `top -n 10` will display 10 iterations.
+* `-p <PID>` (PID): Displays only processes with the specified PIDs. `top -p 1234,5678` will display processes with IDs 1234 and 5678.
+* `-u <user>` (user): Displays only processes belonging to the specified user. `top -u john` shows only processes owned by user `john`.
+
+
+**Example:  Customizing `top`**
+
+To display `top` output every 5 seconds for 10 iterations:
+
+```bash
+top -d 5 -n 10
+```
+
+To view only processes belonging to user `alice`:
+
+```bash
+top -u alice
+```
+
+This guide provides a solid foundation for using the `top` command.  Experiment with the different options and interactive commands to gain a deeper understanding of your system's performance characteristics.  Remember to use `top` responsibly, as indiscriminately killing processes can have unintended consequences.
+

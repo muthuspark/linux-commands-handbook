@@ -1,0 +1,96 @@
+---
+title: "bg"
+date: "04/18/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding Background Processes
+
+Before exploring `bg`, it's crucial to understand background processes.  These are processes that run independently of your current terminal session, allowing you to continue working on other tasks without interruption.  You can initiate a background process using the ampersand (&) symbol at the end of a command. For instance:
+
+```bash
+sleep 60 &
+```
+
+This command starts a `sleep` process for 60 seconds in the background.  Immediately after executing this, you can type other commands and the `sleep` process will continue running independently.
+
+However, if a long-running command is interrupted (e.g., by pressing Ctrl+Z), it moves to a stopped state.  This is where `bg` becomes invaluable.
+
+
+## Resuming Stopped Jobs with `bg`
+
+The `bg` command takes a job ID as its argument. This job ID is a number assigned by the shell to each job it manages.  You can view the list of currently running and stopped jobs using the `jobs` command:
+
+```bash
+sleep 1000 &  #Starts a long sleep process in background
+sleep 10 &    #Starts a shorter sleep process in background
+jobs
+```
+
+This might output something like:
+
+```
+[1]+  Running                 sleep 1000 &
+[2]+  Running                 sleep 10 &
+```
+
+
+Now, let's interrupt the first `sleep` process (job 1):
+
+
+```bash
+Ctrl+Z
+jobs
+```
+
+This will stop the process, and `jobs` might show:
+
+
+```
+[1]+  Stopped                 sleep 1000
+[2]+  Running                 sleep 10 &
+```
+
+Now, use `bg` to resume the stopped job:
+
+
+```bash
+bg %1
+jobs
+```
+
+The `%1` refers to job 1.  You can also use `%` followed by the job name if it's unique or use the `%` followed by a portion of the job name if it's not unique.  After running `bg %1`,  `jobs` will likely display job 1 as running again.
+
+
+##  Multiple Background Jobs
+
+Let's say you have several stopped jobs:
+
+
+```bash
+sleep 100 &
+sleep 200 &
+Ctrl+Z
+Ctrl+Z
+jobs
+```
+
+This might show:
+
+
+```
+[1]+  Stopped                 sleep 100
+[2]+  Stopped                 sleep 200
+```
+
+You can resume them individually using `bg %1` and `bg %2`, or you can resume both simultaneously by using `bg %1 %2`
+
+
+##  `bg` Without Arguments
+
+If you run `bg` without any arguments, it resumes the most recently stopped job.  This is a convenient shortcut.
+
+
+##  Advanced Usage and Considerations
+
+While `bg` is straightforward, remember that background processes consume system resources.  Excessive background processes can degrade performance.  Always monitor your system resource usage and manage background processes appropriately using commands like `top` or `htop`.  Furthermore, ensure your scripts and commands are robust enough to handle potential errors and unexpected terminations when running them in the background.
+

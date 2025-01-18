@@ -1,0 +1,93 @@
+---
+title: "vi"
+date: "11/04/2024"
+categories: [ "Text Processing" ]
+---
+## Navigating the `vi` Landscape
+
+Before exploring advanced editing, understanding basic navigation is crucial.  `vi` operates in different modes:
+
+* **Normal Mode:** This is the default mode upon entering `vi`.  Here, you navigate the text and issue commands.
+* **Insert Mode:** This mode allows you to insert text.  You enter this mode using `i` (insert), `a` (append after cursor), `o` (open a new line below), etc.
+* **Command-line Mode:** Accessed by pressing `:` (colon), this allows execution of commands like saving, quitting, and searching.
+
+**Basic Navigation in Normal Mode:**
+
+* `h`: Move cursor left
+* `j`: Move cursor down
+* `k`: Move cursor up
+* `l`: Move cursor right
+* `w`: Move cursor to the beginning of the next word
+* `b`: Move cursor to the beginning of the previous word
+* `0`: Move cursor to the beginning of the line
+* `$`: Move cursor to the end of the line
+* `G`: Move cursor to the end of the file
+* `gg`: Move cursor to the beginning of the file
+* `nG`: Move cursor to line `n` (e.g., `10G` goes to line 10)
+
+
+**Example:**
+
+Let's say you have a file named `mytext.txt` with the following content:
+
+```
+This is a sample text file.
+It contains multiple lines.
+For demonstration purposes.
+```
+
+Open `vi mytext.txt`. Navigate to the end of the second line using `2G` followed by `$`.
+
+
+## Editing and Deleting Text
+
+Once you've navigated, you can edit and delete:
+
+* `i`: Enter insert mode to insert text before the cursor.
+* `a`: Enter insert mode to append text after the cursor.
+* `x`: Delete the character under the cursor.
+* `dw`: Delete the word under the cursor.
+* `dd`: Delete the entire line.
+* `dG`: Delete from the cursor to the end of the file.
+* `dgg`: Delete from the cursor to the beginning of the file.
+* `yy`: Yank (copy) the current line.
+* `p`: Paste the yanked text after the cursor.
+* `P`: Paste the yanked text before the cursor.
+* `u`: Undo the last change.
+* `Ctrl + r`: Redo the last change.
+
+
+**Example:**
+
+To delete the word "sample" from `mytext.txt`, navigate to the beginning of the word "sample" using `1G` followed by `w` and then press `dw`. To insert "example" in its place, press `i` type "example" and press `Esc` to return to normal mode.
+
+
+## Searching and Replacing Text
+
+`vi` offers powerful search and replace functionalities:
+
+* `/pattern`: Search forward for the `pattern`.
+* `?pattern`: Search backward for the `pattern`.
+* `n`: Repeat the last search forward.
+* `N`: Repeat the last search backward.
+* `:s/old/new/g`: Substitute all occurrences of "old" with "new" on the current line.
+* `:s/old/new/gc`: Substitute all occurrences of "old" with "new" on the current line, prompting for confirmation for each substitution.
+* `:%s/old/new/g`: Substitute all occurrences of "old" with "new" in the entire file.
+
+
+**Example:**
+
+To replace all instances of "lines" with "sentences" in `mytext.txt`, use the command `:%s/lines/sentences/g` in command-line mode (press `:` first).
+
+
+
+## Working with Multiple Files
+
+`vi` allows you to work with multiple files simultaneously.  You can open multiple files using `vi file1 file2 file3`.  The command `:n` switches to the next file, and `:N` switches to the previous file.
+
+
+**Example:** Open two files `file1.txt` and `file2.txt` using `vi file1.txt file2.txt` and switch between them using `:n` and `:N`.
+
+
+This introduction scratches the surface of `vi`'s capabilities.  Exploring further commands and features will exponentially improve your text processing efficiency in Linux.  Remember to consult the `vi` manual (`man vi`) for more comprehensive information.
+

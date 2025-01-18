@@ -1,0 +1,109 @@
+---
+title: "tmux"
+date: "10/07/2024"
+categories: [ "Process Management" ]
+---
+## Getting Started with tmux
+
+Before diving into commands, make sure tmux is installed on your system.  Most Linux distributions include it in their package managers. For example:
+
+* **Debian/Ubuntu:** `sudo apt update && sudo apt install tmux`
+* **Fedora/CentOS/RHEL:** `sudo dnf install tmux`
+* **Arch Linux:** `sudo pacman -S tmux`
+
+
+Once installed, simply type `tmux` in your terminal to launch it.  You'll now be in a tmux session.
+
+
+## Navigating and Managing Panes
+
+Tmux employs a simple keybinding system using the prefix key, usually `Ctrl+b` (configurable).  Let's explore essential pane commands:
+
+**Creating Panes:**
+
+* **`Ctrl+b %`:** Splits the current pane horizontally.
+* **`Ctrl+b "`:** Splits the current pane vertically.
+
+**Switching Panes:**
+
+* **`Ctrl+b arrow keys`:** Navigate between adjacent panes.
+* **`Ctrl+b o`:** Cycle through panes in a circular order.
+
+**Resizing Panes:**
+
+* **`Ctrl+b Shift+arrow keys`:** Resize the current pane.
+
+
+**Example: Setting up a development environment**
+
+Let's imagine you're working on a project requiring multiple terminal sessions.  You might use tmux to set this up:
+
+
+1. Start tmux: `tmux`
+2. Create a vertical split: `Ctrl+b "`
+3. In the left pane, run your web server: `python3 -m http.server`
+4. In the right pane, run your application code: `python3 my_app.py`
+
+Now you have both your server and application running side-by-side, easily managed within a single tmux session.
+
+
+## Managing Windows and Sessions
+
+Tmux allows you to work with multiple windows within a session, further enhancing organization.
+
+**Creating Windows:**
+
+* **`Ctrl+b c`:** Creates a new window.  You'll be prompted to name it.
+
+**Switching Windows:**
+
+* **`Ctrl+b n`:** Switch to the next window.
+* **`Ctrl+b p`:** Switch to the previous window.
+* **`Ctrl+b <number>`:** Switch to window number `<number>`.
+
+**Killing Windows:**
+
+* **`Ctrl+b &`:** Kills the current window.
+
+**Example: Organizing tasks**
+
+Suppose you have several different tasks: database management, code editing, and system monitoring.  You could use different windows for each:
+
+1. Start tmux
+2. Create a new window with `Ctrl+b c` and name it "Database"
+3. In the "Database" window, connect to your database using `psql`
+4. Create a new window with `Ctrl+b c` and name it "Code"
+5. In the "Code" window, start your code editor.
+6. Create a new window with `Ctrl+b c` and name it "Monitoring"
+7. In the "Monitoring" window, run `top` or another system monitoring tool.
+
+Now you have a clearly organized workspace with each task in its own window.
+
+
+## Detaching and Reattaching
+
+One of tmux's most powerful features is the ability to detach from a session and reattach later.  This saves your work even if you close your terminal.
+
+**Detaching:**
+
+* **`Ctrl+b d`:** Detaches from the current tmux session.
+
+**Reattaching:**
+
+* **`tmux attach`:** Reattaches to your last session.  If you have multiple sessions, you might need to use `tmux attach-session -t <session_name>` to specify.
+
+**Listing sessions:**
+
+* `tmux ls`: Lists all active tmux sessions.
+
+
+## Customizing tmux
+
+Tmux offers extensive configuration options through the `~/.tmux.conf` file. You can customize your prefix key, keybindings, and much more.  For example, to change the prefix key to `Ctrl+a`:
+
+```
+set -g prefix C-a
+```
+
+This file allows for powerful customization of your tmux experience.  Exploring the possibilities within this configuration file can significantly improve your productivity.
+

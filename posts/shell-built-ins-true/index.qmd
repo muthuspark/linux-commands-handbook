@@ -1,0 +1,91 @@
+---
+title: "true"
+date: "06/16/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What does `true` do?
+
+The `true` command simply exits with a return code of 0, signifying success.  This might seem trivial, but its significance lies in how it's used in conditional statements and shell scripting.  In essence, it acts as a placeholder for a command that's always meant to succeed.
+
+##  `true` in Conditional Statements
+
+Conditional statements like `if` depend on the exit status of a command. A return code of 0 indicates success, while a non-zero code indicates failure. Because `true` *always* returns 0, it's perfect for situations where you want a block of code to always execute.
+
+**Example 1: Always executing a command**
+
+```bash
+if true; then
+  echo "This will always be printed."
+fi
+```
+
+This script will always print "This will always be printed," regardless of any external factors.
+
+
+**Example 2:  Creating an infinite loop (use cautiously!)**
+
+While not recommended for production code without a clear exit condition,  `true` can be used to create an infinite loop.  This is useful for testing or for processes that need to run indefinitely, checking for certain conditions.
+
+```bash
+while true; do
+  echo "This loop runs forever."
+  sleep 1  # Pauses for 1 second
+done
+```
+
+To stop this loop, you'll need to manually interrupt it using Ctrl+C.
+
+
+
+##  `true` in Cron Jobs and Automation
+
+In automated tasks, `true` is often used as a placeholder when a command isn't needed but a successful return code is required.  Imagine a cron job designed to run a backup script.  If the backup completes successfully, you might want the cron job to log the success. If the backup fails, you want a different action (perhaps sending an email alert). Using `true` in the success case ensures a 0 return code to avoid triggering the failure handling.
+
+
+**Example 3:  Cron job with success logging:**
+
+Let's say your backup script is `backup_script.sh`.  A cron job might look like this:
+
+```bash
+0 0 * * *  if ./backup_script.sh; then echo "Backup successful" >> /var/log/backup.log; else echo "Backup failed!" >> /var/log/backup.log; fi
+```
+
+If you always want to log the success of the cron job itself, even if `backup_script.sh`  fails:
+
+```bash
+0 0 * * * ./backup_script.sh && echo "Cron job ran" >> /var/log/cron.log || (echo "Backup failed!"; echo "Cron job ran with error" >> /var/log/cron.log)
+```
+
+
+##  `true` as a No-op Command
+
+`true` can be used as a no-operation (noop) command, essentially doing nothing.  This can be valuable as a placeholder in scripts or when you need a command that doesn't produce any output or side effects.
+
+
+**Example 4:  A simple noop:**
+
+```bash
+true
+```
+
+This command executes without any visible effect.
+
+
+##  Using `false` for Contrasting Behavior
+
+The opposite of `true` is the `false` command, which always returns a non-zero exit code (typically 1), indicating failure.  This is useful for testing error handling in scripts or intentionally causing a conditional statement to fail.  This command behaves much the same as `true`, except the opposite result.
+
+
+**Example 5:  Always failing condition:**
+
+```bash
+if false; then
+  echo "This will never be printed."
+fi
+```
+
+This will never print the message because `false` always returns a failure code.
+
+
+
+

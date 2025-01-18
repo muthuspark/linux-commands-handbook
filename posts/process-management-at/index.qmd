@@ -1,0 +1,82 @@
+---
+title: "at"
+date: "05/21/2024"
+categories: [ "Process Management" ]
+---
+## Scheduling Single Jobs with `at`
+
+The basic syntax for `at` is straightforward:
+
+```bash
+at [time]
+```
+
+Where `[time]` specifies when the command should execute.  This can be expressed in several ways:
+
+* **Specific time:** `at 10:30` (runs at 10:30 AM today)
+* **Specific date and time:** `at 10:30 AM Oct 26` (runs at 10:30 AM on October 26th)
+* **Relative time:** `at now + 30 minutes` (runs in 30 minutes) `at noon tomorrow` (runs at noon tomorrow)
+
+
+Let's illustrate with examples.  To run a simple `ls -l` command at 5 PM today:
+
+```bash
+at 5PM <<< "ls -l /home"
+```
+
+Here, `<<<` redirects the command to `at`.  You can also use a file:
+
+```bash
+echo "ls -l /home" | at 5PM
+```
+
+This achieves the same result.  For a more complex command involving multiple instructions, it's best to use a script:
+
+```bash
+## Viewing Scheduled Jobs
+
+To see your pending jobs, use:
+
+```bash
+atq
+```
+
+This will list the job ID and scheduled time.
+
+
+## Deleting Scheduled Jobs
+
+To remove a scheduled job, use `atrm` followed by the job ID:
+
+```bash
+atrm job_id
+```
+
+Replace `job_id` with the ID displayed by `atq`.
+
+
+
+## Specifying the Mail Address
+
+By default, `at` sends email notification upon job completion to the user running the command.  You can specify a different email address using the `-M` flag:
+
+
+```bash
+at -M my_email@example.com 10PM <<< "date > /tmp/at_output.txt"
+```
+
+
+##  Using a File for Longer Commands
+
+For extremely long commands or scripts, it's far more manageable to create a file and redirect it to `at`:
+
+```bash
+## Handling Errors and Job Output
+
+It's crucial to consider how to handle potential errors and capture the output of your scheduled commands.  Redirecting the output to a log file, as shown in some of the examples above, is recommended for effective monitoring.  Checking the log file after the scheduled time allows you to assess the success or failure of your jobs.
+
+
+##  Advanced `at` Options
+
+The `at` command offers many additional options for fine-grained control over scheduled jobs.  Refer to the `man at` page for a comprehensive list and explanation of these options.  Exploring these options allows for even more precise scheduling capabilities.
+

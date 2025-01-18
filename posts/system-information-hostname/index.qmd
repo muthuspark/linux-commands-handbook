@@ -1,0 +1,83 @@
+---
+title: "hostname"
+date: "10/07/2024"
+categories: [ "System Information" ]
+---
+## What is `hostname`?
+
+The `hostname` command, as its name suggests, displays the hostname of your Linux system. The hostname is a unique identifier used to locate and address your system within a network.  It's essentially the name by which your computer is known on the network.
+
+
+## Basic Usage: Displaying the Hostname
+
+The simplest use of `hostname` is to simply display the current hostname:
+
+```bash
+hostname
+```
+
+Running this command in your terminal will output the hostname of your system. For instance, it might return something like `mylinuxbox` or `server1`.
+
+
+## Modifying the Hostname (Temporarily and Permanently)
+
+While displaying the hostname is useful, the real power lies in modifying it.  However, the methods for changing it differ depending on whether you want a temporary or permanent change.
+
+### Temporary Hostname Change
+
+For a temporary change, affecting only the current session, use the `-f` (or `--fqdn`) option followed by the desired hostname:
+
+
+```bash
+hostname -f mynewhostname.example.com
+```
+
+This command changes the hostname *only* for the current terminal session. Upon closing the terminal or rebooting, the hostname will revert to its original value.
+
+
+### Permanent Hostname Change
+
+Making a permanent change requires editing system configuration files. The exact method varies slightly depending on your Linux distribution, but the common approach involves modifying the `/etc/hostname` file.
+
+First, open the file using a text editor with root privileges (e.g., `sudo nano /etc/hostname`):
+
+
+```bash
+sudo nano /etc/hostname
+```
+
+Then, replace the existing hostname with your desired hostname.  For example, to set the hostname to "mypermanenthostname":
+
+```
+mypermanenthostname
+```
+
+Save the file and then restart your system for the changes to take effect.  In some distributions, you may also need to update `/etc/hosts`.
+
+
+## Advanced Usage:  Retrieving Fully Qualified Domain Name (FQDN)
+
+
+The `hostname` command can also provide the Fully Qualified Domain Name (FQDN).  The FQDN includes the hostname and the domain name, e.g., `mylinuxbox.example.com`.  Use the `-f` or `--fqdn` option to retrieve this:
+
+```bash
+hostname -f
+```
+
+##  Working with the `/etc/hosts` File
+
+The `/etc/hosts` file plays a critical role in name resolution. It maps hostnames to IP addresses.  Modifying this file can also impact how your system resolves hostnames, though it's generally not the primary method for changing your system's hostname.  It's vital to understand the implications before making changes to this file.  Incorrect entries can disrupt network connectivity.  Example of an entry in `/etc/hosts`:
+
+```
+127.0.0.1       localhost mypermanenthostname
+127.0.1.1       mypermanenthostname.localdomain
+```
+
+
+This illustrates the mapping between IP addresses and hostnames; modifying these entries must be done cautiously.
+
+
+## Troubleshooting
+
+If you encounter issues after changing your hostname, double-check that you've correctly modified both `/etc/hostname` and restarted your system.   Inconsistencies between these settings can lead to problems.  Also, verify that your network configuration is correct and that DNS settings are properly configured.
+

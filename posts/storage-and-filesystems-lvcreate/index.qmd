@@ -1,0 +1,90 @@
+---
+title: "lvcreate"
+date: "01/08/2025"
+categories: [ "Storage and Filesystems" ]
+---
+## Understanding the Basics: What is lvcreate?
+
+The `lvcreate` command is used to create logical volumes within an existing Volume Group (VG).  Think of it this way: a physical hard drive is partitioned, those partitions are grouped into a Volume Group, and then logical volumes are created *within* that Volume Group. This layered approach provides flexibility in resizing and managing storage.  Before using `lvcreate`, you'll need to have a Volume Group already set up.  If not, you'll need to use the `vgcreate` command first.
+
+## Essential lvcreate Syntax
+
+The basic syntax for `lvcreate` is straightforward:
+
+```bash
+lvcreate [options] VGName/LVName
+```
+
+Where:
+
+* `VGName` is the name of your existing Volume Group.
+* `LVName` is the name you want to give to your new logical volume.
+
+
+Let's illustrate with a simple example:
+
+```bash
+lvcreate myVG/myLV
+```
+
+This command creates a logical volume named `myLV` within the Volume Group `myVG`.  By default, `lvcreate` will use all the free space in the Volume Group.
+
+## Specifying Size:  Precise LV Creation
+
+Often, you'll want to specify the size of your logical volume.  You can achieve this using the `-L` or `-s` option:
+
+* **`-L size`**: Specifies the size of the logical volume.  You can use units like `M` (megabytes), `G` (gigabytes), `T` (terabytes), etc.
+
+* **`-s size`**: Similar to `-L`, but allows for more flexible size specifications, such as specifying sizes using units like `KiB`, `MiB`, `GiB`, `TiB`.  This is generally preferred for its clarity and precision.
+
+
+Example using `-L`:
+
+```bash
+lvcreate -L 10G myVG/myLV10G
+```
+
+This creates a 10GB logical volume named `myLV10G`.
+
+Example using `-s`:
+
+```bash
+lvcreate -s 20GiB myVG/myLV20GiB
+```
+
+This creates a 20 GiB logical volume named `myLV20GiB`.
+
+
+## Using a Percentage of Free Space
+
+Instead of specifying a fixed size, you can allocate a percentage of the free space in the Volume Group using the `-l` option:
+
+```bash
+lvcreate -l 50%FREE myVG/myLV50percent
+```
+
+This creates a logical volume using 50% of the free space within `myVG`.
+
+##  Snapshot Creation
+
+`lvcreate` can also be used to create snapshots of existing logical volumes.  This is invaluable for backups and disaster recovery.  The `-s` option (in this context, it's distinct from the size specification) is used for snapshots:
+
+```bash
+lvcreate -s -n myLVSnapshot -L 10G myLV
+```
+
+This creates a 10GB snapshot named `myLVSnapshot` of the logical volume `myLV`.  Note the `-n` option specifies the name of the snapshot.
+
+
+##  Advanced Options:  Extending Functionality
+
+`lvcreate` offers several other advanced options, including:
+
+* **`-V`**: Specify the volume group's physical extent size.
+
+* **`-m`**: Sets metadata percentage.
+
+
+
+These are just a few examples.  Refer to the `man lvcreate` page for a comprehensive list of options and their functionalities.  Understanding these options empowers you to fine-tune your logical volume creation to match your specific storage needs.  Experimentation with these options, while always backing up your data first, is encouraged to become truly proficient with LVM and the `lvcreate` command.
+

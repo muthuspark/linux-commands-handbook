@@ -1,0 +1,93 @@
+---
+title: "vgdisplay"
+date: "01/27/2024"
+categories: [ "Storage and Filesystems" ]
+---
+## What is `vgdisplay`?
+
+The `vgdisplay` command is a powerful tool within the LVM suite.  It displays detailed information about a specified volume group (VG). A volume group is a collection of Physical Volumes (PVs) that are grouped together to create a larger pool of storage.  Think of it as a container for your logical volumes (LVs), which are the actual partitions you use for data.
+
+Without `vgdisplay`, navigating and understanding your LVM setup would be significantly more difficult.
+
+## Basic Usage
+
+The simplest form of `vgdisplay` is just typing the command itself:
+
+```bash
+sudo vgdisplay
+```
+
+This will display information about *all* volume groups on your system. The output will include details such as:
+
+* **VG Name:** The name of the volume group.
+* **VG Size:** The total size of the volume group.
+* **PE Size:** The size of each Physical Extent (PE), which is the basic unit of storage within a VG.
+* **#PE:** The total number of Physical Extents.
+* **Free PE:** The number of free PEs available for creating new logical volumes.
+* **VG Status:** The overall status of the volume group (e.g., active, inactive).
+
+This provides a quick overview of your LVM configuration.
+
+## Displaying Information for a Specific Volume Group
+
+To get information about a *specific* volume group, you need to provide the volume group name as an argument:
+
+```bash
+sudo vgdisplay myvg
+```
+
+Replace `myvg` with the actual name of your volume group. This command will only display information for `myvg`.
+
+## Understanding the Output
+
+Let's break down a sample output:
+
+```
+--- Volume group ---
+VG Name               myvg
+System ID             
+Format                lvm2
+Metadata Areas        1
+Metadata Sequence No  2
+VG Access             read/write
+VG Status             resizable
+MAX LV                0
+Cur LV                1
+Open LV               1
+Max PV                0
+Cur PV                2
+Act PV                2
+VG Size               <20.00 GiB
+PE Size               4.00 MiB
+Total PE              5120
+Alloc PE / Size       1024 / <10.00 GiB
+Free  PE / Size       4096 / <10.00 GiB
+VG UUID               ... (UUID here)
+```
+
+This output tells us:
+
+* The volume group is named `myvg`.
+* It's using the lvm2 format.
+* It currently has 2 physical volumes.
+* It has a total size of just under 20 GiB and 10 GiB are allocated.
+* There are 4096 free PEs available.
+
+##  Filtering Output with `grep`
+
+For more specific information, combine `vgdisplay` with the `grep` command. For example, to only see the VG size:
+
+```bash
+sudo vgdisplay myvg | grep 'VG Size'
+```
+
+This will output only the line containing "VG Size." You can adapt this to filter for any other piece of information displayed by `vgdisplay`.
+
+
+##  Advanced Usage:  Combining with other LVM commands
+
+`vgdisplay` is often used in conjunction with other LVM commands, such as `vgs`, `lvs`, and `pvs`, to get a holistic view of your storage configuration. For instance, after identifying a volume group of interest with `vgs`, you can use `vgdisplay` to drill down to see its specific details.
+
+
+By mastering `vgdisplay`, you gain a crucial tool in managing and troubleshooting your Linux system's storage.  Its straightforward syntax and comprehensive output make it an indispensable command for any system administrator.
+

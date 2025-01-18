@@ -1,0 +1,91 @@
+---
+title: "lscpu"
+date: "04/12/2024"
+categories: [ "System Information" ]
+---
+## What is `lscpu`?
+
+`lscpu` (list CPU architecture) is a simple yet powerful command-line utility that displays a wealth of information about your system's central processing unit (CPU).  This information goes beyond basic specifications, delving into architectural details crucial for performance analysis, troubleshooting, and software compatibility.
+
+## Key Information Provided by `lscpu`
+
+The output of `lscpu` typically includes, but isn't limited to:
+
+* **Architecture:** The underlying CPU architecture (e.g., x86_64, ARM).
+* **CPU op-mode(s):**  The operating modes supported by the CPU (e.g., 32-bit, 64-bit).
+* **Byte Order:** The endianness of the system (big-endian or little-endian).
+* **CPU(s):** The total number of CPU cores.
+* **On-line CPU(s) list:**  A list of currently active CPU cores.
+* **Thread(s) per core:**  The number of hardware threads per core (hyperthreading).
+* **Core(s) per socket:** The number of cores per physical CPU socket.
+* **Socket(s):** The number of physical CPU sockets.
+* **NUMA node(s):**  Information about Non-Uniform Memory Access architecture, if applicable.
+* **Vendor ID:** The manufacturer of the CPU (e.g., GenuineIntel, AuthenticAMD).
+* **CPU family:**  A numerical identifier for the CPU family.
+* **Model:** A numerical identifier for the specific CPU model.
+* **Model name:** The descriptive name of the CPU model (e.g., Intel Core i7-10700K).
+* **Stepping:** A revision number indicating manufacturing refinements.
+* **CPU MHz:** The current CPU clock speed.
+* **BogoMIPS:** A very rough estimate of CPU performance (generally unreliable for comparisons).
+* **Flags:** A detailed list of CPU features and instruction set extensions (e.g., SSE, AVX, AES).
+* **Cache:** Information about different levels of CPU cache (L1, L2, L3).
+
+
+##  Using `lscpu`: Code Examples
+
+Let's explore `lscpu` with practical examples:
+
+**1. Basic `lscpu` Output:**
+
+The simplest usage is just typing the command:
+
+```bash
+lscpu
+```
+
+This will display a comprehensive overview of your CPU information in a structured format.
+
+**2.  Filtering Output with `grep`:**
+
+You can use `grep` to filter the output and extract specific details. For example, to find the CPU model name:
+
+```bash
+lscpu | grep "Model name"
+```
+
+To find all flags that contain "AVX":
+
+```bash
+lscpu | grep -i "avx"
+```
+
+**3.  Getting Specific Information:**
+
+`lscpu` also allows you to extract specific fields using the `--parse=VALUE` option. For example, to get only the CPU architecture:
+
+```bash
+lscpu --parse=architecture
+```
+
+
+**4.  Detailed Cache Information:**
+
+To get a detailed breakdown of cache information:
+
+```bash
+lscpu --extended | grep Cache
+```
+
+This uses the `--extended` flag for a more verbose output focused on cache details.  Note that the output might vary significantly depending on your CPU.
+
+**5.  Focusing on specific aspects**
+
+For instance, focusing solely on the number of cores and threads:
+
+```bash
+lscpu | grep -E "(CPU\(s\)|Thread\(s\))"
+```
+
+
+These examples demonstrate the versatility of `lscpu` and its ability to provide tailored information based on your needs.  The command's simplicity and effectiveness make it a valuable tool for any Linux user.
+

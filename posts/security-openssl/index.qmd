@@ -1,0 +1,77 @@
+---
+title: "openssl"
+date: "02/25/2024"
+categories: [ "Security" ]
+---
+## Generating RSA Keys
+
+RSA keys are fundamental for public-key cryptography.  The following command generates a 2048-bit RSA key pair, storing the private key in `private.pem` and the public key in `public.pem`:
+
+```bash
+openssl genrsa -out private.pem 2048
+openssl rsa -in private.pem -pubout -out public.pem
+```
+
+This creates two files: `private.pem` (keep this secure!) and `public.pem`.  The private key should be protected rigorously, while the public key can be shared freely.
+
+## Encrypting and Decrypting Data
+
+Let's encrypt a message using the public key and decrypt it with the private key.  First, we'll create a message file:
+
+
+```bash
+echo "This is my secret message" > message.txt
+```
+
+Then, we encrypt it using the public key:
+
+```bash
+openssl rsautl -encrypt -pubin -inkey public.pem -in message.txt -out encrypted.txt
+```
+
+Finally, we decrypt the encrypted file using the private key:
+
+```bash
+openssl rsautl -decrypt -inkey private.pem -in encrypted.txt -out decrypted.txt
+```
+
+The `decrypted.txt` file will contain your original message.
+
+
+## Creating Self-Signed Certificates
+
+Self-signed certificates are useful for testing and development purposes.  This command creates a self-signed certificate with a validity period of 365 days:
+
+```bash
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/C=US/ST=California/L=San Francisco/O=My Company/CN=localhost"
+```
+
+Remember to replace the `/C=US/ST=California/L=San Francisco/O=My Company/CN=localhost` part with your own details.  This command generates both the private key (`key.pem`) and the self-signed certificate (`cert.pem`).
+
+
+##  Hashing Data
+
+Hashing is a one-way function that creates a unique fingerprint of data.  Here's how to generate an SHA-256 hash of a file:
+
+```bash
+openssl dgst -sha256 message.txt
+```
+
+This will output the SHA-256 hash of `message.txt`.  You can change `-sha256` to other hashing algorithms like `-sha1` or `-md5`, but SHA-256 is generally preferred for its security.
+
+
+##  Working with Different Cipher Suites
+
+OpenSSL supports a wide range of cipher suites.  To see the available cipher suites, you can use:
+
+```bash
+openssl ciphers
+```
+
+You can then specify a cipher suite when encrypting or decrypting data using options like `-cipher AES-256-CBC`.
+
+
+##  Further Exploration
+
+These examples provide a starting point for using OpenSSL.  The `openssl` command offers many more features and options.  Refer to the OpenSSL documentation for a complete overview of its capabilities.  Remember to handle private keys with utmost care to avoid security breaches.  Improper usage can compromise your system's security, therefore carefully review the options and parameters before executing any `openssl` command.
+

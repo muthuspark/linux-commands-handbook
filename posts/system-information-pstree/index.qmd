@@ -1,0 +1,75 @@
+---
+title: "pstree"
+date: "10/28/2024"
+categories: [ "System Information" ]
+---
+## Basic Usage of `pstree`
+
+The simplest way to use `pstree` is to invoke it without any arguments:
+
+```bash
+pstree
+```
+
+This will display the entire process tree, starting from the init process (typically PID 1).  The output will show the main processes and their children, indented to reflect the parent-child relationship.  You'll see the process ID (PID) and the process name. For example:
+
+```
+init─┬─systemd
+    └─{systemd}─┬─{systemd-journald}
+                 ├─{systemd-logind}
+                 ├─{systemd-udevd}
+                 └─{systemd-network}
+```
+
+This output shows `init` as the root process, with `systemd` as its child, and further children branching out from `systemd`.  The curly braces `{}` indicate that multiple processes of the same name are running.
+
+##  Filtering with `pstree`
+
+`pstree` allows for targeted viewing of specific processes. This is extremely helpful when dealing with a large number of running processes.
+
+Let's say you want to view the process tree rooted at a specific PID. You can achieve this using the `-p` option:
+
+```bash
+pstree -p <PID>
+```
+
+Replace `<PID>` with the actual Process ID. For instance, to see the tree rooted at the PID of your shell:
+
+```bash
+pstree -p $$
+```
+
+(The `$$` variable represents the current shell's PID). This command will display your shell process and all its children, along with their PIDs.
+
+
+Another useful option is `-u` which shows the user ID associated with each process:
+
+```bash
+pstree -u
+```
+
+This output will include the username for each process, facilitating identification of processes owned by specific users.
+
+
+## Combining Options for Detailed Views
+
+The power of `pstree` truly emerges when combining different options.  Let's see an example combining `-p` and `-u`:
+
+```bash
+pstree -pu
+```
+
+This will display the process tree, showing both the PIDs and user IDs for each process, offering a more comprehensive view.
+
+
+##  Showing Full Paths with `pstree`
+
+For further clarity, you can use the `-s` option to display the full command line associated with each process. However, be aware that the output can become quite long and complex:
+
+```bash
+pstree -s
+```
+
+
+Remember to use these commands with caution, especially the `-s` option, as the output can be extensive for systems with many running processes.  `pstree` is an invaluable tool for understanding and managing your Linux system's processes. It provides a visual representation that is often much more intuitive than long lists of PIDs and process information from other tools.  Mastering these simple commands will drastically enhance your Linux system administration skills.
+

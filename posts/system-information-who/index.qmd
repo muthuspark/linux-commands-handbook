@@ -1,0 +1,99 @@
+---
+title: "who"
+date: "09/07/2024"
+categories: [ "System Information" ]
+---
+## Basic Usage: Displaying Logged-in Users
+
+At its core, the `who` command provides a concise list of users currently active on the system.  The output typically includes the username, terminal used for login, login time, and sometimes the remote host from which the user connected.
+
+```bash
+who
+```
+
+This simple command will output something similar to:
+
+```
+user1  pts/0        2023-10-27 10:30 (192.168.1.100)
+user2  pts/1        2023-10-27 11:00 (192.168.1.101)
+```
+
+This shows `user1` logged in on terminal `pts/0` at 10:30 AM from IP `192.168.1.100`, and similarly for `user2`.
+
+
+## Refining Output with Options
+
+The true power of `who` lies in its options. Let's explore some key ones:
+
+
+**`who -u` (Detailed User Information):**  This option provides a more detailed view of each user's session, including the process ID (PID) and the time the user became idle.
+
+```bash
+who -u
+```
+
+Example output:
+
+```
+user1  pts/0        2023-10-27 10:30   0.00.00  192.168.1.100
+user2  pts/1        2023-10-27 11:00   1:23:00  192.168.1.101
+```
+Notice the addition of idle time.
+
+**`who -H` (Header Information):** This adds a header to the output for better readability, specifying the column headings.
+
+
+```bash
+who -H
+```
+
+**`who -a` (All Information):** This combines the functionalities of several other options, providing a comprehensive summary.  It's often equivalent to using `who -bdH`.
+
+```bash
+who -a
+```
+
+
+**`who am i` (Your Own Session Information):** This displays information specifically about your current login session.
+
+```bash
+who am i
+```
+
+**Combining Options:** You can combine multiple options for even more tailored output. For instance, to get a detailed output with a header, use:
+
+```bash
+who -aH
+```
+
+
+**`who -r` (Runlevel Information):** This displays the current runlevel of the system. This is particularly useful for system administrators monitoring the system state.  (Note: The usefulness of this option depends on the specific system and init system used.)
+
+
+```bash
+who -r
+```
+
+
+##  Beyond the Basics:  Using `who` with Other Commands
+
+The output of `who` can be piped to other commands for further processing and analysis. For example, you can count the number of currently logged-in users using `wc`:
+
+```bash
+who | wc -l
+```
+
+This will provide a numerical count of lines in the output of `who`, which represents the number of users.
+
+
+Similarly, you can use `grep` to search for specific users:
+
+```bash
+who | grep user1
+```
+
+This will filter the `who` output to show only lines containing "user1".
+
+
+By mastering the `who` command and its various options, you gain a valuable tool for monitoring and managing your Linux system effectively.  Its simplicity belies its power, making it an indispensable command for both beginners and experienced users.
+

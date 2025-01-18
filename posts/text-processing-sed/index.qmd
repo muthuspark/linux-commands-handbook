@@ -1,0 +1,143 @@
+---
+title: "sed"
+date: "11/05/2024"
+categories: [ "Text Processing" ]
+---
+## Understanding `sed`'s Basics
+
+`sed` operates on a line-by-line basis.  Its general syntax is:
+
+```bash
+sed [options] 'command' input_file
+```
+
+Where:
+
+* **`[options]`**:  Flags modifying `sed`'s behavior (e.g., `-i` for in-place editing).
+* **`command`**: The action `sed` performs (e.g., substitution, deletion).
+* **`input_file`**: The file `sed` processes.  If omitted, `sed` reads from standard input.
+
+Let's start with some fundamental commands.
+
+
+## Substitution: The Workhorse of `sed`
+
+The `s` command is arguably `sed`'s most used feature. It allows for text substitution. The syntax is:
+
+`s/pattern/replacement/flags`
+
+* **`pattern`**: The text to search for.
+* **`replacement`**: The text to substitute.
+* **`flags`**: Optional modifiers (explained below).
+
+
+**Example 1: Replacing a single occurrence:**
+
+Let's say you have a file named `my_file.txt` containing:
+
+```
+This is a sample line.
+This is another sample line.
+```
+
+To replace the first occurrence of "sample" with "example" on each line:
+
+```bash
+sed 's/sample/example/' my_file.txt
+```
+
+Output:
+
+```
+This is a example line.
+This is another example line.
+```
+
+
+**Example 2: Replacing all occurrences:**
+
+To replace *all* occurrences of "sample" with "example", use the `g` flag:
+
+```bash
+sed 's/sample/example/g' my_file.txt
+```
+
+Output:
+
+```
+This is a example line.
+This is another example line.
+```
+
+
+**Example 3: Using delimiters:**
+
+If your pattern or replacement contains slashes, you can use a different delimiter.  For example:
+
+```bash
+sed 's#This is a/#A different beginning:#' my_file.txt
+```
+
+
+## Deletion: Removing Lines and Parts of Lines
+
+The `d` command deletes lines matching a pattern.
+
+**Example 4: Deleting lines containing "another":**
+
+```bash
+sed '/another/d' my_file.txt
+```
+
+This will remove the second line because it contains "another".
+
+
+**Example 5: Deleting lines with specific numbers:**
+
+You can delete lines based on their line number using address ranges.  For example, to delete lines 1 and 2:
+
+```bash
+sed '1,2d' my_file.txt
+```
+
+
+## Appending and Inserting Text
+
+The `a` command appends text after a matched line, and `i` inserts text before a matched line.
+
+**Example 6: Appending text after a line containing "example":**
+
+```bash
+sed '/example/a\ This line was appended.' my_file.txt
+```
+
+
+**Example 7: Inserting text before a line containing "example":**
+
+```bash
+sed '/example/i\ This line was inserted.' my_file.txt
+```
+
+
+## In-place Editing with `-i`
+
+By default, `sed` outputs the modified text to standard output.  To modify the file directly, use the `-i` option:
+
+```bash
+sed -i 's/sample/example/g' my_file.txt
+```
+
+**Caution:**  Always back up your files before using `-i` as it modifies the original file directly.
+
+
+## Advanced `sed` Techniques: Using Regular Expressions
+
+`sed`'s true power lies in its ability to leverage regular expressions.  This allows for much more complex pattern matching and manipulation.  For instance, to replace all occurrences of one or more whitespace characters with a single space:
+
+```bash
+sed 's/[[:space:]]\+/ /g' my_file.txt
+```
+
+
+This is just a glimpse into the capabilities of `sed`.  Experiment with different commands and options to unlock its full potential for efficient text processing in your Linux workflows.  Further exploration into regular expressions will significantly enhance your proficiency with this powerful tool.
+

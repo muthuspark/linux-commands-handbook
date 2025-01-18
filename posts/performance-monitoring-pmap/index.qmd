@@ -1,0 +1,97 @@
+---
+title: "pmap"
+date: "05/21/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding the Output of `pmap`
+
+The core functionality of `pmap` is to display a process's memory map.  This map outlines the different sections of memory allocated to the process, including:
+
+
+* **Address:** The virtual memory address range used by the process.
+* **Permissions:**  Indicates the access rights (read, write, execute) for each memory segment.
+* **Offset:**  The offset within the file (if applicable) from which the memory is mapped.
+* **Device:** The device from which the memory is mapped (e.g., `/dev/zero`).
+* **inode:** The inode number of the file (if applicable).
+* **pathname:** The path to the file mapped into memory (e.g., shared libraries).
+
+
+A typical `pmap` output might look like this:
+
+
+```
+Address           Kbytes     RSS   Swap  Path
+00400000-0041b000     184     184    0     /usr/bin/gnome-terminal
+0041b000-0041c000       4       4    0     /lib/x86_64-linux-gnu/libc-2.35.so
+0041c000-00432000     120     120    0     /lib/x86_64-linux-gnu/libpcre2-8.so
+... more lines ...
+```
+
+Here:
+
+* `Address` shows the virtual address range.
+* `Kbytes` shows the size of the memory region in kilobytes.
+* `RSS` (Resident Set Size) is the amount of memory currently resident in RAM.
+* `Swap` shows how much of the memory is swapped out to disk.
+* `Path` displays the file or library the memory is mapped from.
+
+
+##  Practical Examples with `pmap`
+
+Let's explore some practical scenarios using `pmap`:
+
+**1. Viewing the memory map of a specific process:**
+
+To view the memory map of a process with PID 1234, use:
+
+```bash
+pmap 1234
+```
+
+**2.  Identifying memory leaks:**
+
+By repeatedly running `pmap` on a process and observing the `RSS` values, you can potentially identify memory leaks.  A constantly increasing `RSS` without a corresponding increase in functionality may indicate a leak.
+
+```bash
+
+
+
+
+pmap <PID>
+sleep 60
+pmap <PID>
+sleep 60
+pmap <PID>
+```
+
+
+**3. Analyzing shared library usage:**
+
+`pmap` helps identify which shared libraries a process is using and how much memory each library consumes. This is valuable for debugging issues related to library conflicts or excessive library usage.
+
+```bash
+pmap <PID> | grep "libc"
+```
+This command filters the output to show only lines containing "libc", revealing the memory usage of the C standard library.
+
+
+**4. Investigating memory mapping from specific files:**
+
+You can see the memory usage related to a particular file by searching in the output.  For example, to check memory mapping from `/path/to/my/file`:
+
+```bash
+pmap <PID> | grep "/path/to/my/file"
+```
+
+**5. Using `-x` option for extended information:**
+
+The `-x` option provides a more detailed and verbose output, including information about the mapping type, major and minor device numbers, and other attributes.
+
+
+```bash
+pmap -x <PID>
+```
+
+
+By mastering the `pmap` command, you gain a powerful tool for diagnosing memory-related issues and optimizing the performance of your Linux applications.  Its ability to provide a granular view into process memory makes it an indispensable part of any Linux system administrator's or developer's toolkit.
+

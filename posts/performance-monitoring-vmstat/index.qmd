@@ -1,0 +1,93 @@
+---
+title: "vmstat"
+date: "09/01/2024"
+categories: [ "Performance Monitoring" ]
+---
+## Understanding vmstat's Output
+
+`vmstat` displays various system statistics, categorized into several key areas.  Understanding these categories is crucial to effectively using the command.  A typical output looks like this (the exact columns may vary slightly depending on your system):
+
+```
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+0  0      0 1017364  12368 167332    0    0     2     4  156  270  1  0 99  0  0
+```
+
+Let's break down some of the most important columns:
+
+* **r:** Running processes.  A high number might indicate system overload.
+* **b:** Blocked processes.  Indicates processes waiting for I/O.
+* **swpd:** Used swap space. High values suggest insufficient RAM.
+* **free:** Free memory. Low values can lead to performance degradation.
+* **buff:** Memory used by buffers.
+* **cache:** Memory used for caching.
+* **si:** Swap in.  Amount of data swapped from disk to memory.  High values indicate heavy swapping.
+* **so:** Swap out.  Amount of data swapped from memory to disk. High values also indicate heavy swapping.
+* **bi:** Blocks received.  Disk reads.
+* **bo:** Blocks sent. Disk writes.
+* **in:** Interrupts per second. High values might suggest hardware issues or driver problems.
+* **cs:** Context switches per second.  High values can indicate excessive process scheduling overhead.
+* **us:** User CPU time. Percentage of CPU used by user processes.
+* **sy:** System CPU time. Percentage of CPU used by the kernel.
+* **id:** Idle CPU time. Percentage of CPU idle time.
+* **wa:** I/O wait. Percentage of CPU waiting for I/O operations.
+* **st:** Stolen CPU time (for virtualized environments).
+
+
+## Basic Usage and Examples
+
+The simplest way to use `vmstat` is to run it without any arguments:
+
+```bash
+vmstat
+```
+
+This will display a single line of statistics representing the current system state.  To get a more comprehensive view, specify an interval and count:
+
+```bash
+vmstat 2 5
+```
+
+This command will display statistics every 2 seconds for 5 iterations (10 seconds total).  This allows you to observe trends in system performance over time.
+
+
+## Monitoring System Activity with Specific Intervals
+
+Let's say you suspect your database server is experiencing performance issues. You can use `vmstat` to monitor resource utilization for a longer period:
+
+```bash
+vmstat 5 30
+```
+
+This command outputs statistics every 5 seconds over a 150-second period. Look at the `wa` (I/O wait) and `b` (blocked processes) values – high values indicate I/O bottlenecks which might point to database performance issues.
+
+
+## Advanced Usage:  Understanding the impact of specific tasks
+
+
+Suppose you want to analyze the system's response to a resource-intensive operation.  You can run `vmstat` *before*, *during*, and *after* the operation to compare the values:
+
+1. **Before:** `vmstat 1 3`  (collect baseline data)
+2. **Run your resource intensive task** (e.g., a large database query, video encoding)
+3. **During:** `vmstat 1 10` (Monitor resource use during the task)
+4. **After:** `vmstat 1 3` (Check for recovery)
+
+
+By comparing the `vmstat` outputs from these three stages, you can pinpoint the impact of your task on CPU usage, memory usage, I/O, and other metrics.
+
+
+##  Filtering Specific Metrics
+
+While `vmstat` displays a wealth of information, you can focus on specific metrics using the `-s` option (for summary statistics):
+
+```bash
+vmstat -s
+```
+
+This shows cumulative statistics since boot, useful for long-term analysis.
+
+
+
+
+By mastering `vmstat`, you gain a powerful tool for understanding and optimizing your Linux system's performance.  Remember that interpreting the output requires context and understanding of your specific workload.  Continuous monitoring and analysis are key to identifying and resolving performance bottlenecks effectively.
+

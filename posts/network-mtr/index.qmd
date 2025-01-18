@@ -1,0 +1,91 @@
+---
+title: "mtr"
+date: "10/14/2024"
+categories: [ "Network" ]
+---
+## Understanding `mtr`'s Output
+
+The core strength of `mtr` lies in its comprehensive output.  It displays real-time statistics, allowing you to monitor network performance dynamically. Key metrics included are:
+
+* **Host:** The hostname or IP address of each hop.
+* **Loss%:** The percentage of packets lost at each hop.  High loss indicates potential problems.
+* **Snt:** Packets sent.
+* **Recv:** Packets received.
+* **Last:** The latency (in milliseconds) of the last packet.
+* **Avg:** Average latency.
+* **Best:** Best latency.
+* **Wrst:** Worst latency.
+* **StDev:** Standard deviation of latency (a measure of jitter).
+
+
+## Basic Usage: Tracing to a Website
+
+Let's start with the simplest use case: tracing the network path to a website like `google.com`.  The command is straightforward:
+
+```bash
+mtr google.com
+```
+
+This command will immediately start sending packets and displaying the results in your terminal.  Press `Ctrl+C` to stop the continuous monitoring.  You'll see a table similar to the one described above, showing the performance characteristics for each hop along the way to Google's servers.  Observe the `Loss%`, `Avg`, and `StDev` columns to identify potential bottlenecks.
+
+## Specifying the Target IP Address
+
+Instead of using a hostname, you can directly specify the IP address of your target:
+
+```bash
+mtr 8.8.8.8
+```
+
+This will trace the path to Google's public DNS server (8.8.8.8).  Using IP addresses is particularly useful when you suspect hostname resolution issues.
+
+## Controlling `mtr`'s Behavior with Options
+
+`mtr` offers various options to fine-tune its behavior.  Here are a few useful ones:
+
+* **`-c <count>`:** Specifies the number of probes to send to each hop before moving to the next. The default is 10.
+
+```bash
+mtr -c 20 google.com  # Sends 20 probes to each hop
+```
+
+* **`-r <report_type>`:** Allows you to choose the report format.  Common options include:
+    * `summary`: A concise summary of the results.
+    * `csv`: Comma-separated values for easy import into spreadsheets.
+
+```bash
+mtr -r summary google.com  # Generates a summary report
+```
+
+
+* **`-n`:** Forces `mtr` to use IP addresses instead of resolving hostnames.  This can be useful for faster execution.
+
+```bash
+mtr -n 8.8.8.8 #Uses IP address only, no hostname lookup.
+```
+
+
+* **`-i <interval>`:** Sets the interval (in seconds) between sending packets. The default is 1 second.
+
+```bash
+mtr -i 2 google.com # Sends packets every 2 seconds.
+```
+
+* **`-w <filename>`:** Saves the output to a file.
+
+```bash
+mtr -w mtr_results.txt google.com # Saves the output to mtr_results.txt
+```
+
+
+##  Identifying Network Problems with `mtr`
+
+By analyzing the output of `mtr`, you can pinpoint potential sources of network issues.  High packet loss (`Loss%`) at a specific hop suggests a problem with that segment of the network.  High average latency (`Avg`) indicates slow performance.  High standard deviation (`StDev`) indicates significant jitter (variation in latency), often associated with network congestion or instability.
+
+By combining these parameters you can effectively diagnose your network connectivity issues.
+
+
+## Advanced Usage:  Customizing Packet Sizes and TTL
+
+
+`mtr` allows more fine-grained control over packet behavior through advanced options, including control over the Time To Live (TTL) field within the packets,  which controls how many hops a packet can traverse before being discarded.   Consult the `mtr` man page (`man mtr`) for a complete list of options and advanced usage scenarios.
+

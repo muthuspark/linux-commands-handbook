@@ -1,0 +1,102 @@
+---
+title: "hash"
+date: "04/26/2024"
+categories: [ "Shell Built-ins" ]
+---
+## What does `hash` do?
+
+When you type a command into your terminal, the shell embarks on a search to locate the corresponding executable file. This involves checking directories specified in your `PATH` environment variable, a process that can be time-consuming, especially with lengthy `PATH`s or frequently used commands.
+
+The `hash` command cleverly addresses this performance bottleneck by creating a cache of command-to-path mappings. Once an executable's location is found, `hash` stores this information.  Subsequent calls to the same command will directly retrieve the path from the cache, bypassing the lengthy search. This results in significantly faster command execution.
+
+## Basic Usage of `hash`
+
+The most straightforward use of `hash` is to simply cache the location of a command:
+
+```bash
+hash my_script.sh
+```
+
+Assuming `my_script.sh` is an executable script within a directory listed in your `PATH`, this command will locate and cache its path.
+
+You can also hash multiple commands simultaneously:
+
+```bash
+hash ls grep find
+```
+
+This caches the locations of `ls`, `grep`, and `find`.
+
+
+##  Listing Cached Commands
+
+To see what commands are currently hashed, use the `hash -t` option:
+
+```bash
+hash -t
+```
+
+This will output a list of hashed commands along with their respective paths.
+
+You can also check if a specific command is hashed:
+
+```bash
+hash -t my_script.sh
+```
+
+This will only output information if `my_script.sh` is already hashed.  If not, it will produce no output.
+
+
+## Removing Cached Entries
+
+Sometimes, you might need to remove a command from the hash table.  This is typically necessary when you've moved or renamed an executable, or if you want to force the shell to re-search for the command.  This is done using the `-d` option:
+
+```bash
+hash -d my_script.sh
+```
+
+This removes `my_script.sh` from the hash cache.  The next time you run `my_script.sh`, the shell will perform a full path search.
+
+To clear the entire hash table, use:
+
+```bash
+hash -r
+```
+
+This will remove all cached entries, forcing the shell to re-search for all commands upon their next execution.
+
+
+##  `hash` and Shell Startup
+
+It's important to note that the hash table is typically cleared when you start a new shell session.  However, some shells might persist the cache across sessions.  The behavior depends on your specific shell configuration.
+
+
+##  Example Scenario:  Optimizing a Frequently Used Script
+
+Let's say you have a frequently used script, `backup_data.sh`, located in `/home/user/scripts/`.  To optimize its execution speed:
+
+1. **Add the script directory to your PATH:**  This ensures the shell can find the script. You'd typically add this to your shell's configuration file (e.g., `~/.bashrc`, `~/.zshrc`).
+
+   ```bash
+   export PATH="$PATH:/home/user/scripts"
+   ```
+
+2. **Hash the script:** After adding the directory to your PATH and opening a new terminal or sourcing your configuration file, hash the script:
+
+   ```bash
+   hash backup_data.sh
+   ```
+
+Now, each subsequent invocation of `backup_data.sh` will be significantly faster.
+
+
+## Advanced Usage with `-p`
+
+The `-p` option allows you to hash a command even if it's *not* in your `PATH`.  This is useful for commands in specific directories you want to run frequently:
+
+```bash
+hash -p /usr/local/bin/my_special_tool
+```
+
+This will hash `/usr/local/bin/my_special_tool`, regardless of whether `/usr/local/bin` is in your `PATH`.  However, you'll still need to specify the full path when running the command.
+

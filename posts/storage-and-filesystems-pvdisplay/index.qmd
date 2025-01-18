@@ -1,0 +1,73 @@
+---
+title: "pvdisplay"
+date: "10/27/2024"
+categories: [ "Storage and Filesystems" ]
+---
+## What is `pvdisplay`?
+
+The `pvdisplay` command is a powerful tool within the LVM suite. It displays detailed information about your Physical Volumes.  These PVs are the building blocks of LVM; they are partitions (or entire disks) dedicated to being part of an LVM volume group.  `pvdisplay` reveals crucial information about each PV, allowing you to monitor their status, size, and usage.
+
+## Basic Usage
+
+The simplest use of `pvdisplay` is just typing the command itself:
+
+```bash
+pvdisplay
+```
+
+This will output information about *all* PVs on your system.  The output will include:
+
+* **PV Name:** The unique identifier for the PV.
+* **VG Name:** The Volume Group the PV belongs to.
+* **PV Size:** The total size of the PV.
+* **PE Size:** The Physical Extent size – the fundamental unit of storage within LVM.
+* **PE Total:** The total number of Physical Extents.
+* **Free PE:** The number of free Physical Extents available within the PV.
+* **PV Status:** Indicates whether the PV is active (`allocatable`), inactive, or in some other state.
+
+## Displaying Information About Specific PVs
+
+You don't need to view all PVs at once.  To display information about a specific PV, provide its device path as an argument:
+
+```bash
+pvdisplay /dev/sda2
+```
+
+This command will only show details for the PV located at `/dev/sda2`.  Replace `/dev/sda2` with the actual path of the PV you're interested in.
+
+## Understanding the Output
+
+Let's examine a sample `pvdisplay` output:
+
+```
+  PV Name               VG Name         PV Size   PE Size PE Total Free PE
+  /dev/sda2             myvg           10.00 GiB  4.00 MiB   2560    0
+```
+
+This tells us that:
+
+* A Physical Volume (`/dev/sda2`) exists.
+* It belongs to a Volume Group named `myvg`.
+* It's 10 GiB in size.
+* Each Physical Extent is 4 MiB.
+* It contains 2560 Physical Extents, and none are free.
+
+##  Using `pvdisplay` for Troubleshooting
+
+`pvdisplay` isn't just for informational purposes. Its output is invaluable when troubleshooting LVM-related issues.  For example, if you encounter storage problems, checking the `PV Status` can quickly reveal whether a PV is offline or inaccessible, pointing you towards the source of the problem.  An inactive PV would indicate a potential hardware failure or a configuration problem needing attention.
+
+##  Advanced Options (Brief Overview)
+
+While the basic usage covers many scenarios, `pvdisplay` offers additional, albeit less frequently used, options.  Consult the `man pvdisplay` page for a comprehensive list and detailed explanations.  These often involve manipulating the output format or filtering information.
+
+
+## Practical Example: Identifying a Failing PV
+
+Suppose your system is experiencing slowdowns, and you suspect a failing hard drive.  Running `pvdisplay` could pinpoint the problematic PV:
+
+```bash
+pvdisplay
+```
+
+If you see a PV listed with a status other than `allocatable`, it might be the culprit.  This warrants further investigation, potentially involving hardware diagnostics.
+

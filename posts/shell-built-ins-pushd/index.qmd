@@ -1,0 +1,85 @@
+---
+title: "pushd"
+date: "06/23/2024"
+categories: [ "Shell Built-ins" ]
+---
+## Understanding `pushd`
+
+`pushd` is a shell built-in that allows you to save the current working directory onto a stack and then change to a new directory. This means you can easily switch between multiple directories without having to remember their paths or use lengthy `cd` commands repeatedly.  The beauty of `pushd` lies in its ability to maintain a history of your directory changes, allowing you to quickly return to previously visited locations.
+
+## Basic Usage
+
+The simplest form of `pushd` involves specifying the target directory:
+
+```bash
+pushd /path/to/your/directory
+```
+
+This command does two things:
+
+1. It pushes the current working directory onto a stack.
+2. It changes the current working directory to `/path/to/your/directory`.
+
+To verify the change, you can use the `pwd` (print working directory) command.
+
+Let's illustrate with an example:
+
+```bash
+pwd  # Output: /home/user
+pushd /tmp
+pwd  # Output: /tmp
+```
+
+## Returning to Previous Directories with `popd`
+
+The companion command to `pushd` is `popd` (pop directory). This command removes the top directory from the stack and changes the current working directory to the directory that was previously on top.
+
+```bash
+popd
+pwd  # Output: /home/user
+```
+
+In this example, `popd` effectively reversed the action of `pushd`, returning us to our original directory.
+
+##  Working with the Directory Stack
+
+The `pushd` command also allows you to manipulate the directory stack directly.  You can display the stack using the command without arguments:
+
+```bash
+pushd
+```
+
+This will print the current stack of directories.  The top of the stack (the current directory) is usually displayed first.  Note that the exact output format might vary slightly depending on your shell.
+
+
+## Pushing to Relative Paths
+
+`pushd` works seamlessly with relative paths:
+
+```bash
+mkdir -p mydir/subdir
+pushd mydir/subdir
+pwd # Output: /path/to/your/home/mydir/subdir (replace with your actual path)
+popd
+popd #This will go back to your original directory before creating mydir/subdir.
+```
+
+This example creates a directory structure and then navigates into the `subdir` using a relative path.
+
+## Advanced Usage: Pushing to Specific Stack Positions
+
+While less commonly used,  `pushd` allows you to push directories to specific positions within the stack using a '+' or '-' before the directory. Although the behaviour might differ slightly between shells.
+
+
+```bash
+#Example with + (This command may not be supported by all shells)
+pushd +1  # Moves you to the second directory on the stack (if it exists)
+```
+
+This behaviour is less standardized than other `pushd` usages. It's crucial to consult your shell's documentation for specifics on advanced stack manipulation.
+
+
+## Conclusion:
+
+
+

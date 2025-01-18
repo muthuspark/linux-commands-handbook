@@ -1,0 +1,85 @@
+---
+title: "parted"
+date: "07/31/2024"
+categories: [ "Storage and Filesystems" ]
+---
+## Understanding `parted`'s Interactive Mode
+
+`parted` operates primarily in an interactive mode. You start by specifying the disk you want to work with, and then you execute commands within that context.  The interactive mode provides feedback after each command, allowing you to monitor the process carefully.
+
+To start `parted`, use the following command, replacing `/dev/sda` with the actual device path of your disk (**be extremely cautious when using parted; incorrect usage can lead to data loss. Always double-check your commands before execution**):
+
+```bash
+sudo parted /dev/sda
+```
+
+You'll be presented with a `(parted)` prompt.
+
+## Essential `parted` Commands
+
+Let's explore some core commands with illustrative examples.
+
+**1. Listing Partitions:**
+
+The `print` command displays the current partition table of the selected disk.
+
+```bash
+(parted) print
+```
+
+This will show information such as partition numbers, start and end sectors, size, type (e.g., primary, logical), file system type, and flags.
+
+
+**2. Creating a New Partition:**
+
+To create a new partition, use the `mklabel` command to set the partition table type (e.g., `gpt` for GUID Partition Table, `msdos` for Master Boot Record) and then the `mkpart` command to define the partition.  Here's how to create a new ext4 partition starting at 1GB and extending to 10GB:
+
+```bash
+(parted) mklabel gpt  # Set the partition table type to GPT
+(parted) mkpart primary ext4 1GB 10GB  # Create a primary ext4 partition
+(parted) print          # Verify the new partition
+```
+
+
+**3. Resizing a Partition:**
+
+Resizing partitions requires careful planning.  Use the `resizepart` command, specifying the partition number and the new end sector or size.  Let's resize the partition created above to 15GB:
+
+```bash
+(parted) resizepart 1 15GB  # Resize partition 1 to 15GB
+(parted) print          # Verify the resize
+```
+
+**Important Note:**  Shrinking a partition containing filesystems might require further steps like filesystem resizing using tools like `resize2fs` before and after the `parted` operation.
+
+
+**4. Deleting a Partition:**
+
+To delete a partition, use the `rm` command followed by the partition number:
+
+```bash
+(parted) rm 1     # Delete partition 1
+(parted) print    # Verify the deletion
+```
+
+**5. Setting Partition Flags:**
+
+Partitions can have various flags that control their behavior (e.g., `boot`, `esp`).  Use the `set` command to add or remove flags.  For example, to set the `boot` flag on partition 1:
+
+```bash
+(parted) set 1 boot on # Set the boot flag on
+(parted) print       # Verify the flag is set
+```
+
+
+
+**6. Quitting `parted`:**
+
+To exit `parted` interactive mode, use the `quit` command:
+
+```bash
+(parted) quit
+```
+
+Remember to always back up your data before making any partition changes.  Incorrect use of `parted` can lead to data loss.  Proceed with caution and double-check your commands.  This guide provides a foundation; exploring the `parted` manual page (`man parted`) will reveal its full potential and more advanced options.
+
