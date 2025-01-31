@@ -5,7 +5,7 @@ categories: [ "File Management" ]
 ---
 ## Understanding `updatedb`
 
-The `updatedb` command is a vital component of the `locate` command's functionality.  `locate` doesn't search your entire filesystem every time you use it; instead, it queries a database of file paths. `updatedb` is responsible for creating and updating this database.  This database typically resides at `/var/lib/mlocate/mlocate.db`.
+The `updatedb` command is an important component of the `locate` command's functionality.  `locate` doesn't search your entire filesystem every time you use it; instead, it queries a database of file paths. `updatedb` is responsible for creating and updating this database.  This database typically resides at `/var/lib/mlocate/mlocate.db`.
 
 Without regular updates using `updatedb`, the `locate` command will return outdated results, missing newly created or moved files.
 

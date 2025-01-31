@@ -11,7 +11,7 @@ The `times` command displays the cumulative CPU time used by the current shell p
 * **System time:** The time spent executing kernel code on behalf of the process.
 
 
-This breakdown is provided separately for both the current shell and its children. Understanding this distinction helps in diagnosing whether a process is CPU-bound (high user time) or I/O-bound (high system time).
+This breakdown is provided separately for both the current shell and its children. Understanding this helps in diagnosing whether a process is CPU-bound (high user time) or I/O-bound (high system time).
 
 ## Syntax and Options
 

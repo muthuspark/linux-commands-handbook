@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## What is `system-information`?
 
-The `system-information` command provides a concise yet detailed overview of your Linux system's hardware and software configuration. Unlike commands like `uname` or `lsb_release` which provide only snippets of information, `system-information` paints a complete picture, encompassing everything from CPU and memory details to disk space, network interfaces, and kernel version. This makes it an asset for system administrators, developers, and anyone needing a quick snapshot of their system's specifications.
+The `system-information` command provides a concise yet detailed overview of your Linux system's hardware and software configuration. Unlike commands like `uname` or `lsb_release` which provide only snippets of information, `system-information` paints a complete picture, everything from CPU and memory details to disk space, network interfaces, and kernel version. This makes it an asset for system administrators, developers, and anyone needing a quick snapshot of their system's specifications.
 
 
 ## Installing `system-information`

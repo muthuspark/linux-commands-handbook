@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## What is `strace`?
 
-`strace` (short for "system call tracer") is a diagnostic, debugging, and instructional utility that allows you to monitor the system calls a process makes.  Each system call, a request to the kernel for a specific service, is meticulously logged, including its arguments and return values. This granular level of detail allows developers to identify performance issues, pinpoint the source of errors, and gain a deeper appreciation of how programs operate within the Linux kernel.
+`strace` (short for "system call tracer") is a diagnostic, debugging, and instructional utility that allows you to monitor the system calls a process makes.  Each system call, a request to the kernel for a specific service, is logged, including its arguments and return values. This granular level of detail allows developers to identify performance issues, pinpoint the source of errors, and gain a deeper appreciation of how programs operate within the Linux kernel.
 
 ## Basic Usage: Tracing a Simple Program
 

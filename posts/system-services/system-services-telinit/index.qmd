@@ -79,5 +79,5 @@ To stop it:
 sudo systemctl stop network-online.target
 ```
 
-This highlights the more specific and targeted approach offered by `systemctl`.  While `telinit` changes the entire system state, `systemctl` allows for precise control over individual services.  Understanding both commands provides a detailed view of Linux system management, encompassing both legacy and current practices.
+This highlights the more specific and targeted approach offered by `systemctl`. While `telinit` changes the entire system state, `systemctl` allows for precise control over individual services. Understanding both commands provides a detailed view of Linux system management, covering both legacy and current practices.
 

@@ -78,7 +78,7 @@ Emacs allows you to mark regions of text and perform operations on them.
     * `C-y`: Yanks (pastes) the text from the kill ring.
 
 
-**Example:** To copy a paragraph, mark the region encompassing the paragraph using `Ctrl-Space` and then move the cursor to the end of the paragraph.  Then, press `M-w` to copy it, and `C-y` to paste it elsewhere.
+**Example:** To copy a paragraph, mark the region of the paragraph using `Ctrl-Space` and then move the cursor to the end of the paragraph. Then, press `M-w` to copy it, and `C-y` to paste it elsewhere.
 
 
 ## Macros for Automation

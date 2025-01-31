@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## What `false` Does
 
-The `false` command doesn't perform any actions on your system. Its sole purpose is to return an exit status of 1, indicating failure.  In contrast, most successful commands return an exit status of 0.  This seemingly minor distinction is important in shell scripting, where exit statuses are used to control program flow and error handling.
+The `false` command doesn't perform any actions on your system; it only returns an exit status of 1, indicating failure.  Most successful commands return an exit status of 0. This is important in shell scripting, where exit statuses control program flow and error handling.
 
 ## Using `false` in Shell Scripts
 
