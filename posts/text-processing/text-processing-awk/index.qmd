@@ -138,5 +138,5 @@ awk '{count[$2]++} END {for (level in count) print level, count[level]}' log.txt
 This script uses an associative array (`count`) to count the occurrences of each log level.
 
 
-These examples showcase the versatility of `awk`. Its concise syntax and powerful features make it an indispensable tool for any Linux user working with text data.  By understanding these fundamental concepts and expanding upon them, you'll unlock the true potential of `awk` for various text processing tasks.
+These examples showcase the versatility of `awk`. Its concise syntax and powerful features make it an indispensable tool for any Linux user working with text data.  By understanding these fundamental concepts and expanding upon them, you'll realize the true potential of `awk` for various text processing tasks.
 

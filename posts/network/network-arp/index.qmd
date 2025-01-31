@@ -9,7 +9,7 @@ Every device on a local network has a unique IP address and a unique MAC address
 
 ## Key `arp` Command Options and Examples
 
-The `arp` command offers several options to manage ARP tables. Let's explore some of the most commonly used ones:
+The `arp` command offers many options to manage ARP tables. Let's look at some of the most commonly used ones:
 
 **1. Viewing the ARP Cache:**
 
@@ -60,7 +60,7 @@ This adds an ARP entry on the `eth1` interface.
 
 **5.  Using `ip neigh` (Recommended Modern Alternative):**
 
-While `arp` is still functional, the `ip neigh` command offers more comprehensive network neighbor management, including features not available in `arp`. For example, to display neighbors, similar to `arp -a`:
+While `arp` is still functional, the `ip neigh` command offers more detailed network neighbor management, including features not available in `arp`. For example, to display neighbors, similar to `arp -a`:
 
 ```bash
 ip neigh show

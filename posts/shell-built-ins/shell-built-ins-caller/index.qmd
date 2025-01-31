@@ -125,12 +125,12 @@ echo "End of script"
 ```
 
 
-This will print "Direct call to caller:", then likely an empty line or an error indicating it was not called from a function, and finally "End of script".  Robust scripts should anticipate and handle such cases.
+This will print "Direct call to caller:", then likely an empty line or an error indicating it was not called from a function, and finally "End of script". Scripts should anticipate and handle such cases.
 
 
 ## Advanced Applications
 
-`caller` becomes increasingly valuable in complex scenarios:
+`caller` becomes increasingly important in complex scenarios:
 
 * **Debugging recursive functions:** Trace the execution flow through multiple recursive calls.
 * **Logging function calls:**  Automatically record function calls and their arguments in a log file.

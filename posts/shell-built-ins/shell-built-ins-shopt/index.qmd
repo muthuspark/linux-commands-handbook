@@ -15,7 +15,7 @@ The fundamental usage of `shopt` involves three main actions:
 
 ## Practical Examples:
 
-Let's explore some commonly used `shopt` options with practical examples.
+Let's look at some commonly used `shopt` options with practical examples.
 
 **1. `cdspell`:** This option helps prevent typos when using the `cd` command. If you misspell a directory name, `cdspell` attempts to correct it based on similar directory names.
 

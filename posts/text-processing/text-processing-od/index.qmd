@@ -11,7 +11,7 @@ The fundamental syntax of `od` is:
 od [OPTIONS] [FILE]
 ```
 
-`FILE` is the file you want to examine.  If no file is specified, `od` reads from standard input.  The `OPTIONS` are crucial for controlling the output format. Let's look at some key options:
+`FILE` is the file you want to examine. If no file is specified, `od` reads from standard input. The `OPTIONS` control the output format. Let's look at some key options:
 
 * `-A <addressing>`:  Specifies the addressing style.  Common options include `n` (none), `d` (decimal), `x` (hexadecimal).  Defaults to `d`.
 * `-t <format>`: Specifies the output format.  Important formats include:

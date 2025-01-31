@@ -22,7 +22,7 @@ This command will perform a basic TCP SYN scan, identifying open ports and their
 
 ## Specifying Scan Types with Nmap
 
-Nmap offers a wide variety of scan types, each designed for different purposes.  Let's explore a few:
+Nmap offers a wide variety of scan types, each designed for different purposes.  Let's look at a few:
 
 * **TCP SYN Scan (-sS):** This is the default scan type and is stealthier than a full TCP connect scan.  It's often preferred for security audits as it's less likely to trigger intrusion detection systems.
 
@@ -30,7 +30,7 @@ Nmap offers a wide variety of scan types, each designed for different purposes. 
 nmap -sS 192.168.1.100
 ```
 
-* **UDP Scan (-sU):**  UDP scans are crucial as many services run on UDP ports.  This scan type requires more time due to the nature of UDP.
+* **UDP Scan (-sU):** UDP scans are important as many services run on UDP ports. This scan type requires more time due to the nature of UDP.
 
 ```bash
 nmap -sU 192.168.1.100
@@ -83,7 +83,7 @@ This scans ports 21 through 25, as well as ports 80 and 443.
 
 ## Combining Options
 
-Nmap's power lies in its ability to combine multiple options.  For a comprehensive scan including version detection, OS detection, and script scanning:
+Nmap's power lies in its ability to combine multiple options.  For a detailed scan including version detection, OS detection, and script scanning:
 
 ```bash
 nmap -sS -sV -O -sC 192.168.1.100

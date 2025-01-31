@@ -89,5 +89,5 @@ To replace all instances of "lines" with "sentences" in `mytext.txt`, use the co
 **Example:** Open two files `file1.txt` and `file2.txt` using `vi file1.txt file2.txt` and switch between them using `:n` and `:N`.
 
 
-This introduction scratches the surface of `vi`'s capabilities.  Exploring further commands and features will exponentially improve your text processing efficiency in Linux.  Remember to consult the `vi` manual (`man vi`) for more comprehensive information.
+This introduction scratches the surface of `vi`'s capabilities.  Exploring further commands and features will exponentially improve your text processing efficiency in Linux.  Remember to consult the `vi` manual (`man vi`) for more detailed information.
 

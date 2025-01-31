@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding Shell Built-ins
 
-Before diving into `enable`, let's clarify what shell built-ins are. Unlike external commands (which are separate executables), built-in commands are integral parts of the shell itself. They're typically faster and more efficient because they don't require the shell to fork a new process to execute them.  Common examples include `cd`, `exit`, `echo`, and many more.
+Before diving into `enable`, let's clarify what shell built-ins are. Unlike external commands (which are separate executables), built-in commands are essential parts of the shell itself. They're typically faster and more efficient because they don't require the shell to fork a new process to execute them.  Common examples include `cd`, `exit`, `echo`, and many more.
 
 ## The `enable` Command: Bringing Built-ins Back to Life
 
@@ -30,6 +30,6 @@ disable cd
 ##  Advanced Usage and Considerations
 
 
-The `enable` and `disable` commands offer a powerful mechanism for customizing your shell environment. While disabling core commands like `cd` or `exit` is generally not recommended (it can severely impact usability), they provide valuable control over less frequently used built-ins or for experimentation and troubleshooting. Remember that the effects of `disable` are only temporary and persist only for the current shell session.  Closing and reopening the terminal will reset the built-in command status.
+The `enable` and `disable` commands offer a powerful mechanism for customizing your shell environment. While disabling core commands like `cd` or `exit` is generally not recommended (it can severely impact usability), they provide control over less frequently used built-ins or for experimentation and troubleshooting. Remember that the effects of `disable` are only temporary and persist only for the current shell session. Closing and reopening the terminal will reset the built-in command status.
 
 TODELETE

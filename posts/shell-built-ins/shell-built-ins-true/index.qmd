@@ -59,7 +59,7 @@ If you always want to log the success of the cron job itself, even if `backup_sc
 
 ##  `true` as a No-op Command
 
-`true` can be used as a no-operation (noop) command, essentially doing nothing.  This can be valuable as a placeholder in scripts or when you need a command that doesn't produce any output or side effects.
+`true` can be used as a no-operation (noop) command, essentially doing nothing. This can be a placeholder in scripts or when you need a command that doesn't produce any output or side effects.
 
 
 **Example 4:  A simple noop:**

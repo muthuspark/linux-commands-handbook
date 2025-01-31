@@ -132,12 +132,12 @@ sed -i 's/sample/example/g' my_file.txt
 
 ## Advanced `sed` Techniques: Using Regular Expressions
 
-`sed`'s true power lies in its ability to leverage regular expressions.  This allows for much more complex pattern matching and manipulation.  For instance, to replace all occurrences of one or more whitespace characters with a single space:
+`sed`'s true power lies in its ability to use regular expressions.  This allows for much more complex pattern matching and manipulation.  For instance, to replace all occurrences of one or more whitespace characters with a single space:
 
 ```bash
 sed 's/[[:space:]]\+/ /g' my_file.txt
 ```
 
 
-This is just a glimpse into the capabilities of `sed`.  Experiment with different commands and options to unlock its full potential for efficient text processing in your Linux workflows.  Further exploration into regular expressions will significantly enhance your proficiency with this powerful tool.
+This is just a glimpse into the capabilities of `sed`. Experiment with different commands and options to realize its full potential for efficient text processing in your Linux workflows. Further exploration of regular expressions will improve your proficiency with this powerful tool.
 

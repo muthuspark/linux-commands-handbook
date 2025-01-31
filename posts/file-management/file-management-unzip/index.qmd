@@ -97,5 +97,5 @@ Zip files may contain files with non-standard characters in their names.  `unzip
 
 ## Advanced Options and Error Handling
 
-`unzip` offers many more options to handle various scenarios, such as handling corrupted archives, managing comments, and more. Consult the `man unzip` page for a complete reference.  Understanding error messages is crucial for troubleshooting, paying close attention to any messages indicating file corruption or permission issues.
+`unzip` offers many more options to handle various scenarios, such as handling corrupted archives, managing comments, and more. Consult the `man unzip` page for a complete reference. Understanding error messages is important for troubleshooting, paying close attention to any messages indicating file corruption or permission issues.
 

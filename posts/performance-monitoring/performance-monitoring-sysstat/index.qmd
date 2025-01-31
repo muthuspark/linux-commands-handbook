@@ -41,7 +41,7 @@ You can also specify the types of data to collect using various options.  Refer 
 
 ## Harnessing the Power of `sar` – The Data Analyzer
 
-`sar` is where the magic happens. It reads the data collected by `sadc` and presents it in a user-friendly format. Let's explore some common `sar` commands:
+`sar` is where the magic happens. It reads the data collected by `sadc` and presents it in a user-friendly format. Let's look at some common `sar` commands:
 
 **1. CPU Utilization:**  This command shows CPU usage over time:
 
@@ -56,7 +56,7 @@ This will display CPU usage statistics, including user, system, idle, and I/O wa
 sar -u -f /var/log/sa/sa16  # Replace sa16 with the appropriate file.
 ```
 
-**2. Memory Usage:**  Gain insights into memory usage with:
+**2. Memory Usage:**  Monitor memory usage with:
 
 ```bash
 sar -r
@@ -87,5 +87,5 @@ sar -u -r -f /var/log/sa/sa16 | head -n 20
 ```
 
 
-These examples demonstrate only a fraction of `sar`'s capabilities.  Exploring the `man sar` page will unlock further functionalities, allowing you to fine-tune your performance monitoring strategies and gain deeper insights into your Linux system's behavior.  By leveraging the data gathered by `sadc` and analyzed by `sar`, you can effectively identify and address potential performance issues, ensuring the optimal functioning of your Linux systems.
+These examples demonstrate only a fraction of `sar`'s capabilities. Exploring the `man sar` page will allow you to fine-tune your performance monitoring strategies. By leveraging the data gathered by `sadc` and analyzed by `sar`, you can effectively identify and address potential performance issues, ensuring the optimal functioning of your Linux systems.
 

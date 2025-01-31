@@ -9,7 +9,7 @@ categories: [ "Package Management" ]
 
 ## Basic `dpkg` Commands
 
-Let's explore some essential `dpkg` commands:
+Let's look at some essential `dpkg` commands:
 
 **1. Installing a Package:**
 

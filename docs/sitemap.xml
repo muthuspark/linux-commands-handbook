@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-true/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:02:35.911Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-trap/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:47.721Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-eval/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:02:31.607Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-dirs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:29.021Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-readonly/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:47.707Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-times/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:23.321Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-let/index.html</loc>
@@ -30,83 +30,83 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-caller/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:20.303Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-history/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:02:18.431Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-command/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:02:16.965Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-return/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:02:13.920Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-mapfile/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:02:13.075Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-getopts/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:02:11.363Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-enable/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.237Z</lastmod>
+    <lastmod>2025-01-30T01:02:09.470Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-exit/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:02:07.055Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-set/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:02:04.707Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-shopt/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.320Z</lastmod>
+    <lastmod>2025-01-30T01:02:04.068Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-pushd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:02:04.063Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-jobs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:02:02.628Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-unalias/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:02:00.314Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-bg/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.737Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-declare/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.727Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-hash/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:55.256Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-typeset/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:53.003Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-bind/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:50.955Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-continue/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:49.408Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-fg/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.702Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-fold/index.html</loc>
@@ -114,11 +114,11 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-egrep/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:01:45.918Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-vi/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:43.744Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-aspell/index.html</loc>
@@ -126,31 +126,31 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-hexdump/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:01:43.161Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-emacs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T01:01:39.884Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-patch/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:01:37.768Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-pr/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:36.051Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-wc/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.656Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-sed/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:32.824Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-fgrep/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.644Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-sort/index.html</loc>
@@ -158,35 +158,35 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-split/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.630Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-paste/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:30.018Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-nano/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:01:27.997Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-bacula/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.607Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-amanda/index.html</loc>
-    <lastmod>2025-01-18T06:25:33.635Z</lastmod>
+    <lastmod>2025-01-31T02:19:53.064Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-dd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:01:20.588Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-rsync/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:18.109Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-more/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.579Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-zip/index.html</loc>
@@ -194,15 +194,15 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-pwd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:13.090Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-chgrp/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:13.081Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-gunzip/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:09.527Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-which/index.html</loc>
@@ -210,19 +210,19 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-ln/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:01:08.726Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-tail/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:01:06.884Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-scp/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.537Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-file/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.524Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-touch/index.html</loc>
@@ -230,19 +230,19 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-find/index.html</loc>
-    <lastmod>2025-01-18T06:36:15.066Z</lastmod>
+    <lastmod>2025-01-30T01:00:58.835Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-head/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:55.876Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-tar/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:54.901Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-rsync/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.495Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-gzip/index.html</loc>
@@ -250,67 +250,67 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-whereis/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:50.540Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-rm/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:48.123Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-updatedb/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:00:46.143Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-mpstat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.468Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-vmstat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:04:44.289Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-strace/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:00:39.648Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-pmap/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:00:37.848Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-perf/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:44.225Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-top/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.316Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-iotop/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.307Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-sar/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:00:29.563Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-gpg/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:00:27.912Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-ufw/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.290Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-checksec/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.281Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-certbot/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:22.881Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-chroot/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:18.389Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-openssl/index.html</loc>
@@ -318,19 +318,19 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-arp/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.247Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ip/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:00:12.004Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-wget/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:00:11.426Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-nslookup/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:00:09.958Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-sftp/index.html</loc>
@@ -338,179 +338,179 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-host/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T01:00:09.013Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ssh/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:00:07.535Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-nmap/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:05.051Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-route/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:04.318Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-telnet/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:01.985Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ifconfig/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:00.987Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ss/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:59.198Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-traceroute/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.187Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ping/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:59:53.942Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-sysctl/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:53.048Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-sync/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:59:50.756Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-ulimit/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:59:47.670Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-swapoff/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.152Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-nice/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.141Z</lastmod>
+    <lastmod>2025-01-30T00:59:42.882Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-renice/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.140Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-tmux/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.135Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-cron/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:38.716Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-batch/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:38.704Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-xargs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:59:36.508Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-kill/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:59:34.736Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-timeout/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:31.388Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-killall/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:42.206Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-fuser/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:27.981Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-pgrep/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:26.242Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lsb_release/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:42.177Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-w/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:42.172Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lsof/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:19.616Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-whoami/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:17.132Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-top/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.112Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-pstree/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T00:59:13.776Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lsusb/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.093Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-ltrace/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:59:05.573Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-vmstat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.083Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-uname/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:57.683Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-last/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.074Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lshw/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.069Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-ps/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:48.690Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-strace/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:47.965Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-parted/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T00:58:45.110Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-dumpe2fs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.046Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-tune2fs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:58:40.269Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-smartctl/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.029Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-fdisk/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:58:32.817Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-vgdisplay/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T00:58:30.051Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-mount/index.html</loc>
@@ -518,7 +518,7 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-blkid/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.597Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-vgcreate/index.html</loc>
@@ -534,11 +534,11 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/documentation/documentation-whatis/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.574Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/documentation/documentation-apropos/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:19.823Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-useradd/index.html</loc>
@@ -546,31 +546,31 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-chsh/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:58:16.954Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-newgrp/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:58:15.368Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-passwd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T00:58:13.872Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-su/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:58:10.879Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-gpasswd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:58:07.247Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-groupmod/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:06.501Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-groupdel/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:04.887Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-visudo/index.html</loc>
@@ -578,23 +578,23 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-apt-get/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T00:58:01.894Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-aptitude/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T00:58:00.973Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-gem/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T00:57:58.514Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-npm/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:57:57.135Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-rpm/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:57:56.260Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-apt/index.html</loc>
@@ -602,55 +602,55 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-yum/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:57:55.031Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-update-rcd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T00:57:52.961Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-systemctl/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:57:51.040Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-telinit/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:57:48.685Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-journalctl/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:57:45.722Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/about.html</loc>
-    <lastmod>2025-01-18T03:19:04.958Z</lastmod>
+    <lastmod>2025-01-31T02:06:56.310Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/index.html</loc>
-    <lastmod>2025-01-18T05:43:20.942Z</lastmod>
+    <lastmod>2025-01-31T02:48:07.788Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-init/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:57:48.683Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-chkconfig/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.460Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-rc-update/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:57:51.961Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-services/system-services-service/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T00:57:53.714Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-dnf/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.480Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-flatpak/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:57:55.591Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-pip/index.html</loc>
@@ -658,63 +658,63 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-pacman/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:57:57.153Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-zypper/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.505Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-dpkg/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T00:58:00.975Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/package-management/package-management-snap/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T00:58:02.535Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-lastlog/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:03.455Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-userdel/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:05.604Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-sudo/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.536Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-groupadd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.540Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-groups/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:58:13.034Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-usermod/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T00:58:14.692Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-chage/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:58:16.951Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/user-management/user-management-chfn/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:58:18.326Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/documentation/documentation-tldr/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:58:19.095Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/documentation/documentation-help/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.572Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/documentation/documentation-info/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:58:22.170Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-umount/index.html</loc>
@@ -722,55 +722,55 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-mdadm/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:22.986Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-pvdisplay/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:25.529Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-mkfs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:27.264Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-lvdisplay/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.603Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-lvcreate/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:38.608Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-pvcreate/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:58:34.045Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-badblocks/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:58:38.757Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-hdparm/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:58:42.182Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/storage-and-filesystems/storage-and-filesystems-fsck/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:58:45.108Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lscpu/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:58:47.357Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-free/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.058Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-dmesg/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:58:52.323Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lspci/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.072Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-cal/index.html</loc>
@@ -778,19 +778,19 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-date/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.080Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-dmidecode/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T00:59:03.560Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-hostname/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T00:59:06.608Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-uptime/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T00:59:11.806Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-htop/index.html</loc>
@@ -798,23 +798,23 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-pidof/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T00:59:16.493Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-id/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:17.798Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-who/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:41.124Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/system-information/system-information-lsblk/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:42.174Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-exec/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:24.953Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-bg/index.html</loc>
@@ -822,15 +822,15 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-jobs/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:42.203Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-watch/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:42.208Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-time/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.073Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-fg/index.html</loc>
@@ -838,71 +838,71 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-pmap/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:37.350Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-screen/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.128Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-at/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.132Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-pkill/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:40.200Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/process-management/process-management-nohup/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:42.107Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-ionice/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:59:43.676Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-mkswap/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:46.738Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-swapon/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T00:59:49.684Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-free/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.168Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/memory-management/memory-management-nice/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T00:59:53.936Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-tcpdump/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T00:59:54.735Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-netstat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T00:59:56.315Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-iwconfig/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:00.266Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-nmcli/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:01.982Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-dig/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:04.315Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-whois/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.209Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-curl/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:05.986Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-nc/index.html</loc>
@@ -910,7 +910,7 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-mtr/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:00:09.016Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ftp/index.html</loc>
@@ -918,7 +918,7 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-hostname/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:00:10.535Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-iptables/index.html</loc>
@@ -926,19 +926,19 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/network/network-ethtool/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:00:12.738Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-fail2ban-client/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:00:13.822Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-ssh-keygen/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:15.727Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-tripwire/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:21.795Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-apparmor_status/index.html</loc>
@@ -950,103 +950,103 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-selinuxenabled/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:00:27.102Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/security/security-getenforce/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:00:28.535Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-ps/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:29.569Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-htop/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:43.314Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-netstat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:33.031Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-dtrace/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:00:36.923Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-sysstat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:00:39.631Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-atop/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.279Z</lastmod>
+    <lastmod>2025-01-30T01:04:44.281Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/performance-monitoring/performance-monitoring-iostat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:45.238Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-df/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:00:45.219Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-chmod/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:00:46.752Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-du/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:48.634Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-locate/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:52.212Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-cat/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.493Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-xz/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.498Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-umask/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:54.916Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-chown/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.509Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-bunzip2/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:00:59.868Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-unzip/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:00.986Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-mv/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:02.186Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-bzip2/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.346Z</lastmod>
+    <lastmod>2025-01-30T01:01:05.168Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-dd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:01:08.091Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-mkdir/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:01:08.738Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-cp/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:01:09.524Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-ls/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:10.416Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-cd/index.html</loc>
@@ -1054,35 +1054,35 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-less/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:13.793Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-readlink/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:15.731Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/file-management/file-management-unxz/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.581Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-mt/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:18.962Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-cpio/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:01:21.466Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-dump/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:01:25.277Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/backup-and-recovery/backup-and-recovery-restore/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:01:26.677Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-comm/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:01:29.338Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-join/index.html</loc>
@@ -1090,47 +1090,47 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-tee/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:31.242Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-uniq/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.642Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-nl/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:32.096Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-strings/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:33.481Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-awk/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:35.494Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-fmt/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.664Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-tr/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:01:38.690Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-diff/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:01:41.366Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-grep/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:01:43.736Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-cut/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:43.741Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-od/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:01:44.507Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/text-processing/text-processing-vim/index.html</loc>
@@ -1138,11 +1138,11 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-disown/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.354Z</lastmod>
+    <lastmod>2025-01-30T01:01:47.372Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-printf/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:48.225Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-source/index.html</loc>
@@ -1154,11 +1154,11 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-test/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:53.662Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-read/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:01:55.851Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-export/index.html</loc>
@@ -1166,15 +1166,15 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-wait/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:02:00.311Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-unset/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.353Z</lastmod>
+    <lastmod>2025-01-30T01:02:01.093Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-fc/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.748Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-logout/index.html</loc>
@@ -1182,23 +1182,23 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-alias/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.351Z</lastmod>
+    <lastmod>2025-01-30T01:02:04.072Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-suspend/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:02:05.501Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-echo/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.312Z</lastmod>
+    <lastmod>2025-01-30T01:02:08.440Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-builtin/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:04:46.775Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-pwd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.235Z</lastmod>
+    <lastmod>2025-01-30T01:02:12.037Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-umask/index.html</loc>
@@ -1206,35 +1206,35 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-exec/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.230Z</lastmod>
+    <lastmod>2025-01-30T01:04:47.647Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-type/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:17.849Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-kill/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:19.002Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-break/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:21.017Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-ulimit/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:22.700Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-help/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:02:24.001Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-popd/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.229Z</lastmod>
+    <lastmod>2025-01-30T01:04:47.709Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-local/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.215Z</lastmod>
+    <lastmod>2025-01-30T01:02:29.801Z</lastmod>
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-cd/index.html</loc>
@@ -1242,6 +1242,6 @@
   </url>
   <url>
     <loc>https://linux.muthu.co/posts/shell-built-ins/shell-built-ins-false/index.html</loc>
-    <lastmod>2025-01-18T05:59:30.132Z</lastmod>
+    <lastmod>2025-01-30T01:04:48.774Z</lastmod>
   </url>
 </urlset>

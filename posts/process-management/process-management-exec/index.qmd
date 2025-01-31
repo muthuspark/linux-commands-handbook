@@ -16,7 +16,7 @@ The `exec` command isn't a single command, but rather a family of functions – 
 
 ## Exploring the `exec` Variants with Code Examples
 
-Let's explore some of the most commonly used `exec` functions through practical examples.  All examples assume you're working within a C program.  Remember to compile your code using a C compiler (like GCC): `gcc your_program.c -o your_program`
+Let's look at some of the most commonly used `exec` functions through practical examples.  All examples assume you're working within a C program.  Remember to compile your code using a C compiler (like GCC): `gcc your_program.c -o your_program`
 
 **1. `execl` (execl "ls", "ls", "-l", NULL)`:**
 
@@ -111,5 +111,5 @@ int main() {
 
 This improved example demonstrates how to properly check for and handle errors with `execvp`.  Note the use of `strerror(errno)` to get a human-readable error message.  The  `errno` variable holds the system error code.
 
-These examples provide a foundation for understanding and utilizing the `exec` family of functions.  Remember to adapt these code snippets to your specific needs and always handle potential errors gracefully.
+These examples provide a foundation for understanding and utilizing the `exec` family of functions. Remember to modify these code snippets to your specific needs and always handle potential errors gracefully.
 

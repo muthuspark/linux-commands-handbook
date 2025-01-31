@@ -15,7 +15,7 @@ This typically shows the process ID (PID), Terminal (TTY), and command name. How
 
 ## Key Options and Their Usage
 
-Let's explore some essential `ps` options:
+Let's look at some essential `ps` options:
 
 * **`-e` (or `-A`)**: Displays all processes running on the system, including those not associated with a terminal.
 
@@ -35,7 +35,7 @@ ps -ef
 ps -u john
 ```
 
-* **`-x`**: Includes processes without controlling terminals. Combining this with `-f` gives a comprehensive view.
+* **`-x`**: Includes processes without controlling terminals. Combining this with `-f` gives a detailed view.
 
 ```bash
 ps -fx

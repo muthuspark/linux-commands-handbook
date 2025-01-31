@@ -100,5 +100,5 @@ gpg --import recipient_public_key.asc
 
 If your private key is compromised, you must revoke it to prevent unauthorized access.  This is a complex procedure and requires careful consideration.  Consult the `gpg` documentation for details on revocation.
 
-This comprehensive guide provides a solid foundation for using GPG.  Remember to always handle your private key with utmost care and practice safe key management.  Further exploration of `gpg`'s options and features will enhance your ability to secure your communications and data effectively.
+This guide provides a solid foundation for using GPG. Remember to always handle your private key with utmost care and practice safe key management. Further exploration of `gpg`'s options and features will improve your ability to secure your communications and data effectively.
 

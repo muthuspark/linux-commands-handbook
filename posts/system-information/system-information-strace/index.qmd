@@ -56,7 +56,7 @@ This output shows calls like `execve` (executing the program), `mmap` (memory ma
 strace -e trace=write ./hello
 ```
 
-This will significantly reduce the output, showing only the lines related to writing to files or standard output.
+This will reduce the output, showing only the lines related to writing to files or standard output.
 
 
 ## Tracing Specific Processes by PID
@@ -70,7 +70,7 @@ strace -p <PID>
 
 ## Advanced Options: Tracing File Operations
 
-`strace` offers sophisticated options for tracing specific file operations.  For example, to trace only open, read, and write system calls:
+`strace` offers complex options for tracing specific file operations.  For example, to trace only open, read, and write system calls:
 
 
 ```bash

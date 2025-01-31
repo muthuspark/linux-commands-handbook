@@ -19,7 +19,7 @@ Where:
 
 ## Managing Network Interfaces with `ip link`
 
-The `ip link` subcommand focuses on managing network interfaces themselves. Let's explore some key functionalities:
+The `ip link` subcommand focuses on managing network interfaces themselves. Let's look at some key functionalities:
 
 **1. Listing Interfaces:**  The simplest use is to list all available interfaces:
 
@@ -134,7 +134,7 @@ ip route del 10.0.0.0/8 via 192.168.1.1 dev eth0
 
 ##  Neighbor Discovery with `ip neigh`
 
-The `ip neigh` subcommand manages neighbor discovery entries, crucial for protocols like ARP and NDP.
+The `ip neigh` subcommand manages neighbor discovery entries for protocols like ARP and NDP.
 
 **1. Showing Neighbors:**
 
@@ -158,5 +158,5 @@ Replace `xx:xx:xx:xx:xx:xx` with the MAC address of the host.
 This adds a static entry associating the IP address `192.168.1.101` with the specified MAC address on interface `eth0`. This is generally not recommended unless absolutely necessary, as it can interfere with ARP resolution.
 
 
-This is a detailed overview of the core functionality of the `ip` command. There are many more advanced options and subcommands available;  exploring the `man ip` page will provide a comprehensive understanding of its full potential. Remember to always use `sudo` or `su` when performing operations that require root privileges.
+This is a detailed overview of the core functionality of the `ip` command. There are many more advanced options and subcommands available;  exploring the `man ip` page will provide a detailed understanding of its full potential. Remember to always use `sudo` or `su` when performing operations that require root privileges.
 

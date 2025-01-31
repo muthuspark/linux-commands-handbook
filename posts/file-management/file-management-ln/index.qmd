@@ -89,5 +89,5 @@ ln -s /home/user/data/myfile.txt /tmp/myfile_link.txt
 If the original file of a symbolic link is deleted, the link becomes broken. You can identify broken symbolic links using `ls -l`:  they'll appear with an indication like `->` followed by a path that doesn't exist. To fix this, either restore the original file or remove the broken symbolic link using `rm`.
 
 
-This guide offers a solid foundation for effectively utilizing the `ln` command in your Linux workflow.  Further exploration of its capabilities can significantly enhance your Linux administration skills.
+This guide offers a solid foundation for effectively utilizing the `ln` command in your Linux workflow. Further exploration of its capabilities can improve your Linux administration skills.
 

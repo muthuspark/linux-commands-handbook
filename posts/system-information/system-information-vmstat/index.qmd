@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## Understanding `vmstat` Output
 
-`vmstat`'s output is a table, presenting key metrics across several categories.  The exact columns and their meanings depend on the options used, but common fields include:
+`vmstat`'s output is a table, presenting key metrics across many categories.  The exact columns and their meanings depend on the options used, but common fields include:
 
 * **procs:**  Running and blocked processes.
 * **memory:**  Physical memory usage (used, free, buffered, cached).
@@ -23,7 +23,7 @@ The simplest way to use `vmstat` is to execute it without any arguments. This pr
 vmstat
 ```
 
-This will give you one line of data representing the current state.  To get a more comprehensive picture, you'll need to use the `-n` option to display the number of processes running concurrently.
+This will give you one line of data representing the current state.  To get a more detailed picture, you'll need to use the `-n` option to display the number of processes running concurrently.
 
 ```bash
 vmstat -n
@@ -66,7 +66,7 @@ vmstat -m -S 2 5
 
 ## Interpreting the Output:  A Practical Example
 
-Let's imagine you run `vmstat 2 5`. You might observe something like this (actual numbers will vary significantly depending on your system):
+Let's imagine you run `vmstat 2 5`. You might observe something like this (actual numbers will vary depending on your system):
 
 
 ```
@@ -82,5 +82,5 @@ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
 From this, you could infer that CPU utilization is relatively low (mostly idle), memory usage is stable, and I/O operations are moderate. However, a decrease in free memory over time might indicate a potential problem requiring further investigation.  Analyzing such patterns is key to effective system administration.
 
 
-Remember to adapt the options and intervals according to your specific needs and system characteristics.  `vmstat`'s flexibility makes it a powerful tool for anyone looking to gain a deeper understanding of their Linux system's performance.
+Remember to adjust the options and intervals according to your specific needs and system characteristics.  `vmstat`'s flexibility makes it a powerful tool for anyone looking to gain a deeper understanding of their Linux system's performance.
 

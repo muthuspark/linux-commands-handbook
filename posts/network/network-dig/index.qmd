@@ -5,7 +5,7 @@ categories: [ "Network" ]
 ---
 ## What is `dig`?
 
-`dig` is a flexible and robust DNS query tool that lets you perform various types of DNS lookups.  Instead of simply returning an IP address like a simple browser lookup, `dig` provides detailed information about the DNS record itself, including the authoritative nameservers, TTL (Time To Live) values, and various record types (A, AAAA, MX, NS, CNAME, etc.). This granular information is crucial for troubleshooting DNS issues and understanding how DNS works.
+`dig` is a flexible DNS query tool that lets you perform various types of DNS lookups. Instead of simply returning an IP address like a simple browser lookup, `dig` provides detailed information about the DNS record itself, including the authoritative nameservers, TTL (Time To Live) values, and various record types (A, AAAA, MX, NS, CNAME, etc.). This granular information is important for troubleshooting DNS issues and understanding how DNS works.
 
 ## Basic Usage: Finding IP Addresses
 
@@ -82,5 +82,5 @@ This provides a detailed breakdown of each step in the DNS resolution process, r
 
 ##  Beyond the Basics:  Advanced Options
 
-`dig` offers many more options for fine-tuning your queries, including specifying query types, controlling recursion, and output formatting.  Consult the `man dig` page for a complete list of options and their descriptions.  Experimenting with these options will give you a deeper understanding of DNS and its complexities.  Mastering `dig` is a valuable asset for any network professional or enthusiast.
+`dig` offers many more options for fine-tuning your queries, including specifying query types, controlling recursion, and output formatting. Consult the `man dig` page for a complete list of options and their descriptions. Experimenting with these options will give you a deeper understanding of DNS and its complexities. Mastering `dig` is an asset for any network professional or enthusiast.
 

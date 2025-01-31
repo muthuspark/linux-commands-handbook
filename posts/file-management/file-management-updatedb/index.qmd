@@ -30,7 +30,7 @@ While the basic command is sufficient for most users, `updatedb` offers a few op
 sudo updatedb -V
 ```
 
-* **`-U` or `--update`**: This option only updates the database with changes since the last update.  This is significantly faster than a full rebuild (`updatedb`) and is ideal for incremental updates.  However, for a clean update, using `updatedb` is recommended once in a while.
+* **`-U` or `--update`**: This option only updates the database with changes since the last update. This is faster than a full rebuild (`updatedb`) and is ideal for incremental updates. However, for a clean update, using `updatedb` is recommended once in a while.
 
 
 ```bash

@@ -40,7 +40,7 @@ This indicates 3 lines, 9 words, and 46 bytes in `my_file.txt`.
 
 ## Exploring `wc` Options
 
-`wc` offers several valuable options to tailor its output:
+`wc` offers many options to tailor its output:
 
 * **`-l` (or `--lines`):** Counts only the number of lines.
 
@@ -147,5 +147,5 @@ This command counts the lines in `my_log.txt` and redirects the output to a new 
 
 
 
-By understanding and utilizing these various options and techniques, you can leverage the `wc` command to gain valuable insights into your text files efficiently and effectively within the Linux environment.
+By understanding and utilizing these various options and techniques, you can use the `wc` command to efficiently and effectively analyze your text files within the Linux environment.
 

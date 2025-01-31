@@ -143,5 +143,5 @@ When dealing with files having different numbers of lines, `paste` will stop at 
 
 ```
 
-This section requires a more concrete example to showcase the synergy between `paste` and `cut` effectively.  A specific use case with input data and desired output would provide a much clearer illustration.
+This section requires a more concrete example to showcase the relationship between `paste` and `cut` effectively. A specific use case with input data and desired output would provide a much clearer illustration.
 

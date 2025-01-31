@@ -23,7 +23,7 @@ cat my_long_text_file.txt | fmt > formatted_text.txt
 
 ## Customizing `fmt`'s Behavior
 
-`fmt` offers several options to fine-tune its output:
+`fmt` offers many options to fine-tune its output:
 
 **Specifying Width:**
 
@@ -97,5 +97,5 @@ This command reformats `my_file.txt`, removing leading whitespace and setting th
 ##  Beyond Simple Formatting:  Practical Applications
 
 
-`fmt` shines in automating text cleanup tasks within shell scripts or as part of a larger data processing pipeline.  Imagine using `fmt` to standardize the format of log files before analysis, or to prepare text for inclusion in a generated report.  Its simple yet effective approach to text manipulation makes it a valuable tool in a Linux user's arsenal.
+`fmt` shines in automating text cleanup tasks within shell scripts or as part of a larger data processing pipeline.  Imagine using `fmt` to standardize the format of log files before analysis, or to prepare text for inclusion in a generated report.  Its simple yet effective approach to text manipulation makes it a tool in a Linux user's arsenal.
 

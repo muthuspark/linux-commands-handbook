@@ -48,12 +48,12 @@ For continuous monitoring, specify the interval and number of samples:
 mpstat 2 5  # Display statistics every 2 seconds for 5 samples
 ```
 
-This command will show CPU utilization every two seconds for five iterations.  This is invaluable for observing CPU behavior during resource-intensive tasks.
+This command will show CPU utilization every two seconds for five iterations. This is useful for observing CPU behavior during resource-intensive tasks.
 
 
 ## Focusing on Specific Metrics
 
-While the default output is comprehensive, you might only need certain metrics.  Using the `-u` option displays only user and system statistics:
+While the default output is detailed, you might only need certain metrics.  Using the `-u` option displays only user and system statistics:
 
 ```bash
 mpstat -u 2 5
@@ -89,5 +89,5 @@ mpstat -A 10 1 # Averages over 10 seconds for one sample
 This provides a smoother view of CPU utilization compared to snapshots taken at short intervals.
 
 
-Using these examples and understanding the core metrics, you can effectively leverage `mpstat` to gain valuable insights into your Linux system's performance and optimize its resource usage.  This detailed understanding will allow you to proactively address performance issues before they impact your system's stability and responsiveness.
+Using these examples and understanding the core metrics, you can effectively use `mpstat` to gain a better understanding of your Linux system's performance and optimize its resource usage. This detailed understanding will allow you to proactively address performance issues before they impact your system's stability and responsiveness.
 

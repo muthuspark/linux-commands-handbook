@@ -114,5 +114,5 @@ This removes packages from the cache that are not currently installed on your sy
 Pacman's behaviour is controlled by the `/etc/pacman.conf` file.  Modifying this file allows you to add new repositories, prioritize repositories, and customize other aspects of package management.  **Always back up this file before making changes.**
 
 
-This detailed overview of `pacman`'s core functionalities provides a solid foundation for managing your Arch Linux system effectively. Remember to always consult the `pacman` man page (`man pacman`) for comprehensive information.
+This detailed overview of `pacman`'s core functionalities provides a solid foundation for managing your Arch Linux system effectively. Remember to always consult the `pacman` man page (`man pacman`) for detailed information.
 

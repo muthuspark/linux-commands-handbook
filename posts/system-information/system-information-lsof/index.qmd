@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## What is `lsof`?
 
-`lsof` is a versatile command-line utility that displays information about files opened by processes. This includes network connections, open files, and more.  Understanding this information is critical for troubleshooting network issues, identifying resource bottlenecks, and generally gaining a deeper insight into your system's activity.  It's a crucial tool for system administrators, developers, and anyone seeking a detailed view of their Linux system's file usage.
+`lsof` is a versatile command-line utility that displays information about files opened by processes. This includes network connections, open files, and more. Understanding this information is critical for troubleshooting network issues, identifying resource bottlenecks, and generally gaining a deeper insight into your system's activity.  It's a tool for system administrators, developers, and anyone seeking a detailed view of their Linux system's file usage.
 
 ## Basic Usage: Listing All Open Files
 
@@ -30,7 +30,7 @@ This command will list all open files on your system.  The output can be quite e
 
 ## Filtering with `lsof`:  Targeting Specific Processes and Files
 
-The true power of `lsof` lies in its filtering capabilities.  Let's explore some examples:
+The true power of `lsof` lies in its filtering capabilities.  Let's look at some examples:
 
 **1. Listing open files for a specific process:**
 
@@ -92,5 +92,5 @@ lsof -c firefox
 `lsof` provides numerous other options for more granular control over the output. Refer to the `man lsof` page for a complete list and detailed explanations.
 
 
-This exploration of `lsof` demonstrates its versatility in examining file usage and network connections within a Linux system.  Its filtering capabilities empower users to pinpoint specific processes and files, making it an essential command for system administrators and developers alike.
+This exploration of `lsof` demonstrates its versatility in examining file usage and network connections within a Linux system. Its filtering capabilities let users pinpoint specific processes and files, making it an essential command for system administrators and developers alike.
 

@@ -125,5 +125,5 @@ cp -s source_symlink destination_symlink
 
 ##  Advanced Usage and Options
 
-The `cp` command offers additional options for even finer control over the copy process. Refer to the `man cp` page for a complete list and detailed descriptions of all available options.  Experimenting with these options will enhance your proficiency with this crucial Linux command.
+The `cp` command offers additional options for finer control over the copy process. Refer to the `man cp` page for a complete list and detailed descriptions of all available options. Experimenting with these options will improve your proficiency with this Linux command.
 

@@ -16,7 +16,7 @@ The simplest way to use `ss` is to run it without any arguments:
 ss
 ```
 
-This will display a summary of all established network connections.  However, `ss` offers a wide array of options to refine the output.  Let's explore some of the most common ones:
+This will display a summary of all established network connections.  However, `ss` offers a wide array of options to refine the output.  Let's look at some of the most common ones:
 
 
 ### Displaying Active Connections
@@ -27,7 +27,7 @@ To view only active connections (established, listening, etc.), use the `-a` (al
 ss -a
 ```
 
-This provides a comprehensive overview of all network activity on your system.
+This provides an overview of all network activity on your system.
 
 
 ### Filtering by Protocol
@@ -44,7 +44,7 @@ Similarly, for UDP connections:
 ss -a -p udp
 ```
 
-The `-p` option shows the process ID (PID) and the program name associated with each connection, adding valuable context.
+The `-p` option shows the process ID (PID) and the program name associated with each connection, adding context.
 
 
 ### Filtering by Port
@@ -98,5 +98,5 @@ However, the options and output format differ slightly. Refer to your system's `
 
 ###  Further Exploration
 
-The `ss` command offers many more powerful options for manipulating and interpreting network data.  Experiment with different combinations of flags to further refine your understanding and ability to troubleshoot networking issues. You can consult the `man ss` page for a complete reference.  Exploring the various options will unlock powerful insights into your system's network activity.
+The `ss` command offers many more powerful options for manipulating and interpreting network data. Experiment with different combinations of flags to further refine your understanding and ability to troubleshoot networking issues. You can consult the `man ss` page for a complete reference. Exploring the various options will improve your understanding of your system's network activity.
 

@@ -37,12 +37,12 @@ The simplest way to use `lshw` is to run it without any arguments:
 sudo lshw
 ```
 
-The `sudo` is necessary because `lshw` requires root privileges to access detailed hardware information. This will generate a comprehensive report covering all aspects of your system's hardware.  The output can be quite lengthy.
+The `sudo` is necessary because `lshw` requires root privileges to access detailed hardware information. This will generate a detailed report covering all aspects of your system's hardware.  The output can be quite lengthy.
 
 
 ## Refining the Output with Options
 
-`lshw` offers a range of options to customize its output.  Let's explore some useful ones:
+`lshw` offers a range of options to customize its output.  Let's look at some useful ones:
 
 * **`-short`:** This option provides a concise summary of the hardware. Ideal for a quick overview:
 
@@ -94,7 +94,7 @@ for element in root.findall('.//node[@class="cpu"]'):
     # Add more attributes as needed
 ```
 
-This script extracts the CPU model and clock speed. You'd need to adapt this to extract other attributes based on your requirements and the structure of your `lshw` XML output.
+This script extracts the CPU model and clock speed. You'd need to modify this to extract other attributes based on your requirements and the structure of your `lshw` XML output.
 
 
 ## Troubleshooting

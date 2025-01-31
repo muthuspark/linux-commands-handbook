@@ -12,7 +12,7 @@ my_command="ls -l"
 eval "$my_command /tmp"
 ```
 
-This will list the contents of `/tmp` in long listing format.  `eval` takes `"$my_command /tmp"` (note the quoting!), concatenates it into `ls -l /tmp`, and then executes that command.  The quotes are crucial to prevent word splitting and globbing, which could lead to unexpected behavior or security vulnerabilities.
+This will list the contents of `/tmp` in long listing format.  `eval` takes `"$my_command /tmp"` (note the quoting!), concatenates it into `ls -l /tmp`, and then executes that command.  The quotes prevent word splitting and globbing, which could lead to unexpected behavior or security vulnerabilities.
 
 ## Variable Expansion Within Commands
 
@@ -67,5 +67,5 @@ This revised version achieves the same outcome without the risks associated with
 
 ##  When to Use `eval` Judiciously
 
-While it's generally advised to avoid `eval` due to its security implications, there are specific circumstances where it might be necessary.  Always thoroughly sanitize any input before using it with `eval`.  Furthermore, carefully consider alternative solutions; often, a more secure and maintainable approach exists.  Using `eval` should always be a conscious decision after evaluating the security implications and exploring alternatives.
+While it's generally advised to avoid `eval` due to security concerns, there are specific circumstances where it might be necessary. Always thoroughly sanitize any input before using it with `eval`.  Furthermore, carefully consider alternative solutions; often, a more secure and maintainable approach exists. Using `eval` should always be a conscious decision after evaluating security concerns and exploring alternatives.
 

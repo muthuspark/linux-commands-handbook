@@ -119,5 +119,5 @@ hello world this is a test
 ```
 
 
-These examples demonstrate the versatility of the `tr` command. Its concise syntax and powerful options make it an invaluable tool for any Linux user working with text.  Remember to consult the `man tr` page for a complete list of options and features.
+These examples demonstrate the versatility of the `tr` command. Its concise syntax and powerful options make it a tool for any Linux user working with text. Remember to consult the `man tr` page for a complete list of options and features.
 

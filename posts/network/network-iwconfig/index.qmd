@@ -5,7 +5,7 @@ categories: [ "Network" ]
 ---
 
 
-The Linux command-line interface (CLI) offers powerful tools for managing network interfaces.  Among these, `iwconfig` stands out as a versatile utility for configuring wireless interfaces. While newer tools like `iw` are gaining popularity, understanding `iwconfig` remains crucial for system administrators and experienced Linux users. This post provides a detailed exploration of `iwconfig`, covering its core functionalities with practical code examples.
+The Linux command-line interface (CLI) offers powerful tools for managing network interfaces. Among these, `iwconfig` stands out as a versatile utility for configuring wireless interfaces. While newer tools like `iw` are gaining popularity, understanding `iwconfig` remains important for system administrators and experienced Linux users. This post provides a detailed exploration of `iwconfig`, covering its core functionalities with practical code examples.
 
 **Understanding `iwconfig`**
 

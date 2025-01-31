@@ -24,7 +24,7 @@ This limits the tracing to the specified system calls.
 
 ## Tracing Specific System Calls
 
-Let's explore a more targeted approach. Suppose you suspect a slow-down is related to network activity.  You can focus on network-related system calls:
+Let's look at a more targeted approach. Suppose you suspect a slow-down is related to network activity.  You can focus on network-related system calls:
 
 ```bash
 strace -e trace=socket,connect,recv,send,accept wget https://www.example.com

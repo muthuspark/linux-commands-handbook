@@ -79,5 +79,5 @@ exit 0
 
 
 
-This script demonstrates a basic flow.  Remember to adjust the script to your specific needs and always consider security implications when incorporating `newgrp` into automated processes.  Ensure appropriate permissions and error handling are implemented.
+This script demonstrates a basic flow. Remember to adjust the script to your specific needs and always consider security when incorporating `newgrp` into automated processes. Ensure appropriate permissions and error handling are implemented.
 

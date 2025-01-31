@@ -78,7 +78,7 @@ If the user doesn't enter a password within 5 seconds, the script prints "Timeou
 
 ##  Ignoring Leading and Trailing Whitespace
 
-The `-r` option, as mentioned earlier, is crucial for preserving backslashes.  Combining it with parameter expansion to remove leading/trailing whitespace offers further control:
+The `-r` option, as mentioned earlier, is for preserving backslashes. Combining it with parameter expansion to remove leading/trailing whitespace offers further control:
 
 ```bash
 read -r input

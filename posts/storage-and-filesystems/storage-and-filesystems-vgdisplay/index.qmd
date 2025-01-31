@@ -7,7 +7,7 @@ categories: [ "Storage and Filesystems" ]
 
 The `vgdisplay` command is a powerful tool within the LVM suite.  It displays detailed information about a specified volume group (VG). A volume group is a collection of Physical Volumes (PVs) that are grouped together to create a larger pool of storage.  Think of it as a container for your logical volumes (LVs), which are the actual partitions you use for data.
 
-Without `vgdisplay`, navigating and understanding your LVM setup would be significantly more difficult.
+Without `vgdisplay`, navigating and understanding your LVM setup would be more difficult.
 
 ## Basic Usage
 
@@ -81,13 +81,13 @@ For more specific information, combine `vgdisplay` with the `grep` command. For 
 sudo vgdisplay myvg | grep 'VG Size'
 ```
 
-This will output only the line containing "VG Size." You can adapt this to filter for any other piece of information displayed by `vgdisplay`.
+This will output only the line containing "VG Size." You can filter this for any other piece of information displayed by `vgdisplay`.
 
 
 ##  Advanced Usage:  Combining with other LVM commands
 
-`vgdisplay` is often used in conjunction with other LVM commands, such as `vgs`, `lvs`, and `pvs`, to get a holistic view of your storage configuration. For instance, after identifying a volume group of interest with `vgs`, you can use `vgdisplay` to drill down to see its specific details.
+`vgdisplay` is often used in conjunction with other LVM commands, such as `vgs`, `lvs`, and `pvs`, to get a view of your storage configuration. For instance, after identifying a volume group of interest with `vgs`, you can use `vgdisplay` to drill down to see its specific details.
 
 
-By mastering `vgdisplay`, you gain a crucial tool in managing and troubleshooting your Linux system's storage.  Its straightforward syntax and comprehensive output make it an indispensable command for any system administrator.
+By mastering `vgdisplay`, you gain a tool in managing and troubleshooting your Linux system's storage. Its straightforward syntax and detailed output make it an indispensable command for any system administrator.
 

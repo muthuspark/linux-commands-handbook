@@ -28,7 +28,7 @@ This command lists the contents of `/tmp` with detailed information (`ls -l`), p
 
 ## Advanced `tee` Usage: Appending and Multiple Files
 
-`tee` offers more advanced options to enhance its functionality.
+`tee` offers more advanced options to improve its functionality.
 
 **Appending to a file:**  By default, `tee` overwrites the output file if it exists.  To append to an existing file, use the `-a` (or `--append`) option:
 
@@ -86,5 +86,5 @@ long_running_command | tee -i output.log
 This ensures that even if you interrupt `long_running_command`, the output already processed will be saved to `output.log`.
 
 
-By understanding and utilizing the versatile `tee` command, you can significantly enhance your command-line efficiency and streamline your workflow.  Its ability to simultaneously display output and log it to files makes it an invaluable tool for any Linux user.
+By understanding and utilizing the versatile `tee` command, you can improve your command-line efficiency and streamline your workflow. Its ability to simultaneously display output and log it to files makes it a useful tool for any Linux user.
 

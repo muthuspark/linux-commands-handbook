@@ -24,7 +24,7 @@ This command does exactly the same, but instead of specifying number of lines, i
 
 ## Advanced Usage: Customizing Splitting Behavior
 
-`split` offers several options to fine-tune the splitting process. Let's explore some of them:
+`split` offers many options to fine-tune the splitting process. Let's look at some of them:
 
 **Specifying the Output File Suffix Length:**
 
@@ -70,5 +70,5 @@ split -l 1000 my_large_file.txt - my_large_file_
 This will create files like `my_large_file_001`, `my_large_file_002` and so on.  Essentially, it overrides the auto-generated suffix with `-`.  You can put any string in that place, which will be appended to each output file name.
 
 
-These examples demonstrate the versatility of the `split` command. By combining different options, you can tailor the splitting process to suit your specific needs. Remember to consult the `man split` page for a comprehensive list of all available options and their functionalities.
+These examples demonstrate the versatility of the `split` command. By combining different options, you can tailor the splitting process to suit your specific needs. Remember to consult the `man split` page for a detailed list of all available options and their functionalities.
 

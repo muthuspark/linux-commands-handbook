@@ -38,7 +38,7 @@ Here:
 
 ##  Practical Examples with `pmap`
 
-Let's explore some practical scenarios using `pmap`:
+Let's look at some practical scenarios using `pmap`:
 
 **1. Viewing the memory map of a specific process:**
 
@@ -67,7 +67,7 @@ pmap <PID>
 
 **3. Analyzing shared library usage:**
 
-`pmap` helps identify which shared libraries a process is using and how much memory each library consumes. This is valuable for debugging issues related to library conflicts or excessive library usage.
+`pmap` helps identify which shared libraries a process is using and how much memory each library consumes. This is helpful for debugging issues related to library conflicts or excessive library usage.
 
 ```bash
 pmap <PID> | grep "libc"

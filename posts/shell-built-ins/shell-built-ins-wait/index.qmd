@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding the `wait` Command
 
-The `wait` command suspends the execution of a script until one or more background processes complete.  It's invaluable when you need to ensure a certain order of operations, preventing subsequent commands from executing before dependent background tasks finish.  Without `wait`, your script might proceed to the next step before the background process has a chance to complete, leading to unexpected behavior or errors.
+The `wait` command suspends the execution of a script until one or more background processes complete. It's useful when you need to ensure a certain order of operations, preventing subsequent commands from executing before dependent background tasks finish. Without `wait`, your script might proceed to the next step before the background process has a chance to complete, leading to unexpected behavior or errors.
 
 
 ## Basic Usage: Waiting for a Single Process
@@ -20,7 +20,7 @@ The simplest form of `wait` involves waiting for a single background process ide
 ```bash
 ##  Using `wait` with Process Groups
 
-Instead of individual PIDs, you can also use the process group ID (`pgid`) to wait for all processes within a specific group.  You can obtain the `pgid` using the `jobs` command and then feed that information into `wait`.  This is useful if you've initiated multiple background processes within a subshell or through other group commands.  This approach is more robust when dealing with complex process trees.
+Instead of individual PIDs, you can also use the process group ID (`pgid`) to wait for all processes within a specific group. You can obtain the `pgid` using the `jobs` command and then feed that information into `wait`. This is useful if you've initiated multiple background processes within a subshell or through other group commands. This approach is more efficient when dealing with complex process trees.
 
 
 ```bash
@@ -59,5 +59,5 @@ This enhances the script's robustness.  It checks the exit status of `sleep 10` 
 
 ##  Advanced Applications:  Orchestrating Complex Workflows
 
-`wait` is not only beneficial for basic background process management.  It forms the backbone of sophisticated shell scripts that manage complex sequences of operations, especially useful in automated tasks, data processing pipelines, or any scenario that requires finely tuned process coordination.  Its ability to ensure the correct completion order of processes ensures data integrity and prevent cascading failures in intricate workflows.
+`wait` is not only beneficial for basic background process management. It forms the backbone of complex shell scripts that manage complex sequences of operations, especially useful in automated tasks, data processing pipelines, or any scenario that requires finely tuned process coordination. Its ability to ensure the correct completion order of processes ensures data integrity and prevents cascading failures in workflows.
 

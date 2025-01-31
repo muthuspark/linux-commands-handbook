@@ -5,12 +5,12 @@ categories: [ "Security" ]
 ---
 ## Understanding `certbot`'s Role in Website Security
 
-`certbot`'s primary function is to simplify the process of obtaining and installing SSL/TLS certificates from Let's Encrypt, a free, automated, and open certificate authority.  This eliminates the need for manual certificate requests and renewals, significantly reducing the risk of security lapses due to expired certificates.
+`certbot`'s primary function is to simplify the process of obtaining and installing SSL/TLS certificates from Let's Encrypt, a free, automated, and open certificate authority.  This eliminates the need for manual certificate requests and renewals, reducing the risk of security lapses due to expired certificates.
 
 
 ## Installation
 
-Before we delve into the examples, make sure `certbot` is installed on your Linux system.  The installation method varies depending on your distribution. Here are a few examples:
+Before we look at the examples, make sure `certbot` is installed on your Linux system.  The installation method varies depending on your distribution. Here are a few examples:
 
 **Debian/Ubuntu:**
 

@@ -90,7 +90,7 @@ If you attempt to `unset` a variable that doesn't exist, `unset` will typically 
 
 ## Advanced Usage in Scripting
 
-`unset` proves invaluable in shell scripts for managing temporary variables or cleaning up after a specific process.  This allows for better resource management and avoids potential conflicts.  For instance, you might `unset` variables after they are no longer needed within a loop or function.
+`unset` proves useful in shell scripts for managing temporary variables or cleaning up after a specific process. This allows for better resource management and avoids potential conflicts. For instance, you might `unset` variables after they are no longer needed within a loop or function.
 
 
 ##  Important Considerations

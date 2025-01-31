@@ -32,7 +32,7 @@ This command will send `SIGKILL` to all "firefox" processes, forcing immediate t
 
 ## Using Regular Expressions for Pattern Matching
 
-For more flexible matching, `pkill` supports regular expressions using the `-f` option. This allows for sophisticated pattern matching beyond simple substring matching.
+For more flexible matching, `pkill` supports regular expressions using the `-f` option. This allows for complex pattern matching beyond simple substring matching.
 
 For example, to kill all processes whose names start with "chrome":
 

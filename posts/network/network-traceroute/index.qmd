@@ -29,7 +29,7 @@ An asterisk (*) indicates a hop that didn't respond.
 
 **Advanced Options:**
 
-`traceroute` offers several useful options:
+`traceroute` offers many useful options:
 
 * `-f <first_hop>`: Specifies the first hop TTL. Useful to skip initial hops on your local network.  For example: `traceroute -f 5 google.com` starts at TTL 5.
 * `-m <max_hops>`: Sets the maximum number of hops to trace. The default is typically 30.  Useful for limiting the trace depth to avoid long waits. For example: `traceroute -m 15 google.com`
@@ -46,7 +46,7 @@ traceroute -f 5 -m 20 -q 5 -I www.example.org
 
 ## Introducing `mtr` – An Enhanced `traceroute`
 
-`mtr` (my traceroute) combines the functionalities of `traceroute` and `ping`. It provides a more user-friendly output, displaying hop information, packet loss, and RTT statistics in a table format.  This makes it significantly easier to identify problematic hops.
+`mtr` (my traceroute) combines the functionalities of `traceroute` and `ping`. It provides a more user-friendly output, displaying hop information, packet loss, and RTT statistics in a table format. This makes it easier to identify problematic hops.
 
 **Basic `mtr` Usage:**
 
@@ -75,5 +75,5 @@ mtr -c 10 -r 2 -w 80 google.com
 This will send 10 probes, display a report every 2 seconds, and use a report width of 80 characters.
 
 
-These commands are indispensable tools for diagnosing network connectivity problems.  Their ability to pinpoint specific hops causing delays or packet loss is invaluable for troubleshooting network issues effectively.  Mastering their usage significantly enhances your ability to resolve network-related challenges within a Linux environment.
+These commands are indispensable tools for diagnosing network connectivity problems. Their ability to pinpoint specific hops causing delays or packet loss is essential for troubleshooting network issues effectively. Mastering their usage enhances your ability to resolve network-related challenges within a Linux environment.
 

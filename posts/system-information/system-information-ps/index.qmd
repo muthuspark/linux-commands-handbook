@@ -15,7 +15,7 @@ This will likely show a limited set of information, including the process ID (PI
 
 ## Refining Your `ps` Output with Options
 
-To get more detailed information, you need to utilize `ps`'s numerous options. Here are some crucial ones:
+To get more detailed information, you need to utilize `ps`'s numerous options. Here are some:
 
 * **`-a` (or `-e`):** Shows all processes.  `-a` shows processes for the current terminal, while `-e` displays *every* process running on the system.
 
@@ -24,7 +24,7 @@ ps -a
 ps -e
 ```
 
-* **`-f` (full format):** Provides a more comprehensive view, including the process's parent process ID (PPID), session ID (SID), and more.
+* **`-f` (full format):** Provides a more detailed view, including the process's parent process ID (PPID), session ID (SID), and more.
 
 ```bash
 ps -f
@@ -84,7 +84,7 @@ This command shows the top 10 CPU-consuming processes.  The `--sort=-%cpu` sorts
 
 ##  Exploring Other Useful `ps` Options
 
-Beyond the options covered,  `ps` offers many more for fine-grained control.  Consult the `man ps` page for a complete list and detailed explanations.  Remember to explore and experiment to understand how `ps` can best serve your system administration needs.
+Beyond the options covered,  `ps` offers many more for fine-grained control.  Consult the `man ps` page for a complete list and detailed explanations.  Remember to look at and experiment to understand how `ps` can best serve your system administration needs.
 
 
 

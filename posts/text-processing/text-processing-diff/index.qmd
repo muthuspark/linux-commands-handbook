@@ -74,7 +74,7 @@ This would yield something like:
 +This is a new line.
 ```
 
-* **`-r` (recursive diff):** This option is crucial for comparing directories recursively. It will compare all files within the specified directories.
+* **`-r` (recursive diff):** This option is for comparing directories recursively. It will compare all files within the specified directories.
 
 ```bash
 diff -r dir1 dir2
@@ -111,5 +111,5 @@ The power of `diff` extends beyond simple file comparison. You can use it in scr
 
 ## Integrating `diff` into your workflow
 
-`diff` is a fundamental tool for any Linux user.  Mastering its options and understanding its output will significantly improve your efficiency when working with text files and managing changes in your projects.  Its flexibility allows for a wide range of applications, making it an indispensable part of any developer's or system administrator's arsenal.
+`diff` is a fundamental tool for any Linux user. Mastering its options and understanding its output will improve your efficiency when working with text files and managing changes in your projects. Its flexibility allows for a wide range of applications, making it an indispensable part of any developer's or system administrator's arsenal.
 

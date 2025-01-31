@@ -68,7 +68,7 @@ If you need to examine memory usage across multiple processes, you can use `ps` 
 ```bash
 ps aux | while read line; do PID=$(echo $line | awk '{print $2}'); pmap $PID; done
 ```
-This is an example and might need adjustments based on your system's `ps` output format. It's crucial to understand the output of your `ps` command to extract the PID correctly.
+This is an example and might need adjustments based on your system's `ps` output format.  It's important to understand the output of your `ps` command to extract the PID correctly.
 
 
 ## Identifying Memory Leaks

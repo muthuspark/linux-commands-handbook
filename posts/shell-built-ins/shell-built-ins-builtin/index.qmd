@@ -17,7 +17,7 @@ Where `<command>` is the name of the shell built-in and `[arguments]` are any ar
 
 ## Code Examples: Illustrating `builtin`'s Power
 
-Let's explore several practical examples showcasing `builtin`'s functionality:
+Let's look at many practical examples showcasing `builtin`'s functionality:
 
 **Example 1: Avoiding External Command Conflicts**
 
@@ -47,7 +47,7 @@ This example highlights the critical role of `builtin` in ensuring the correct e
 
 **Example 2:  Explicitly Using Built-in `echo`**
 
-While less crucial for `echo`, this example demonstrates `builtin`'s use for any built-in:
+While less important for `echo`, this example demonstrates `builtin`'s use for any built-in:
 
 ```bash
 #!/bin/bash

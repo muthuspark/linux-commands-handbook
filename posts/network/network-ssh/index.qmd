@@ -67,7 +67,7 @@ For example, to check the disk space on `example.com`:
 ssh john@example.com 'df -h'
 ```
 
-Note the single quotes around the command; this is crucial to prevent local shell interpretation of special characters.  For more complex commands, it's often safer to use a script:
+Note the single quotes around the command; this prevents local shell interpretation of special characters.  For more complex commands, it's often safer to use a script:
 
 ```bash
 ssh john@example.com "bash -s" < my_remote_script.sh
@@ -104,5 +104,5 @@ ssh -L 8080:internal_server_ip:80 username@gateway_server
 This forwards traffic from port 8080 on your local machine to port 80 on `internal_server_ip` through `gateway_server`.
 
 
-These examples illustrate the core functionality of the `ssh` command.  Exploring its many other options and capabilities will significantly enhance your Linux system administration skills.
+These examples illustrate the core functionality of the `ssh` command. Exploring its many other options and capabilities will improve your Linux system administration skills.
 

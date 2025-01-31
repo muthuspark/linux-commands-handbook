@@ -68,7 +68,7 @@ This command displays information about the tape, including its position, densit
 
 ##  Advanced Usage and Error Handling
 
-`mt` offers more advanced options, such as setting block size and specifying tape density.  Refer to the `man mt` page for a complete list of options.  It's crucial to handle potential errors.  `mt` typically returns error codes that you can check using the `$?` variable in your scripts.  For example, a simple script to rewind and check for errors:
+`mt` offers more advanced options, such as setting block size and specifying tape density.  Refer to the `man mt` page for a complete list of options.  Handle potential errors.  `mt` typically returns error codes that you can check using the `$?` variable in your scripts.  For example, a simple script to rewind and check for errors:
 
 ```bash
 #!/bin/bash

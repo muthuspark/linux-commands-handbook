@@ -5,7 +5,7 @@ categories: [ "Memory Management" ]
 ---
 ## Understanding Swap Space
 
-Before diving into `mkswap`, let's understand its purpose.  When your system runs low on RAM, the kernel uses a process called swapping (or paging). It moves inactive data from RAM to the swap space on your hard drive, freeing up RAM for active processes.  This prevents system crashes due to memory exhaustion.  However, accessing data from the hard drive is significantly slower than from RAM, so excessive swapping can lead to performance degradation.  Therefore, having an appropriately sized swap partition is crucial for system stability and performance.
+Before diving into `mkswap`, let's understand its purpose. When your system runs low on RAM, the kernel uses a process called swapping (or paging). It moves inactive data from RAM to the swap space on your hard drive, freeing up RAM for active processes. This prevents system crashes due to memory exhaustion. However, accessing data from the hard drive is slower than from RAM, so excessive swapping can lead to performance degradation. Therefore, having an appropriately sized swap partition is important for system stability and performance.
 
 
 ## Creating a Swap File with `mkswap`

@@ -5,7 +5,7 @@ categories: [ "Network" ]
 ---
 ## Beyond Simple Web Page Downloads: Unveiling `curl`'s Power
 
-While many know `curl` for retrieving web pages (like `curl www.example.com`), its functionality extends far beyond this basic use case.  It supports a wide array of protocols including HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, and more.  This makes it an invaluable tool for a range of tasks, from downloading files to interacting with APIs.
+While many know `curl` for retrieving web pages (like `curl www.example.com`), its functionality extends far beyond this basic use case.  It supports a wide array of protocols including HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, and more.  This makes it a tool for a range of tasks, from downloading files to interacting with APIs.
 
 
 ### 1. Downloading Files: The Basics

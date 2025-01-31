@@ -21,7 +21,7 @@ Before diving into examples, let's familiarize ourselves with some frequently us
 
 * **`-f`:** Forces the application of the patch even if there are warnings or potential conflicts. Use with caution!
 
-* **`--dry-run` or `-n`:** Performs a dry run, showing what changes would be made without actually modifying the files. This is invaluable for previewing the impact of a patch.
+* **`--dry-run` or `-n`:** Performs a dry run, showing what changes would be made without actually modifying the files. This is for previewing the impact of a patch.
 
 
 ## Practical Code Examples

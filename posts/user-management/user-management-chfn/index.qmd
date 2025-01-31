@@ -11,7 +11,7 @@ This information is stored in the `/etc/passwd` file (though not directly editab
 
 ## Using `chfn`: Practical Examples
 
-Let's dive into practical examples to demonstrate the usage of `chfn`.  Remember to run these commands with `sudo` or as the root user, unless you're modifying your own account.
+Let's see practical examples to demonstrate the usage of `chfn`. Remember to run these commands with `sudo` or as the root user, unless you're modifying your own account.
 
 **1. Modifying your own account information:**
 
@@ -56,7 +56,7 @@ sudo chfn -l john.doe
 The `-l` option displays the current finger information.
 
 
-**Important Note:**  While `chfn` is a convenient tool, the security implications of directly editing user information must be considered.  Ensure appropriate permissions and security practices are maintained. Always exercise caution when modifying user accounts.
+**Important Note:** While `chfn` is a convenient tool, directly editing user information must be considered carefully. Ensure appropriate permissions and security practices are maintained. Always exercise caution when modifying user accounts.
 
 
 The `chfn` command provides a valuable, user-friendly interface for managing user profile information in Linux. While seemingly simple, mastering its use can streamline user management significantly.  This makes it an indispensable tool for both administrators and power users alike.

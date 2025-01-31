@@ -5,7 +5,7 @@ categories: [ "Text Processing" ]
 ---
 ## Navigating and Editing Text
 
-Emacs's navigation commands form the foundation of efficient text manipulation.  Learning these shortcuts significantly boosts productivity.
+Emacs's navigation commands form the foundation of efficient text manipulation. Learning these shortcuts boosts productivity.
 
 * **Movement:**
     * `Ctrl-f`: Move cursor forward one character.
@@ -57,7 +57,7 @@ Emacs's search functionality is incredibly robust, allowing for both simple and 
 
 ## Utilizing Regular Expressions
 
-Emacs's support for regular expressions significantly expands its text manipulation capabilities. This allows for sophisticated pattern matching and replacement.
+Emacs's support for regular expressions expands its text manipulation capabilities. This allows for complex pattern matching and replacement.
 
 **Example:** Let's say you have a file with email addresses in the format `name@domain.com`. You want to extract only the domain names.  You can use the following regular expression within Emacs's search and replace functionality:
 

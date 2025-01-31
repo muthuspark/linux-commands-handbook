@@ -5,7 +5,7 @@ categories: [ "Performance Monitoring" ]
 ---
 ## Understanding sar's Functionality
 
-`sar` gathers system performance data from various sources, including the kernel's accounting mechanisms.  It can report on CPU utilization, memory usage, I/O activity, network traffic, and much more.  The beauty of `sar` lies in its ability to collect data over time, allowing you to analyze trends and identify patterns.  This historical perspective is crucial for accurate performance diagnosis.
+`sar` gathers system performance data from various sources, including the kernel's accounting mechanisms.  It can report on CPU utilization, memory usage, I/O activity, network traffic, and much more.  The beauty of `sar` lies in its ability to collect data over time, allowing you to analyze trends and identify patterns. This historical perspective is important for accurate performance diagnosis.
 
 
 ## Installing sar

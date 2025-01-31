@@ -69,5 +69,5 @@ Keep in mind that running `lastlog` requires appropriate permissions.  Typically
 
 ##  Beyond the Basics:  System Logging and Security Auditing
 
-While `lastlog` provides a snapshot of the last login,  a comprehensive security audit requires examining more detailed system logs. Tools like `journalctl` (for systemd-based systems) offer richer information regarding user activity, failed login attempts, and other relevant events.  The information provided by `lastlog` serves as a quick overview, but should be complemented by more thorough logging analysis for robust security monitoring.
+While `lastlog` provides a snapshot of the last login, a detailed security audit requires examining more detailed system logs. Tools like `journalctl` (for systemd-based systems) offer richer information regarding user activity, failed login attempts, and other relevant events. The information provided by `lastlog` serves as a quick overview, but should be complemented by more thorough logging analysis for security monitoring.
 

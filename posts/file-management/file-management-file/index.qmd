@@ -51,12 +51,12 @@ file *.txt  #Analyzes all .txt files in the current directory
 file -r my_directory/ #Recursively analyzes all files in my_directory
 ```
 
-The `-r` option enables recursive analysis, crucial for handling large directory structures.
+The `-r` option enables recursive analysis for handling large directory structures.
 
 
 ## Advanced Options:  `-b` and `-i`
 
-The `file` command offers several options to customize its output:
+The `file` command offers many options to customize its output:
 
 * **`-b` (brief):** This option suppresses the filename prefix in the output.  Useful when processing large numbers of files.
 
@@ -105,5 +105,5 @@ file -rib my_directory/
 This recursively analyzes all files in `my_directory/` and provides only the brief MIME type output, omitting filenames.
 
 
-This post has provided a solid foundation for using the `file` command.  Experiment with these examples and explore further options in the command's manual page (`man file`) to master this powerful Linux tool.
+This post has provided a solid foundation for using the `file` command.  Experiment with these examples and look at further options in the command's manual page (`man file`) to master this powerful Linux tool.
 

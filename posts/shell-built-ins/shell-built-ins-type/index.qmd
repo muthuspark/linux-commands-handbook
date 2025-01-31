@@ -39,7 +39,7 @@ date is /usr/bin/date
 
 Again, an external command, but located in `/usr/bin`.  The location might differ depending on your system.
 
-Now, let's explore built-in commands:
+Now, let's look at built-in commands:
 
 ```bash
 type cd
@@ -92,7 +92,7 @@ This will provide the type information for each command individually.
 
 ##  Importance of `type` in Scripting
 
-The `type` command is crucial for robust shell scripting.  You can use it to conditionally execute commands based on their type.  For example:
+The `type` command is important for shell scripting. You can use it to conditionally execute commands based on their type. For example:
 
 ```bash
 command="grep"

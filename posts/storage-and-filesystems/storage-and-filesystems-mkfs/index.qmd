@@ -27,7 +27,7 @@ mkfs.type [options] device
 
 Where `type` is the filesystem type (e.g., `ext4`, `btrfs`, `xfs`) and `device` is the block device (e.g., `/dev/sda1`, `/dev/sdb`).
 
-Let's explore some commonly used options:
+Let's look at some commonly used options:
 
 * `-t type`: Specifies the filesystem type.  This is usually implied by the command name (e.g., `mkfs.ext4` implies `-t ext4`), but it's good practice to be explicit.
 * `-l label`: Assigns a label to the filesystem, making it easier to identify.

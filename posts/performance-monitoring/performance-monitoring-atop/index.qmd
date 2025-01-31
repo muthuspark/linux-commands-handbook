@@ -5,7 +5,7 @@ categories: [ "Performance Monitoring" ]
 ---
 ## What is atop?
 
-`atop` is a powerful command-line utility for Linux systems that provides a comprehensive view of system performance over time. Unlike `top`, which only displays real-time data, `atop` logs system activity at regular intervals, allowing you to analyze historical performance trends. This is invaluable for identifying recurring issues or pinpointing the root cause of past performance problems.  It collects a wide range of metrics, including CPU usage, memory usage, disk I/O, network traffic, and process activity.
+`atop` is a powerful command-line utility for Linux systems that provides a detailed view of system performance over time. Unlike `top`, which only displays real-time data, `atop` logs system activity at regular intervals, allowing you to analyze historical performance trends. This is for identifying recurring issues or pinpointing the root cause of past performance problems. It collects a wide range of metrics, including CPU usage, memory usage, disk I/O, network traffic, and process activity.
 
 ## Installation
 
@@ -63,7 +63,7 @@ This command displays the data from 10:00 AM to 11:00 AM on October 27th, 2024.
 
 ##  Focusing on Specific Processes
 
-`atop`'s ability to filter data is crucial for troubleshooting.  To focus on a specific process (e.g., `httpd`), use the `-p` option:
+`atop`'s ability to filter data is important for troubleshooting. To focus on a specific process (e.g., `httpd`), use the `-p` option:
 
 ```bash
 atop -r /var/log/atop/atop_20241027 -p httpd
@@ -89,7 +89,7 @@ The `atop` daemon runs continuously in the background, logging data to the speci
 
 ##  Advanced Usage
 
-`atop` offers several other powerful features, such as:
+`atop` offers many other powerful features, such as:
 
 * **Multiple Log File Analysis:**  Combine logs from multiple days for longer-term analysis.
 * **Saving Output to a File:** Redirect the output to a file using `>`.

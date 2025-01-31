@@ -23,7 +23,7 @@ This shows `user1` logged in on terminal `pts/0` at 10:30 AM from IP `192.168.1.
 
 ## Refining Output with Options
 
-The true power of `who` lies in its options. Let's explore some key ones:
+The true power of `who` lies in its options. Let's look at some key ones:
 
 
 **`who -u` (Detailed User Information):**  This option provides a more detailed view of each user's session, including the process ID (PID) and the time the user became idle.
@@ -47,7 +47,7 @@ Notice the addition of idle time.
 who -H
 ```
 
-**`who -a` (All Information):** This combines the functionalities of several other options, providing a comprehensive summary.  It's often equivalent to using `who -bdH`.
+**`who -a` (All Information):** This combines the functionalities of many other options, providing a detailed summary.  It's often equivalent to using `who -bdH`.
 
 ```bash
 who -a
@@ -95,5 +95,5 @@ who | grep user1
 This will filter the `who` output to show only lines containing "user1".
 
 
-By mastering the `who` command and its various options, you gain a valuable tool for monitoring and managing your Linux system effectively.  Its simplicity belies its power, making it an indispensable command for both beginners and experienced users.
+By mastering the `who` command and its various options, you gain a tool for monitoring and managing your Linux system effectively.  Its simplicity belies its power, making it an indispensable command for both beginners and experienced users.
 

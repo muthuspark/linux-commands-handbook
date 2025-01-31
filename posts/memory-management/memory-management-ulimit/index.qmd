@@ -35,7 +35,7 @@ ulimit [-SHa] [limit]
 ulimit -a
 ```
 
-This command provides a comprehensive overview of all the configured limits.  The output will vary depending on the system's configuration.
+This command provides an overview of all the configured limits.  The output will vary depending on the system's configuration.
 
 
 **2. Setting the soft limit for the number of open files:**
@@ -97,5 +97,5 @@ This script first sets the memory and number of open files limits before executi
 * **System-wide limits:**  System administrators can set system-wide limits for all users.  These usually override per-user limits.
 
 
-By understanding and effectively employing `ulimit`, you can enhance system stability, improve security, and gain finer control over resource allocation within your Linux environment.  Appropriate use of `ulimit` is a cornerstone of responsible system administration.
+By understanding and effectively employing `ulimit`, you can improve system stability, security, and resource allocation within your Linux environment. Appropriate use of `ulimit` is a cornerstone of responsible system administration.
 

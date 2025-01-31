@@ -5,14 +5,14 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding Resource Limits
 
-Before diving into the specifics of `ulimit`, let's clarify what resources it can control.  These limits are crucial for maintaining system stability and preventing resource exhaustion:
+Before diving into the specifics of `ulimit`, let's clarify what resources it can control. These limits are for maintaining system stability and preventing resource exhaustion:
 
 * **`-f` (file size):**  Limits the maximum size of files a process can create.  This prevents a single process from filling up an entire disk.
 * **`-t` (process CPU time):** Sets a limit on the CPU time (in seconds) a process can consume. This is especially useful for preventing long-running or poorly-written processes from monopolizing the CPU.
 * **`-v` (virtual memory):** Limits the amount of virtual memory (address space) a process can use.  This prevents processes from exhausting available RAM and leading to swapping and performance degradation.
 * **`-u` (open files):** Controls the maximum number of files a process can have open simultaneously.  This can prevent resource exhaustion and improve system stability.
 * **`-n` (file descriptors):**  Similar to `-u`, this limits the number of open file descriptors.  File descriptors are integer representations of open files.
-* **`-m` (memory locked in RAM):** Limits the amount of memory a process can lock into RAM, preventing it from being swapped out.  This is less commonly used but crucial in specific scenarios.
+* **`-m` (memory locked in RAM):** Limits the amount of memory a process can lock into RAM, preventing it from being swapped out. This is less commonly used in specific scenarios.
 * **`-s` (stack size):**  Determines the maximum size of the process stack.  A too-small stack size can cause stack overflows.
 * **`-a` (all limits):** Displays all currently set limits.
 

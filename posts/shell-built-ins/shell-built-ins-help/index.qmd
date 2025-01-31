@@ -90,5 +90,5 @@ help | grep echo
 ```
 
 
-Using `help` effectively allows for a quick and easy way to understand the functionality of numerous shell built-ins, making it a valuable tool in any Linux user's arsenal.
+Using `help` effectively allows for a quick and easy way to understand the functionality of numerous shell built-ins, making it a tool in any Linux user's arsenal.
 

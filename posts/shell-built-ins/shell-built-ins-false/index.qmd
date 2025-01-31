@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## What `false` Does
 
-The `false` command doesn't perform any actions on your system. Its sole purpose is to return an exit status of 1, indicating failure.  In contrast, most successful commands return an exit status of 0.  This seemingly minor distinction is crucial in shell scripting, where exit statuses are used to control program flow and error handling.
+The `false` command doesn't perform any actions on your system. Its sole purpose is to return an exit status of 1, indicating failure.  In contrast, most successful commands return an exit status of 0.  This seemingly minor distinction is important in shell scripting, where exit statuses are used to control program flow and error handling.
 
 ## Using `false` in Shell Scripts
 
@@ -78,7 +78,7 @@ In this example, if `command_that_might_fail` fails (returns a non-zero exit sta
 
 **5.  Testing Error Handling:**
 
-You can leverage `false` to rigorously test your script's error handling capabilities.
+You can use `false` to rigorously test your script's error handling capabilities.
 
 ```bash
 #!/bin/bash
@@ -94,5 +94,5 @@ else
 fi
 ```
 
-By strategically placing `false` in your scripts, you gain finer control over execution flow and error reporting, leading to more robust and reliable shell scripts.  Remember to use `false` judiciously, carefully considering its implications within the context of your script's logic.
+By strategically placing `false` in your scripts, you gain finer control over execution flow and error reporting, leading to more reliable shell scripts. Remember to use `false` judiciously, carefully considering its effect within the context of your script's logic.
 

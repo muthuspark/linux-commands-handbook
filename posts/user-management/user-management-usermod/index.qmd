@@ -11,7 +11,7 @@ categories: [ "User Management" ]
 usermod [OPTIONS] USERNAME
 ```
 
-Where `USERNAME` is the name of the user account you want to modify.  Let's explore some key options with practical examples.
+Where `USERNAME` is the name of the user account you want to modify.  Let's look at some key options with practical examples.
 
 
 ## Modifying User Information
@@ -76,7 +76,7 @@ This command moves John's home directory to `/home/new_location/john`.  Note tha
 ##  Important Considerations
 
 * **Root Privileges:** Most `usermod` operations require root privileges (`sudo`).
-* **Backup:** Before making significant changes, especially those affecting home directories or UIDs, it's crucial to back up the user's data.
+* **Backup:** Before making significant changes, especially those affecting home directories or UIDs, back up the user's data.
 * **Testing:** In a production environment, it's advisable to test `usermod` commands on a non-critical user account first to avoid unintended consequences.
 
 

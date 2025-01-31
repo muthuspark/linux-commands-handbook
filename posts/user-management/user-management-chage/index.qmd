@@ -5,12 +5,12 @@ categories: [ "User Management" ]
 ---
 ## Understanding the Basics of `chage`
 
-The `chage` command interacts directly with the `/etc/shadow` file, a crucial system file containing encrypted passwords and password aging information.  It's important to note that you'll need root privileges (using `sudo`) to execute `chage` effectively.
+The `chage` command interacts directly with the `/etc/shadow` file, a system file containing encrypted passwords and password aging information.  It's important to note that you'll need root privileges (using `sudo`) to execute `chage` effectively.
 
 
 ## Key Options and Usage Examples
 
-Let's explore the most commonly used options of `chage`:
+Let's look at the most commonly used options of `chage`:
 
 
 **1. Viewing Password Information:**
@@ -83,7 +83,7 @@ This would set the last password change date to November 20th, 2023 for the user
 
 **4. Locking and Unlocking Accounts:**
 
-You can lock an account using the `-E` option to set the account expiration date to the past.   This effectively prevents the user from logging in. To unlock it, set it to a future date or `never`.
+You can lock an account using the `-E` option to set the account expiration date to the past. This effectively prevents the user from logging in. To re-enable it, set it to a future date or `never`.
 
 
 **Example: Locking an Account**
@@ -102,7 +102,7 @@ sudo chage -E never john #unlocks account, removing expiry date
 
 **5.  Using `-l` with Multiple Users:**
 
-While not directly supported by `chage` itself, you can leverage the power of `xargs` to apply `chage -l` to multiple users listed in a file:
+While not directly supported by `chage` itself, you can use the power of `xargs` to apply `chage -l` to multiple users listed in a file:
 
 ```bash
 cat userlist.txt | xargs -I {} sudo chage -l {}

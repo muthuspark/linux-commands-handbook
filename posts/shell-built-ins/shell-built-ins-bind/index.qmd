@@ -33,7 +33,7 @@ bind '"\C-m": "cd $my_dir"'
 
 This binds Ctrl+M (often the Enter key) to change the directory to `$my_dir`. Be cautious with this example as it reassigns a fundamental key; you might want to use a less common key combination.
 
-You can further enhance this by creating a function:
+You can further improve this by creating a function:
 
 ```bash
 my_func() {
@@ -64,12 +64,12 @@ To see all your current key bindings, use:
 bind -p
 ```
 
-This provides a comprehensive list of all defined key bindings, allowing for verification and troubleshooting.
+This provides a detailed list of all defined key bindings, allowing for verification and troubleshooting.
 
 
 ## Advanced Techniques:  `readline` Escape Sequences
 
-The true potential of `bind` is unlocked by understanding `readline` escape sequences. These sequences allow you to precisely control cursor movements, text manipulation, and more. The `bind -p` command shows many examples which provide insights into more advanced possibilities.  Consult the `readline` documentation for a complete reference of escape sequences.
+The true potential of `bind` is unlocked by understanding `readline` escape sequences. These sequences allow you to precisely control cursor movements, text manipulation, and more. The `bind -p` command shows many examples of more advanced possibilities. Consult the `readline` documentation for a complete reference of escape sequences.
 
 
 

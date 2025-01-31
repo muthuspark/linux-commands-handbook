@@ -88,5 +88,5 @@ fi
 This script uses `pwd` to construct the full path to the `data` subdirectory and then uses `find` to locate and process all `.txt` files within that directory.  Error handling is included to check for the existence of the subdirectory.
 
 
-These examples demonstrate `pwd`'s essential role in constructing robust and reliable shell scripts.  Understanding its function and integrating it appropriately makes navigating and manipulating the Linux file system significantly easier and more efficient.
+These examples demonstrate `pwd`'s essential role in constructing reliable shell scripts. Understanding its function and integrating it appropriately makes navigating and manipulating the Linux file system easier and more efficient.
 

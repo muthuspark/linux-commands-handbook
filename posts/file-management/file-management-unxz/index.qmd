@@ -41,7 +41,7 @@ unxz file1.xz file2.xz file3.xz
 
 ##  Advanced Options: Fine-tuning `unxz`
 
-While the basic usage is sufficient for many tasks, `unxz` offers several options for more control:
+While the basic usage is sufficient for many tasks, `unxz` offers many options for more control:
 
 * **`-f` or `--force`:** This option forces the overwrite of existing files without prompting for confirmation.  Use with caution!
 

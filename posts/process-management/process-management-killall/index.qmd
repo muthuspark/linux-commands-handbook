@@ -21,7 +21,7 @@ killall firefox
 
 ## Handling Multiple Processes with the Same Name
 
-If multiple processes share the same name, `killall` will terminate them all. This is particularly useful when dealing with applications that spawn multiple child processes. For example, if you have several `gnome-terminal` windows open, a single `killall gnome-terminal` command will close them all.
+If multiple processes share the same name, `killall` will terminate them all. This is particularly useful when dealing with applications that spawn multiple child processes. For example, if you have many `gnome-terminal` windows open, a single `killall gnome-terminal` command will close them all.
 
 ```bash
 killall gnome-terminal
@@ -84,5 +84,5 @@ While less common, some systems may have `killall5` which is essentially an olde
 
 ## Advanced Use Cases and Considerations
 
-The `killall` command offers a simple yet powerful approach to managing processes in Linux.  Understanding the different signal options and the case-sensitive nature of the command are crucial for effectively using it.  Always exercise caution when using `SIGKILL` to avoid data loss.  Remember to check the termination of the processes afterwards to ensure your commands have had the desired effect.
+The `killall` command offers a simple yet powerful approach to managing processes in Linux.  Understanding the different signal options and the case-sensitive nature of the command is important for effectively using it.  Always exercise caution when using `SIGKILL` to avoid data loss.  Remember to check the termination of the processes afterwards to ensure your commands have had the desired effect.
 

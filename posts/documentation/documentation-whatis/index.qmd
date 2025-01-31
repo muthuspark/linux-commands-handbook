@@ -18,7 +18,7 @@ Replace `command_name` with the command you want information about.
 
 ## Practical Examples
 
-Let's explore some practical examples to illustrate the functionality of `whatis`:
+Let's look at some practical examples to illustrate the functionality of `whatis`:
 
 **1. Getting Information about a Common Command:**
 
@@ -48,7 +48,7 @@ This will provide concise descriptions for each command in a separate line.
 
 If a command name is ambiguous, `whatis` will list all matching entries:
 
-For example, if you are unsure about the exact name of a command related to users, trying `whatis user` might give you several results.
+For example, if you are unsure about the exact name of a command related to users, trying `whatis user` might give you many results.
 
 ```bash
 whatis user
@@ -80,7 +80,7 @@ The accuracy and completeness of `whatis` relies heavily on a well-maintained `m
 
 
 
-**7.  Using `apropos` for more comprehensive searches:**
+**7.  Using `apropos` for more detailed searches:**
 
 While `whatis` offers quick summaries, the `apropos` command provides more detailed search capabilities based on keywords in the manual pages, allowing for more flexible searching.
 

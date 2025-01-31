@@ -17,7 +17,7 @@ Once installed, simply type `tmux` in your terminal to launch it.  You'll now be
 
 ## Navigating and Managing Panes
 
-Tmux employs a simple keybinding system using the prefix key, usually `Ctrl+b` (configurable).  Let's explore essential pane commands:
+Tmux employs a simple keybinding system using the prefix key, usually `Ctrl+b` (configurable).  Let's look at essential pane commands:
 
 **Creating Panes:**
 
@@ -67,7 +67,7 @@ Tmux allows you to work with multiple windows within a session, further enhancin
 
 **Example: Organizing tasks**
 
-Suppose you have several different tasks: database management, code editing, and system monitoring.  You could use different windows for each:
+Suppose you have many different tasks: database management, code editing, and system monitoring.  You could use different windows for each:
 
 1. Start tmux
 2. Create a new window with `Ctrl+b c` and name it "Database"
@@ -105,5 +105,5 @@ Tmux offers extensive configuration options through the `~/.tmux.conf` file. You
 set -g prefix C-a
 ```
 
-This file allows for powerful customization of your tmux experience.  Exploring the possibilities within this configuration file can significantly improve your productivity.
+This file allows for powerful customization of your tmux experience. Exploring the possibilities within this configuration file can improve your productivity.
 

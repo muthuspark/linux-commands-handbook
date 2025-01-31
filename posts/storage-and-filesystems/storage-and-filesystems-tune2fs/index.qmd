@@ -16,7 +16,7 @@ Here, `filesystem` refers to the path to your filesystem's device (e.g., `/dev/s
 
 ## Common `tune2fs` Operations
 
-Let's explore some of the most frequently used `tune2fs` options with clear code demonstrations.
+Let's look at some of the most frequently used `tune2fs` options with clear code demonstrations.
 
 ### 1. Checking Filesystem Information
 
@@ -38,7 +38,7 @@ This command displays a wealth of details, including:
 
 ### 2. Modifying the Filesystem's Reserved Block Percentage
 
-The reserved block percentage dictates the proportion of blocks reserved for the root user.  This is crucial for preventing filesystem corruption if the system runs low on disk space.  You can adjust this using the `-m` option:
+The reserved block percentage dictates the proportion of blocks reserved for the root user. This prevents filesystem corruption if the system runs low on disk space. You can adjust this using the `-m` option:
 
 ```bash
 sudo tune2fs -m 5% /dev/sda1  # Reserves 5% of blocks for root
@@ -71,7 +71,7 @@ The `^` negates the option. To re-enable it:
 sudo tune2fs -O has_journal /dev/sda1 # Enables journaling
 ```
 
-**Important Note:** Disabling journaling significantly compromises data integrity.  Only do this if you fully understand the risks and have a robust backup strategy.
+**Important Note:** Disabling journaling compromises data integrity. Only do this if you fully understand the risks and have a backup strategy.
 
 ### 5. Changing the Mount Options
 

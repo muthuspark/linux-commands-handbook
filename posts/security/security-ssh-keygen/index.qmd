@@ -71,7 +71,7 @@ This will prompt you for the old passphrase and then for a new one (or to remove
 
 ##  Adding your Public Key to Authorized Keys
 
-Once you've generated your key pair, the next crucial step is to add your *public* key to the `authorized_keys` file on the server you want to access.  This file is typically located at `/home/user/.ssh/authorized_keys` on the remote server. You can copy the contents of your `id_rsa.pub` file and append it to this file on the server.
+Once you've generated your key pair, the next step is to add your *public* key to the `authorized_keys` file on the server you want to access. This file is typically located at `/home/user/.ssh/authorized_keys` on the remote server. You can copy the contents of your `id_rsa.pub` file and append it to this file on the server.
 
 Alternatively, you can use `ssh-copy-id` (if installed):
 
@@ -87,5 +87,5 @@ This command simplifies the process of securely copying your public key to the r
 Common errors often stem from incorrect permissions on the `.ssh` directory and its contents. Ensure that the `.ssh` directory has permissions of `700` and the `authorized_keys` file has permissions of `600`.
 
 
-By understanding the capabilities of `ssh-keygen` and following best practices, you can greatly enhance the security of your SSH connections.  Remember to prioritize strong passphrases and maintain the confidentiality of your private key.
+By understanding the capabilities of `ssh-keygen` and following best practices, you can greatly improve the security of your SSH connections. Remember to prioritize strong passphrases and maintain the confidentiality of your private key.
 

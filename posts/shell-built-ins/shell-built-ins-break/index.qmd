@@ -112,5 +112,5 @@ echo "Loop finished."
 Here, `break outer` explicitly exits the loop labeled `outer`.
 
 
-These examples highlight the versatility of the `break` command in managing loop execution in shell scripts, enabling more efficient and flexible control flow.  Understanding its behavior is crucial for writing robust and well-structured scripts.
+These examples highlight the versatility of the `break` command in managing loop execution in shell scripts, enabling more efficient and flexible control flow. Understanding its behavior is important for writing well-structured scripts.
 

@@ -82,5 +82,5 @@ gzip -dc etc_backup.cpio.gz | cpio -ivc
 ```
 
 
-This showcases how `cpio` can be incorporated into a robust backup and recovery strategy, providing flexibility and control over the process.  Remember to always test your backup and recovery procedures in a non-production environment before implementing them in a critical system.
+This showcases how `cpio` can be incorporated into a backup and recovery strategy, providing flexibility and control over the process. Remember to always test your backup and recovery procedures in a non-production environment before implementing them in a critical system.
 

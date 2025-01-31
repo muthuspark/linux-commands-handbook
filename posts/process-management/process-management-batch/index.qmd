@@ -16,12 +16,12 @@ Unlike interactive commands, batch jobs typically run in the background, freeing
 
 ## Key Commands and Techniques
 
-Several commands and techniques are vital for efficient batch job management.  Let's explore some of the most important ones with practical examples.
+Several commands and techniques are vital for efficient batch job management.  Let's look at some of the most important ones with practical examples.
 
 
 ### 1.  `nohup` (No Hang Up): Running Jobs Beyond Terminal Sessions
 
-The `nohup` command is crucial for ensuring your batch job continues running even after you close your terminal session.  It prevents the `SIGHUP` signal (sent when you log out) from terminating the process.
+The `nohup` command ensures your batch job continues running even after you close your terminal session. It prevents the `SIGHUP` signal (sent when you log out) from terminating the process.
 
 ```bash
 nohup my_script.sh &
@@ -103,5 +103,5 @@ find . -name "*.txt" -print0 | xargs -0 -P 4 grep "keyword"
 
 This finds all `.txt` files, passing them to `xargs` which then runs `grep` in parallel on four processes (`-P 4`).  `-print0` and `-0` handle filenames with spaces correctly.
 
-These techniques provide a strong foundation for efficient batch job management in Linux.  By combining these tools, you can automate complex workflows and significantly improve your system administration efficiency.
+These techniques provide a strong foundation for efficient batch job management in Linux. By combining these tools, you can automate complex workflows and improve your system administration efficiency.
 

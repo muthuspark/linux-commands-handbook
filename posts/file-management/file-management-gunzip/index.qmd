@@ -16,7 +16,7 @@ The basic syntax of `gunzip` is straightforward:
 gunzip [options] file.gz
 ```
 
-Where `file.gz` is the name of the compressed file you want to decompress.  Let's explore some examples:
+Where `file.gz` is the name of the compressed file you want to decompress.  Let's look at some examples:
 
 
 **Example 1: Decompressing a single file**

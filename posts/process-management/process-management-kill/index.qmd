@@ -5,7 +5,7 @@ categories: [ "Process Management" ]
 ---
 ## Understanding Signals
 
-Before delving into the `kill` command itself, let's clarify the concept of signals.  In Linux, signals are software interrupts that inform a process about an event. These events can be anything from a user request to terminate a program to a system notification about an error.  Each signal is represented by a number.  Some common signals include:
+Before clarifying the concept of signals, let's consider the following: In Linux, signals are software interrupts that inform a process about an event. These events can be anything from a user request to terminate a program to a system notification about an error.  Each signal is represented by a number.  Some common signals include:
 
 * **SIGTERM (15):** The default termination signal.  It requests the process to terminate gracefully, allowing it to clean up resources before exiting.
 * **SIGKILL (9):** A forceful termination signal.  The process receives no chance for cleanup and is immediately terminated.  Use this with caution!
@@ -67,7 +67,7 @@ kill 1234 5678 9012
 
 ## Finding Process IDs
 
-Before you can kill a process, you need its PID. The `ps` command is invaluable for this:
+Before you can kill a process, you need its PID. The `ps` command is useful for this:
 
 ```bash
 ps aux | grep <process_name>

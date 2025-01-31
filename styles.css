@@ -1,42 +1,363 @@
-/* css styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+/* Base Styles */
 body, p {
-    font-family: "Inter", serif;
+    font-family: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                 "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", 
+                 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-        "MONO" 1;
 }
-#listing-listing > table > thead > tr > th:nth-child(3) {
-    display: none;
+
+/* Layout Containers */
+.navbar > .container-xxl,
+.navbar > .container-xl,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm,
+.navbar > .container,
+.navbar > .container-fluid {
+    max-width: 1145px;
+    margin: 0 auto;
 }
-pre.sourceCode{
+
+/* Navigation */
+.navigation-header {
+    background-color: #ffffff;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+nav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.menu-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Portfolio Layout */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Profile Section */
+.profile-section {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-button {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-button:hover {
+    opacity: 0.7;
+}
+
+.social-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Content Section */
+.content-section {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.bio {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Section Titles and Items */
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.education-item,
+.experience-item {
+    margin-bottom: 30px;
+}
+
+.institution {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.location {
+    color: #666;
+    font-style: italic;
+}
+
+.degree {
+    margin-top: 5px;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Patents Section */
+.patents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+}
+
+.patent-item {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.patent-number {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #64748b;
+    min-width: 2.5rem;
+}
+
+.patent-content {
+    flex: 1;
+}
+
+.patent-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+}
+
+.patent-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.patent-id {
+    font-family: monospace;
+}
+
+.patent-date {
+    color: #94a3b8;
+}
+
+/* Code Blocks */
+pre {
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 16px 0;
+    overflow-x: auto;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #24292e;
+    tab-size: 4;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+pre::selection {
+    background-color: #0366d6;
+    color: #ffffff;
+}
+
+pre.sourceCode {
     border: 1px solid #111111;
     padding: 1em;
 }
-pre {
-    background: lightgray;
-    padding: 1em;
-}
-body{
-  font-optical-sizing: auto;
-  font-weight: 300;
-}
-.listing-date{
+
+/* Utility Classes */
+.listing-date {
     display: block;
     width: 100px !important;
 }
+
 .page-item .page-link {
     border-radius: 5px;
 }
-.utterances {
-    background: #f6f8fa;
-    border-radius: 7px;
+
+.listing-no-matching {
+    display: none !important;
 }
+
 .quarto-title-meta {
     display: none !important;
 }
+
 .quarto-title-banner {
     padding-bottom: 0 !important;
+}
+
+/* Footer */
+footer {
+    margin-top: 5em;
+    font-size: small;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-section {
+        order: -1;
+    }
+
+    .profile-image {
+        max-width: 300px;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    nav > div {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    nav ul.active {
+        max-height: 500px;
+    }
+
+    nav li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav li:last-child {
+        border-bottom: none;
+    }
+
+    pre {
+        padding: 12px;
+        font-size: 13px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 640px) {
+    .patent-item {
+        gap: 1rem;
+    }
+
+    .patent-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .patent-number {
+        font-size: 1rem;
+        min-width: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.quarto-listing-table{
+    text-align: left;
+}
+
+#title-block-header .title{
+    margin-bottom: 0px !important;
+}
+
+#title-block-header .date{
+    margin-top: 0px !important;
 }

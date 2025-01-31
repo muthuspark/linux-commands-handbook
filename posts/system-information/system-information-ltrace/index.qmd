@@ -61,7 +61,7 @@ This will only trace the first 1000 system calls made by `sleep`.
 
 ##  Troubleshooting with ltrace
 
-`ltrace` is an invaluable tool for troubleshooting applications. Let's say you have a program that's mysteriously failing. By tracing its system calls, you might identify a failing `open()` call indicating a permissions problem, or a failed network call revealing a connectivity issue.  The specific system call and its return value often directly points to the source of the problem.
+`ltrace` is a tool for troubleshooting applications. Let's say you have a program that's mysteriously failing. By tracing its system calls, you might identify a failing `open()` call indicating a permissions problem, or a failed network call revealing a connectivity issue. The specific system call and its return value often directly points to the source of the problem.
 
-These examples demonstrate the versatility of `ltrace`. By effectively utilizing its options and filtering capabilities, you can gain a deep understanding of your applications' system call behavior, greatly aiding in debugging, optimization, and security assessments.  Remember to always run `ltrace` with appropriate privileges, as it requires access to the system call tracing mechanism.
+These examples demonstrate the versatility of `ltrace`. By effectively utilizing its options and filtering capabilities, you can gain a better understanding of your applications' system call behavior, greatly aiding in debugging, optimization, and security assessments. Remember to always run `ltrace` with appropriate privileges, as it requires access to the system call tracing mechanism.
 

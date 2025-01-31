@@ -54,7 +54,7 @@ To change the nice value of process 5678 to 10:
 
 ##  Customizing `top`'s Display
 
-`top` offers several options for customizing its output. You can specify these options directly when launching `top`:
+`top` offers many options for customizing its output. You can specify these options directly when launching `top`:
 
 
 * **`top -u <username>`:** Shows only processes owned by the specified username.  For example: `sudo top -u john`
@@ -73,7 +73,7 @@ sudo top -bn10 > top_output.txt
 
 ##  Analyzing `top` Output for Performance Tuning
 
-The `top` command is crucial for performance analysis. By regularly monitoring CPU usage (`%CPU`), memory usage (`%MEM`), and the processes consuming the most resources, you can pinpoint bottlenecks and address them effectively. Identifying consistently high CPU or memory usage from specific processes often indicates a need for investigation, such as code optimization, resource leaks, or potential issues with the application itself.  You can use this information to adjust resource allocation, upgrade hardware, or optimize software.
+The `top` command is for performance analysis. By regularly monitoring CPU usage (`%CPU`), memory usage (`%MEM`), and the processes consuming the most resources, you can pinpoint bottlenecks and address them effectively. Identifying consistently high CPU or memory usage from specific processes often indicates a need for investigation, such as code optimization, resource leaks, or potential issues with the application itself. You can use this information to adjust resource allocation, upgrade hardware, or optimize software.
 
 
 ## Conclusion (Excluded as per instructions)

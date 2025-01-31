@@ -5,7 +5,7 @@ categories: [ "Performance Monitoring" ]
 ---
 ## Understanding vmstat's Output
 
-`vmstat` displays various system statistics, categorized into several key areas.  Understanding these categories is crucial to effectively using the command.  A typical output looks like this (the exact columns may vary slightly depending on your system):
+`vmstat` displays various system statistics, categorized into many key areas. Understanding these categories is essential to effectively using the command. A typical output looks like this (the exact columns may vary slightly depending on your system):
 
 ```
 procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
@@ -42,7 +42,7 @@ The simplest way to use `vmstat` is to run it without any arguments:
 vmstat
 ```
 
-This will display a single line of statistics representing the current system state.  To get a more comprehensive view, specify an interval and count:
+This will display a single line of statistics representing the current system state.  To get a more detailed view, specify an interval and count:
 
 ```bash
 vmstat 2 5

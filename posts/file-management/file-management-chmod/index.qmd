@@ -5,7 +5,7 @@ categories: [ "File Management" ]
 ---
 ## Understanding File Permissions
 
-Before delving into `chmod`, it's essential to grasp the fundamental concept of file permissions in Linux.  Each file and directory possesses three sets of permissions:
+Before understanding `chmod`, it's essential to grasp the fundamental concept of file permissions in Linux. Each file and directory possesses three sets of permissions:
 
 * **Owner:** The user who created the file or directory.
 * **Group:** A group of users who share access privileges.

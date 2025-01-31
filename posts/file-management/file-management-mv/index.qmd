@@ -106,7 +106,7 @@ This example is a bit counter-intuitive and not commonly used, as using `-f` wil
 
 ##  Error Handling
 
-`mv` will return a non-zero exit status if it encounters an error, such as trying to move a file to a non-existent directory or encountering permission issues.  Checking the exit status is crucial in scripting environments.
+`mv` will return a non-zero exit status if it encounters an error, such as trying to move a file to a non-existent directory or encountering permission issues. Checking the exit status is important in scripting environments.
 
 
 ##  Important Note on Permissions

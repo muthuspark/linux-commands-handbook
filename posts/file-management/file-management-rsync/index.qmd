@@ -5,9 +5,9 @@ categories: [ "File Management" ]
 ---
 ## Understanding rsync's Core Functionality
 
-At its heart, `rsync` leverages several clever techniques to optimize file transfers:
+At its heart, `rsync` uses many clever techniques to optimize file transfers:
 
-* **Delta Transfers:** Instead of sending entire files, `rsync` only transmits the changed portions, significantly reducing bandwidth usage and transfer times.
+* **Delta Transfers:** Instead of sending entire files, `rsync` only transmits the changed portions, reducing bandwidth usage and transfer times.
 * **Checksum Verification:**  `rsync` verifies file integrity, ensuring data consistency at the destination.
 * **Resume Capability:**  If a transfer is interrupted, `rsync` can seamlessly resume from where it left off.
 
@@ -24,7 +24,7 @@ rsync [OPTIONS] source destination
 
 ## Essential rsync Options
 
-Let's explore some frequently used `rsync` options:
+Let's look at some frequently used `rsync` options:
 
 * `-a` (archive): This option recursively copies directories, preserving permissions, timestamps, and symbolic links.  It's often the default choice for backups.
 * `-v` (verbose): Provides detailed output during the transfer process, showing progress and details of each file.

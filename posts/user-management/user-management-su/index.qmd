@@ -48,7 +48,7 @@ For example, to run the `ls -l /root` command as the `root` user (listing the co
 su -c "ls -l /root" root
 ```
 
-This executes the command within the context of the `root` user, but doesn't provide full shell access as the `root` user. This approach significantly reduces the potential security risk.
+This executes the command within the context of the `root` user, but doesn't provide full shell access as the `root` user. This approach reduces the potential security risk.
 
 
 ##  `su` vs `sudo`: Key Differences

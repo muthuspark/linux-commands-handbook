@@ -5,7 +5,7 @@ categories: [ "Process Management" ]
 ---
 ## What is `renice`?
 
-`renice` is a command-line tool that allows you to change the niceness (priority) of running processes. Niceness is a numerical value that affects process scheduling.  A lower niceness value means higher priority, while a higher value means lower priority.  The default niceness is 0, but you can adjust it within a range of -20 (highest priority) to 19 (lowest priority).  This doesn't directly control how much CPU time a process gets, but it significantly influences the scheduler's decisions.
+`renice` is a command-line tool that allows you to change the niceness (priority) of running processes. Niceness is a numerical value that affects process scheduling. A lower niceness value means higher priority, while a higher value means lower priority. The default niceness is 0, but you can adjust it within a range of -20 (highest priority) to 19 (lowest priority). This doesn't directly control how much CPU time a process gets, but it influences the scheduler's decisions.
 
 ## Understanding Niceness Values
 
@@ -17,7 +17,7 @@ The niceness value is an *additive* value.  If you use `renice` to increase the 
 
 ## Using `renice`: Practical Examples
 
-Let's explore several practical scenarios and the corresponding `renice` commands:
+Let's look at many practical scenarios and the corresponding `renice` commands:
 
 **1. Increasing the Niceness of a Specific Process (PID):**
 

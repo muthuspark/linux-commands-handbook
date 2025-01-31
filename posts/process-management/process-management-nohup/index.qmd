@@ -23,7 +23,7 @@ This command starts the download in the background, and it won't be affected if 
 
 ## Handling Output with `nohup`
 
-By default, `nohup` redirects standard output (stdout) and standard error (stderr) to a file named `nohup.out` in the current directory. This is crucial for monitoring the progress and any potential errors. Let's examine how this works:
+By default, `nohup` redirects standard output (stdout) and standard error (stderr) to a file named `nohup.out` in the current directory. This is for monitoring the progress and any potential errors. Let's examine how this works:
 
 ```bash
 nohup my_long_running_script.sh &
@@ -73,5 +73,5 @@ This will list the background jobs, including those started with `nohup`.  You c
 It's important to understand that `nohup` *does not* make the process immune to *all* signals. Some signals, like `KILL` (SIGKILL), can still terminate the process.  However, it protects against signals that would normally terminate a process upon logout.
 
 
-This detailed explanation provides a comprehensive understanding of how to harness `nohup` for effective Linux process management.  By mastering its usage, you can improve your efficiency and reliability when dealing with long-running tasks.
+This detailed explanation provides a detailed understanding of how to harness `nohup` for effective Linux process management.  By mastering its usage, you can improve your efficiency and reliability when dealing with long-running tasks.
 

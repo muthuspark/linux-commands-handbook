@@ -26,7 +26,7 @@ du -sh ~
 This will output a single line showing the total size of your home directory in a human-readable format.
 
 
-## Delving Deeper: Exploring `du`'s Options
+## Exploring `du`'s Options
 
 The `du` command offers a range of options to fine-tune your analysis:
 

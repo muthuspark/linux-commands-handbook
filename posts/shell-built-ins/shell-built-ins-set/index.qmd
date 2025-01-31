@@ -11,7 +11,7 @@ At its heart, `set` modifies the shell's environment.  This includes setting she
 set [option] [parameter]...
 ```
 
-Let's explore the key aspects:
+Let's look at the key aspects:
 
 
 ### Setting Shell Variables
@@ -106,7 +106,7 @@ echo "$@" # one two three four
 ```
 
 
-This shows how positional parameters can act as a rudimentary array.  However, for robust array handling, consider using Bash arrays with the `declare -a` command.
+This shows how positional parameters can act as a rudimentary array. However, for array handling, consider using Bash arrays with the `declare -a` command.
 
 
 ##  `set` with Special Parameters

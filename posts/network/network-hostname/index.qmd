@@ -5,7 +5,7 @@ categories: [ "Network" ]
 ---
 ## Understanding Hostname Components
 
-Before exploring `hostnamectl`'s capabilities, it's crucial to understand the different hostname components it manages:
+Before exploring `hostnamectl`'s capabilities, it's important to understand the different hostname components it manages:
 
 * **Static hostname:** The primary hostname, used for most network interactions. This is generally the hostname you see when you type `hostname`.
 * **Pretty hostname:** A more user-friendly, often longer, version of the hostname. This is suitable for display purposes.

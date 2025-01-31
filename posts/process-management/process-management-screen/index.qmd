@@ -8,7 +8,7 @@ categories: [ "Process Management" ]
 `screen` is a powerful terminal multiplexer that lets you manage multiple terminal sessions within a single window.  It's particularly useful for:
 
 * **Running long-running processes:**  Keep your processes running even after you close your terminal.
-* **Managing multiple sessions:** Work on several tasks concurrently within a single terminal.
+* **Managing multiple sessions:** Work on many tasks concurrently within a single terminal.
 * **Remote access:** Access your sessions from different terminals.
 * **Session restoration:** Recover sessions after unexpected disconnections.
 
@@ -18,7 +18,7 @@ Before diving into detailed examples, ensure `screen` is installed on your syste
 
 ## Basic `screen` Commands
 
-Let's explore fundamental `screen` commands with practical examples.
+Let's look at fundamental `screen` commands with practical examples.
 
 **1. Starting a `screen` session:**
 

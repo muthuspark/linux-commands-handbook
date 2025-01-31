@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding `dirs`
 
-The `dirs` command, short for "directories," displays the current working directory stack. This stack is a list of directories you've visited using `pushd` and `popd` (explained below).  Understanding this stack is crucial for quickly navigating between different project directories or configurations.
+The `dirs` command, short for "directories," displays the current working directory stack. This stack is a list of directories you've visited using `pushd` and `popd` (explained below). Understanding this stack is important for quickly navigating between different project directories or configurations.
 
 
 ## Basic Usage: Displaying the Directory Stack
@@ -74,5 +74,5 @@ dirs # The stack will be empty
 
 ## Integrating `dirs` into your Workflow
 
-By incorporating `pushd`, `popd`, and `dirs` into your workflow, you can significantly streamline your navigation between different projects and directories, saving time and reducing errors.  The numbered indices provided by `dirs -v` are particularly helpful when dealing with a complex directory structure or many simultaneously active projects.  Mastering these commands will elevate your Linux command-line proficiency.
+By incorporating `pushd`, `popd`, and `dirs` into your workflow, you can streamline your navigation between different projects and directories, saving time and reducing errors.  The numbered indices provided by `dirs -v` are particularly helpful when dealing with a complex directory structure or many simultaneously active projects.  Mastering these commands will improve your Linux command-line proficiency.
 

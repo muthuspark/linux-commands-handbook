@@ -76,7 +76,7 @@ While less commonly used,  `pushd` allows you to push directories to specific po
 pushd +1  # Moves you to the second directory on the stack (if it exists)
 ```
 
-This behaviour is less standardized than other `pushd` usages. It's crucial to consult your shell's documentation for specifics on advanced stack manipulation.
+This behaviour is less standardized than other `pushd` usages. Consult your shell's documentation for specifics on advanced stack manipulation.
 
 
 ## Conclusion:

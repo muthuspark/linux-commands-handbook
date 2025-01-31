@@ -23,7 +23,7 @@ Running the command above will display this text in your terminal.
 
 ## Concatenating Files
 
-`cat` shines when it comes to joining multiple files.  You can concatenate several files into a single output, either to the terminal or to a new file:
+`cat` shines when it comes to joining multiple files.  You can concatenate many files into a single output, either to the terminal or to a new file:
 
 ```bash
 cat file1.txt file2.txt file3.txt > combined.txt
@@ -101,5 +101,5 @@ cat myfile.txt | wc -l
 This pipes the output of `cat myfile.txt` to the `wc -l` command, which counts the number of lines.
 
 
-This demonstrates just a fraction of the possibilities offered by the seemingly simple `cat` command.  Experimenting with different options and combinations will unlock its full potential.
+This demonstrates just a fraction of the possibilities offered by the seemingly simple `cat` command.  Experimenting with different options and combinations will reveal its full potential.
 

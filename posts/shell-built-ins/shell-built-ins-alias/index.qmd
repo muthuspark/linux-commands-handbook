@@ -98,7 +98,7 @@ The function above handles missing filenames gracefully, something an alias cann
 
 ## Advanced Alias Examples
 
-Let's explore more advanced uses. This alias uses command substitution to get the current date and create a directory with that date:
+Let's look at more advanced uses. This alias uses command substitution to get the current date and create a directory with that date:
 
 ```bash
 alias create_dated_dir='mkdir -p "$(date +%Y-%m-%d)"'

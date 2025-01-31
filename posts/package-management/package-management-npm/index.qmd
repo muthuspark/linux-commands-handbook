@@ -117,5 +117,5 @@ npm run start  // Runs node server.js
 npm run dev   // Runs nodemon server.js
 ```
 
-These examples demonstrate the fundamental commands.  npm offers many more features, including package versioning (using semver), managing private packages, and working with different registries, providing a robust and flexible system for managing your Node.js project dependencies.
+These examples demonstrate the fundamental commands. npm offers many more features, including package versioning (using semver), managing private packages, and working with different registries, providing a flexible system for managing your Node.js project dependencies.
 

@@ -34,7 +34,7 @@ MiB Swap:    7999.9 total,    7999.9 free,      0.0 used.   6895.7 avail Mem
 
 ## Interacting with `top`
 
-`top` offers several interactive features:
+`top` offers many interactive features:
 
 * **Sorting:** Press a column header (e.g., '%CPU', '%MEM') to sort the processes by that column.  Press it again to reverse the sort order.
 * **Filtering:** You can filter the process list using the `o` (lowercase 'o') command, followed by the filtering criteria. This is less common and requires more advanced syntax.

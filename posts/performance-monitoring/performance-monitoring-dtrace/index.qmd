@@ -34,7 +34,7 @@ This script uses two tracepoints: `sys_enter_read` (entry into the `read()` call
 
 ### Example 2:  Analyzing CPU Usage by Process
 
-Identifying CPU-intensive processes is crucial for performance tuning.  The following `bpftrace` script tracks CPU usage per process:
+Identifying CPU-intensive processes for performance tuning. The following `bpftrace` script tracks CPU usage per process:
 
 ```bash
 bpftrace -e 'kprobe:sched_switch {
@@ -86,5 +86,5 @@ While `bpftrace` is highly recommended for its ease of use, other tools offer al
 These tools offer a broader range of features, including advanced filtering and data analysis capabilities. However, `bpftrace` provides a good starting point for most performance analysis tasks due to its simplicity and efficiency.
 
 
-This blog post has shown the power of DTrace-like tools on Linux, particularly `bpftrace`, for performance monitoring.  Further exploration of its capabilities will unlock even deeper insights into system behavior.
+This blog post has shown the power of DTrace-like tools on Linux, particularly `bpftrace`, for performance monitoring. Further exploration of its capabilities will reveal even deeper understanding of system behavior.
 

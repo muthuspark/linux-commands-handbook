@@ -5,7 +5,7 @@ categories: [ "Performance Monitoring" ]
 ---
 ## Understanding the Basics
 
-`netstat` displays network-related information in a textual format.  Its output can be overwhelming at first, but with a bit of practice, you'll quickly learn to interpret the crucial details.  The most common usage involves viewing active network connections.
+`netstat` displays network-related information in a textual format. Its output can be overwhelming at first, but with a bit of practice, you'll quickly learn to interpret the details. The most common usage involves viewing active network connections.
 
 **Basic Syntax:**
 
@@ -49,7 +49,7 @@ The `-r` option displays the kernel routing table, showing how your system route
 netstat -r
 ```
 
-This will show you the destination network, gateway, flags, refcount, use, interface, etc.  This is invaluable for troubleshooting network connectivity issues.
+This will show you the destination network, gateway, flags, refcount, use, interface, etc. This is helpful for troubleshooting network connectivity issues.
 
 
 **3. Viewing Interface Statistics (`-i`):**
@@ -90,5 +90,5 @@ netstat -atp
 ```
 
 
-These examples provide a starting point for utilizing `netstat`.  Experiment with different combinations of options to tailor the output to your specific monitoring needs. Remember that `ss` offers a more modern and efficient alternative, but `netstat` remains a valuable tool, particularly on older systems.
+These examples provide a starting point for utilizing `netstat`.  Experiment with different combinations of options to tailor the output to your specific monitoring needs. Remember that `ss` offers a more modern and efficient alternative, but `netstat` remains a tool, particularly on older systems.
 

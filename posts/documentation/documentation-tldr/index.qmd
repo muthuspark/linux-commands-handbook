@@ -100,5 +100,5 @@ tldr --update
 This will fetch and install any new or updated examples from the `tldr` repository.
 
 
-Using `tldr` enhances your Linux command-line experience by providing clear, concise, and readily applicable examples.  It's a valuable tool for both beginners and experienced users alike, ensuring you can efficiently utilize the full power of the Linux command-line.
+Using `tldr` enhances your Linux command-line experience by providing clear, concise, and readily applicable examples. It's a tool for both beginners and experienced users alike, ensuring you can efficiently utilize the full power of the Linux command-line.
 

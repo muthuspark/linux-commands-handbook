@@ -19,9 +19,9 @@ dd if=<input_file> of=<output_file> [options]
 
 ## Key `dd` Options
 
-Several options significantly extend `dd`'s functionality. Let's explore the most common ones:
+Several options extend `dd`'s functionality. Let's look at the most common ones:
 
-* **`bs=<bytes>` (block size):** Specifies the size of each block read from the input and written to the output. This significantly impacts performance.  Larger block sizes are generally faster but require more memory.
+* **`bs=<bytes>` (block size):** Specifies the size of each block read from the input and written to the output. This impacts performance. Larger block sizes are generally faster but require more memory.
 
 * **`count=<blocks>`:**  Limits the number of blocks to be copied. This is essential for preventing accidental overwriting of entire drives.
 

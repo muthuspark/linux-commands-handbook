@@ -6,9 +6,8 @@ listing:
   type: table
   categories: true
   sort-ui: false
-  filter-ui: false
+  filter-ui: true
   fields: [title, categories]
   page-size: 500
 page-layout: full
-title-block-banner: false
 ---

@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## What is `mapfile`?
 
-`mapfile` is a Bash built-in command that reads lines from a file or standard input and stores them into an array variable.  This simplifies the process of loading data into arrays, eliminating the need for complex loops and manual array indexing.  It offers flexibility and control over how data is imported, making it invaluable for various scripting tasks.
+`mapfile` is a Bash built-in command that reads lines from a file or standard input and stores them into an array variable. This simplifies the process of loading data into arrays, eliminating the need for complex loops and manual array indexing. It offers flexibility and control over how data is imported, making it useful for various scripting tasks.
 
 ## Basic Usage
 

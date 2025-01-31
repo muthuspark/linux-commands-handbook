@@ -120,5 +120,5 @@ snap find <search_term>
 Replace `<search_term>` with keywords describing the application you are searching for.
 
 
-This guide provides a solid foundation for utilizing Snap for package management on your Linux system.  The versatility and security features of Snap make it a valuable tool for any Linux user.
+This guide provides a solid foundation for utilizing Snap for package management on your Linux system. The versatility and security features of Snap make it a tool for any Linux user.
 

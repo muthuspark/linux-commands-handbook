@@ -20,7 +20,7 @@ sudo ufw disable
 
 ## Checking UFW Status
 
-It's crucial to check the status of UFW regularly to verify your rules are working correctly.
+Check the status of UFW regularly to verify your rules are working correctly.
 
 ```bash
 sudo ufw status
@@ -59,7 +59,7 @@ sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 ```
 
-**Allowing a Specific Port Range (e.g., 1000-2000):** This is useful if you have several applications using a range of ports.
+**Allowing a Specific Port Range (e.g., 1000-2000):** This is useful if you have many applications using a range of ports.
 
 ```bash
 sudo ufw allow 1000:2000/tcp

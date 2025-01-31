@@ -11,7 +11,7 @@ Why does priority matter for memory?  While `nice` doesn't directly control memo
 
 ## Using the `nice` Command: Practical Examples
 
-Let's explore some practical scenarios with code examples.  We'll use a simple Python script that simulates memory-intensive behavior:
+Let's look at some practical scenarios with code examples.  We'll use a simple Python script that simulates memory-intensive behavior:
 
 ```python
 import time
@@ -69,5 +69,5 @@ renice +10 12345
 
 This increases the nice value of the running process with PID 12345 by 10.
 
-These examples demonstrate how `nice` influences process priority, indirectly impacting system resource allocation and potentially affecting memory usage.  Understanding its effects can be crucial in managing system performance, especially in environments with many concurrent processes.  Remember to use `top` or `htop` to observe the real-time effects of these commands on CPU and memory usage.
+These examples demonstrate how `nice` influences process priority, indirectly impacting system resource allocation and potentially affecting memory usage.  Understanding its effects can be important in managing system performance, especially in environments with many concurrent processes. Remember to use `top` or `htop` to observe the real-time effects of these commands on CPU and memory usage.
 

@@ -121,5 +121,5 @@ fi
 ```
 
 
-These examples showcase the versatility of the `test` command. Remember to always quote your variables to prevent word splitting and globbing issues. Mastering this built-in is essential for creating robust and effective shell scripts.
+These examples showcase the versatility of the `test` command. Remember to always quote your variables to prevent word splitting and globbing issues. Mastering this built-in is essential for creating effective shell scripts.
 

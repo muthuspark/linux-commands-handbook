@@ -15,7 +15,7 @@ categories: [ "System Services" ]
 
 ## Essential `systemctl` Commands with Examples
 
-Let's explore some fundamental `systemctl` commands, illustrated with practical examples. We'll use the `network-manager` service for demonstration purposes, but these commands apply to most services.
+Let's look at some fundamental `systemctl` commands, illustrated with practical examples. We'll use the `network-manager` service for demonstration purposes, but these commands apply to most services.
 
 
 **1. Checking Service Status:**
@@ -117,5 +117,5 @@ sudo systemctl mask network-manager
 This is usually used for services that should never be run, such as outdated or conflicting services.  Unmasking can be done with `sudo systemctl unmask network-manager`.
 
 
-These examples provide a foundation for effective service management using `systemctl`.  Exploring the numerous other options and features offered by this command will further enhance your Linux administration skills. Remember to consult the `man systemctl` page for a comprehensive guide.
+These examples provide a foundation for effective service management using `systemctl`. Exploring the numerous other options and features offered by this command will further improve your Linux administration skills. Remember to consult the `man systemctl` page for a detailed guide.
 

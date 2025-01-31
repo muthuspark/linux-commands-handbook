@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## Understanding `pidof`
 
-The `pidof` command searches for processes matching a given name and returns their PIDs.  This is invaluable for scripting, monitoring, and troubleshooting.  It's particularly helpful when you need to interact with a running process, such as sending signals or killing it.
+The `pidof` command searches for processes matching a given name and returns their PIDs. This is useful for scripting, monitoring, and troubleshooting. It's particularly helpful when you need to interact with a running process, such as sending signals or killing it.
 
 **Basic Syntax:**
 
@@ -75,7 +75,7 @@ This script stores the output of `pidof apache2` in the `apache_pid` variable.  
 
 **Example 5:  Error Handling**
 
-While `pidof` usually returns nothing when a process isn't found, robust scripts should explicitly check for this.   This can be done as shown in the previous example using `-n` to check for an empty string.  Alternatively, you can use a more explicit check:
+While `pidof` usually returns nothing when a process isn't found, scripts should explicitly check for this. This can be done as shown in the previous example using `-n` to check for an empty string. Alternatively, you can use a more explicit check:
 
 
 ```bash

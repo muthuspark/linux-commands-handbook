@@ -5,7 +5,7 @@ categories: [ "System Services" ]
 ---
 ## Understanding Runlevels
 
-Before exploring `rc-update`, it's crucial to understand Linux runlevels. A runlevel represents a system's operational state.  Common runlevels include:
+Before exploring `rc-update`, understand Linux runlevels. A runlevel represents a system's operational state. Common runlevels include:
 
 * **0:** Halt (power down)
 * **1:** Single-user mode (root only)
@@ -67,7 +67,7 @@ This command lists all services associated with runlevel 3. To view all services
 sudo rc-update show
 ```
 
-This provides a comprehensive overview of service runlevel associations.
+This provides an overview of service runlevel associations.
 
 ## Handling Dependencies
 

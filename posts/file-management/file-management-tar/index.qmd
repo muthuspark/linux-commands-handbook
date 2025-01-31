@@ -15,7 +15,7 @@ The basic syntax of `tar` is:
 tar [options] [archive-file] [file-list]
 ```
 
-Let's explore some common options:
+Let's look at some common options:
 
 * **`-c` (create):** Creates a new archive.
 * **`-x` (extract):** Extracts files from an archive.

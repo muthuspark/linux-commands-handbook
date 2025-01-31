@@ -121,5 +121,5 @@ This shows how different return codes can represent different types of errors or
 
 
 
-Using `return` effectively is fundamental to modular shell scripting and allows for robust error handling and improved code organization. Remember to always check the return status of your functions to properly handle potential errors and ensure your scripts operate reliably.
+Using `return` effectively is fundamental to modular shell scripting and allows for error handling and improved code organization. Remember to always check the return status of your functions to properly handle potential errors and ensure your scripts operate reliably.
 

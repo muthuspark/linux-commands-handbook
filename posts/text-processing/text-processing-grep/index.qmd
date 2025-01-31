@@ -105,7 +105,7 @@ grep "[0-9]" my_file.txt
 
 `[0-9]` matches any digit.
 
-These are just a few examples; the possibilities with regular expressions are vast.  Learning regular expressions significantly enhances your `grep` skills.
+These are just a few examples; the possibilities with regular expressions are vast. Learning regular expressions enhances your `grep` skills.
 
 
 ## Combining Options for Advanced Searches
@@ -128,5 +128,5 @@ While `grep` is versatile, two related commands offer slight variations:
 * **`fgrep` (fast grep):** `fgrep` treats the search pattern as a fixed string, not a regular expression. This makes it faster for simple string searches, but it lacks the power of regular expressions.
 
 
-This exploration of `grep` offers a solid foundation. As you become more comfortable, delve into the extensive `grep` documentation for even more advanced techniques and options.  Practice is key to mastering this fundamental Linux command.
+This exploration of `grep` offers a solid foundation. As you become more comfortable, look at the extensive `grep` documentation for even more advanced techniques and options.  Practice is key to mastering this fundamental Linux command.
 

@@ -26,7 +26,7 @@ Nano uses simple key combinations for navigation and editing.  Here's a quick ru
 ## Essential Nano Commands
 
 
-Nano's power lies in its intuitive command shortcuts, displayed at the bottom of the editor window. Let's explore some crucial ones:
+Nano's power lies in its intuitive command shortcuts, displayed at the bottom of the editor window. Let's look at some:
 
 * **Saving the file:**  Press Ctrl+O (write out).  You'll be prompted to confirm the filename.  Press Enter to save.
 
@@ -89,5 +89,5 @@ cat -n my_poem.txt
 ```
 
 
-These examples provide a solid foundation for using Nano for various text editing tasks.  Experiment with the commands and shortcuts to master this valuable Linux tool. Remember to always save your work using Ctrl+O before exiting with Ctrl+X.
+These examples provide a solid foundation for using Nano for various text editing tasks. Experiment with the commands and shortcuts to master this Linux tool. Remember to always save your work using Ctrl+O before exiting with Ctrl+X.
 

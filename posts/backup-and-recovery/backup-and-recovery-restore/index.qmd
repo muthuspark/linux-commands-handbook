@@ -46,7 +46,7 @@ The `-x` (extract) option combined with `-d` (directory) lets you specify a targ
 restore -x -d /path/to/destination/ < backup.tar
 ```
 
-This extracts the entire archive to `/path/to/destination/`.  This is critical for avoiding accidental overwrites.
+This extracts the entire archive to `/path/to/destination/`.  This is important in avoiding accidental overwrites.
 
 
 ## Dealing with Tape Devices
@@ -90,5 +90,5 @@ This will create the directory `/tmp/restored_data` (if it doesn't exist) and ex
 
 
 
-Remember to always test your restore procedures on a non-production environment before applying them to critical data.  Furthermore,  consider using more modern backup solutions for comprehensive and efficient backup and recovery strategies.
+Remember to always test your restore procedures on a non-production environment before applying them to critical data.  Furthermore,  consider using more modern backup solutions for detailed and efficient backup and recovery strategies.
 

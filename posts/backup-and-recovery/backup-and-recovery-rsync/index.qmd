@@ -30,7 +30,7 @@ rsync -avz /home/user/Documents /mnt/backup/documents
 * `-z`: Compression. Compresses the data during transfer, saving space and bandwidth.
 
 
-This command creates a complete backup of your Documents directory. Subsequent backups can leverage rsync's incremental nature:
+This command creates a complete backup of your Documents directory. Subsequent backups can use rsync's incremental nature:
 
 
 ```bash

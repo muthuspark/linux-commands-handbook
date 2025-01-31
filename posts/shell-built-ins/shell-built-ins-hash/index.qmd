@@ -7,7 +7,7 @@ categories: [ "Shell Built-ins" ]
 
 When you type a command into your terminal, the shell embarks on a search to locate the corresponding executable file. This involves checking directories specified in your `PATH` environment variable, a process that can be time-consuming, especially with lengthy `PATH`s or frequently used commands.
 
-The `hash` command cleverly addresses this performance bottleneck by creating a cache of command-to-path mappings. Once an executable's location is found, `hash` stores this information.  Subsequent calls to the same command will directly retrieve the path from the cache, bypassing the lengthy search. This results in significantly faster command execution.
+The `hash` command cleverly addresses this performance bottleneck by creating a cache of command-to-path mappings. Once an executable's location is found, `hash` stores this information. Subsequent calls to the same command will directly retrieve the path from the cache, bypassing the lengthy search. This results in faster command execution.
 
 ## Basic Usage of `hash`
 
@@ -87,7 +87,7 @@ Let's say you have a frequently used script, `backup_data.sh`, located in `/home
    hash backup_data.sh
    ```
 
-Now, each subsequent invocation of `backup_data.sh` will be significantly faster.
+Now, each subsequent invocation of `backup_data.sh` will be faster.
 
 
 ## Advanced Usage with `-p`

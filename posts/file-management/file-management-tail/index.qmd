@@ -5,7 +5,7 @@ categories: [ "File Management" ]
 ---
 ## Understanding the `tail` Command
 
-The `tail` command, at its core, displays the last part of a file.  Its primary application lies in observing the most recent entries in log files, crucial for system administration, debugging, and monitoring applications.  Without any arguments, `tail` defaults to displaying the last 10 lines.
+The `tail` command, at its core, displays the last part of a file.  Its primary application lies in observing the most recent entries in log files for system administration, debugging, and monitoring applications.  Without any arguments, `tail` defaults to displaying the last 10 lines.
 
 
 ## Basic Usage: Displaying the Last Lines of a File
@@ -59,7 +59,7 @@ This will show the last 5 lines of each file, with a header indicating which fil
 
 ## Advanced Usage:  Following Symbolic Links and Handling Large Files
 
-The `-F` option combines the functionality of `-f` and automatically follows renamed files.  For very large files where reading the entire file is undesirable, specifying a specific number of bytes or a number of lines from the end can significantly improve performance.  For instance, to display the last 100 kilobytes of a large file named "bigfile.log":
+The `-F` option combines the functionality of `-f` and automatically follows renamed files.  For very large files where reading the entire file is undesirable, specifying a specific number of bytes or a number of lines from the end can improve performance.  For instance, to display the last 100 kilobytes of a large file named "bigfile.log":
 
 ```bash
 tail -c 100k bigfile.log

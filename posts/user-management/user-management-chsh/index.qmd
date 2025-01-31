@@ -16,7 +16,7 @@ chsh [options] [username]
 ```
 
 * **`chsh`:** The command itself.
-* **`[options]`:**  Optional arguments to modify command behavior.  We'll explore these later.
+* **`[options]`:**  Optional arguments to modify command behavior.  We'll look at these later.
 * **`[username]`:** The username of the account you want to modify.  If omitted, it defaults to the currently logged-in user.
 
 

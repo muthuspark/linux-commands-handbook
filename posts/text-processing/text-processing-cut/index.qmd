@@ -21,7 +21,7 @@ The key options are:
 
 ## Practical Examples
 
-Let's explore some common `cut` use cases with illustrative examples.  Assume we have a file named `data.txt` with the following content:
+Let's look at some common `cut` use cases with illustrative examples.  Assume we have a file named `data.txt` with the following content:
 
 ```
 Name,Age,City
@@ -133,5 +133,5 @@ cut -d ',' -f 1 data1.txt data2.txt
 ```
 
 
-These examples demonstrate the versatility of the `cut` command.  Experiment with different options and file formats to fully leverage its capabilities for efficient text processing within your Linux workflow. Remember to always consult the `man cut` page for a complete list of options and further details.
+These examples demonstrate the versatility of the `cut` command.  Experiment with different options and file formats to fully use its capabilities for efficient text processing within your Linux workflow. Remember to always consult the `man cut` page for a complete list of options and further details.
 

@@ -32,7 +32,7 @@ Documentation/mini-howto/
 These paths indicate directories containing documentation.  To access the contents of a specific directory, use the `cd` command:
 
 ```bash
-cd /usr/share/doc/$(Documentation-info | grep 'Documentation/admin-guide/' | cut -d'/' -f2)  #Example, adapt based on your output
+cd /usr/share/doc/$(Documentation-info | grep 'Documentation/admin-guide/' | cut -d'/' -f2)  # Example, based on your output
 ls -l
 ```
 
@@ -76,5 +76,5 @@ man ls
 ```
 
 
-This illustrates how `Documentation-info` acts as a guide to your system's extensive documentation resources. By effectively utilizing this command in conjunction with other command-line tools, you can efficiently locate and access valuable information relevant to your system administration tasks.
+This illustrates how `Documentation-info` acts as a guide to your system's extensive documentation resources. By effectively utilizing this command in conjunction with other command-line tools, you can efficiently locate and access information relevant to your system administration tasks.
 

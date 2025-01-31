@@ -36,7 +36,7 @@ This one has banana and apple.
 
 ## Leveraging Regular Expressions with egrep
 
-The true power of `egrep` lies in its support for extended regular expressions.  This allows for significantly more complex pattern matching.
+The true power of `egrep` lies in its support for extended regular expressions. This allows for more complex pattern matching.
 
 **Matching Multiple Patterns:**
 
@@ -131,5 +131,5 @@ egrep -ic "apple" data.txt
 cat logfile.txt | egrep -n "error"
 ```
 
-This powerful combination allows for sophisticated text processing workflows within the Linux environment.  By mastering `egrep` and its regular expression capabilities, you'll significantly enhance your command-line prowess.
+This powerful combination allows for complex text processing workflows within the Linux environment. By mastering `egrep` and its regular expression capabilities, you'll improve your command-line prowess.
 

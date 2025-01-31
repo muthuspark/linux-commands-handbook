@@ -77,7 +77,7 @@ This code snippet first checks if `my_alias` exists and only proceeds with unali
 
 **Example 4: Unaliasing with wildcard characters (Bash specific):**
 
-Bash allows for more sophisticated unaliasing using wildcard characters:
+Bash allows for more complex unaliasing using wildcard characters:
 
 ```bash
 unalias my_alias*

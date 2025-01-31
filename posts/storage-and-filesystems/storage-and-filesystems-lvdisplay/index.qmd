@@ -5,7 +5,7 @@ categories: [ "Storage and Filesystems" ]
 ---
 ## Understanding Logical Volumes
 
-Before we explore `lvdisplay`, let's briefly recap LVM's structure. LVM organizes storage into three layers:
+Before we look at `lvdisplay`, let's briefly recap LVM's structure. LVM organizes storage into three layers:
 
 1. **Physical Volumes (PVs):** These are your physical hard drives or partitions dedicated to LVM.
 2. **Volume Groups (VGs):**  PVs are grouped together to form a VG, providing a larger pool of storage.
@@ -48,7 +48,7 @@ This will provide a more detailed report only for `mylv`.
 
 ##  Using Options for Enhanced Output
 
-`lvdisplay` offers several options to customize the output:
+`lvdisplay` offers many options to customize the output:
 
 * **`-c` or `--columns`:** This option allows you to specify which columns to display. For example, `lvdisplay -c name,size mylv` will only show the name and size of `mylv`.
 
@@ -80,7 +80,7 @@ This indicates that the specified LV is not found in your system.
 
 ##  Practical Applications
 
-`lvdisplay` is invaluable for:
+`lvdisplay` is useful for:
 
 * **Monitoring storage usage:**  Regularly checking LV sizes can help you prevent running out of space.
 * **Troubleshooting storage issues:**  `lvdisplay` can help identify problems with LVs, such as errors in the volume group or space allocation issues.

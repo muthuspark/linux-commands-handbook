@@ -75,7 +75,7 @@ Notice the `continue 2`.  The number `2` specifies that the `continue` command s
 
 ##  Practical Applications
 
-The `continue` statement is invaluable in various scenarios:
+The `continue` statement is useful in various scenarios:
 
 * **Data filtering:**  Skipping lines or elements that don't meet specific criteria.
 * **Error recovery:**  Handling exceptions without terminating the loop.
@@ -83,5 +83,5 @@ The `continue` statement is invaluable in various scenarios:
 * **Complex control flow:**  Managing nested loops and conditional execution effectively.
 
 
-This illustrates the versatility and utility of the `continue` command. By mastering its usage, you can write more efficient and robust shell scripts.
+This illustrates the versatility and utility of the `continue` command. By mastering its usage, you can write more efficient shell scripts.
 

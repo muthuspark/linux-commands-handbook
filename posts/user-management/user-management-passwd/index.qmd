@@ -53,5 +53,5 @@ Many Linux distributions provide additional options within the `passwd` command 
 
 ##  Security Considerations
 
-Always handle password management securely. Avoid storing passwords in plain text, use strong and unique passwords, and regularly update them.  Remember that using `sudo` appropriately grants significant power, so exercise caution and adhere to security best practices.
+Always handle password management securely. Avoid storing passwords in plain text, use strong and unique passwords, and regularly update them.  Remember that using `sudo` appropriately grants significant power, so exercise caution and follow security best practices.
 

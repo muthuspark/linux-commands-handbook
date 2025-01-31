@@ -13,7 +13,7 @@ uname [option]
 
 Where `[option]` specifies the type of information you want to retrieve. Let's look at the most commonly used options:
 
-* **`-a` or `--all`:** This option displays all available system information. This is often the quickest way to get a comprehensive overview.
+* **`-a` or `--all`:** This option displays all available system information. This is often the quickest way to get an overview.
 
 * **`-s` or `--kernel-name`:**  Shows the kernel name. This is typically the most concise output of `uname`.
 
@@ -95,5 +95,5 @@ my-linux-machine
 ```
 
 
-These examples showcase the fundamental applications of `uname`. By combining these options, you can quickly obtain specific details about your Linux system, which is invaluable for troubleshooting, scripting, and general system administration tasks.  The versatility of `uname` makes it an indispensable tool in any Linux user's arsenal.
+These examples showcase the fundamental applications of `uname`. By combining these options, you can quickly obtain specific details about your Linux system, which is helpful for troubleshooting, scripting, and general system administration tasks. The versatility of `uname` makes it an indispensable tool in any Linux user's arsenal.
 

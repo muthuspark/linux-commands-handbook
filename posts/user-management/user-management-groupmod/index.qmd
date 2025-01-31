@@ -16,7 +16,7 @@ The basic syntax for `groupmod` is as follows:
 groupmod [options] group
 ```
 
-where `group` is the name of the group you want to modify.  Let's explore some crucial options:
+where `group` is the name of the group you want to modify.  Let's look at some options:
 
 * **`-g GID`**:  Changes the group ID (GID) of the specified group.  GID must be a unique unsigned integer.
 * **`-n newgroup`**: Renames the group.  This is a powerful feature, but remember that changing a group's name can affect user permissions and scripts that reference it.

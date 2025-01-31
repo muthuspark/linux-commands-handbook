@@ -89,5 +89,5 @@ This script runs five `sleep 1` commands concurrently in the background and wait
 If a specific program or shell script is running slowly, use `times` before and after its execution to pinpoint whether the performance issue stems from extensive user computation or frequent system calls. A disproportionately high system time might indicate I/O bottlenecks, while a high user time could suggest optimization needs within the program's code itself.
 
 
-This capability makes `times` a simple yet effective tool for basic performance analysis directly within your shell environment.  It's a valuable addition to your Linux command-line toolbox.
+This capability makes `times` a simple yet effective tool for basic performance analysis directly within your shell environment.  It's an addition to your Linux command-line toolbox.
 

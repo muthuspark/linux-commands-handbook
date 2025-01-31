@@ -10,7 +10,7 @@ Before diving into `chkconfig`, it's important to understand what system service
 
 ## Runlevels: The Core Concept
 
-Runlevels define the system's operational state.  Traditional SysVinit systems have several runlevels (typically 0-6), each representing a different operational mode (e.g., 0 for halt, 1 for single-user mode, 3 for multi-user mode with networking, 5 for graphical multi-user mode, 6 for reboot). `chkconfig` allows you to specify which runlevels a service should be active in.
+Runlevels define the system's operational state.  Traditional SysVinit systems have many runlevels (typically 0-6), each representing a different operational mode (e.g., 0 for halt, 1 for single-user mode, 3 for multi-user mode with networking, 5 for graphical multi-user mode, 6 for reboot). `chkconfig` allows you to specify which runlevels a service should be active in.
 
 
 ## Key `chkconfig` Commands
@@ -82,5 +82,5 @@ sudo chkconfig --del <service_name>
 * **Service Scripts:** `chkconfig` relies on properly configured service scripts located in `/etc/init.d/`.
 
 
-This detailed exploration of `chkconfig` provides a solid foundation for managing system services on older Linux systems. Remember to adapt these examples to your specific services and needs.  Always exercise caution when modifying system services.
+This detailed exploration of `chkconfig` provides a solid foundation for managing system services on older Linux systems. Remember to tailor these examples to your specific services and needs. Always exercise caution when modifying system services.
 

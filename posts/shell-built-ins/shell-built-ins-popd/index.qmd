@@ -5,12 +5,12 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding `popd`
 
-`popd` (pop directory) is a shell built-in command that removes the top directory from the directory stack and changes the current working directory to that directory.  Essentially, it reverses the action of `pushd`. If you've used `pushd` to save a directory location, `popd` retrieves it and makes it your current directory.  This avoids the need to manually type out lengthy or complex path names, significantly speeding up your workflow.
+`popd` (pop directory) is a shell built-in command that removes the top directory from the directory stack and changes the current working directory to that directory.  Essentially, it reverses the action of `pushd`. If you've used `pushd` to save a directory location, `popd` retrieves it and makes it your current directory.  This avoids the need to manually type out lengthy or complex path names, speeding up your workflow.
 
 
 ## Using `popd` in Action
 
-Let's explore `popd` through several code examples.  Assume we start in our home directory (`/home/user`).
+Let's look at `popd` through many code examples.  Assume we start in our home directory (`/home/user`).
 
 
 **Example 1: Basic `popd` Usage**
@@ -81,7 +81,7 @@ popd  # (Executed after all directories have been popped)
 
 **Example 5: Combining `pushd`, `popd`, and `dirs`**
 
-The `dirs` command is invaluable for inspecting the directory stack.  Let's use it alongside `pushd` and `popd`:
+The `dirs` command is for inspecting the directory stack. Let's use it alongside `pushd` and `popd`:
 
 ```bash
 pushd /tmp
@@ -97,5 +97,5 @@ dirs # Output: /home/user
 
 
 
-Using these examples as a foundation, you can incorporate `popd` effectively into your shell scripting and daily Linux workflow to efficiently manage your directory navigation.  Experiment with these examples, modifying paths and using the `-n` option to gain a comprehensive understanding of this powerful command.
+Using these examples as a foundation, you can incorporate `popd` effectively into your shell scripting and daily Linux workflow to efficiently manage your directory navigation.  Experiment with these examples, modifying paths and using the `-n` option to gain a detailed understanding of this powerful command.
 

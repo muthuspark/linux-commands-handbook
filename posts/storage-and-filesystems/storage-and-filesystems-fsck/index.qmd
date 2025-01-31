@@ -65,5 +65,5 @@ For different filesystems, replace `fsck.ext4` with the appropriate command:
 
 ## Advanced Usage and Options
 
-Many `fsck` variants offer numerous other options for fine-grained control.  Refer to the man page (`man fsck.ext4`, `man btrfs`, etc.) for a comprehensive list of options available for your specific filesystem.  Understanding these options will allow you to tailor `fsck` to your specific needs and environment.  Remember to always exercise caution when working with low-level system tools like `fsck`.  Improper use can potentially lead to data loss.
+Many `fsck` variants offer numerous other options for fine-grained control.  Refer to the man page (`man fsck.ext4`, `man btrfs`, etc.) for a detailed list of options available for your specific filesystem.  Understanding these options will allow you to tailor `fsck` to your specific needs and environment.  Remember to always exercise caution when working with low-level system tools like `fsck`.  Improper use can potentially lead to data loss.
 

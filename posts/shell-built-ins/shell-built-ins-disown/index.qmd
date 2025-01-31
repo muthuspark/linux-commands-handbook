@@ -21,7 +21,7 @@ disown [-h] [jobspec ...]
 
 ## Practical Examples
 
-Let's explore some practical applications of `disown` with concrete examples.
+Let's look at some practical applications of `disown` with concrete examples.
 
 **Example 1: Disowning a Single Background Job**
 
@@ -80,5 +80,5 @@ jobs
 disown 1 #Disowns job number 1
 ```
 
-These examples illustrate the flexibility and power of `disown`.  Remember that once a process is disowned, you'll lose the ability to manage it directly through the shell's job control.  However, you can always use other tools like `ps` and `kill` to monitor and interact with the process, even after disowning it.  Using `nohup` in conjunction with `disown` can provide even greater robustness for processes that might be sensitive to terminal disconnections.  However, understanding  when and how to use `disown` is a valuable skill for any Linux user.
+These examples illustrate the flexibility and power of `disown`.  Remember that once a process is disowned, you'll lose the ability to manage it directly through the shell's job control.  However, you can always use other tools like `ps` and `kill` to monitor and interact with the process, even after disowning it.  Using `nohup` in conjunction with `disown` can provide even greater robustness for processes that might be sensitive to terminal disconnections.  However, understanding when and how to use `disown` is a skill for any Linux user.
 

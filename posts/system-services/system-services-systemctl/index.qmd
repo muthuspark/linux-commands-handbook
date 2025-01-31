@@ -5,7 +5,7 @@ categories: [ "System Services" ]
 ---
 ## Understanding Systemd Services
 
-Before diving into `systemctl` commands, it's crucial to grasp the concept of systemd services.  These are essentially processes or daemons that run in the background, providing essential system functionality.  Examples include network management (`networkd`), logging (`journalctl`), and the display manager (`gdm3`).  Each service is defined by a unit file, typically located in `/etc/systemd/system/`. These files specify how the service should be started, stopped, and managed.
+Before diving into `systemctl` commands, it's important to grasp the concept of systemd services.  These are essentially processes or daemons that run in the background, providing essential system functionality.  Examples include network management (`networkd`), logging (`journalctl`), and the display manager (`gdm3`).  Each service is defined by a unit file, typically located in `/etc/systemd/system/`. These files specify how the service should be started, stopped, and managed.
 
 ## Common systemctl Commands
 

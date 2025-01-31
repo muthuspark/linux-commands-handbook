@@ -11,7 +11,7 @@ The key benefit of `suspend` is its ability to pause a long-running script or in
 
 ## Practical Examples
 
-Let's explore `suspend`'s functionality with practical examples.
+Let's look at `suspend`'s functionality with practical examples.
 
 
 **Example 1: Suspending a simple script**
@@ -66,5 +66,5 @@ This script introduces user interaction.  At iteration 5, it pauses and awaits u
 * **Job Control:**  `suspend` integrates well with shell job control features. Commands like `jobs`, `fg`, and `bg` are essential for managing suspended processes.
 
 
-By understanding and using the `suspend` built-in command, you can significantly enhance the efficiency and control of your Linux shell interactions and scripts.  It provides a robust and elegant way to temporarily pause execution without resorting to more drastic measures like killing processes.
+By understanding and using the `suspend` built-in command, you can improve the efficiency and control of your Linux shell interactions and scripts. It provides an elegant way to temporarily pause execution without resorting to more drastic measures like killing processes.
 

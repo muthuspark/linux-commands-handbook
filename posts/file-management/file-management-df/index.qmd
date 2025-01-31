@@ -26,7 +26,7 @@ This will give you a general overview of your disk space usage.
 
 ##  `df` with Options: Fine-tuning Your Output
 
-The power of `df` lies in its various options that allow you to customize the output. Let's explore some of the most useful ones:
+The power of `df` lies in its various options that allow you to customize the output. Let's look at some of the most useful ones:
 
 **1.  `-h` (Human-readable):**  This option formats the output in a more human-friendly way, using units like KB, MB, GB, and TB. This is generally preferred over the default 1K-blocks output.
 
@@ -88,5 +88,5 @@ df -h -x tmpfs
 ```
 
 
-These examples demonstrate how flexible and informative the `df` command can be.  By mastering its options, you gain a crucial tool for effective disk space management on your Linux system.  Experiment with different combinations of options to tailor the output to your specific needs.  Remember to consult the `man df` page for a complete list of options and further details.
+These examples demonstrate how flexible and informative the `df` command can be. By mastering its options, you gain a tool for effective disk space management on your Linux system. Experiment with different combinations of options to tailor the output to your specific needs. Remember to consult the `man df` page for a complete list of options and further details.
 

@@ -7,7 +7,7 @@ categories: [ "Shell Built-ins" ]
 
 Shell built-ins are functions or commands implemented within the shell's code.  They're typically faster than external commands because they avoid the overhead of process creation and execution.  Common shells like Bash, Zsh, and Ksh each have their own sets of built-in commands. While some built-ins are common across different shells, others might be unique to a specific shell.
 
-Let's explore some widely used built-in commands:
+Let's look at some widely used built-in commands:
 
 
 ### 1. `cd` (Change Directory)
@@ -136,5 +136,5 @@ echo $MY_SCRIPT_VAR
 
 ```
 
-These examples demonstrate only a subset of shell built-in commands. Each shell offers a broader range of functionalities. Exploring your shell's built-in command documentation (often accessible via `help` or `man`) will significantly enhance your Linux proficiency.  Remember that effective use of built-ins streamlines your workflows and improves efficiency.
+These examples demonstrate only a subset of shell built-in commands. Each shell offers a broader range of functionalities. Exploring your shell's built-in command documentation (often accessible via `help` or `man`) will improve your Linux proficiency. Remember that effective use of built-ins streamlines your workflows and improves efficiency.
 

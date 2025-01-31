@@ -11,7 +11,7 @@ The `comm` command compares two sorted files line by line, revealing the lines u
 * **Column 2:** Lines unique to the second file.
 * **Column 3:** Lines common to both files.
 
-The absence of a column indicates that no lines fall into that category.  This makes `comm` invaluable for identifying differences and similarities between datasets quickly.
+The absence of a column indicates that no lines fall into that category. This makes `comm` useful for quickly identifying differences and similarities between datasets.
 
 ## Basic Usage
 
@@ -113,7 +113,7 @@ date
 
 ## Handling Unsorted Files
 
-It's crucial to remember that `comm` expects its input files to be sorted.  Attempting to compare unsorted files will lead to inaccurate results.  Use the `sort` command to sort your files before using `comm`:
+Remember that `comm` expects its input files to be sorted.  Attempting to compare unsorted files will lead to inaccurate results.  Use the `sort` command to sort your files before using `comm`:
 
 ```bash
 sort file1.txt > file1_sorted.txt

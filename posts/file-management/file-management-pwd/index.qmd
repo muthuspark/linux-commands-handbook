@@ -13,7 +13,7 @@ The absolute path provides the complete location of the directory, starting from
 
 ## Using the `pwd` Command: Examples
 
-Let's explore some practical examples of using `pwd`.
+Let's look at some practical examples of using `pwd`.
 
 **Example 1:  Finding your current location**
 

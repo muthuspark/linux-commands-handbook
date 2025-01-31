@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding Background Processes
 
-Before we dive into `jobs`, let's quickly refresh our memory on background processes.  In Linux, you can run commands in the background by appending an ampersand (`&`) to the command. This allows you to continue using your shell while the command executes asynchronously.
+Before refreshing our memory on background processes, let's quickly review them. In Linux, you can run commands in the background by appending an ampersand (`&`) to the command. This allows you to continue using your shell while the command executes asynchronously.
 
 ```bash
 sleep 10 &  # Runs 'sleep 10' in the background
@@ -90,5 +90,5 @@ echo "Job 1 is complete"
 It's important to remember that `jobs` only manages background processes within the *current* shell. If you open a new terminal or a new shell instance, the background processes from the previous shell are not managed by `jobs` in the new shell.
 
 
-This detailed exploration of `jobs` provides a comprehensive understanding of how to effectively manage background processes in your Linux shell.  By mastering this command, you can significantly enhance your shell productivity and workflow.
+This detailed exploration of `jobs` provides a detailed understanding of how to effectively manage background processes in your Linux shell. By mastering this command, you can improve your shell productivity and workflow.
 

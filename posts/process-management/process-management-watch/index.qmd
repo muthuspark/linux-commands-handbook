@@ -13,7 +13,7 @@ The basic syntax is:
 watch [options] command
 ```
 
-Where `command` is any command you'd like to monitor, and `options` allow for customization (we'll explore these shortly).
+Where `command` is any command you'd like to monitor, and `options` allow for customization (we'll look at these shortly).
 
 ## Basic Process Monitoring with `watch`
 
@@ -27,7 +27,7 @@ This command does the following:
 
 * `watch`:  Invokes the `watch` command.
 * `-n 2`: Specifies an update interval of 2 seconds.  The default is 2 seconds.
-* `top -bn1`: Executes the `top` command. `-b` runs `top` in batch mode, and `-n 1` tells it to only run a single iteration. This is crucial for `watch`; otherwise, `top` would constantly scroll and be unreadable.
+* `top -bn1`: Executes the `top` command. `-b` runs `top` in batch mode, and `-n 1` tells it to only run a single iteration. This is for `watch`; otherwise, `top` would constantly scroll and be unreadable.
 * `head -n 15`: Takes only the top 15 lines of `top`'s output to prevent the display from becoming overwhelmingly large.
 
 This will display a continuously updating view of the top 5 processes, updated every 2 seconds.
@@ -57,7 +57,7 @@ This command will update every 5 seconds, showing the memory map of the process 
 
 ##  Advanced Options with `watch`
 
-The `watch` command offers several options to refine monitoring:
+The `watch` command offers many options to refine monitoring:
 
 * `-d`: Highlights changes between updates.  This is very helpful for spotting fluctuations.
 * `-c`: Clears the screen before each update, offering cleaner output.
@@ -72,7 +72,7 @@ The true power of `watch` lies in its ability to combine commands. You can chain
 
 ## Example:  Monitoring CPU and Memory Usage of a Specific Process
 
-Let's create a more advanced example that combines several commands to monitor both CPU and memory usage of a process named "myapp":
+Let's create a more advanced example that combines many commands to monitor both CPU and memory usage of a process named "myapp":
 
 ```bash
 watch -n 2 'ps aux | grep "myapp" | awk "{print \$2, \$3, \$4}" | sort -k3 -nr | head -n 5'

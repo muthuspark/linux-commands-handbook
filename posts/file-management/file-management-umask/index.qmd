@@ -30,7 +30,7 @@ For example:
 
 ## Practical Examples
 
-Let's explore some `umask` scenarios with code examples:
+Let's look at some `umask` scenarios with code examples:
 
 **1. Setting a `umask`:**
 

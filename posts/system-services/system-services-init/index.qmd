@@ -37,7 +37,7 @@ Let's say we want to manage the SSH service (usually `ssh`).
 sudo systemctl start ssh
 ```
 
-This starts the SSH service. The `sudo` is crucial because managing services often requires root privileges.
+This starts the SSH service. The `sudo` is needed because managing services often requires root privileges.
 
 * **Stop:**
 
@@ -94,7 +94,7 @@ This prevents the service from starting automatically on boot.
 
 **5.  Working with Service Files:**
 
-Understanding the structure of a service file is crucial for customization.  A basic service file might look like this:
+Understanding the structure of a service file is important for customization. A basic service file might look like this:
 
 ```ini
 [Unit]
@@ -135,5 +135,5 @@ sudo journalctl -u ssh
 This shows the logs specifically for the SSH service.  `journalctl -xe` displays recent system logs across all units.
 
 
-These examples provide a solid foundation for managing Linux services with Systemd.  Further exploration into Systemd's capabilities, including timers, sockets, and more, will significantly enhance your Linux administration skills.
+These examples provide a solid foundation for managing Linux services with Systemd. Further exploration into Systemd's capabilities, including timers, sockets, and more, will improve your Linux administration skills.
 

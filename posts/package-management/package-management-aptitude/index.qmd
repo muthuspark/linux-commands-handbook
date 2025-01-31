@@ -7,7 +7,7 @@ categories: [ "Package Management" ]
 
 The core functionality of Aptitude revolves around installing, updating, and removing software packages.  Let's start with the basics:
 
-**Updating the package list:** Before installing or upgrading anything, it's crucial to update Aptitude's local package database.  This ensures you're working with the latest available versions.
+**Updating the package list:** Before installing or upgrading anything, update Aptitude's local package database. This ensures you're working with the latest available versions.
 
 ```bash
 sudo aptitude update

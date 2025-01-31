@@ -81,7 +81,7 @@ Here, `{}` is the placeholder that's replaced with each filename.
 
 **More Advanced Usage**
 
-`xargs` can be combined with other powerful commands for advanced tasks.  Consider combining it with `grep`, `sed`, `awk`, or other text processing tools to achieve intricate data manipulation.
+`xargs` can be combined with other powerful commands for advanced tasks. Consider combining it with `grep`, `sed`, `awk`, or other text processing tools to achieve data manipulation.
 
 
 **Example:  Processing Log Files**
@@ -95,5 +95,5 @@ grep "192.168.1.1" access.log | xargs wc -l
 This command first filters lines containing the IP address using `grep`, then uses `xargs` to pass those lines to `wc -l` to count them.
 
 
-These examples showcase the flexibility and power of `xargs` in streamling Linux command-line workflows.  Experiment with different combinations to enhance your command-line skills and accomplish complex tasks with increased efficiency.
+These examples showcase the flexibility and power of `xargs` in streamlining Linux command-line workflows. Experiment with different combinations to improve your command-line skills and accomplish complex tasks with increased efficiency.
 

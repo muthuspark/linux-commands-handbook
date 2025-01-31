@@ -43,7 +43,7 @@ The `!` symbol signifies that you are referencing a command from your history.  
 !grep*
 ```
 
-This will execute the most recent command containing "grep".  If multiple commands match, the most recent one will be executed. You can also use more sophisticated patterns with wildcards:
+This will execute the most recent command containing "grep".  If multiple commands match, the most recent one will be executed. You can also use more complex patterns with wildcards:
 
 
 ```bash
@@ -84,5 +84,5 @@ The `history` command offers other options to tailor the output:
 * **`history -c`**: Clear the current history.  Be careful with this command!
 
 
-This article has covered the fundamental aspects of the `history` command.  Exploring its capabilities will significantly enhance your command-line workflow and efficiency.
+This article has covered the fundamental aspects of the `history` command. Exploring its capabilities will improve your command-line workflow and efficiency.
 

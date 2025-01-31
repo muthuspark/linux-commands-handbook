@@ -52,7 +52,7 @@ sudo dnf remove vim --autoremove
 
 ## Advanced DNF Techniques: Searching, Listing, and Repositories
 
-DNF offers several advanced features to manage your system effectively.
+DNF offers many advanced features to manage your system effectively.
 
 **Searching for Packages:**
 

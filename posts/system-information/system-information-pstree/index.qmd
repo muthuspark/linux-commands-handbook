@@ -48,7 +48,7 @@ Another useful option is `-u` which shows the user ID associated with each proce
 pstree -u
 ```
 
-This output will include the username for each process, facilitating identification of processes owned by specific users.
+This output will include the username for each process, identifying processes owned by specific users.
 
 
 ## Combining Options for Detailed Views
@@ -59,7 +59,7 @@ The power of `pstree` truly emerges when combining different options.  Let's see
 pstree -pu
 ```
 
-This will display the process tree, showing both the PIDs and user IDs for each process, offering a more comprehensive view.
+This will display the process tree, showing both the PIDs and user IDs for each process, offering a more detailed view.
 
 
 ##  Showing Full Paths with `pstree`
@@ -71,5 +71,5 @@ pstree -s
 ```
 
 
-Remember to use these commands with caution, especially the `-s` option, as the output can be extensive for systems with many running processes.  `pstree` is an invaluable tool for understanding and managing your Linux system's processes. It provides a visual representation that is often much more intuitive than long lists of PIDs and process information from other tools.  Mastering these simple commands will drastically enhance your Linux system administration skills.
+Remember to use these commands with caution, especially the `-s` option, as the output can be extensive for systems with many running processes. `pstree` is a useful tool for understanding and managing your Linux system's processes. It provides a visual representation that is often much more intuitive than long lists of PIDs and process information from other tools. Mastering these simple commands will drastically improve your Linux system administration skills.
 

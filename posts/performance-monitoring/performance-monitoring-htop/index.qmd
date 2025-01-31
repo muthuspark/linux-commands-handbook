@@ -68,10 +68,10 @@ While `htop` doesn't directly show detailed disk I/O, observing overall CPU usag
 
 **4.  Analyzing Process Tree:** (Requires enabling the tree view in `htop`'s configuration)
 
-With the tree view enabled, `htop` provides a visual representation of the process hierarchy.  This is invaluable for understanding process relationships and identifying processes indirectly impacting system performance. For instance, a high-CPU consuming process might have several child processes contributing to the load.
+With the tree view enabled, `htop` provides a visual representation of the process hierarchy. This is helpful for understanding process relationships and identifying processes indirectly impacting system performance. For instance, a high-CPU consuming process might have many child processes contributing to the load.
 
 
 ## Beyond the Basics
 
-`htop` offers many additional features and options worth exploring, such as customizing the displayed columns, setting alerts, and integrating with external monitoring tools.  Refer to the `htop` man page (`man htop`) for a comprehensive overview of its features. The built-in help section (often accessible with F1) is also a great starting point.
+`htop` offers many additional features and options worth exploring, such as customizing the displayed columns, setting alerts, and integrating with external monitoring tools.  Refer to the `htop` man page (`man htop`) for an overview of its features. The built-in help section (often accessible with F1) is also a great starting point.
 

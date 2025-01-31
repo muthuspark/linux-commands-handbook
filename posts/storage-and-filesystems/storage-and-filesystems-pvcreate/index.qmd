@@ -40,7 +40,7 @@ This command creates a PV solely from `/dev/sda2`, leaving the rest of the disk 
 
 ### Verifying PV Creation
 
-After executing `pvcreate`, it's crucial to verify that the PV has been successfully created. You can do this using the `pvs` command:
+After executing `pvcreate`, verify that the PV has been successfully created using the `pvs` command:
 
 ```bash
 sudo pvs
@@ -62,7 +62,7 @@ While the basic usage covers most scenarios, `pvcreate` offers additional option
 
 * `-f`: Force creation, even if the device is already in use. **Use with extreme caution, as this could lead to data loss.**
 * `-vv`: Increase verbosity for more detailed output during the process.
-* `-y`: Answer yes to all prompts.  Use this only if you understand the implications fully.
+* `-y`: Answer yes to all prompts. Use this only if you understand fully.
 
 
 

@@ -85,7 +85,7 @@ RPM maintains a database of installed packages.  You can use `rpm` to interact w
 rpm -q --whatrequires mypackage
 ```
 
-This command shows which other packages depend on `mypackage`. This is crucial before removing a package to avoid breaking dependencies.
+This command shows which other packages depend on `mypackage`.  This is important before removing a package to avoid breaking dependencies.
 
 These are just some of the many useful commands that `rpm` provides.  Exploring the `man rpm` page provides a wealth of additional options and functionalities.  Properly utilizing `rpm` is a fundamental skill for efficient Linux system administration.
 

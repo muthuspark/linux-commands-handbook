@@ -22,7 +22,7 @@ This creates a string variable.  However, `declare`'s true power lies in its opt
 
 ### Specifying Variable Attributes
 
-`declare` accepts several options to modify variable behavior:
+`declare` accepts many options to modify variable behavior:
 
 * **`-i` (integer):** Declares an integer variable.  Arithmetic operations are automatically handled.
 

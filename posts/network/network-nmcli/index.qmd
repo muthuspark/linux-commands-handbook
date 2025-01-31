@@ -17,7 +17,7 @@ If it's not running, start it using:
 sudo systemctl start NetworkManager
 ```
 
-Now you're ready to explore `nmcli`'s potential.
+Now you're ready to look at `nmcli`'s potential.
 
 ##  Connecting to Wi-Fi Networks
 
@@ -104,5 +104,5 @@ To see the status of your network devices:
 nmcli dev status
 ```
 
-These commands provide crucial details for troubleshooting and monitoring your network.  Remember to replace placeholders like `<connection-id>` with the actual values from your system.  Consult the `nmcli` man page for a comprehensive list of options and features.
+These commands provide details for troubleshooting and monitoring your network. Remember to replace placeholders like `<connection-id>` with the actual values from your system. Consult the `nmcli` man page for a detailed list of options and features.
 

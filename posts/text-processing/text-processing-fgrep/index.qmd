@@ -65,7 +65,7 @@ This would produce the same output as the first example, even if "line" appeared
 
 ## Searching Multiple Files:  Wildcard Characters
 
-`fgrep` efficiently handles searches across multiple files using wildcard characters.  Let's assume we have several files in a directory, and want to find all instances of "error" within files ending in `.log`:
+`fgrep` efficiently handles searches across multiple files using wildcard characters.  Let's assume we have many files in a directory, and want to find all instances of "error" within files ending in `.log`:
 
 ```bash
 fgrep "error" *.log
@@ -98,5 +98,5 @@ This counts the number of lines containing "error" (case-insensitive) across all
 
 ## Handling Large Files Efficiently
 
-When dealing with exceptionally large files, `fgrep`'s speed advantage becomes crucial. Its focus on fixed-string matching avoids the computational overhead associated with regular expressions, enabling quicker processing compared to `grep` in these scenarios.  This makes it an invaluable tool for tasks requiring rapid searches in massive log files or datasets.
+When dealing with exceptionally large files, `fgrep`'s speed advantage becomes crucial. Its focus on fixed-string matching avoids the computational overhead associated with regular expressions, enabling quicker processing compared to `grep` in these scenarios. This makes it a useful tool for tasks requiring rapid searches in massive log files or datasets.
 

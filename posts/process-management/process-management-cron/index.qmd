@@ -5,7 +5,7 @@ categories: [ "Process Management" ]
 ---
 ## Understanding the cron Daemon
 
-The `cron` daemon runs in the background, constantly checking a system-wide configuration file for scheduled jobs.  These jobs, specified in the crontab (cron table), are executed at the designated times.  Let's explore the structure of a crontab entry:
+The `cron` daemon runs in the background, constantly checking a system-wide configuration file for scheduled jobs.  These jobs, specified in the crontab (cron table), are executed at the designated times.  Let's look at the structure of a crontab entry:
 
 ```
 * * * * * command_to_be_executed

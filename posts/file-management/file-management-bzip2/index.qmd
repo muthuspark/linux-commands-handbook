@@ -113,5 +113,5 @@ This will show the compression ratio and other statistics.
 `bzip2` returns error codes which can be checked using the `$?` variable after running the command. A return code of 0 indicates success.  Script writers can use this for error handling.
 
 
-These examples provide a solid foundation for using `bzip2` effectively for file compression and decompression in your Linux workflows. Remember to consult the `bzip2` man page (`man bzip2`) for a comprehensive list of options and further details.
+These examples provide a solid foundation for using `bzip2` effectively for file compression and decompression in your Linux workflows. Remember to consult the `bzip2` man page (`man bzip2`) for a detailed list of options and further details.
 

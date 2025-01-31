@@ -39,7 +39,7 @@ APT will automatically resolve dependencies – meaning it will install any othe
 
 ## Updating Packages
 
-Keeping your system's software up-to-date is crucial for security and stability.  Use the following command to upgrade all installed packages to their latest versions:
+Keeping your system's software up-to-date is important for security and stability. Use the following command to upgrade all installed packages to their latest versions:
 
 ```bash
 sudo apt-get upgrade

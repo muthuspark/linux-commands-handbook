@@ -5,7 +5,7 @@ categories: [ "Memory Management" ]
 ---
 ## Understanding Swap Space
 
-Before diving into the command itself, let's clarify the importance of swap space.  Insufficient RAM can lead to performance bottlenecks and system instability. Swap space acts as a buffer, preventing these issues by providing virtual memory. However, it's significantly slower than RAM, so it's best utilized only as a last resort.
+Before diving into the command itself, let's clarify the importance of swap space. Insufficient RAM can lead to performance bottlenecks and system instability. Swap space acts as a buffer, preventing these issues by providing virtual memory. However, it's slower than RAM, so it's best utilized only as a last resort.
 
 ## The `swapon` Command: Syntax and Options
 
@@ -17,7 +17,7 @@ swapon [options] <swap_device>
 
 `<swap_device>` refers to the path to the swap partition or file.  This could be a partition like `/dev/sda5` or a swap file like `/swapfile`.
 
-Let's explore some useful options:
+Let's look at some useful options:
 
 * `-a`: Activates all swap devices listed in `/etc/fstab`. This is extremely convenient for automatically enabling swap at boot time.
 
@@ -70,7 +70,7 @@ This is often the preferred method, especially during system startup:
 sudo swapon -a
 ```
 
-This command reads `/etc/fstab` and activates all entries marked as swap.  It is crucial to ensure your `/etc/fstab` file is correctly configured for swap.
+This command reads `/etc/fstab` and activates all entries marked as swap. Ensure your `/etc/fstab` file is correctly configured for swap.
 
 
 **4. Setting Swap Priority:**
@@ -93,7 +93,7 @@ To see detailed output during activation, add the `-v` option:
 sudo swapon -v /dev/sdb1
 ```
 
-This provides valuable information, helpful for debugging any activation problems.
+This provides information helpful for debugging any activation problems.
 
 
 **6. Deactivating Swap:**

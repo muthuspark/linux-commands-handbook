@@ -5,7 +5,7 @@ categories: [ "Memory Management" ]
 ---
 ## Understanding I/O Priorities
 
-Before we explore `ionice`, it's important to grasp the concept of I/O priorities.  When multiple processes request I/O access (e.g., reading from a hard drive, writing to a network interface), the kernel needs to decide which process gets served first.  `ionice` allows you to influence this decision, assigning different priority classes and scheduling classes to your processes.
+Before we look at `ionice`, it's important to grasp the concept of I/O priorities.  When multiple processes request I/O access (e.g., reading from a hard drive, writing to a network interface), the kernel needs to decide which process gets served first.  `ionice` allows you to influence this decision, assigning different priority classes and scheduling classes to your processes.
 
 There are three main priority classes:
 
@@ -73,5 +73,5 @@ This will output the class and nice value for the specified process.
 
 
 
-These examples demonstrate the core functionality of `ionice`. By carefully selecting the appropriate priority class and scheduler, you can effectively manage I/O resources and enhance the performance of your Linux system.  Remember responsible usage of `realtime` priority to avoid unintended consequences.  Experimentation is key to finding the optimal settings for your specific workload.
+These examples demonstrate the core functionality of `ionice`. By carefully selecting the appropriate priority class and scheduler, you can effectively manage I/O resources and improve the performance of your Linux system. Remember responsible usage of `realtime` priority to avoid unintended consequences. Experimentation is key to finding the optimal settings for your specific workload.
 

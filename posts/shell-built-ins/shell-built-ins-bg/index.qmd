@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding Background Processes
 
-Before exploring `bg`, it's crucial to understand background processes.  These are processes that run independently of your current terminal session, allowing you to continue working on other tasks without interruption.  You can initiate a background process using the ampersand (&) symbol at the end of a command. For instance:
+Before exploring `bg`, understand background processes. These are processes that run independently of your current terminal session, allowing you to continue working on other tasks without interruption. You can initiate a background process using the ampersand (&) symbol at the end of a command. For instance:
 
 ```bash
 sleep 60 &
@@ -63,7 +63,7 @@ The `%1` refers to job 1.  You can also use `%` followed by the job name if it's
 
 ##  Multiple Background Jobs
 
-Let's say you have several stopped jobs:
+Let's say you have many stopped jobs:
 
 
 ```bash
@@ -92,5 +92,5 @@ If you run `bg` without any arguments, it resumes the most recently stopped job.
 
 ##  Advanced Usage and Considerations
 
-While `bg` is straightforward, remember that background processes consume system resources.  Excessive background processes can degrade performance.  Always monitor your system resource usage and manage background processes appropriately using commands like `top` or `htop`.  Furthermore, ensure your scripts and commands are robust enough to handle potential errors and unexpected terminations when running them in the background.
+While `bg` is straightforward, remember that background processes consume system resources. Excessive background processes can degrade performance. Always monitor your system resource usage and manage background processes appropriately using commands like `top` or `htop`. Furthermore, ensure your scripts and commands handle potential errors and unexpected terminations when running them in the background.
 

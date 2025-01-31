@@ -24,11 +24,12 @@ website:
 
 format:
   html:
-    theme: litera
+    theme: pandoc
     css: styles.css
-    lang: en
-    toc: true
-    image: false
     mermaid:
       theme: neutral
+    minimal: true
+    include-in-header: 
+      - favicon.html
+      - header.html
 

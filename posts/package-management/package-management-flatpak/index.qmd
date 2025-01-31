@@ -56,7 +56,7 @@ This command installs Gedit from the Flathub repository.  You can replace `org.g
 
 ## Updating Applications
 
-Keeping your applications updated is crucial for security and stability.  Flatpak makes this easy:
+Keeping your applications updated is important for security and stability. Flatpak makes this easy:
 
 ```bash
 flatpak update

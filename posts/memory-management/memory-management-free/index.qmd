@@ -30,7 +30,7 @@ This indicates a system with 993MB of RAM, where 214MB is used, 631MB is free, 1
 
 ## Enhancing the `free` Command with Options
 
-The `free` command offers several options to customize its output:
+The `free` command offers many options to customize its output:
 
 * **`-h` (or `--human-readable`):** Displays memory amounts in a human-readable format (e.g., KB, MB, GB), making the output much easier to understand.
 
@@ -66,7 +66,7 @@ free -h -s 2
 ```
 
 
-This continuous monitoring is invaluable for debugging performance issues.  You can use `Ctrl+C` to stop the continuous output.
+This continuous monitoring is important for debugging performance issues. You can use `Ctrl+C` to stop the continuous output.
 
 
 By mastering the `free` command and its options, you gain a powerful tool for understanding and managing your Linux system's memory resources.  This is essential for optimizing performance and troubleshooting memory-related problems.

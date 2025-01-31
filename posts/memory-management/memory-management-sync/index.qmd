@@ -67,5 +67,5 @@ sync
 echo "Backup and Sync complete"
 ```
 
-**Important Note:** While `sync` significantly reduces the risk of data loss, it doesn't eliminate it entirely.  Hardware failures or other unforeseen events can still lead to data corruption.  Regular backups remain the most reliable way to protect your data.  Moreover, `sync` is a relatively slow operation;  it's best not to overuse it in performance-critical situations where frequent synchronous writes aren't necessary.
+**Important Note:** While `sync` reduces the risk of data loss, it doesn't eliminate it entirely. Hardware failures or other unforeseen events can still lead to data corruption. Regular backups remain the most reliable way to protect your data. Moreover, `sync` is a relatively slow operation; it's best not to overuse it in performance-critical situations where frequent synchronous writes aren't necessary.
 

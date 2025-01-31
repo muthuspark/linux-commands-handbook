@@ -5,7 +5,7 @@ categories: [ "Security" ]
 ---
 ## Understanding SELinux Modes
 
-Before exploring `getenforce`, it's crucial to grasp the three main SELinux modes:
+Before exploring `getenforce`, it's important to grasp the three main SELinux modes:
 
 * **Enforcing:** This is the strictest mode. SELinux rules are actively enforced, blocking any access attempts that violate the defined policies.  This provides the highest level of security.
 

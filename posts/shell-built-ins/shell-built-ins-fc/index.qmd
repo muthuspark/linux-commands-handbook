@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding `fc`'s Core Functionality
 
-The `fc` command allows you to modify and re-run previously executed commands.  This is incredibly useful for correcting typos, experimenting with slightly altered commands, or simply avoiding repetitive typing.  It offers several options to customize its behavior.
+The `fc` command allows you to modify and re-run previously executed commands.  This is incredibly useful for correcting typos, experimenting with slightly altered commands, or simply avoiding repetitive typing.  It offers many options to customize its behavior.
 
 **Basic Usage:**
 
@@ -96,5 +96,5 @@ fc -R -1 "install"
 This example uses `-1` which references the last command matching the given pattern.
 
 
-These examples demonstrate the versatility of `fc`.  By mastering these options, you can significantly streamline your workflow and boost your command-line efficiency.
+These examples demonstrate the versatility of `fc`. By mastering these options, you can streamline your workflow and boost your command-line efficiency.
 

@@ -9,7 +9,7 @@ Before diving into the commands, let's briefly understand routing tables.  These
 
 ## Key `ip route` Commands and Options
 
-The `ip route` command offers a wealth of options, allowing you to view, add, delete, and modify routing entries. Let's explore some common commands and their usage:
+The `ip route` command offers a wealth of options, allowing you to view, add, delete, and modify routing entries. Let's look at some common commands and their usage:
 
 ### 1. Viewing Routing Tables
 

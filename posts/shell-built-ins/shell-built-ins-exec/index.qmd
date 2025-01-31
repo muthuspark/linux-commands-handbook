@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding `exec`
 
-Unlike commands that run as separate processes, `exec` replaces the current shell process with the specified command. This means that after `exec` is executed, the original shell process no longer exists.  This has significant implications for script execution and resource management.  The primary benefit is efficiency: it avoids the overhead of creating and managing a new process.
+Unlike commands that run as separate processes, `exec` replaces the current shell process with the specified command. This means that after `exec` is executed, the original shell process no longer exists. This affects script execution and resource management. The primary benefit is efficiency: it avoids the overhead of creating and managing a new process.
 
 The basic syntax is straightforward:
 
@@ -85,5 +85,5 @@ echo "This will be written to my_output.txt"
 ```
 
 
-The possibilities with `exec` are numerous.  It’s a powerful tool for streamlining shell scripts and fine-tuning process behavior.  Its ability to replace the current shell process must be carefully considered, as it results in the termination of that shell session. Remember to use it judiciously and understand the implications before incorporating it into your scripts.
+The possibilities with `exec` are numerous.  It’s a powerful tool for streamlining shell scripts and fine-tuning process behavior.  Its ability to replace the current shell process must be carefully considered, as it results in the termination of that shell session. Remember to use it judiciously and understand it before incorporating it into your scripts.
 

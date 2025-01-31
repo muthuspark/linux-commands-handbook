@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding the `exit` Command
 
-The `exit` command, as its name suggests, terminates the current shell session.  It's crucial for managing multiple shells and scripts, allowing you to gracefully exit from one environment and return to a parent shell or the operating system login prompt.
+The `exit` command, as its name suggests, terminates the current shell session. It's for managing multiple shells and scripts, allowing you to gracefully exit from one environment and return to a parent shell or the operating system login prompt.
 
 
 ## Basic Usage: Exiting the Shell
@@ -33,7 +33,7 @@ In scripts, `exit` plays a critical role in controlling the script's flow and co
 
 ##  `exit` and Signal Handling
 
-While less common in basic usage, the `exit` command can also be used in conjunction with signal handling.  This is a more advanced topic typically used in robust and complex scripts. However, understanding how `exit` might interact with signals offers a complete picture.
+While less common in basic usage, the `exit` command can also be used in conjunction with signal handling. This is a more advanced topic typically used in complex scripts. However, understanding how `exit` might interact with signals offers a complete picture.
 
 
 ## Practical Examples

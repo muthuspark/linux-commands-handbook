@@ -20,7 +20,7 @@ When you have multiple background jobs, you need to specify which one to bring t
 ```bash
 ## Handling Multiple Jobs
 
-If you have several background processes running, the `fg` command will only resume the most recently backgrounded job by default.  Specifying the job number or name allows more precise control:
+If you have many background processes running, the `fg` command will only resume the most recently backgrounded job by default.  Specifying the job number or name allows more precise control:
 
 
 ```bash

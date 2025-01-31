@@ -5,7 +5,7 @@ categories: [ "Network" ]
 ---
 ## Why `ip` is Better than `ifconfig`
 
-`ifconfig` is a legacy tool with a simpler, less structured approach.  `ip` offers a significantly improved interface, providing more comprehensive control over network interfaces and routing tables. Its structured approach makes complex configurations much easier to manage and understand.
+`ifconfig` is a legacy tool with a simpler, less structured approach.  `ip` offers an improved interface, providing more detailed control over network interfaces and routing tables. Its structured approach makes complex configurations much easier to manage and understand.
 
 
 ## Basic Network Interface Management with `ip`
@@ -79,5 +79,5 @@ ip link set eth0 down
 
 ##  Advanced Usage (Brief Overview)
 
-The `ip` command offers much more than what's covered here.  Explore the `ip route`, `ip link`, and `ip netns` commands for advanced routing, interface management, and network namespace manipulation respectively.  Consult the `man ip` page for exhaustive documentation.  Understanding these capabilities provides much more comprehensive control over your network configurations.
+The `ip` command offers much more than what's covered here.  Explore the `ip route`, `ip link`, and `ip netns` commands for advanced routing, interface management, and network namespace manipulation respectively.  Consult the `man ip` page for exhaustive documentation.  Understanding these capabilities provides much more detailed control over your network configurations.
 

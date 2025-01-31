@@ -104,5 +104,5 @@ ping6 2001:4860:4860::8888
 This pings an IPv6 address.
 
 
-This comprehensive guide covers the core functionalities of the `ping` command.  Experiment with different options to understand its capabilities better and leverage it for effective network troubleshooting.
+This guide covers the core functionalities of the `ping` command.  Experiment with different options to understand its capabilities better and use it for effective network troubleshooting.
 

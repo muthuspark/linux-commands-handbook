@@ -43,7 +43,7 @@ Let's try a more computationally intensive task:
 time for i in {1..1000000}; do : ; done
 ```
 
-This loop iterates a million times.  The `time` output will show significantly higher `user` time, indicating substantial CPU usage.
+This loop iterates a million times. The `time` output will show higher `user` time, indicating substantial CPU usage.
 
 
 ##  `time` and External Commands:  `/usr/bin/time`
@@ -67,5 +67,5 @@ time grep "error" logfile.txt | wc -l
 
 This command will first search for lines containing "error" in `logfile.txt`, then count the number of matching lines using `wc -l`. The `time` command measures the combined execution time of both commands.
 
-These examples showcase the flexibility and utility of `time` for benchmarking code and diagnosing performance bottlenecks in your scripts and applications.  Careful analysis of the `real`, `user`, and `sys` times can provide valuable insights into the efficiency and resource usage of your processes.
+These examples showcase the flexibility and utility of `time` for benchmarking code and diagnosing performance bottlenecks in your scripts and applications. Careful analysis of the `real`, `user`, and `sys` times can provide understanding of the efficiency and resource usage of your processes.
 

@@ -26,7 +26,7 @@ This command will capture and display all packets passing through `eth0`. Press 
 
 ## Filtering Packets: Focusing on Specific Traffic
 
-Capturing all traffic can quickly overwhelm you.  `tcpdump`'s filtering capabilities are crucial for focusing on relevant information.  Filters use the Berkeley Packet Filter (BPF) syntax.
+Capturing all traffic can quickly overwhelm you.  `tcpdump`'s filtering capabilities are important for focusing on relevant information.  Filters use the Berkeley Packet Filter (BPF) syntax.
 
 **Example 1: Filtering by IP Address**
 

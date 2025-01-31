@@ -67,5 +67,5 @@ Permissions are crucial. If you lack the necessary write permissions in a specif
 
 ##  Beyond the Basics:  Further Exploration
 
-While this guide provides a solid foundation, there are other options and considerations surrounding `mkdir`.  Further exploration of  Linux's manual pages (`man mkdir`) will provide more comprehensive information and advanced usage scenarios.  The `umask` command also plays a role in determining the default permissions of newly created directories.
+While this guide provides a solid foundation, there are other options and considerations surrounding `mkdir`.  Further exploration of  Linux's manual pages (`man mkdir`) will provide more detailed information and advanced usage scenarios.  The `umask` command also plays a role in determining the default permissions of newly created directories.
 

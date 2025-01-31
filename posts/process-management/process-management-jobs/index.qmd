@@ -68,7 +68,7 @@ Sometimes, jobs might be stopped (e.g., by pressing Ctrl+Z). The `jobs` command 
 jobs -l # Show detailed job information including PID
 ```
 
-This command displays detailed information, including the process ID (PID), which is crucial for more advanced process management.
+This command displays detailed information, including the process ID (PID), for advanced process management.
 
 
 ## Combining `jobs` with Other Commands
@@ -88,7 +88,7 @@ This example demonstrates how you can efficiently manage a background process an
 ##  Advanced `jobs` Options
 
 
-The `jobs` command has several other options you can explore to tailor its output:
+The `jobs` command has many other options you can look at to tailor its output:
 
 * `jobs -p`: Displays only the process IDs.
 * `jobs -n`: Shows only the new jobs since the last `jobs` command.

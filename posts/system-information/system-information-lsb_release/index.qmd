@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## What is `lsb_release`?
 
-`lsb_release` is a command-line utility that retrieves information about your Linux distribution based on the LSB (Linux Standard Base) information.  The LSB aims to standardize Linux systems, making applications more portable.  While not all distributions strictly adhere to the LSB, many include this command, providing a consistent way to identify the distribution and its version.
+`lsb_release` is a command-line utility that retrieves information about your Linux distribution based on the LSB (Linux Standard Base) information. The LSB aims to standardize Linux systems, making applications more portable. While not all distributions strictly follow the LSB, many include this command, providing a consistent way to identify the distribution and its version.
 
 ## Accessing Your System Information
 
@@ -15,7 +15,7 @@ The simplest way to use `lsb_release` is to run it without any arguments:
 lsb_release -a
 ```
 
-This will output a comprehensive overview of your system's distribution details.  Let's break down the typical output:
+This will output an overview of your system's distribution details.  Let's break down the typical output:
 
 ```
 No LSB modules are available.
@@ -32,7 +32,7 @@ Codename:	jammy
 
 ## Targeted Information Retrieval
 
-For more granular control, `lsb_release` offers several options:
+For more granular control, `lsb_release` offers many options:
 
 * **`-a` or `--all`:** (As shown above) Displays all available information.
 * **`-c` or `--codename`:**  Shows only the codename.

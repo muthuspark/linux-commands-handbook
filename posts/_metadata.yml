@@ -7,3 +7,9 @@ freeze: true
 # Enable banner style title blocks
 title-block-banner: true
 page-navigation: true
+metadata:
+  license: "MIT"
+  author-meta: "Muthukrishnan"
+  description-meta: "Explore Linux commands. Free knowledge sharing under MIT License."
+include-after-body:
+  - ../footer.html

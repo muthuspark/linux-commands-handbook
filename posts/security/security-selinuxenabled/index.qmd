@@ -22,7 +22,7 @@ The command produces one of two outputs:
 
 ## Code Examples and Practical Usage
 
-Let's explore how to use `security-selinuxenabled` in various scenarios:
+Let's look at how to use `security-selinuxenabled` in various scenarios:
 
 
 **1. Basic Check:**
@@ -70,7 +70,7 @@ This example adds port 8080 to the allowed HTTP ports only if SELinux is enabled
 
 **4. Combining with other commands:**
 
-`security-selinuxenabled` can be combined with other commands for more comprehensive system checks.  For example, you could check the SELinux status and then display the current SELinux mode using `sestatus`:
+`security-selinuxenabled` can be combined with other commands for more detailed system checks.  For example, you could check the SELinux status and then display the current SELinux mode using `sestatus`:
 
 ```bash
 if security-selinuxenabled; then

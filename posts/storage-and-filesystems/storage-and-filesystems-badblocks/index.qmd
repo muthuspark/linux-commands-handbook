@@ -11,13 +11,13 @@ The `badblocks` command is a non-destructive utility; it identifies bad blocks w
 
 * **`-n` (Non-destructive):** This is the safest option.  It only reads data from the device, making it suitable for regular checks without risking data loss. However, it might miss some bad blocks that only manifest themselves under write operations.
 
-* **`-w` (Destructive):** This option performs write tests, which can identify more bad blocks than `-n`. However, it's crucial to back up any important data before using this option, as it will overwrite the device's contents.  This is often used on freshly formatted devices or during the process of preparing a storage device for usage.
+* **`-w` (Destructive):** This option performs write tests, which can identify more bad blocks than `-n`. However, it's important to back up any important data before using this option, as it will overwrite the device's contents. This is often used on freshly formatted devices or during the process of preparing a storage device for usage.
 
-* **`-s` (Super-destructive):** This approach is much more intensive, significantly increasing the detection of bad blocks.  As it is more destructive, use with extreme caution, and only when absolutely necessary after securing backups.
+* **`-s` (Super-destructive):** This approach is much more intensive, increasing the detection of bad blocks. As it is more destructive, use with extreme caution, and only when absolutely necessary after securing backups.
 
 ## Practical Examples
 
-Let's explore some examples illustrating `badblocks` usage.  Remember to replace `/dev/sdX` with the actual device path. **Be extremely cautious when working with `/dev` devices.  Incorrect usage can lead to data loss.** Always double-check your device path before executing any commands.
+Let's look at some examples illustrating `badblocks` usage.  Remember to replace `/dev/sdX` with the actual device path. **Be extremely cautious when working with `/dev` devices.  Incorrect usage can lead to data loss.** Always double-check your device path before executing any commands.
 
 **1. Non-destructive testing:**
 

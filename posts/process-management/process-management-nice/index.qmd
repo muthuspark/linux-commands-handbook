@@ -77,5 +77,5 @@ sudo renice -n 5 -p <PID_of_your_process>
 This command changes the niceness of the process with PID `<PID_of_your_process>` to 5.
 
 
-These examples demonstrate the flexibility and importance of the `nice` and `renice` commands for controlling process priority in a Linux environment.  Proper use of these commands is crucial for managing system resources effectively and ensuring optimal performance for both individual processes and the entire system.
+These examples demonstrate the flexibility and importance of the `nice` and `renice` commands for controlling process priority in a Linux environment. Proper use of these commands is important for managing system resources effectively and ensuring optimal performance for both individual processes and the entire system.
 

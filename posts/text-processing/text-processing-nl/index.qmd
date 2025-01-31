@@ -32,7 +32,7 @@ Notice the default behavior:  line numbers are left-aligned, separated by a tab 
 
 ## Customizing Line Numbers
 
-`nl` offers a wealth of options for customizing the numbering.  Let's explore some key options:
+`nl` offers a wealth of options for customizing the numbering.  Let's look at some key options:
 
 * **`-s` (separator):**  Changes the separator between the line number and the text.  Instead of a tab, we can use a colon:
 
@@ -124,5 +124,5 @@ nl -n ln -w 3 -s ' - ' my_file.txt > temp_file.txt && mv temp_file.txt my_file.t
 This will overwrite the original `my_file.txt`.  Remember to always back up your files before performing in-place modifications.
 
 
-These examples demonstrate the flexibility and power of the `nl` command. By combining `nl` with other text processing tools, you can achieve sophisticated line numbering tailored to your specific needs.
+These examples demonstrate the flexibility and power of the `nl` command. By combining `nl` with other text processing tools, you can achieve complex line numbering tailored to your specific needs.
 

@@ -5,7 +5,7 @@ categories: [ "System Services" ]
 ---
 ## Understanding Runlevels and System Initialization
 
-Before diving into `update-rc.d`, it's crucial to grasp the concept of runlevels.  Runlevels represent different operating states of a Linux system.  Each runlevel corresponds to a specific set of services that are started or stopped. Common runlevels include:
+Before diving into `update-rc.d`, it's important to grasp the concept of runlevels. Runlevels represent different operating states of a Linux system. Each runlevel corresponds to a specific set of services that are started or stopped. Common runlevels include:
 
 * **0:** Halt (shutdown)
 * **1:** Single-user mode

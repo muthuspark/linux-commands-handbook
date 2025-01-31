@@ -95,7 +95,7 @@ This reveals a detailed list of offloading capabilities.  Enabling or disabling 
 
 ##  Troubleshooting with ethtool
 
-`ethtool` is invaluable for troubleshooting network issues.  For instance, if you experience connection problems, you can quickly check the link status, speed, and duplex settings to identify potential misconfigurations.
+`ethtool` is useful for troubleshooting network issues. For instance, if you experience connection problems, you can quickly check the link status, speed, and duplex settings to identify potential misconfigurations.
 
 
 ##  Important Note on Permissions

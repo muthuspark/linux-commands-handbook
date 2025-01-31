@@ -68,5 +68,5 @@ Different I/O schedulers (e.g., `cfq`, `noop`, `deadline`) impact performance di
 High values for `avgqu-sz`, `await`, and `%util` suggest potential I/O bottlenecks.  For example, if `%util` is consistently near 100% for a specific device, it indicates that the disk is saturated and unable to keep up with the I/O requests. This might necessitate upgrading the disk, optimizing database queries, or investigating other performance issues within your application.   Analyzing the `r/s` and `w/s` values, in conjunction with the average queue size and wait times, can help to pinpoint whether read or write operations are the limiting factor.
 
 
-By carefully observing the output of `iostat` and understanding its metrics, you can gain valuable insights into your system's I/O performance and effectively address any bottlenecks that impact application performance and system responsiveness.
+By carefully observing the output of `iostat` and understanding its metrics, you can gain a better understanding of your system's I/O performance and effectively address any bottlenecks impacting application performance and system responsiveness.
 

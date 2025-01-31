@@ -49,7 +49,7 @@ The `sudo` is necessary because `iotop` needs root privileges to access process 
 
 ##  `iotop` Options for Advanced Analysis
 
-`iotop` offers several command-line options to refine its output and customize its behavior.
+`iotop` offers many command-line options to refine its output and customize its behavior.
 
 * **`-o` (or `--only`):** Displays only processes with I/O activity. This filters out idle processes, simplifying the view.
 

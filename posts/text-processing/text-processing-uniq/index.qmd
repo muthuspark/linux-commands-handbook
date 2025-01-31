@@ -40,7 +40,7 @@ Notice how the consecutive "banana" and "apple" lines are reduced to single inst
 
 ## Key Options: Fine-Tuning Your `uniq` Commands
 
-`uniq` offers several options to customize its behavior:
+`uniq` offers many options to customize its behavior:
 
 * **`-c` (count):**  Prefix each line with the count of its consecutive occurrences.
 
@@ -125,5 +125,5 @@ By default, `uniq` considers whitespace as the field separator. However, you can
 
 ##  Beyond Simple Line Comparisons: Advanced Applications
 
-`uniq` forms a fundamental building block in many more complex text processing workflows.  It is frequently used in conjunction with other commands like `grep`, `sed`, `awk`, and `sort` to achieve sophisticated data manipulation and analysis.  Its concise syntax and efficient operation make it an essential tool for any Linux user working with text data.
+`uniq` forms a fundamental building block in many more complex text processing workflows.  It is frequently used in conjunction with other commands like `grep`, `sed`, `awk`, and `sort` to achieve complex data manipulation and analysis.  Its concise syntax and efficient operation make it an essential tool for any Linux user working with text data.
 

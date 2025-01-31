@@ -43,7 +43,7 @@ echo $my_variable
 echo "${my_variable}"
 ```
 
-Both lines print the contents of `my_variable`.  The curly braces `{}` are crucial when variables are followed by other characters to prevent ambiguity.
+Both lines print the contents of `my_variable`. The curly braces `{}` are needed when variables are followed by other characters to prevent ambiguity.
 
 ```bash
 my_var="Hello"
@@ -96,5 +96,5 @@ This creates a file named `my_data_YYYYMMDD.txt` (with today's date) and writes 
 
 ##  `printf` - A More Powerful Alternative
 
-While `echo` is simple and convenient, the `printf` command offers more control over formatting, especially when dealing with different data types.  However,  `echo` remains a valuable tool for quick and simple output tasks.
+While `echo` is simple and convenient, the `printf` command offers more control over formatting, especially when dealing with different data types. However, `echo` remains a tool for quick and simple output tasks.
 

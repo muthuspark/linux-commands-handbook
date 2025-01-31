@@ -5,9 +5,9 @@ categories: [ "Memory Management" ]
 ---
 ## Understanding Swap Space and Why You Might Use `swapoff`
 
-Swap space acts as an overflow for your RAM.  While it allows your system to handle more applications simultaneously than its physical RAM would allow alone,  accessing data on a hard drive is significantly slower than accessing RAM.  Consequently, excessive swapping can lead to performance degradation – a condition often referred to as "thrashing."
+Swap space acts as an overflow for your RAM. While it allows your system to handle more applications simultaneously than its physical RAM would allow alone, accessing data on a hard drive is slower than accessing RAM. Consequently, excessive swapping can lead to performance degradation – a condition often referred to as "thrashing."
 
-You might want to use `swapoff` in several scenarios:
+You might want to use `swapoff` in many scenarios:
 
 * **Troubleshooting performance issues:** If you suspect excessive swapping is causing slowdowns, temporarily disabling swap can help isolate the problem.
 * **Testing scenarios:**  Disabling swap provides a controlled environment for testing applications or system behaviors without the influence of swapping.
@@ -51,7 +51,7 @@ sudo swapoff /dev/sda5
 
 **Example 2: Disabling all swap partitions**
 
-While there isn't a direct command to disable all swap partitions at once, you can achieve this by iterating through the output of `swapon --show`.  A bash script offers a robust solution:
+While there isn't a direct command to disable all swap partitions at once, you can achieve this by iterating through the output of `swapon --show`. A bash script offers a solution:
 
 ```bash
 #!/bin/bash

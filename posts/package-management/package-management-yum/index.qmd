@@ -28,7 +28,7 @@ sudo yum install httpd vim git
 
 ## Updating Packages with Yum
 
-Keeping your system's software up-to-date is crucial for security and stability.  Yum simplifies this process:
+Keeping your system's software up-to-date is important for security and stability. Yum simplifies this process:
 
 ```bash
 sudo yum update
@@ -79,7 +79,7 @@ To see a list of all installed packages:
 yum list installed
 ```
 
-This command displays a comprehensive list, including package names, versions, and architectures.  You can also search for specific packages:
+This command displays a detailed list, including package names, versions, and architectures.  You can also search for specific packages:
 
 ```bash
 yum list installed | grep <search_term>
@@ -149,5 +149,5 @@ sudo yum clean all
 This command removes downloaded packages, cache files, and metadata.  Be cautious when using this command, particularly `yum clean all`.  You can selectively remove only the cache with `sudo yum clean cache`.
 
 
-This guide provides a solid foundation for using Yum.  Further exploration of its capabilities will enhance your Linux system administration skills. Remember to always use `sudo` before Yum commands that modify the system.
+This guide provides a solid foundation for using Yum. Further exploration of its capabilities will improve your Linux system administration skills. Remember to always use `sudo` before Yum commands that modify the system.
 

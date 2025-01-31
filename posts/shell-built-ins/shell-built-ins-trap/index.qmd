@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## Understanding Signals
 
-Before diving into `trap`, it's crucial to grasp the concept of signals.  Signals are software interrupts sent to a process to notify it of an event, such as a termination request (SIGTERM), an interrupt from the keyboard (SIGINT), or a hangup (SIGHUP).  These signals, represented by numbers or names (e.g., SIGINT, SIGTERM), trigger predefined actions within the process, unless otherwise handled.
+Before diving into `trap`, it's important to grasp the concept of signals. Signals are software interrupts sent to a process to notify it of an event, such as a termination request (SIGTERM), an interrupt from the keyboard (SIGINT), or a hangup (SIGHUP). These signals, represented by numbers or names (e.g., SIGINT, SIGTERM), trigger predefined actions within the process, unless otherwise handled.
 
 
 ## The `trap` Command: Structure and Usage
@@ -29,7 +29,7 @@ Here:
 
 ## Practical Examples
 
-Let's illustrate the usage of `trap` with several examples:
+Let's illustrate the usage of `trap` with many examples:
 
 **1. Handling Ctrl+C (SIGINT):**
 
@@ -113,5 +113,5 @@ trap 'echo "Variable value: $my_variable"' EXIT
 sleep 2
 ```
 
-These examples demonstrate the versatility of `trap` in managing signals and improving the robustness of your shell scripts.  Proper use of `trap` can prevent data loss, ensure graceful termination, and enhance overall script reliability.  Remember to choose the appropriate signal(s) based on the specific scenario and desired behavior.
+These examples demonstrate the versatility of `trap` in managing signals and improving the robustness of your shell scripts.  Proper use of `trap` can prevent data loss, ensure graceful termination, and improve overall script reliability. Remember to choose the appropriate signal(s) based on the specific scenario and desired behavior.
 

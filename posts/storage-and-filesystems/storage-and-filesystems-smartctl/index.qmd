@@ -35,7 +35,7 @@ The first step is identifying the storage devices connected to your system. You 
 lsblk
 ```
 
-This command will list all block devices, including hard drives, SSDs, and partitions.  Note the device names (e.g., `/dev/sda`, `/dev/sdb`).  These names are crucial for targeting specific drives with `smartctl`.
+This command will list all block devices, including hard drives, SSDs, and partitions. Note the device names (e.g., `/dev/sda`, `/dev/sdb`). These names are for targeting specific drives with `smartctl`.
 
 
 ## Basic SMART Information Retrieval
@@ -46,7 +46,7 @@ To obtain a basic overview of a drive's SMART attributes, use the following comm
 sudo smartctl -a /dev/sda
 ```
 
-The `-a` option provides a comprehensive report including SMART attributes, self-test results, and device information.  The output is extensive and provides valuable insights into the drive's health.  Look for attributes with "Failing" or "Warning" status.
+The `-a` option provides a detailed report including SMART attributes, self-test results, and device information. The output is extensive and provides information on the drive's health. Look for attributes with "Failing" or "Warning" status.
 
 ## Focusing on Specific SMART Attributes
 
@@ -89,5 +89,5 @@ Many SMART attributes have pre-defined thresholds. Exceeding these thresholds of
 
 ##  Advanced Usage:  Log Retrieval and More
 
-`smartctl` offers numerous other options for advanced usage. For example, you can retrieve error logs, manage drive settings (where applicable), and more.  Consult the `smartctl` manual page (`man smartctl`) for a complete list of options and their functionalities.  The manual provides in-depth explanations for every option and parameter available, crucial for effectively using this powerful tool.
+`smartctl` offers numerous other options for advanced usage. For example, you can retrieve error logs, manage drive settings (where applicable), and more. Consult the `smartctl` manual page (`man smartctl`) for a complete list of options and their functionalities. The manual provides in-depth explanations for every option and parameter available, for effectively using this powerful tool.
 

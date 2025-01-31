@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## Understanding the `last` Command's Functionality
 
-The `last` command displays a list of recent logins and system events.  By default, it shows information from the `/var/log/wtmp` file (or its symbolic link, often `/var/run/utmp`), which records user logins and system boot/shutdown events.  The output provides crucial details, including:
+The `last` command displays a list of recent logins and system events.  By default, it shows information from the `/var/log/wtmp` file (or its symbolic link, often `/var/run/utmp`), which records user logins and system boot/shutdown events.  The output provides details, including:
 
 * **Username:** The user who logged in.
 * **TTY:** The terminal or device used for login (e.g., pts/0, tty1).
@@ -26,7 +26,7 @@ This will display the most recent login entries.  The number of entries shown de
 
 ## Refining Your Search with Options
 
-The `last` command offers several useful options to customize the displayed information:
+The `last` command offers many useful options to customize the displayed information:
 
 * **`-n <number>`:** Limits the output to the specified number of lines.  For example, to see only the last 10 logins:
 

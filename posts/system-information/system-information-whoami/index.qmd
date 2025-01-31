@@ -53,7 +53,7 @@ This script first retrieves the username using `whoami` and stores it in the `us
 
 ## Combining `whoami` with other commands
 
-`whoami` can be effectively combined with other commands to achieve more sophisticated tasks:
+`whoami` can be effectively combined with other commands to achieve more complex tasks:
 
 This example uses `whoami` and `echo` to create a personalized greeting:
 
@@ -73,5 +73,5 @@ echo "$(whoami) - $(date) - Script started" >> my_script.log
 This appends a line containing the username, current timestamp, and a message to the `my_script.log` file.
 
 
-Understanding and utilizing `whoami` enhances your command-line proficiency and enables you to write more robust and user-friendly shell scripts.  Its simplicity belies its considerable value in various Linux tasks.
+Understanding and utilizing `whoami` enhances your command-line proficiency and enables you to write more user-friendly shell scripts. Its simplicity belies its considerable value in various Linux tasks.
 

@@ -5,7 +5,7 @@ categories: [ "Shell Built-ins" ]
 ---
 ## What is `local`?
 
-The `local` command is used to declare variables that are only accessible within a specific function or scope. This is crucial for writing modular and robust shell scripts.  Without `local`, variables declared within a function would become global, potentially leading to unintended side effects and making your scripts harder to maintain and debug.
+The `local` command is used to declare variables that are only accessible within a specific function or scope. Without `local`, variables declared within a function would become global, potentially leading to unintended side effects and making your scripts harder to maintain and debug.
 
 
 ## Declaring Local Variables

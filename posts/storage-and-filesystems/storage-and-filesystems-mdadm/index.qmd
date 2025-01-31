@@ -97,5 +97,5 @@ Remember to adjust the number of `--raid-devices` according to the number of dri
 
 ## Monitoring Your RAID Array
 
-Regular monitoring of your RAID array is crucial to ensure data integrity.  Use the `cat /proc/mdstat` command periodically to check the array's status.  Any errors or warnings should be addressed promptly.  You can also use monitoring tools to automatically track your array's health.
+Regular monitoring of your RAID array is important to ensure data integrity. Use the `cat /proc/mdstat` command periodically to check the array's status. Any errors or warnings should be addressed promptly. You can also use monitoring tools to automatically track your array's health.
 

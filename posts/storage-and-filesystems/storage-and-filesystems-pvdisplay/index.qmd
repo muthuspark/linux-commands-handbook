@@ -5,7 +5,7 @@ categories: [ "Storage and Filesystems" ]
 ---
 ## What is `pvdisplay`?
 
-The `pvdisplay` command is a powerful tool within the LVM suite. It displays detailed information about your Physical Volumes.  These PVs are the building blocks of LVM; they are partitions (or entire disks) dedicated to being part of an LVM volume group.  `pvdisplay` reveals crucial information about each PV, allowing you to monitor their status, size, and usage.
+The `pvdisplay` command is a powerful tool within the LVM suite. It displays detailed information about your Physical Volumes (PVs). These PVs are the building blocks of LVM; they are partitions (or entire disks) dedicated to being part of an LVM volume group. `pvdisplay` reveals information about each PV, allowing you to monitor their status, size, and usage.
 
 ## Basic Usage
 
@@ -54,11 +54,11 @@ This tells us that:
 
 ##  Using `pvdisplay` for Troubleshooting
 
-`pvdisplay` isn't just for informational purposes. Its output is invaluable when troubleshooting LVM-related issues.  For example, if you encounter storage problems, checking the `PV Status` can quickly reveal whether a PV is offline or inaccessible, pointing you towards the source of the problem.  An inactive PV would indicate a potential hardware failure or a configuration problem needing attention.
+`pvdisplay` isn't just for informational purposes. Its output is helpful when troubleshooting LVM-related issues. For example, if you encounter storage problems, checking the `PV Status` can quickly reveal whether a PV is offline or inaccessible, pointing you towards the source of the problem. An inactive PV would indicate a potential hardware failure or a configuration problem needing attention.
 
 ##  Advanced Options (Brief Overview)
 
-While the basic usage covers many scenarios, `pvdisplay` offers additional, albeit less frequently used, options.  Consult the `man pvdisplay` page for a comprehensive list and detailed explanations.  These often involve manipulating the output format or filtering information.
+While the basic usage covers many scenarios, `pvdisplay` offers additional, albeit less frequently used, options.  Consult the `man pvdisplay` page for a detailed list and detailed explanations.  These often involve manipulating the output format or filtering information.
 
 
 ## Practical Example: Identifying a Failing PV

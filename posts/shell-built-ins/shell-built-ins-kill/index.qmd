@@ -88,7 +88,7 @@ This sends the `SIGHUP` signal to process 1234.  The effect depends on how the p
 
 * Always try `SIGTERM` first.
 * `SIGKILL` should be used as a last resort.
-* Be extremely cautious when killing system processes.  Incorrectly killing crucial processes can lead to system instability.
+* Be extremely cautious when killing system processes. Incorrectly killing processes can lead to system instability.
 * Consult your application's documentation to understand how it responds to different signals.
 
 

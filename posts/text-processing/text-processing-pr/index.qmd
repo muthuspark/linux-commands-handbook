@@ -10,7 +10,7 @@ The `pr` command's core function is to paginate and format text files.  It takes
 
 ## Key Options and Their Usage
 
-Let's explore some crucial `pr` options through practical examples:
+Let's look at some `pr` options through practical examples:
 
 **1. Setting Page Length and Width:**
 
@@ -100,5 +100,5 @@ pr -t sample.txt
 This will produce output without any headers or footers.
 
 
-These examples demonstrate the versatility of the `pr` command. Experiment with these options and their combinations to achieve the desired text formatting for your specific needs. Remember to consult the `man pr` page for a comprehensive list of all available options and their detailed descriptions.
+These examples demonstrate the versatility of the `pr` command. Experiment with these options and their combinations to achieve the desired text formatting for your specific needs. Remember to consult the `man pr` page for a detailed list of all available options and their detailed descriptions.
 

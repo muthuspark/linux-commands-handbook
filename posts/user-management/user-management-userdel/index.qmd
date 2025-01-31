@@ -72,7 +72,7 @@ Before attempting to delete a user, it's a good practice to check if the user ac
 id username
 ```
 
-If the user exists, the command will output information about the user; otherwise, it will return an error. You can incorporate this check into your scripts for more robust user management.
+If the user exists, the command will output information about the user; otherwise, it will return an error. You can incorporate this check into your scripts for more user management.
 
 
 ##  Advanced Usage with `-f`

@@ -5,7 +5,7 @@ categories: [ "Network" ]
 ---
 ## Understanding `mtr`'s Output
 
-The core strength of `mtr` lies in its comprehensive output.  It displays real-time statistics, allowing you to monitor network performance dynamically. Key metrics included are:
+The core strength of `mtr` lies in its detailed output.  It displays real-time statistics, allowing you to monitor network performance dynamically. Key metrics included are:
 
 * **Host:** The hostname or IP address of each hop.
 * **Loss%:** The percentage of packets lost at each hop.  High loss indicates potential problems.

@@ -39,7 +39,7 @@ strings -e b mybinaryfile  # 'b' specifies big-endian UTF-8
 strings -e s mybinaryfile  # 's' specifies UTF-8
 ```
 
-Choosing the correct encoding is crucial for accurate results, especially when dealing with files from different systems or applications.
+Choosing the correct encoding ensures accurate results, especially when dealing with files from different systems or applications.
 
 
 ##  Outputting to a File
@@ -62,7 +62,7 @@ unzip myarchive.zip
 strings myfile.txt # myfile.txt might be a file extracted from the archive
 ```
 
-This demonstrates the power of combining `strings` with other Linux commands for a more comprehensive analysis.
+This demonstrates the power of combining `strings` with other Linux commands for a more detailed analysis.
 
 
 ##  Advanced Usage:  Combining with Other Commands

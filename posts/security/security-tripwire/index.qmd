@@ -29,7 +29,7 @@ sudo pacman -S tripwire
 
 ## Initial Configuration and Database Creation
 
-After installation, you need to initialize Tripwire. This involves creating a policy file and a database of your current file system's integrity.  This is a crucial step, and any errors here will prevent Tripwire from functioning correctly.
+After installation, you need to initialize Tripwire. This involves creating a policy file and a database of your current file system's integrity. Any errors here will prevent Tripwire from functioning correctly.
 
 The first step is to install the configuration files.  Typically, this involves running a command like this:
 
@@ -65,7 +65,7 @@ This line specifies:
 * `root`: The expected owner of the file.
 * `0644`: The expected file permissions.
 
-**Important Considerations:**  Incorrectly modifying the `twpol.txt` file can lead to false positives.  It's crucial to understand the implications of adding or removing entries from this file.
+**Important Considerations:** Incorrectly modifying the `twpol.txt` file can lead to false positives.  Understand the effects of adding or removing entries from this file.
 
 
 ## Running Tripwire and Analyzing Reports
@@ -78,13 +78,13 @@ sudo tripwire --check
 
 Tripwire will compare the current state of your system with the database created earlier.  If any changes are detected (e.g., a file has been modified, deleted, or created), Tripwire will generate a report highlighting the discrepancies.  This report will usually be located in `/var/log/tripwire`.
 
-Examining the report is crucial for determining whether the changes are legitimate or indicate malicious activity.
+Examining the report is important for determining whether the changes are legitimate or indicate malicious activity.
 
 
 ## Working with the Tripwire Report
 
 
-Tripwire’s reports are crucial. They detail file changes, including file names, checksums, and timestamps. Understanding what constitutes an actual security risk requires examining the report carefully and correlating it with known system changes or updates. False positives, legitimate updates misinterpreted as security breaches, are common and require expertise to eliminate.  A good understanding of your system's typical operational changes is essential to interpreting the report accurately.
+Tripwire’s reports are crucial, detailing file changes (names, checksums, timestamps).  Understanding what constitutes an actual security risk requires careful report examination and correlation with known system changes or updates. False positives—legitimate updates misinterpreted as security breaches—are common and require elimination. A good understanding of your system's typical operational changes is essential for accurate interpretation.
 
 
 ## Utilizing Different Checksum Algorithms

@@ -5,7 +5,7 @@ categories: [ "Process Management" ]
 ---
 ## What is `pgrep`?
 
-`pgrep` is a powerful command-line utility that allows you to find the process ID (PID) of running processes based on their name or other criteria. Unlike `ps`, which displays a comprehensive list of processes, `pgrep` focuses on providing only the PIDs, making it ideal for scripting and automation.
+`pgrep` is a powerful command-line utility that allows you to find the process ID (PID) of running processes based on their name or other criteria. Unlike `ps`, which displays a detailed list of processes, `pgrep` focuses on providing only the PIDs, making it ideal for scripting and automation.
 
 
 ## Basic Usage: Finding Processes by Name
@@ -30,7 +30,7 @@ For more complex searches, `pgrep` supports regular expressions via the `-f` opt
 pgrep -f "firefox --profile myprofile"
 ```
 
-This command will only return PIDs of Firefox processes that include "--profile myprofile" in their full command line.  The `-f` option significantly increases the precision of your search.
+This command will only return PIDs of Firefox processes that include "--profile myprofile" in their full command line. The `-f` option increases the precision of your search.
 
 
 
@@ -93,5 +93,5 @@ This combines user filtering with a full command-line regular expression search.
 If `pgrep` cannot find any matching processes, it returns an exit code of 1. This is important to consider when using `pgrep` in scripts. You can check the exit status using `$?` after running the command.
 
 
-This guide covers the core functionality of `pgrep`.  Experiment with different options and combinations to master this invaluable tool for Linux process management.
+This guide covers the core functionality of `pgrep`. Experiment with different options and combinations to master this tool for Linux process management.
 

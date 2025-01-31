@@ -30,7 +30,7 @@ sudo dd if=/dev/sda1 of=/path/to/backup/partition_backup.img bs=4M status=progre
 * **`sudo`:**  Requires root privileges.
 * **`if=/dev/sda1`:**  Specifies the input partition. **Double-check this!**
 * **`of=/path/to/backup/partition_backup.img`:** Specifies the output file.  Ensure sufficient space on the target drive.
-* **`bs=4M`:** Sets the block size to 4MB, significantly speeding up the process.  Experiment with different sizes to find the optimal value for your system.
+* **`bs=4M`:** Sets the block size to 4MB, speeding up the process. Experiment with different sizes to find the optimal value for your system.
 * **`status=progress`:** Shows a progress bar, indicating the copying progress.
 
 **Important Considerations:**
@@ -72,5 +72,5 @@ Remember to replace `/dev/sda` and `/path/to/backup/disk_backup.img` with your c
 * **`seek=N`:** Seeks to N blocks at the beginning of the output.
 
 
-**Disclaimer:**  The `dd` command is a powerful tool capable of causing significant data loss if used incorrectly. Always double-check your commands before execution and test your backup/restore procedures on a non-critical system.  Consider using more robust backup solutions like `rsync` or dedicated backup software for routine backups.  `dd` is best suited for specific scenarios requiring a bit-level copy.
+**Disclaimer:**  The `dd` command is a powerful tool capable of causing significant data loss if used incorrectly. Always double-check your commands before execution and test your backup/restore procedures on a non-critical system.  Consider using more backup solutions like `rsync` or dedicated backup software for routine backups.  `dd` is best suited for specific scenarios requiring a bit-level copy.
 

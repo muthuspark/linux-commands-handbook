@@ -5,7 +5,7 @@ categories: [ "System Information" ]
 ---
 ## What is `lspci`?
 
-`lspci` (List PCI) is a command-line utility that lists all PCI (Peripheral Component Interconnect) devices installed on your system. PCI is a standard interface used to connect various hardware components to the motherboard, including graphics cards, network adapters, sound cards, and more.  `lspci` provides detailed information about each device, making it crucial for system administrators and hardware enthusiasts alike.
+`lspci` (List PCI) is a command-line utility that lists all PCI (Peripheral Component Interconnect) devices installed on your system. PCI is a standard interface used to connect various hardware components to the motherboard, including graphics cards, network adapters, sound cards, and more.  `lspci` provides detailed information about each device, making it useful for system administrators and hardware enthusiasts alike.
 
 
 ## Basic Usage
@@ -34,7 +34,7 @@ This command will output a list of all PCI devices, each with a short descriptio
 
 ##  Advanced Usage and Options
 
-`lspci` offers several options to refine its output and extract specific information:
+`lspci` offers many options to refine its output and extract specific information:
 
 * **`-v` (verbose):** This option provides a much more detailed description of each device, including vendor and device specific information, resources used, and interrupt assignments.
 
@@ -83,5 +83,5 @@ lspci -v -x -s 00:02.0
 ```
 
 
-This command provides detailed information about the device at address `00:02.0` in a structured XML format, which is very useful for automated processing.  Experiment with these options to tailor the output to your specific needs.  Remember to consult the `lspci --help` output for a comprehensive list of available options.
+This command provides detailed information about the device at address `00:02.0` in a structured XML format, which is very useful for automated processing.  Experiment with these options to tailor the output to your specific needs.  Remember to consult the `lspci --help` output for a detailed list of available options.
 

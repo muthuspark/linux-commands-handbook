@@ -5,7 +5,7 @@ categories: [ "File Management" ]
 ---
 ## Understanding BZIP2 and `bunzip2`
 
-BZIP2 is a powerful data compression algorithm known for its high compression ratios, often exceeding those of the popular `gzip` algorithm. However, it typically requires more processing time.  `bunzip2` is the command-line tool specifically designed to decompress files compressed with BZIP2.  It's a crucial part of any Linux system administrator's or power user's toolkit.
+BZIP2 is a powerful data compression algorithm known for its high compression ratios, often exceeding those of the popular `gzip` algorithm. However, it typically requires more processing time.  `bunzip2` is the command-line tool specifically designed to decompress files compressed with BZIP2.  It's a part of any Linux system administrator's or power user's toolkit.
 
 
 ## Basic Usage of `bunzip2`

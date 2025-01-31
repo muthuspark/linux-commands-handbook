@@ -17,7 +17,7 @@ You'll be presented with a `(parted)` prompt.
 
 ## Essential `parted` Commands
 
-Let's explore some core commands with illustrative examples.
+Let's look at some core commands with illustrative examples.
 
 **1. Listing Partitions:**
 

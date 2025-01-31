@@ -24,7 +24,7 @@ telnet <hostname or IP address> <port number>
 
 ## Practical Telnet Examples
 
-Let's explore some practical examples illustrating `telnet` usage:
+Let's look at some practical examples illustrating `telnet` usage:
 
 **1. Connecting to a remote host on the default port:**
 

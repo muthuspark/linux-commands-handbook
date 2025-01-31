@@ -7,14 +7,14 @@ categories: [ "Storage and Filesystems" ]
 
 `hdparm` interacts directly with the ATA/ATAPI interface of your storage devices. This allows you to access and adjust settings that aren't typically exposed through the operating system's graphical interface.  Some key functionalities include:
 
-* **Reading drive parameters:** Retrieve crucial information like model number, firmware version, current settings, and transfer modes.
+* **Reading drive parameters:** Retrieve information like model number, firmware version, current settings, and transfer modes.
 * **Modifying drive parameters:** Adjust settings such as spin-up speed, read-ahead cache size, and power management features.  Note that some settings might not be adjustable on all drives.
 * **Enabling/disabling features:** Control features like DMA (Direct Memory Access) and APM (Advanced Power Management).
 * **Testing drive performance:**  Perform benchmark tests to assess read and write speeds.
 
 ##  Essential hdparm Commands with Examples
 
-Let's explore some frequently used `hdparm` commands with practical examples.  Remember to replace `/dev/sda` with the actual path to your hard drive.  **Always exercise caution when modifying drive parameters.** Incorrect settings can potentially damage your data or lead to instability.  It's recommended to back up your data before making significant changes.
+Let's look at some frequently used `hdparm` commands with practical examples.  Remember to replace `/dev/sda` with the actual path to your hard drive.  **Always exercise caution when modifying drive parameters.** Incorrect settings can potentially damage your data or lead to instability.  It's recommended to back up your data before making significant changes.
 
 **1. Getting Drive Information:**
 
@@ -36,7 +36,7 @@ The `-t` option performs a short read test, while `-T` performs a longer test, p
 
 **3. Enabling/Disabling DMA:**
 
-DMA significantly boosts transfer speeds.  This command enables DMA if it's currently disabled.
+DMA boosts transfer speeds. This command enables DMA if it's currently disabled.
 
 ```bash
 sudo hdparm -d1 /dev/sda  # Enable DMA
@@ -66,7 +66,7 @@ While `hdparm` can be used with SSDs, many of its features (like APM) are less r
 
 **7.  Identifying your drive:**
 
-Before making any changes, it is crucial to correctly identify your hard drive.  Using the wrong device will result in data loss or system instability.  Use `lsblk` or `fdisk -l` to verify the correct device name before executing any `hdparm` command.
+Before making any changes, correctly identify your hard drive. Using the wrong device will result in data loss or system instability. Use `lsblk` or `fdisk -l` to verify the correct device name before executing any `hdparm` command.
 
 
 Remember that the optimal settings for `hdparm` will depend on your specific hardware and workload. Experimentation and careful monitoring are key to achieving optimal performance.  Always consult your drive's documentation for recommended settings and limitations.

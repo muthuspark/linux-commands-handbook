@@ -10,7 +10,7 @@ categories: [ "Network" ]
 
 ## Key `netstat` Options and Examples
 
-Let's explore some of the most commonly used `netstat` options:
+Let's look at some of the most commonly used `netstat` options:
 
 **1. Viewing Active Connections (`netstat -a` or `netstat -an`)**
 
